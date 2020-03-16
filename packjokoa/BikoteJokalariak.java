@@ -25,4 +25,7 @@ public class BikoteJokalariak {
 	public void itsasontziakJarri() {
 		
 	}
+	public void partidaBukatu() {
+		
+	}
 }
