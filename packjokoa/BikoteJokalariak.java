@@ -28,4 +28,7 @@ public class BikoteJokalariak {
 	public void partidaBukatu() {
 		
 	}
+	public void txandaBatJolastu() {
+		
+	}
 }
