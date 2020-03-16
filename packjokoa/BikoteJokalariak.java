@@ -14,7 +14,6 @@ public class BikoteJokalariak {
 	public BikoteJokalariak getNireBikoteJokalariak() {
 		
 	}
-
 	
 	//gainontzeko metodoak:
 	
