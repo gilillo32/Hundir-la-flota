@@ -5,6 +5,7 @@ public abstract class Jokalaria {
 	private Tableroa nireTableroa;
 	private String izena;
 	private Tableroa printTableroa;
+	private int nUkituta;
 	
 	//eraikitzailea:
 	public Jokalaria() {
@@ -22,6 +23,10 @@ public abstract class Jokalaria {
 	
 	
 	public abstract void hirugarrenTiroaEgin(short pX, short pY, String pEma);
+	//hemen tableroaEguneratu() deituko da eta this.nUkituta++
+	//10 ukituta egonda, itsasontzi guztiak hondoratuta daudela esan nahi du,
+	//beraz, irabazi duzu.
+	
 	
 	protected void setIzena(String pIzena) {
 		this.izena = pIzena;
@@ -29,6 +34,8 @@ public abstract class Jokalaria {
 	
 	protected boolean itsasontzirikEz() {
 		//true ematen du itsasontzirik ez badago tableroan
+		//Dentro de arrunta y dentro de CPU comprueba cuántos se han tocado. 
+		//Si llega a 10 partidaBukatu = true. Y se acaba el juego.
 	}
 
 }

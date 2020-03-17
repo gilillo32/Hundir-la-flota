@@ -2,7 +2,7 @@ package packjokoa;
 
 public class Tableroa {
 	//atributuak:
-	private int errenZutKop;                       //errenkada eta zutabe kopurua
+	private int errenZutKop;  //errenkada eta zutabe kopurua
 	private String[][] matrizea;
 	
 	//eraikitzailea:
