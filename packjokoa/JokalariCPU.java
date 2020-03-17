@@ -2,8 +2,8 @@ package packjokoa;
 
 public class JokalariCPU extends Jokalaria {
 	
-	public JokalariCPU(String pIzena) {
-		super(pIzena);
+	public JokalariCPU() {
+		super("CPU");
 	}
 
 	@Override
@@ -23,5 +23,6 @@ public class JokalariCPU extends Jokalaria {
 		// TODO Auto-generated method stub
 
 	}
-
+	
+	
 }

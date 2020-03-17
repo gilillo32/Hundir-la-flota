@@ -4,11 +4,11 @@ public abstract class Jokalaria {
 	//atributuak:
 	private Tableroa nireTableroa;
 	private String izena;
-	private Tableroa printTableroa;
+	private Tableroa tableroa;
 	
 	//eraikitzailea:
 	public Jokalaria(String pIzena) {
-		
+		this.izena = pIzena;
 	}
 	
 	public void itsasontziakJarri() {
@@ -22,5 +22,9 @@ public abstract class Jokalaria {
 	
 	
 	public abstract void hirugarrenTiroaEgin(short pX, short pY, String pEma);
+	
+	protected void setIzena(String pIzena) {
+		this.izena = pIzena;
+	}
 
 }
