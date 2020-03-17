@@ -28,5 +28,9 @@ public class JokalariCPU extends Jokalaria {
 		super("CPU");
 	}
 	
+	public boolean itsasontzirikEz() {
+		super();
+	}
+	
 	
 }

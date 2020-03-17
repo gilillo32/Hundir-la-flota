@@ -24,10 +24,14 @@ public class BikoteJokalariak {
 	public void itsasontziakJarri() {
 		
 	}
-	public void partidaBukatu() {
-		
+	public boolean partidaBukatu() {
+		// bi jokalarien tableroak begiratzen ditu eta 
+		// ez badago itsasontzirik, partida amaitzen da.
+		// itsasontzirikEz() erabiliko da jokalarien tableroak ikusteko.
 	}
 	public void txandaBatJolastu() {
 		
 	}
+	
+	
 }

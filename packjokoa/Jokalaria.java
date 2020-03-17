@@ -26,5 +26,9 @@ public abstract class Jokalaria {
 	protected void setIzena(String pIzena) {
 		this.izena = pIzena;
 	}
+	
+	protected boolean itsasontzirikEz() {
+		//true ematen du itsasontzirik ez badago tableroan
+	}
 
 }

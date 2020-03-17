@@ -44,7 +44,7 @@ public class Tableroa {
 		
 	}
 	
-	private void eguneratuTableroa() {
+	public void eguneratuTableroa() {
 		
 	}
 

@@ -27,4 +27,10 @@ public class JokalariArrunta extends Jokalaria {
 	public void setIzena(String pIzena) {
 		super(pIzena);
 	}
+	
+	public boolean itsasontzirikEz() {
+		super();
+	}
+	
+	
 }
