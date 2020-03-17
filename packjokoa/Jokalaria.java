@@ -4,7 +4,7 @@ public abstract class Jokalaria {
 	//atributuak:
 	private Tableroa nireTableroa;
 	private String izena;
-	private Tableroa tableroa;
+	private Tableroa printTableroa;
 	
 	//eraikitzailea:
 	public Jokalaria() {
