@@ -2,8 +2,8 @@ package packjokoa;
 
 public class JokalariArrunta extends Jokalaria {
 	
-	public JokalariArrunta(String pIzena) {
-		super(pIzena);
+	public JokalariArrunta() {
+		
 	}
 
 	@Override

@@ -7,8 +7,8 @@ public abstract class Jokalaria {
 	private Tableroa tableroa;
 	
 	//eraikitzailea:
-	public Jokalaria(String pIzena) {
-		this.izena = pIzena;
+	public Jokalaria() {
+		
 	}
 	
 	public void itsasontziakJarri() {

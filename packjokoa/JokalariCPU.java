@@ -3,7 +3,7 @@ package packjokoa;
 public class JokalariCPU extends Jokalaria {
 	
 	public JokalariCPU() {
-		super("CPU");
+		
 	}
 
 	@Override
@@ -22,6 +22,10 @@ public class JokalariCPU extends Jokalaria {
 	public void hirugarrenTiroaEgin(short pX, short pY, String pEma) {
 		// TODO Auto-generated method stub
 
+	}
+	
+	public void setIzena() {
+		super("CPU");
 	}
 	
 	
