@@ -21,7 +21,7 @@ public class JokalariArrunta extends Jokalaria {
 	@Override
 	public void hirugarrenTiroaEgin(short pX, short pY, String pEma) {
 		// TODO Auto-generated method stub
-
+		// primeros llamamos a super.nUkituaInkrementatu y luego a tableroa.eguneratu
 	}
 
 	public void setIzena(String pIzena) {

@@ -32,6 +32,10 @@ public abstract class Jokalaria {
 		this.izena = pIzena;
 	}
 	
+	protected int nUkituaInkrementatu() {
+		
+	}
+	
 	protected boolean itsasontzirikEz() {
 		//true ematen du itsasontzirik ez badago tableroan
 		//Dentro de arrunta y dentro de CPU comprueba cuántos se han tocado. 
