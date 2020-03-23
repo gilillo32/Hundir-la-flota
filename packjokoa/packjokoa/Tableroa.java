@@ -63,7 +63,7 @@ public class Tableroa {
 	}
 	
 	public String bigarrenTiroa(short pX, short pY) {
-		//salbuespen del teklado SE MIRA AL PEDI R LA CORDENADA
+		//salbuespen del teklado SE MIRA AL PEDIR LA CORDENADA
 		//honek etsaiaren tableroan begiratuko du zer dagoen kasilan
 		return this.matrizea[pX][pY];
 		
