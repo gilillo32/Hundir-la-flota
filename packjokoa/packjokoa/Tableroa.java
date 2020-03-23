@@ -44,7 +44,7 @@ public class Tableroa {
 		
 	}
 	
-	public void eguneratuTableroa() {
+	public void eguneratuTableroa(String pEmaitza) {
 		
 	}
 

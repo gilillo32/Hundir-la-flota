@@ -9,7 +9,6 @@ public class JokalariCPU extends Jokalaria {
 	@Override
 	public void lehenengoTiroaEgin(short pX, short pY) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override

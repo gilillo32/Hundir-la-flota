@@ -8,8 +8,19 @@ public abstract class Jokalaria {
 	private int nUkituta;
 	
 	//eraikitzailea:
-	public Jokalaria() {
-		
+	public Jokalaria(String pIzena, int pNUkitua) {
+		this.nireTableroa=new Tableroa(pErrenkadaZutKop);
+		this.izena=pIzena;
+		this.nUkituta=pNUkitua;
+		this.printTableroa=new Tableroa(pErrenkadaZutKop); 
+	}
+	
+	protected Tableroa getNireTableroa() {
+		return this.nireTableroa;
+	}
+	
+	protected Tableroa getPrintTableroa() {
+		return this.nireTableroa;
 	}
 	
 	public void itsasontziakJarri() {
@@ -32,14 +43,20 @@ public abstract class Jokalaria {
 		this.izena = pIzena;
 	}
 	
-	protected int nUkituaInkrementatu() {
-		
+	protected void nUkituaInkrementatu() {
+		this.nUkituta++;
 	}
 	
 	protected boolean itsasontzirikEz() {
 		//true ematen du itsasontzirik ez badago tableroan
 		//Dentro de arrunta y dentro de CPU comprueba cuántos se han tocado. 
 		//Si llega a 10 partidaBukatu = true. Y se acaba el juego.
+		boolean badaudeItsas=false;
+		if(this.nUkituta==10) {
+			badaudeItsas=true;
+		}
+		return badaudeItsas;
+		
 	}
 
 }
