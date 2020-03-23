@@ -45,7 +45,7 @@ public class Tableroa {
 		
 	}
 	
-	public void itsasontziakJarri() {
+	public void itsasontziakJarri(short pX, short pY) {
 		
 		
 	}
@@ -55,7 +55,7 @@ public class Tableroa {
 		//konprobatuko dugu ez duela lehen erabili, ez badago U edo - (U itsasontzia ukituta dagoela esan nahi du, GOGORATU!!!
 		//konprobaketa bere asmakuntzen tableroan begiratuko du
 		boolean tiroa= false;
-		if( this.matrizea[pX][pY] != "-" || this.matrizea[pX][pY] != "U") {
+		if( !this.uraDago(pX, pY) || this.matrizea[pX][pY] != "U") {
 			tiroa= true;
 		}
 		return tiroa;
@@ -70,14 +70,21 @@ public class Tableroa {
 	}
 	
 	private boolean uraDago(short pX, short pY) {
+		boolean dago=false;
+		if( this.matrizea[pX][pY] == "-") {
+			dago=true;
+		}
+		
+		return dago;
 		
 	}
 	
-	private boolean hondoratutaDago(short pZenb) {
+	/*private boolean hondoratutaDago(short pZenb) {
 		
-	}
+	}*/
 	
-	private boolean konprobatuHutsuneak() {
+	private boolean konprobatuHutsuneak(short pX, short pY) {
+		//itsasontsien hartean gutxienez kasila bat tartean egon behar da
 		
 	}
 	
