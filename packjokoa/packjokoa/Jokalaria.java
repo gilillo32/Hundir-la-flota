@@ -8,7 +8,7 @@ public abstract class Jokalaria {
 	private int nUkituta;
 	
 	//eraikitzailea:
-	public Jokalaria(String pIzena, Short pErrenkadaZutKop) {
+	public Jokalaria(String pIzena, short pErrenkadaZutKop) {
 		this.nireTableroa=new Tableroa(pErrenkadaZutKop);
 		this.izena=pIzena;
 		this.nUkituta=0;
