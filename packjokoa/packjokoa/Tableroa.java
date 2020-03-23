@@ -46,9 +46,30 @@ public class Tableroa {
 	}
 	
 	public void itsasontziakJarri(short pX, short pY,short pItsas, String pOrientazio) {
+		//salbuespena:
 		//konprobatu itsasontsia sar daitekeela koordenatu horretan, hau da 4eko itsasontsia ez gara saiatuko sartzen 9,9 kooedenatuan ez baita sartzen
-		
-		
+		int aux=0;
+		this.tableroaBete();// tableroa uraz beteko dugu
+		//itsasontsia jarriko dugu:
+		if(	this.konprobatuHutsuneak(pX, pY, pItsas, pOrientazio)) {
+			//orentazioaren arabera bi modu:
+			if (pOrientazio=="H") {//pY ez da aldatzen
+				aux= pX+pItsas;
+				while(pX<aux) {
+					 this.matrizea[pX][pY]= String.valueOf(pItsas);
+					pX++;
+				}
+			}
+			else if(pOrientazio=="B") {//pX ez da aldatzen
+				aux	=pY+ pItsas;
+				while(pY<aux) {
+					 this.matrizea[pX][pY]= String.valueOf(pItsas);
+					pY++;
+				}
+				
+			}
+		}		
+		this.tableroaInprimatu();			
 	}
 	
 	public boolean konprobatuTiroa(short pX, short pY) {
