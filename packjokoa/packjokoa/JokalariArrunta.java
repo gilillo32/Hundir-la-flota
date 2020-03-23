@@ -2,8 +2,8 @@ package packjokoa;
 
 public class JokalariArrunta extends Jokalaria {
 	
-	public JokalariArrunta(String pIzena, int pNUkitua) {
-		super(pIzena,pNUkitua);
+	public JokalariArrunta(String pIzena, Short pErrenkadaZutKop) {
+		super(pIzena, pErrenkadaZutKop); 
 	}
 	
 	@Override
@@ -14,7 +14,7 @@ public class JokalariArrunta extends Jokalaria {
 				String emaitza=pJokalaria.bigarrenTiroaEgin(pX, pY);
 				this.hirugarrenTiroaEgin(pX, pY, emaitza);
 				if(emaitza!="U") {
-					posibleaDa=false;
+					posibleaDa=false; 
 				}
 			}
 			else {
@@ -42,13 +42,12 @@ public class JokalariArrunta extends Jokalaria {
 		this.getNireTableroa().eguneratuTableroa(pEma);
 	}
 	
-	public void setIzena(String pIzena) {
+	/*public void setIzena(String pIzena) {
 		super.setIzena(pIzena);
-	}
+	}*/
 	
 	public boolean itsasontzirikEz() {
 		return super.itsasontzirikEz();
-	}
-	
+	}   
 	
 }
