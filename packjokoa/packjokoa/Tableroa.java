@@ -45,7 +45,8 @@ public class Tableroa {
 		
 	}
 	
-	public void itsasontziakJarri(short pX, short pY) {
+	public void itsasontziakJarri(short pX, short pY,short pItsas, String pOrientazio) {
+		//konprobatu itsasontsia sar daitekeela koordenatu horretan, hau da 4eko itsasontsia ez gara saiatuko sartzen 9,9 kooedenatuan ez baita sartzen
 		
 		
 	}
@@ -73,19 +74,89 @@ public class Tableroa {
 		boolean dago=false;
 		if( this.matrizea[pX][pY] == "-") {
 			dago=true;
-		}
-		
-		return dago;
-		
+		}		
+		return dago;		
 	}
 	
 	/*private boolean hondoratutaDago(short pZenb) {
 		
 	}*/
 	
-	private boolean konprobatuHutsuneak(short pX, short pY) {
-		//itsasontsien hartean gutxienez kasila bat tartean egon behar da
+	private boolean konprobatuHutsuneak(short pX, short pY, short pItsas, String pOrientazio ) {
 		
+		
+		//////////
+		//HAY QUE MIRARR QUE NO SEAN ESQUINAS NI PUNTOS CRITICOS!!! AHORA SOLO ESTA LO GENERICO
+		//////////
+		
+		//true bueltatzen du itsasontzien hartean hiutsuneak egongo badira itsasontsia koordenatu horretan jarrri ostean, bestela false, hau da, itsasontzia ezin da han jarri
+		//pItsas esango digu zein motatak itsasontsia den, guk jakitek zein koordenatuan amaituko den itsasontzia
+		//itsasontsien hartean gutxienez kasila bat tartean egon behar da
+		boolean hutsune = false;
+		int aux=0;
+		int amaierakoEr=0;
+		int amaierakoZut=0;
+		//orientazioaren arabera prozedura desberdina izango da
+		if (pOrientazio=="H") { 
+			//horizontalean
+			amaierakoEr=  pX + pItsas;
+			amaierakoZut= pY;
+			if(this.matrizea[pX-1][pY]=="-") { //EZKERREKO KASILAN BEGIRATU
+				hutsune = true;
+			}
+			else if(this.matrizea[amaierakoEr][amaierakoZut]=="-") { //ESKUINEKO KASILAN BEGIRATU
+				hutsune = true;	
+			}
+			aux=pX;
+			while(!hutsune && aux< amaierakoEr) {		//GOIKO ERRENKETAKO KASILAK BEGIRATU		
+				if(this.matrizea[aux][pY-1]=="-") {
+					hutsune = true;
+				}
+				aux++;
+			}
+			aux=pX;
+			while(!hutsune && aux< amaierakoEr) {				
+				if(this.matrizea[aux][pY+1]=="-") { //BEHEKO ERRENKADAKO KASILETAN BEGIRATU
+					hutsune = true;
+				}
+				aux++;
+			}
+			
+			///QUE NO SSE OLVIDEN LAS SALBUESPENAS, ESQUINAS ETC....
+			
+			
+		}
+		else if (pOrientazio=="B") {
+			//Bertikalean
+			amaierakoEr=  pX;
+			amaierakoZut= pY + pItsas;
+	
+			if(this.matrizea[pX][pY-1]=="-") { //gOIKO KASILAN BEGIRATU
+				hutsune = true;
+			}
+			else if(this.matrizea[amaierakoEr][amaierakoZut]=="-") { //BEHEKO KASILAN BEGIRATU
+				hutsune = true;	
+			}
+			aux=pY;
+			while(!hutsune && aux< amaierakoZut) {		//EZKERREKO ZUTABEKOKASILAK BEGIRATU		
+				if(this.matrizea[pX-1][aux]=="-") {
+					hutsune = true;
+				}
+				aux++;
+			}
+			aux=pY;
+			while(!hutsune && aux< amaierakoZut) {			//ESKUINEKO ZUTABEKOKASILAK BEGIRATU	
+				if(this.matrizea[pX+1][aux]=="-") {
+					hutsune = true;
+				}
+				aux++;
+			}
+			///QUE NO SSE OLVIDEN LAS SALBUESPENAS, ESQUINAS ETC....
+			
+		
+			
+		}
+		return hutsune;
 	}
 	
 	public void eguneratuTableroa(String pEmaitza) {
