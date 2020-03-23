@@ -27,17 +27,7 @@ public abstract class Jokalaria {
 		
 	}
 	
-	public abstract void lehenengoTiroaEgin(short pX, short pY);		
-
-	
-	public abstract String bigarrenTiroaEgin(short pX, short pY);
-	
-	
-	public abstract void hirugarrenTiroaEgin(short pX, short pY, String pEma);
-	//hemen tableroaEguneratu() deituko da eta this.nUkituta++
-	//10 ukituta egonda, itsasontzi guztiak hondoratuta daudela esan nahi du,
-	//beraz, irabazi duzu.
-	
+	public abstract void txandaBatJokatu(short pX, short pY, Jokalaria pJokalaria);		
 	
 	protected void setIzena(String pIzena) {
 		this.izena = pIzena;
