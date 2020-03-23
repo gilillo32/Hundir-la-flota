@@ -8,10 +8,10 @@ public abstract class Jokalaria {
 	private int nUkituta;
 	
 	//eraikitzailea:
-	public Jokalaria(String pIzena, int pNUkitua) {
+	public Jokalaria(String pIzena, Short pErrenkadaZutKop) {
 		this.nireTableroa=new Tableroa(pErrenkadaZutKop);
 		this.izena=pIzena;
-		this.nUkituta=pNUkitua;
+		this.nUkituta=0;
 		this.printTableroa=new Tableroa(pErrenkadaZutKop); 
 	}
 	
@@ -29,9 +29,9 @@ public abstract class Jokalaria {
 	
 	public abstract void txandaBatJokatu(short pX, short pY, Jokalaria pJokalaria);		
 	
-	protected void setIzena(String pIzena) {
+	/*protected void setIzena(String pIzena) {
 		this.izena = pIzena;
-	}
+	}*/
 	
 	protected void nUkituaInkrementatu() {
 		this.nUkituta++;
