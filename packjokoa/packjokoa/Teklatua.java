@@ -3,7 +3,7 @@ package packjokoa;
 import java.util.Scanner;
 
 public class Teklatua {
-	private static Teklatua nireTeklatua;
+	private static Teklatua nireTeklatua=null;
 	private Scanner sc;
 	
 	//eraikitzailea SINGLETON patroia
