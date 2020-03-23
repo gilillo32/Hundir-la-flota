@@ -41,8 +41,7 @@ public class Tableroa {
 			while (z<this.errenZutKop+1) { //erabili daiteke this.matrize[e].length
 				this.matrizea[e][z] = "-";				
 			}			
-		}
-		
+		}	
 		
 	}
 	
@@ -52,10 +51,21 @@ public class Tableroa {
 	}
 	
 	public boolean konprobatuTiroa(short pX, short pY) {
+		//honako hauek salbuespenean jarriko ditugu(teklatuan)
+		//konprobatuko dugu ez duela lehen erabili, ez badago U edo - (U itsasontzia ukituta dagoela esan nahi du, GOGORATU!!!
+		//konprobaketa bere asmakuntzen tableroan begiratuko du
+		boolean tiroa= false;
+		if( this.matrizea[pX][pY] != "-" || this.matrizea[pX][pY] != "U") {
+			tiroa= true;
+		}
+		return tiroa;
 		
 	}
 	
 	public String bigarrenTiroa(short pX, short pY) {
+		//salbuespen del teklado SE MIRA AL PEDI R LA CORDENADA
+		//honek etsaiaren tableroan begiratuko du zer dagoen kasilan
+		return this.matrizea[pX][pY];
 		
 	}
 	
