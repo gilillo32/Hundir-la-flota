@@ -159,8 +159,9 @@ public class Tableroa {
 		return hutsune;
 	}
 	
-	public void eguneratuTableroa(String pEmaitza) {
-		
+	public void eguneratuTableroa( short pX, short pY, String pEmaitza) {
+		//etsaiak koordenatu horretan duena zure tableroan jarriko du metodo honek
+		this.matrizea[pX][pY] = pEmaitza;
 	}
 
 }
