@@ -76,10 +76,10 @@ public class JokalariCPU extends Jokalaria {
 	 * 2- se dice la coordenada de arriba
 	 * 3- se dice la coordenada de la izda
 	 * 4- se dice la coordenada de abajo
-	 * Además de todo esto, hay que tener en cuenta que la coordenada dicha puede ser esquina o borde.
-	 * 
+	 * Además de todo esto, hay que tener en cuenta que la coordenada dicha puede ser esquina o borde.	 * 
 	 */
 	
+	 
 	
 	
 	/*Koordenada bat ertza bada konprobatzen duen duen metodoa:
