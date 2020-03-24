@@ -93,7 +93,7 @@ public class JokalariCPU extends Jokalaria {
 	private boolean ertz1Da(short pX, short pY) {
 		boolean ertz1Da = false;
 		int errenkadaZutKop = this.getNireTableroa().getErrenkadaZutKop();
-		if(pY + 1 > errenkadaZutKop) {
+		if(pX + 1 > errenkadaZutKop) {
 			ertz1Da = true;
 		}
 		
@@ -102,7 +102,7 @@ public class JokalariCPU extends Jokalaria {
 	
 	private boolean ertz2Da(short pX, short pY) {
 		boolean ertz2Da = false;
-		if(pX - 1 == 0) {
+		if(pY - 1 == 0) {
 			ertz2Da = true;
 		}
 		return ertz2Da;
@@ -110,7 +110,7 @@ public class JokalariCPU extends Jokalaria {
 	
 	private boolean ertz3Da(short pX, short pY) {
 		boolean ertz3Da = false;
-		if(pY - 1 == 0) {
+		if(pX - 1 == 0) {
 			ertz3Da = true;
 		}
 		return ertz3Da;
@@ -119,7 +119,7 @@ public class JokalariCPU extends Jokalaria {
 	private boolean ertz4Da(short pX, short pY) {
 		boolean ertz4Da = false;
 		int errenkadaZutKop = this.getNireTableroa().getErrenkadaZutKop();
-		if(pX + 1 > errenkadaZutKop) {
+		if(pY + 1 > errenkadaZutKop) {
 			ertz4Da = true;
 		}
 		return ertz4Da;
@@ -164,7 +164,7 @@ public class JokalariCPU extends Jokalaria {
 	private boolean izkina1Da(short pX, short pY) {
 		boolean izkina1Da = false;
 		int errenZutKop = this.getNireTableroa().getErrenkadaZutKop();
-		if((pX - 1 == 0) && (pY + 1 > errenZutKop)) {
+		if((pY - 1 == 0) && (pX + 1 > errenZutKop)) {
 			izkina1Da = true;
 		}
 		return izkina1Da;
@@ -182,7 +182,7 @@ public class JokalariCPU extends Jokalaria {
 	private boolean izkina3Da(short pX, short pY) {
 		boolean izkina3Da = false;
 		int errenZutKop = this.getNireTableroa().getErrenkadaZutKop();
-		if((pX + 1 > errenZutKop) && (pY - 1 == 0)) {
+		if((pY + 1 > errenZutKop) && (pX - 1 == 0)) {
 			izkina3Da = true;
 		}
 		return izkina3Da;
