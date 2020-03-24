@@ -43,7 +43,7 @@ public class Tableroa {
 			}			
 		}	
 		
-	}
+	} 
 	
 	public void itsasontziakJarri(short pX, short pY,short pItsas, String pOrientazio) {
 		//salbuespena:
