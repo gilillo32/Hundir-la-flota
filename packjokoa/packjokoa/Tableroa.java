@@ -36,7 +36,6 @@ public class Tableroa {
 		//hasieratu indizeak
 		int e= 0;
 		int z= 0;
-
 		while (e< this.errenZutKop + 1) { //erabili daiteke This.matrizea.length
 			while (z<this.errenZutKop+1) { //erabili daiteke this.matrize[e].length
 				this.matrizea[e][z] = "-";				
