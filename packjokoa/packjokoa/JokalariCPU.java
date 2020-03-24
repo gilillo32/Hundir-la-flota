@@ -44,7 +44,7 @@ public class JokalariCPU extends Jokalaria {
 
 	
 	public String bigarrenTiroaEgin(short pX, short pY) {
-		return super.getNireTableroa().bigarrenTiroaEgin(pX, pY);
+		return super.bigarrenTiroaEgin(pX, pY);
 		//itzuliko duen String-a hirugarren tiroan erabiliko da
 	}
 
@@ -56,7 +56,7 @@ public class JokalariCPU extends Jokalaria {
 			//Itsasontzia "U"kitu badu:
 			super.nUkituaInkrementatu();
 		}
-		this.getNireTableroa().eguneratuTableroa(pEma);
+		this.getNireTableroa().eguneratuTableroa(pX, pY, pEma);
 
 	}
 	
@@ -79,6 +79,7 @@ public class JokalariCPU extends Jokalaria {
 	 * Además de todo esto, hay que tener en cuenta que la coordenada dicha puede ser esquina o borde.
 	 * 
 	 */
+	
 	
 	
 	/*Koordenada bat ertza bada konprobatzen duen duen metodoa:
