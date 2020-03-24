@@ -6,7 +6,8 @@ public class Tableroa {
 	private String[][] matrizea;
 	
 	//eraikitzailea:
-	public Tableroa() { /*BIGARREN MAILAKO ATAZA  int pTamaina*/
+	public Tableroa(int pTamaina) { /*BIGARREN MAILAKO ATAZA*/
+		this.errenZutKop = pTamaina;
 		this.errenZutKop = 10;
 		this.matrizea = new String[this.errenZutKop][this.errenZutKop];
 	}
