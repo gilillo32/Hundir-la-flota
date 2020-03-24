@@ -69,7 +69,7 @@ public class Tableroa {
 				
 			}
 		}
-		else {
+		else { 
 			//ez bada posible sartzea itsasontsia leku honetan, SALBUESPENA. BERAZ BERRIRO ESKATU BEHAR DIO KOORDENATUA HORIENTAZIOA ETA ABAR
 		}
 		this.tableroaInprimatu();			
