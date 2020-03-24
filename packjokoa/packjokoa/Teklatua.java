@@ -21,6 +21,25 @@ public class Teklatua {
 	public void mezuaIrakurri() {
 		
 	}
+	//String bat irakurtzeko
+	public String irakurriString(){
+		String mezua=this.sc.nextLine();
+		return mezua;
+	}
 	
+	//short bat irakurtzeko
+	public short irakurriOsoa(){
+		String zenb=this.irakurriString();
+		short zenbInt=0;
+		//salbuespenak egin barik
+		if(zenb.isEmpty()){
+			System.out.println("Zenbaki bat idatzi, mesedez");
+			zenb=this.irakurriString();
+		}
+		else {
+			zenbInt=Short.parseShort(zenb);
+		}
+		return zenbInt;
+	}
 	
 }
