@@ -142,8 +142,7 @@ public class Tableroa {
 				aux++;
 			}
 			
-			///QUE NO SSE OLVIDEN LAS SALBUESPENAS, ESQUINAS ETC....
-			
+			///QUE NO SSE OLVIDEN LAS SALBUESPENAS, ESQUINAS ETC....			
 			
 		}
 		else if (pOrientazio=="B") {
