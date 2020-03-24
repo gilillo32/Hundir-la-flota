@@ -68,12 +68,98 @@ public class JokalariCPU extends Jokalaria {
 		return super.itsasontzirikEz();
 	}
 	
+	//Itsasontzia ukitu badu, metodo hau erabiliko da ausazko alboko koordenatuak generatzeko
+	/*Cuando la CPU acierta una coordenada por primera vez, tiene cuatro opciones para decir la siguiente coordenada:
+	 * la coordenada de arriba, la de abajo, la de la eskuma y la de la izda. Por lo tanto, este método crea un Random
+	 * entre 1 y 4 (ambos incluídos), y si sale:
+	 * 1- se dice la coordenada de la derecha
+	 * 2- se dice la coordenada de arriba
+	 * 3- se dice la coordenada de la izda
+	 * 4- se dice la coordenada de abajo
+	 * Además de todo esto, hay que tener en cuenta que la coordenada dicha puede ser esquina o borde.
+	 * 
+	 */
+	
+	
+	/*Koordenada bat ertza bada konprobatzen duen duen metodoa:
+	 * Lehenengo, izkina bat bada konprobatzen du, eta ez bada, zein ertza den konprobatzen du
+	 * 1 bueltatuko du eskumako ertza bada
+	 * 2 bueltatuko du goiko ertza bada
+	 * 3 bueltatko du ezkerreko ertza bada
+	 * 4 bueltatko du beheko ertza bada
+	 * 0 bueltatuko du ertza ez bada.
+	 */
+	
+	private boolean ertz1Da(short pX, short pY) {
+		boolean ertz1Da = false;
+		int errenkadaZutKop = this.getNireTableroa().getErrenkadaZutKop();
+		if(pY + 1 > errenkadaZutKop) {
+			ertz1Da = true;
+		}
+		
+		return true;
+	}
+	
+	private boolean ertz2Da(short pX, short pY) {
+		boolean ertz2Da = false;
+		if(pX - 1 == 0) {
+			ertz2Da = true;
+		}
+		return ertz2Da;
+	}
+	
+	private boolean ertz3Da(short pX, short pY) {
+		boolean ertz3Da = false;
+		if(pY - 1 == 0) {
+			ertz3Da = true;
+		}
+		return ertz3Da;
+	}
+	
+	private boolean ertz4Da(short pX, short pY) {
+		boolean ertz4Da = false;
+		int errenkadaZutKop = this.getNireTableroa().getErrenkadaZutKop();
+		if(pX + 1 > errenkadaZutKop) {
+			ertz4Da = true;
+		}
+		return ertz4Da;
+	}
+	
+	//Metodo honek ertza ETA ez izkina den konprobatzen du
+	private short zeinErtzaDa(short pX, short pY) {
+		short ertzZenb = 0;
+		if(this.zeinIzkinaDa(pX, pY) == 0) {
+			//Izkina ez bada ertza bada konprobatuko du
+			if(ertz1Da(pX, pY)) {
+				ertzZenb = 1;
+			}
+			else {
+				if(ertz2Da(pX, pY)) {
+					ertzZenb = 2;
+				}
+				else{
+					if(ertz3Da(pX, pY)) {
+						ertzZenb = 3;
+					}
+					else {
+						if(ertz4Da(pX, pY)) {
+							ertzZenb = 4;
+						}
+					}
+				}
+				
+			}
+		}
+		return ertzZenb;
+	}
+	
 	/*Koordenada bat izkina den ala ez konprobatzeko metodoak:
 	 * izkinen zenbakiak koadrante kartesiarrak bezala banatuko dira.
 	 * 1 izkina eskumako goiko izkina izango da.
 	 * 2 izkina ezkerraldeko goiko izkina izango da.
 	 * 3 izkina ezkerraldeko beheko izkina izango da.
 	 * 4 izkina eskumako beheko izkina izango da.
+	 * 0 izkina ez bada
 	 */
 	private boolean izkina1Da(short pX, short pY) {
 		boolean izkina1Da = false;
@@ -111,7 +197,7 @@ public class JokalariCPU extends Jokalaria {
 		return izkina4Da;
 	}
 	
-	//Método general que comprueba qué esquina de todas es:
+	//Método general que devuelve el número de esquina:
 	private short zeinIzkinaDa(short pX, short pY) {
 		short izkinaZenb = 0;
 		if(izkina1Da(pX, pY)) {
