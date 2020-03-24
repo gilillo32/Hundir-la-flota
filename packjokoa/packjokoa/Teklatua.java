@@ -32,7 +32,7 @@ public class Teklatua {
 		String zenb=this.irakurriString();
 		short zenbInt=0;
 		//salbuespenak egin barik
-		if(zenb.isEmpty()){
+		if(zenb.isEmpty()){ //true bueltatuko du String tamaina 0 bada
 			System.out.println("Zenbaki bat idatzi, mesedez");
 			zenb=this.irakurriString();
 		}
