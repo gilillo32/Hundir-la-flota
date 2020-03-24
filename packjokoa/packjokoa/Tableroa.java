@@ -184,5 +184,12 @@ public class Tableroa {
 		//etsaiak koordenatu horretan duena zure tableroan jarriko du metodo honek
 		this.matrizea[pX][pY] = pEmaitza;
 	}
+	
+	//setter getter:
+	
+	//izkinen konprobaketak JokalariCPU-n beharrezkoa da metodo hau:
+	public int getErrenkadaZutKop() {
+		return this.errenZutKop;
+	}
 
 }
