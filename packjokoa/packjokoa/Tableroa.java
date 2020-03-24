@@ -56,14 +56,14 @@ public class Tableroa {
 			if (pOrientazio=="H") {//pY ez da aldatzen
 				aux= pX+pItsas;
 				while(pX<aux) {
-					 this.matrizea[pX][pY]= String.valueOf(pItsas);
+					 this.matrizea[pY][pX]= String.valueOf(pItsas);
 					pX++;
 				}
 			}
 			else if(pOrientazio=="B") {//pX ez da aldatzen
 				aux	=pY+ pItsas;
 				while(pY<aux) {
-					 this.matrizea[pX][pY]= String.valueOf(pItsas);
+					 this.matrizea[pY][pX]= String.valueOf(pItsas);
 					pY++;
 				}
 				
@@ -77,7 +77,7 @@ public class Tableroa {
 		//konprobatuko dugu ez duela lehen erabili, ez badago U edo - (U itsasontzia ukituta dagoela esan nahi du, GOGORATU!!!
 		//konprobaketa bere asmakuntzen tableroan begiratuko du
 		boolean tiroa= false;
-		if( !this.uraDago(pX, pY) || this.matrizea[pX][pY] != "U") {
+		if( !this.uraDago(pX, pY) || this.matrizea[pY][pX] != "U") {
 			tiroa= true;
 		}
 		return tiroa;
@@ -87,13 +87,13 @@ public class Tableroa {
 	public String bigarrenTiroa(short pX, short pY) {
 		//salbuespen del teklado SE MIRA AL PEDIR LA CORDENADA
 		//honek etsaiaren tableroan begiratuko du zer dagoen kasilan
-		return this.matrizea[pX][pY];
+		return this.matrizea[pY][pX];
 		
 	}
 	
 	private boolean uraDago(short pX, short pY) {
 		boolean dago=false;
-		if( this.matrizea[pX][pY] == "-") {
+		if( this.matrizea[pY][pX] == "-") {
 			dago=true;
 		}		
 		return dago;		
@@ -122,7 +122,7 @@ public class Tableroa {
 			//horizontalean
 			amaierakoEr=  pX + pItsas;
 			amaierakoZut= pY;
-			if(this.matrizea[pX-1][pY]=="-") { //EZKERREKO KASILAN BEGIRATU
+			if(this.matrizea[pY][pX-1]=="-") { //EZKERREKO KASILAN BEGIRATU
 				hutsune = true;
 			}
 			else if(this.matrizea[amaierakoEr][amaierakoZut]=="-") { //ESKUINEKO KASILAN BEGIRATU
@@ -130,14 +130,14 @@ public class Tableroa {
 			}
 			aux=pX;
 			while(!hutsune && aux< amaierakoEr) {		//GOIKO ERRENKETAKO KASILAK BEGIRATU		
-				if(this.matrizea[aux][pY-1]=="-") {
+				if(this.matrizea[pY-1][aux]=="-") {
 					hutsune = true;
 				}
 				aux++;
 			}
 			aux=pX;
 			while(!hutsune && aux< amaierakoEr) {				
-				if(this.matrizea[aux][pY+1]=="-") { //BEHEKO ERRENKADAKO KASILETAN BEGIRATU
+				if(this.matrizea[pY+1][aux]=="-") { //BEHEKO ERRENKADAKO KASILETAN BEGIRATU
 					hutsune = true;
 				}
 				aux++;
@@ -152,7 +152,7 @@ public class Tableroa {
 			amaierakoEr=  pX;
 			amaierakoZut= pY + pItsas;
 	
-			if(this.matrizea[pX][pY-1]=="-") { //gOIKO KASILAN BEGIRATU
+			if(this.matrizea[pY-1][pX]=="-") { //gOIKO KASILAN BEGIRATU
 				hutsune = true;
 			}
 			else if(this.matrizea[amaierakoEr][amaierakoZut]=="-") { //BEHEKO KASILAN BEGIRATU
@@ -160,14 +160,14 @@ public class Tableroa {
 			}
 			aux=pY;
 			while(!hutsune && aux< amaierakoZut) {		//EZKERREKO ZUTABEKOKASILAK BEGIRATU		
-				if(this.matrizea[pX-1][aux]=="-") {
+				if(this.matrizea[aux][pX-1]=="-") {
 					hutsune = true;
 				}
 				aux++;
 			}
 			aux=pY;
 			while(!hutsune && aux< amaierakoZut) {			//ESKUINEKO ZUTABEKOKASILAK BEGIRATU	
-				if(this.matrizea[pX+1][aux]=="-") {
+				if(this.matrizea[aux][pX+1]=="-") {
 					hutsune = true;
 				}
 				aux++;
@@ -182,7 +182,7 @@ public class Tableroa {
 	
 	public void eguneratuTableroa( short pX, short pY, String pEmaitza) {
 		//etsaiak koordenatu horretan duena zure tableroan jarriko du metodo honek
-		this.matrizea[pX][pY] = pEmaitza;
+		this.matrizea[pY][pX] = pEmaitza;
 	}
 	
 	//setter getter:
