@@ -57,7 +57,7 @@ public class JokalariCPU extends Jokalaria {
 			super.nUkituaInkrementatu();
 		}
 		this.getNireTableroa().eguneratuTableroa(pX, pY, pEma);
-
+ 
 	}
 	
 	/*public void setIzena() {
