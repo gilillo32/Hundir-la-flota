@@ -83,9 +83,9 @@ public class Tableroa {
 		if( !this.uraDago(pX, pY) || this.matrizea[pY][pX] != "U") {
 			tiroa= true;
 		}
-		return tiroa;
 		
-	}
+		return tiroa;
+		}
 	
 	public String bigarrenTiroa(short pX, short pY) {
 		//salbuespen del teklado SE MIRA AL PEDIR LA CORDENADA
@@ -189,6 +189,9 @@ public class Tableroa {
 	
 	public void eguneratuTableroa( short pX, short pY, String pEmaitza) {
 		//etsaiak koordenatu horretan duena zure tableroan jarriko du metodo honek
+		if ( pEmaitza != "U") {
+			pEmaitza= "X"; //jarriko du X bat gero konprobatuTiroa jakiteko ea koordenatu hori lehenik esan dugun ala ez
+		}
 		this.matrizea[pY][pX] = pEmaitza;
 	}
 	
