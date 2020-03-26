@@ -16,6 +16,7 @@ public class JokalariCPU extends Jokalaria {
 		Random rand = new Random();
 		short pX = (short) ((short) rand.nextInt(10) + 1);
 		short pY = (short) ((short) rand.nextInt(10) + 1);
+		Koordenatuak koord = new Koordenatuak(pX, pY);
 		while(posibleaDa) { 
 			//Ura ukitzen duen arte errepikatuko den buklea:
 			if(this.lehenengoTiroaEgin(pX, pY)) {
@@ -76,9 +77,164 @@ public class JokalariCPU extends Jokalaria {
 	 * 2- se dice la coordenada de arriba
 	 * 3- se dice la coordenada de la izda
 	 * 4- se dice la coordenada de abajo
-	 * Además de todo esto, hay que tener en cuenta que la coordenada dicha puede ser esquina o borde.	 * 
 	 */
 	
+	//Metodo honetako azken parametroak zenbat koordenatu eta non era ditzakeen ezaten du.
+	private Koordenatuak albokoKoordenatuakEratu(short pX, short pY) {
+		//Arazorik ez badago, lau aukera ditu koordenatua eratzeko:
+		if(this.zeinErtzaDa(pX, pY) == 0 && this.zeinIzkinaDa(pX, pY) == 0) {
+			Random rand = new Random();
+			byte zeinAukera = (byte)rand.nextInt(4);
+			switch(zeinAukera) {
+			case 0:
+				pX = (short) (pX + 1);
+				break;
+			case 1:
+				pY = (short) (pY - 1);
+				break;
+			case 2:
+				pX = (short) (pX - 1);
+				break;
+			case 3:
+				pY = (short) (pY + 1);
+				break;
+			}			
+		}
+		else {
+			//Eskumako ertzan badago:
+			if(this.zeinErtzaDa(pX, pY) == 1) {
+				Random rand = new Random();
+				byte zeinAukera = (byte) rand.nextInt(2);
+				switch(zeinAukera) {
+				case 0:
+					pY = (short)(pY - 1);
+					break;
+				case 1:
+					pX = (short)(pX - 1);
+					break;
+				case 2:
+					pY = (short)(pY + 1);
+					break;
+				}
+			}
+			else {
+				//Eskumako goiko izkinan badago:
+				if(this.zeinIzkinaDa(pX, pY) == 1) {
+					Random rand = new Random();
+					byte zeinAukera = (byte)rand.nextInt(1);
+					switch(zeinAukera) {
+					case 0:
+						pY = (short)(pY + 1);
+						break;
+					case 1:
+						pX = (short)(pX - 1);
+						break;
+					}
+				}
+				else {
+					//Goiko ertza bada:
+					if(this.zeinErtzaDa(pX, pY) == 2) {
+						Random rand = new Random();
+						byte zeinAukera = (byte)rand.nextInt(3);
+						switch(zeinAukera) {
+						case 0:
+							pX = (short)(pX + 1);
+							break;
+						case 1:
+							pY = (short)(pY + 1);
+							break;
+						case 2:
+							pX = (short)(pX - 1);
+							break;
+						}
+					}
+					else {
+						//Goiko ezkerreko izkina bada:
+						if(this.zeinIzkinaDa(pX, pY) == 2) {
+							Random rand = new Random();
+							byte zeinAukera = (byte)rand.nextInt(2);
+							switch(zeinAukera) {
+							case 0:
+								pY = (short)(pY + 1);
+								break;
+							case 1:
+								pX = (short)(pX + 1);
+								break;
+							}
+						}
+						else {
+							//Ezkerreko ertza bada:
+							if(this.zeinErtzaDa(pX, pY) == 3) {
+								Random rand = new Random();
+								byte zeinAukera = (byte)rand.nextInt(3);
+								switch(zeinAukera) {
+								case 0:
+									pY = (short)(pY - 1);
+									break;
+								case 1:
+									pX = (short)(pX + 1);
+									break;
+								case 2:
+									pY = (short)(pY + 1);
+									break;
+								}
+							}
+							else {
+								//Beheko ezkerreko izkina bada: 
+								if(this.zeinIzkinaDa(pX, pY) == 3) {
+									Random rand = new Random();
+									byte zeinAukera = (byte)rand.nextInt(2);
+									switch(zeinAukera) {
+									case 0:
+										pY = (short)(pY - 1);
+										break;
+									case 1:
+										pX = (short)(pX + 1);
+										break;
+									}
+								}
+								else {
+									//Beheko ertza bada:
+									if(this.zeinErtzaDa(pX, pY) == 4) {
+										Random rand = new Random();
+										byte zeinAukera = (byte)rand.nextInt(3);
+										switch(zeinAukera) {
+										case 0:
+											pX = (short)(pX - 1);
+											break;
+										case 1:
+											pY = (short)(pY - 1);
+											break;
+										case 2:
+											pX = (short)(pX + 1);
+											break;
+										}
+									}
+									else {
+										//Beheko ezkumako izkina bada:
+										if(this.zeinIzkinaDa(pX, pY) == 4) {
+											Random rand = new Random();
+											byte zeinAukera = (byte)rand.nextInt(2);
+											switch(zeinAukera) {
+											case 0:
+												pY = (short)(pY - 1);
+												break;
+											case 1:
+												pX = (short)(pX - 1);
+												break;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		Koordenatuak koord = new Koordenatuak(pX, pY);
+		return koord;
+	}
 	 
 	
 	
