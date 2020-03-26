@@ -6,6 +6,7 @@ public class KoordenatuEzEgokiak extends Exception {
 	public KoordenatuEzEgokiak() {}
 		//parametroekin
 	public KoordenatuEzEgokiak() {
+		
 		System.out.println("Sartu dituzun kordenatuak ez dira egkiak, mesedez sartu koordenatuak berriro.");
 	}
 
