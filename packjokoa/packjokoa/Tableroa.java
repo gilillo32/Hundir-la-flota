@@ -21,13 +21,14 @@ public class Tableroa {
 		System.out.print(" "); // lehennegoz hutsune bat inprimatu
 		//Orain zutabeen indizeak imprimatuko ditu
 		while (e<this.errenZutKop + 1) { 
-			System.out.print(" "+e);	
+			System.out.print(" "+e);	//linea berean inprimatzen du
 			//deasberdin egingo dugu luzera hamar baino handiagoa denean, bain ahori bigarren mailako ataza da.
+			e++;
 		}
 		e=0; //berriro hasieratuko dugu
 		while (e< this.errenZutKop + 1) { //erabili daiteke This.matrizea.length
 			while (z<this.errenZutKop+1) { //erabili daiteke this.matrize[e].length
-				System.out.print(e+ " " + this.matrizea[e][z]);				
+				System.out.println(e+ " " + this.matrizea[e][z]);		//aldi bakoitzean hurrengo lerroan inprimatzen du		
 			}			
 		}
 		
