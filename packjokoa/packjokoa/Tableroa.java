@@ -49,7 +49,7 @@ public class Tableroa {
 	
 	public void itsasontziakJarri (short pX, short pY,short pItsas, String pOrientazio)  {
 		try { if ((pX+pItsas>= this.errenZutKop) || pX<0 || pY<0 || (pY+pItsas>= this.errenZutKop) ){
-			throw (new IndexOutOfRangeException());
+			throw (new IndexOutOfBoundsException());//esta salbuespen es de C+, la nuestra seria IndexOutOfBoundsException()
 			}
 		//salbuespena:
 		//konprobatu itsasontsia sar daitekeela koordenatu horretan, hau da 4eko itsasontsia ez gara saiatuko sartzen 9,9 kooedenatuan ez baita sartzen
@@ -80,7 +80,7 @@ public class Tableroa {
 		}
 		this.tableroaInprimatu();
 		}//try
-		catch(IndexOutOfRangeException e) {
+		catch(IndexOutOfBoundsException e) {
 			System.out.print("Sartu dituzun koordenatuak ez dira egokiak, ez baitaude tableroaren barruan. Mesedez sartu koordenatu berriak:");
 			//pedir koordenadas
 			//pX
