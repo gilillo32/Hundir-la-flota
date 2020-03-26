@@ -180,7 +180,7 @@ public class JokalariCPU extends Jokalaria {
 								}
 							}
 							else {
-								//Beheko ezkerreko izkina bada:
+								//Beheko ezkerreko izkina bada: 
 								if(this.zeinIzkinaDa(pX, pY) == 3) {
 									Random rand = new Random();
 									byte zeinAukera = (byte)rand.nextInt(2);
