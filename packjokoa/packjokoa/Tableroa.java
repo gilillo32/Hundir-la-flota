@@ -8,7 +8,7 @@ public class Tableroa {
 	//eraikitzailea:
 	public Tableroa(int pTamaina) { /*BIGARREN MAILAKO ATAZA*/
 		this.errenZutKop = pTamaina;
-		this.errenZutKop = 10;
+		
 		this.matrizea = new String[this.errenZutKop][this.errenZutKop];
 	}
 	
@@ -43,9 +43,13 @@ public class Tableroa {
 			}			
 		}	
 		
+		
 	} 
 	
-	public void itsasontziakJarri(short pX, short pY,short pItsas, String pOrientazio) {
+	public void itsasontziakJarri (short pX, short pY,short pItsas, String pOrientazio)  {
+		try { if ((pX+pItsas>= this.errenZutKop) || pX<0 || pY<0 || (pY+pItsas>= this.errenZutKop) ){
+			throw (new IndexOutOfRangeException());
+			}
 		//salbuespena:
 		//konprobatu itsasontsia sar daitekeela koordenatu horretan, hau da 4eko itsasontsia ez gara saiatuko sartzen 9,9 kooedenatuan ez baita sartzen
 		int aux=0;
@@ -55,6 +59,7 @@ public class Tableroa {
 			//orentazioaren arabera bi modu:
 			if (pOrientazio=="H") {//pY ez da aldatzen
 				aux= pX+pItsas;
+				
 				while(pX<aux) {
 					 this.matrizea[pY][pX]= String.valueOf(pItsas);
 					pX++;
@@ -65,14 +70,24 @@ public class Tableroa {
 				while(pY<aux) {
 					 this.matrizea[pY][pX]= String.valueOf(pItsas);
 					pY++;
-				}
-				
+				}				
 			}
 		}
 		else { 
 			//ez bada posible sartzea itsasontsia leku honetan, SALBUESPENA. BERAZ BERRIRO ESKATU BEHAR DIO KOORDENATUA HORIENTAZIOA ETA ABAR
+			System.out.print("Sartu dituzun koordenatuak ez dira egokiak, itsasontsia beste baten parean jarriko zenukeelako. Mesedez sartu koordenatu berriak:");
 		}
-		this.tableroaInprimatu();			
+		this.tableroaInprimatu();
+		}//try
+		catch(IndexOutOfRangeException e) {
+			System.out.print("Sartu dituzun koordenatuak ez dira egokiak, ez baitaude tableroaren barruan. Mesedez sartu koordenatu berriak:");
+			//pedir koordenadas
+			//pX
+			//pY
+			//pOientazio
+			this.itsasontziakJarri(pX, pY, pItsas, pOrientazio);
+			
+		}
 	}
 	
 	public boolean konprobatuTiroa(short pX, short pY) {
