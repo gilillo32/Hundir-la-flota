@@ -7,8 +7,7 @@ public class JokalariCPU extends Jokalaria {
 		super("CPU", pErrenkadaZutKop);
 	}
 	
-	 
-	public void txandaBatJokatu(JokalariArrunta pJokalaria) {
+	 public void txandaBatJokatu(JokalariArrunta pJokalaria) {
 		boolean posibleaDa = true;
 		boolean aurrekoanUkituDu = false;
 		short jarraianAurkituDitzakeenUkitutak = 4;
@@ -69,6 +68,199 @@ public class JokalariCPU extends Jokalaria {
 		return super.itsasontzirikEz();
 	}
 	
+	/*
+	 * Metodo honek zentzu bat jarraitzen duen hurrengo koordenatua emango du
+	 * 0 eskumarantz
+	 * 1 gora
+	 * 2 ezkerrerantz
+	 * 3 beherantz
+	 * null bueltatuko du ezin bada hurrengo koordenatua eman (izkina edo ertza bada)
+	 */
+	 private Koordenatuak zentzuBateanKoordenatuBerriak(short pX, short pY, byte pZentzua) {
+		 //Arazorik ez badago:
+		 if(this.zeinErtzaDa(pX, pY) == 0 && this.zeinIzkinaDa(pX, pY) == 0) {
+			 switch(pZentzua) {
+			 case 0:
+				 pX = (short)(pX + 1);
+				 break;
+			 case 1:
+				 pY = (short)(pY - 1);
+				 break;
+			 case 2:
+				 pX = (short)(pX - 1);
+				 break;
+			 case 3:
+				 pY = (short)(pY + 1);
+				 break;
+			 }
+		 }
+		 else {
+			 //Eskumako ertza bada:
+			 if(this.zeinErtzaDa(pX, pY) == 1) {
+				 switch(pZentzua) {
+				 case 0:
+					 pX = (Short) null;
+					 pY = (Short) null;
+					 break;
+				 case 1:
+					 pY = (short)(pY - 1);
+					 break;
+				 case 2:
+					 pX = (short)(pX - 1);
+					 break;
+				 case 3:
+					 pY = (short)(pY + 1);
+					 break;
+				 }
+			 }
+			 else {
+				 //Eskumako goiko izkina bada:
+				 if(this.zeinIzkinaDa(pX, pY) == 1) {
+					 switch(pZentzua) {
+					 case 0:
+						 pX = (Short)null;
+						 pY = (Short)null;
+						 break;
+					 case 1:
+						 pX = (Short)null;
+						 pY = (Short)null;
+						 break;
+					 case 2:
+						 pX =(short)(pX - 1);
+						 break;
+					 case 3: 
+						 pY = (short)(pY + 1);
+						 break;
+					 }
+				 }
+				 else {
+					 //Goiko(grill) ertza bada:
+					 if(this.zeinErtzaDa(pX, pY) == 2) {
+						 switch(pZentzua) {
+						 case 0:
+							 pX = (short)(pX + 1);
+							 break;
+						 case 1:
+							 pX = (Short)null;
+							 pY = (Short)null;
+							 break;
+						 case 2:
+							 pX = (short)(pX - 1);
+							 break;
+						 case 3:
+							 pY = (short)(pY + 1);
+							 break;
+						 }
+						 
+					 }
+					 else {
+						 //Goiko ezkerreko izkina bada:
+						 if(this.zeinIzkinaDa(pX, pY) == 2) {
+							 switch(pZentzua) {
+							 case 0:
+								 pX = (short)(pX + 1);
+								 break;
+							 case 1:
+								 pX = (Short)null;
+								 pY = (Short)null;
+								 break;
+							 case 2:
+								 pX = (Short)null;
+								 pY = (Short)null;
+								 break;
+							 case 3:
+								 pY = (short)(pY + 1);
+								 break;
+							 }
+						 }
+						 else {
+							 //Ezkerreko ertza bada:
+							 if(this.zeinErtzaDa(pX, pY) == 3) {
+								 switch(pZentzua) {
+								 case 0:
+									 pX = (short)(pX + 1);
+									 break;
+								 case 1:
+									 pY = (short)(pY - 1);
+									 break;
+								 case 2:
+									 pX = (Short)null;
+									 pY = (Short)null;
+									 break;
+								 case 3:
+									 pY = (short)(pY + 1);
+									 break;
+								 }
+							 }
+							 else {
+								 //Beheko ezkerreko izkina bada:
+								 if(this.zeinIzkinaDa(pX, pY) == 3) {
+									 switch(pZentzua) {
+									 case 0:
+										 pX = (short)(pX + 1);
+										 break;
+									 case 1:
+										 pY = (short)(pY - 1);
+										 break;
+									 case 2:
+										 pX = (Short)null;
+										 pY = (Short)null;
+										 break;
+									 case 3:
+										 pX = (Short)null;
+										 pY = (Short)null;
+										 break;
+									 }
+								 }
+								 else {
+									 //Beheko ertza bada:
+									 if(this.zeinErtzaDa(pX, pY) == 4) {
+										 switch(pZentzua) {
+										 case 0:
+											 pX = (short)(pX + 1);
+											 break;
+										 case 1:
+											 pY = (short)(pY - 1);
+											 break;
+										 case 2:
+											 pX = (short)(pX - 1);
+											 break;
+										 case 3:
+											 pX = (Short)null;
+											 pY = (Short)null;
+											 break;
+										 }
+									 }
+									 else {
+										 //Beheko eskumako izkina bada:
+										 if(this.zeinIzkinaDa(pX, pY) == 4) {
+											 switch(pZentzua) {
+											 case 0:
+												 pX = (Short)null;
+												 pY = (Short)null;
+												 break;
+											 case 1:
+												 pY = (short)(pY - 1);
+												 break;
+											 case 2:
+												 pX = (short)(pX - 1);
+												 break;
+											 case 3:
+												 pX = (Short)null;
+												 pY = (Short)null;
+												 break;
+											 }
+										 }
+									 }
+								 }
+							 }
+						 }
+					 }
+				 }
+			 }
+		 }
+	 }
+	
 	//Itsasontzia ukitu badu, metodo hau erabiliko da ausazko alboko koordenatuak generatzeko
 	/*Cuando la CPU acierta una coordenada por primera vez, tiene cuatro opciones para decir la siguiente coordenada:
 	 * la coordenada de arriba, la de abajo, la de la eskuma y la de la izda. Por lo tanto, este método crea un Random
@@ -80,7 +272,7 @@ public class JokalariCPU extends Jokalaria {
 	 */
 	
 	//Metodo honetako azken parametroak zenbat koordenatu eta non era ditzakeen ezaten du.
-	private Koordenatuak albokoKoordenatuakEratu(short pX, short pY) {
+	private Koordenatuak albokoAusazkoKoordenatuakEratu(short pX, short pY) {
 		//Arazorik ez badago, lau aukera ditu koordenatua eratzeko:
 		if(this.zeinErtzaDa(pX, pY) == 0 && this.zeinIzkinaDa(pX, pY) == 0) {
 			Random rand = new Random();
@@ -211,7 +403,7 @@ public class JokalariCPU extends Jokalaria {
 										}
 									}
 									else {
-										//Beheko ezkumako izkina bada:
+										//Beheko eskumako izkina bada:
 										if(this.zeinIzkinaDa(pX, pY) == 4) {
 											Random rand = new Random();
 											byte zeinAukera = (byte)rand.nextInt(2);
