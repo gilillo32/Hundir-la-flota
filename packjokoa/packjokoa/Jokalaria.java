@@ -24,6 +24,8 @@ public abstract class Jokalaria {
 	}
 	
 	public void itsasontziakJarri() {
+		//hay que meterle todos los parametros que se usaran en los metodos de dentro
+		//salbuespenak: konprobatu posibeak direla koordenatuak, horientazioa eta ez badira zuzenak berriro jartzeko eskatuko saio erabiltzaileari
 		
 	}
 	
