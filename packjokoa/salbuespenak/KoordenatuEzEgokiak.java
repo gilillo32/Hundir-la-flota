@@ -3,7 +3,9 @@ package salbuespenak;
 public class KoordenatuEzEgokiak extends Exception {
 	//eraikitzaaileak
 		//parametrorik gabe
-	public KoordenatuEzEgokiak() {}
+	public KoordenatuEzEgokiak() {
+		super();
+	}
 		//parametroekin
 	public KoordenatuEzEgokiak(String pMezua) {
 		//"Sartu dituzun kordenatuak ez dira egkiak, mesedez sartu koordenatuak berriro."

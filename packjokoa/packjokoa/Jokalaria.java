@@ -23,10 +23,17 @@ public abstract class Jokalaria {
 		return this.nireTableroa;
 	}
 	
-	public void itsasontziakJarri() {
+	public void itsasontziakJarri()  {
 		//hay que meterle todos los parametros que se usaran en los metodos de dentro
 		//salbuespenak: konprobatu posibeak direla koordenatuak, horientazioa eta ez badira zuzenak berriro jartzeko eskatuko saio erabiltzaileari
-		
+		try {
+			//aqui va el codigo norrmal y si no puede seguir salta
+			this
+		}
+		catch (Exception e) {
+			System.out.println("Sartu diren koordenatuak ez dira egokiak, mesedez sartu berriro.");
+			this.nireTableroa.itsasontziakJarri(pX, pY, pItsas, pOrientazio);
+		}
 	}
 	
 	public abstract void txandaBatJokatu(short pX, short pY, Jokalaria pJokalaria);		
