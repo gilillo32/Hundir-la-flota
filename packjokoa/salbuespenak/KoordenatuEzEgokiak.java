@@ -5,9 +5,12 @@ public class KoordenatuEzEgokiak extends Exception {
 		//parametrorik gabe
 	public KoordenatuEzEgokiak() {}
 		//parametroekin
-	public KoordenatuEzEgokiak() {
+	public KoordenatuEzEgokiak(String pMezua) {
+		//"Sartu dituzun kordenatuak ez dira egkiak, mesedez sartu koordenatuak berriro."
+		//cuando agamos trow exception tenemos que poner esto entre parentesis
+		super(pMezua);
 		
-		System.out.println("Sartu dituzun kordenatuak ez dira egkiak, mesedez sartu koordenatuak berriro.");
+		//Sartu dituzun kordenatuak ez dira egkiak, mesedez sartu koordenatuak berriro.
 	}
 
 }
