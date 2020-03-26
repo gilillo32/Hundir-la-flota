@@ -10,13 +10,20 @@ public class Koordenatuak {
 		this.y = pY;
 	}
 	
-	public void setKoordenatuak(short pX, short pY) {
+	public void setKoordenatuakX(short pX) {
 		this.x = pX;
+	}
+	
+	public short getKoordenatuakX() {
+		return this.x;
+	}
+	
+	public void setKoordenatuakY(short pY) {
 		this.y = pY;
 	}
 	
-	public Koordenatuak getKoordenatuak() {
-		return this;
+	public short getKoordenatuakY() {
+		return this.y;
 	}
 
 }
