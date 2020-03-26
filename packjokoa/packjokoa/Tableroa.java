@@ -84,8 +84,11 @@ public class Tableroa {
 			System.out.print("Sartu dituzun koordenatuak ez dira egokiak, ez baitaude tableroaren barruan. Mesedez sartu koordenatu berriak:");
 			//pedir koordenadas
 			//pX
+			pX=Teklatua.getNireTeklatua().irakurriShort();
 			//pY
-			//pOientazio
+			pY=Teklatua.getNireTeklatua().irakurriShort();
+			//pOrientazio
+			pOrientazio=Teklatua.getNireTeklatua().irakurriString();
 			this.itsasontziakJarri(pX, pY, pItsas, pOrientazio);
 			
 		}

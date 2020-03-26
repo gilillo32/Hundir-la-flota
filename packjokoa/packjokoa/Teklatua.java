@@ -24,22 +24,35 @@ public class Teklatua {
 	//String bat irakurtzeko
 	public String irakurriString(){
 		String mezua=this.sc.nextLine();
+		//faltaria salbuespena de si no mete una H o B
+		
 		return mezua;
 	}
 	
+	
+	
 	//short bat irakurtzeko
-	public short irakurriOsoa(){
+	public short irakurriShort(){
 		String zenb=this.irakurriString();
-		short zenbInt=0;
+		short zenbShort=0;
 		//salbuespenak egin barik
+		
 		if(zenb.isEmpty()){ //true bueltatuko du String tamaina 0 bada
 			System.out.println("Zenbaki bat idatzi, mesedez");
 			zenb=this.irakurriString();
 		}
 		else {
-			zenbInt=Short.parseShort(zenb);
-		}
-		return zenbInt;
+			
+			try {
+				zenbShort=Short.parseShort(zenb);
+				//if(zenbShort<1 || zenbShort>)
+			}
+			catch(NumberFormatException e){
+				System.out.println("Bakarrik zenbaki osoak onartzen dira.");
+				zenbShort=this.irakurriShort();
+				}
+			}
+		return zenbShort;
 	}
 	
 }
