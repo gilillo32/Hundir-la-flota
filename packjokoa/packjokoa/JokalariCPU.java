@@ -259,6 +259,8 @@ public class JokalariCPU extends Jokalaria {
 				 }
 			 }
 		 }
+		 Koordenatuak koord = new Koordenatuak(pX, pY);
+		 return koord;
 	 }
 	
 	//Itsasontzia ukitu badu, metodo hau erabiliko da ausazko alboko koordenatuak generatzeko
