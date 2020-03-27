@@ -4,15 +4,19 @@ public class BikoteJokalariak {
 	//atributuak:
 	private Jokalaria j1;
 	private Jokalaria j2;
-	private BikoteJokalariak nireBikoteJokalariak = null;
+	private static BikoteJokalariak nireBikoteJokalariak = null;
 	
 	//eraikitzailea (Singleton):
 	private BikoteJokalariak(Jokalaria pJ1, Jokalaria pJ2) {
-		
+		this.j1 = pJ1;
+		this.j2 = pJ2;
 	}
 	
-	public BikoteJokalariak getNireBikoteJokalariak() {
-		
+	public static synchronized BikoteJokalariak getNireBikoteJokalariak(Jokalaria pJ1, Jokalaria pJ2) {
+		if(BikoteJokalariak.nireBikoteJokalariak==null) {
+			BikoteJokalariak.nireBikoteJokalariak=new BikoteJokalariak(pJ1,pJ2);
+		} 
+		return BikoteJokalariak.nireBikoteJokalariak;
 	}
 	
 	//gainontzeko metodoak:
