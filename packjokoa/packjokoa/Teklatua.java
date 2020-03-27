@@ -22,11 +22,20 @@ public class Teklatua {
 	}
 
 	//String bat irakurtzeko
+
 	public String irakurriString(String pMezua){
 		//ailegatuko saio, inprimatu nahi dugun mezua NUMEROS!!!!!
 		System.out.println(pMezua);
 		String emaitza = sc.nextLine();//irakurri teklatutik enter bat sartu arte
 		return emaitza;
+	}
+
+	public String irakurriString(){
+		String mezua=this.sc.nextLine();
+		//faltaria salbuespena de si no mete una H o B
+		
+		return mezua;
+
 	}
 	
 	/*public String irakurriOrientazioa(String pMezua) throws OrientazioExc{
@@ -48,8 +57,11 @@ public class Teklatua {
 		while(!denaOndo);
 		return emaitza;
 	}*/
+
+
 	
 	//short bat irakurtzeko
+
 	public short irakurriShort(String pMezua, int pNundik, int pNora) throws NumberFormatException{
 		short emaitza = (short) (pNundik -1);
         boolean denaOndo=false;
@@ -72,15 +84,29 @@ public class Teklatua {
 
 		/*String zenb=this.irakurriString();
 		short zenbInt=0;
+
+	public short irakurriShort(){
+		String zenb=this.irakurriString();
+		short zenbShort=0;
+
 		//salbuespenak egin barik
+		
 		if(zenb.isEmpty()){ //true bueltatuko du String tamaina 0 bada
 			System.out.println("Zenbaki bat idatzi, mesedez");
 			zenb=this.irakurriString();
 		}
 		else {
-			zenbInt=Short.parseShort(zenb);
-		}
-		return zenbInt;
+			
+			try {
+				zenbShort=Short.parseShort(zenb);
+				//if(zenbShort<1 || zenbShort>)
+			}
+			catch(NumberFormatException e){
+				System.out.println("Bakarrik zenbaki osoak onartzen dira.");
+				zenbShort=this.irakurriShort();
+				}
+			}
+		return zenbShort;
 	}
 	///salbuespena de estar detro del rango*/
 	

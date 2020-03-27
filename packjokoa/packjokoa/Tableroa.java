@@ -21,13 +21,14 @@ public class Tableroa {
 		System.out.print(" "); // lehennegoz hutsune bat inprimatu
 		//Orain zutabeen indizeak imprimatuko ditu
 		while (e<this.errenZutKop + 1) { 
-			System.out.print(" "+e);	
+			System.out.print(" "+e);	//linea berean inprimatzen du
 			//deasberdin egingo dugu luzera hamar baino handiagoa denean, bain ahori bigarren mailako ataza da.
+			e++;
 		}
 		e=0; //berriro hasieratuko dugu
 		while (e< this.errenZutKop + 1) { //erabili daiteke This.matrizea.length
 			while (z<this.errenZutKop+1) { //erabili daiteke this.matrize[e].length
-				System.out.print(e+ " " + this.matrizea[e][z]);				
+				System.out.println(e+ " " + this.matrizea[e][z]);		//aldi bakoitzean hurrengo lerroan inprimatzen du		
 			}			
 		}
 		
@@ -46,11 +47,18 @@ public class Tableroa {
 		
 	} 
 	
+
 	public void itsasontziakJarri (short pX, short pY,short pItsas, String pOrientazio){
 		/*try { if ((pX+pItsas>= this.errenZutKop) || pX<0 || pY<0 || (pY+pItsas>= this.errenZutKop) ){
 			//CREO QUE LO DE PX<0 Y LO PY<0 NO HACE FALTA!!
 			throw (new IndexOutOfBoundsException());
 		}
+=======
+	public void itsasontziakJarri (short pX, short pY,short pItsas, String pOrientazio)  {
+		try { if ((pX+pItsas>= this.errenZutKop) || pX<0 || pY<0 || (pY+pItsas>= this.errenZutKop) ){
+			throw (new IndexOutOfBoundsException());//esta salbuespen es de C+, la nuestra seria IndexOutOfBoundsException()
+			}
+
 		//salbuespena:
 		//konprobatu itsasontzia sar daitekeela koordenatu horretan, hau da 4eko itsasontzia ez gara saiatuko sartzen 9,9 kooedenatuan ez baita sartzen
 		if ((pX+pItsas>= this.errenZutKop) || pX<0 || pY<0 || (pY+pItsas>= this.errenZutKop) ){
@@ -85,12 +93,19 @@ public class Tableroa {
 		}
 		this.tableroaInprimatu();
 		}//try
+
 		/*catch(IndexOutOfBoundsException e) {
+=======
+		catch(IndexOutOfBoundsException e) {
+
 			System.out.print("Sartu dituzun koordenatuak ez dira egokiak, ez baitaude tableroaren barruan. Mesedez sartu koordenatu berriak:");
 			//pedir koordenadas
 			//pX
+			pX=Teklatua.getNireTeklatua().irakurriShort();
 			//pY
-			//pOientazio
+			pY=Teklatua.getNireTeklatua().irakurriShort();
+			//pOrientazio
+			pOrientazio=Teklatua.getNireTeklatua().irakurriString();
 			this.itsasontziakJarri(pX, pY, pItsas, pOrientazio);
 			
 		}*/
