@@ -16,9 +16,9 @@ public class JokalariArrunta extends Jokalaria {
 		
 		boolean posibleaDa=true;
 		while(posibleaDa) {
-			if(this.lehenengoTiroaEgin(pX, pY)) {
-				String emaitza = pJokalaria.bigarrenTiroaEgin(pX, pY);
-				this.hirugarrenTiroaEgin(pX, pY, emaitza);
+			if(this.koordenadaBaliogarriak(pX, pY)) {
+				String emaitza = pJokalaria.koordenatuanZerDagoen(pX, pY);
+				this.eguneratuPrintTableroa(pX, pY, emaitza);
 				if(emaitza!="U") {
 					posibleaDa=false; 
 				}
@@ -36,17 +36,17 @@ public class JokalariArrunta extends Jokalaria {
 		}
 	}
 
-	private boolean lehenengoTiroaEgin(short pX, short pY) {
+	private boolean koordenadaBaliogarriak(short pX, short pY) {
 		 return super.getNireTableroa().konprobatuTiroa(pX, pY);
 	}
 
 
-	public String bigarrenTiroaEgin(short pX, short pY) {
-		return super.bigarrenTiroaEgin(pX, pY);
+	public String koordenatuanZerDagoen(short pX, short pY) {
+		return super.koordenatuanZerDagoen(pX, pY);
 		//itzuliko duen String-a hirugarren tiroan erabiliko da
 	}
 
-	private void hirugarrenTiroaEgin(short pX, short pY, String pEma) {
+	private void eguneratuPrintTableroa(short pX, short pY, String pEma) {
 		// primeros llamamos a super.nUkituaInkrementatu y luego a tableroa.eguneratu
 		//bigarren tiroan itzuli duen String-a dagokion posizioan sartuko du
 		if(pEma=="U") {

@@ -121,7 +121,7 @@ public abstract class Jokalaria {
 		
 	}
 
-	protected String bigarrenTiroaEgin(short pX, short pY) {
+	protected String koordenatuanZerDagoen(short pX, short pY) {
 		return this.nireTableroa.bigarrenTiroa(pX, pY);
 		//itzuliko duen String-a hirugarren tiroan erabiliko da
 	}

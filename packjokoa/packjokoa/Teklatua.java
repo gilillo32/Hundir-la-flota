@@ -80,13 +80,9 @@ public class Teklatua {
         }
         while(!denaOndo);
         return emaitza;
-<<<<<<< HEAD
-      } }
-
-=======
       } 
 }
->>>>>>> branch 'master' of https://github.com/gilillo32/JOKOA.git
+
 	//paula
 	/*package packjokoa;
 
@@ -174,11 +170,7 @@ public class Teklatua {
 	}
 	///salbuespena de estar detro del rango*/
 	
-<<<<<<< HEAD
-=======
 	/*}
->>>>>>> branch 'master' of https://github.com/gilillo32/JOKOA.git
-
 	
 	//leire
 
@@ -210,7 +202,6 @@ public class Teklatua {
 	}
 	///salbuespena de estar detro del rango*/
 	
-<<<<<<< HEAD
 
 /*
 =======
