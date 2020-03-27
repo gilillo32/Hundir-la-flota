@@ -95,7 +95,6 @@ public class Tableroa {
 		}//try
 
 		/*catch(IndexOutOfBoundsException e) {
-=======
 		catch(IndexOutOfBoundsException e) {
 
 			System.out.print("Sartu dituzun koordenatuak ez dira egokiak, ez baitaude tableroaren barruan. Mesedez sartu koordenatu berriak:");
