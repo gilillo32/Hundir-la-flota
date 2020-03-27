@@ -76,7 +76,7 @@ public class JokalariCPU extends Jokalaria {
 	 * 3 beherantz
 	 * null bueltatuko du ezin bada hurrengo koordenatua eman (izkina edo ertza bada)
 	 */
-	 private Koordenatuak zentzuBateanKoordenatuBerriak(short pX, short pY, byte pZentzua) {
+	private Koordenatuak zentzuBateanKoordenatuBerriak(short pX, short pY, byte pZentzua) {
 		 //Arazorik ez badago:
 		 if(this.zeinErtzaDa(pX, pY) == 0 && this.zeinIzkinaDa(pX, pY) == 0) {
 			 switch(pZentzua) {
@@ -263,17 +263,34 @@ public class JokalariCPU extends Jokalaria {
 		 return koord;	
 	 }
 	
+	private byte kontrakoZentzua(byte pZentzua) {
+		switch(pZentzua) {
+		case 0:
+			pZentzua = 2;
+			break;
+		case 1:
+			pZentzua = 3;
+			break;
+		case 2: 
+			pZentzua = 0;
+			break;
+		case 3:
+			pZentzua = 1;
+			break;
+		}
+		return pZentzua;
+	}
+	
 	//Itsasontzia ukitu badu, metodo hau erabiliko da ausazko alboko koordenatuak generatzeko
 	/*Cuando la CPU acierta una coordenada por primera vez, tiene cuatro opciones para decir la siguiente coordenada:
 	 * la coordenada de arriba, la de abajo, la de la eskuma y la de la izda. Por lo tanto, este método crea un Random
 	 * entre 1 y 4 (ambos incluídos), y si sale:
-	 * 1- se dice la coordenada de la derecha
-	 * 2- se dice la coordenada de arriba
-	 * 3- se dice la coordenada de la izda
-	 * 4- se dice la coordenada de abajo
+	 * 0- se dice la coordenada de la derecha
+	 * 1- se dice la coordenada de arriba
+	 * 2- se dice la coordenada de la izda
+	 * 3- se dice la coordenada de abajo
 	 */
 	
-	//Metodo honetako azken parametroak zenbat koordenatu eta non era ditzakeen ezaten du.
 	private Koordenatuak albokoAusazkoKoordenatuakEratu(short pX, short pY) {
 		//Arazorik ez badago, lau aukera ditu koordenatua eratzeko:
 		if(this.zeinErtzaDa(pX, pY) == 0 && this.zeinIzkinaDa(pX, pY) == 0) {
