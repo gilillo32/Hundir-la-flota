@@ -260,7 +260,7 @@ public class JokalariCPU extends Jokalaria {
 			 }
 		 }
 		 Koordenatuak koord = new Koordenatuak(pX, pY);
-		 return koord;
+		 return koord;	
 	 }
 	
 	//Itsasontzia ukitu badu, metodo hau erabiliko da ausazko alboko koordenatuak generatzeko
@@ -453,7 +453,7 @@ public class JokalariCPU extends Jokalaria {
 	
 	private boolean ertz2Da(short pX, short pY) {
 		boolean ertz2Da = false;
-		if(pY - 1 == 0) {
+		if(pY - 1 == -1) {
 			ertz2Da = true;
 		}
 		return ertz2Da;
@@ -461,7 +461,7 @@ public class JokalariCPU extends Jokalaria {
 	
 	private boolean ertz3Da(short pX, short pY) {
 		boolean ertz3Da = false;
-		if(pX - 1 == 0) {
+		if(pX - 1 == -1) {
 			ertz3Da = true;
 		}
 		return ertz3Da;
@@ -515,7 +515,7 @@ public class JokalariCPU extends Jokalaria {
 	private boolean izkina1Da(short pX, short pY) {
 		boolean izkina1Da = false;
 		int errenZutKop = this.getNireTableroa().getErrenkadaZutKop();
-		if((pY - 1 == 0) && (pX + 1 > errenZutKop)) {
+		if((pY - 1 == -1) && (pX + 1 > errenZutKop)) {
 			izkina1Da = true;
 		}
 		return izkina1Da;
@@ -524,7 +524,7 @@ public class JokalariCPU extends Jokalaria {
 	private boolean izkina2Da(short pX, short pY) {
 		boolean izkina2Da = false;
 		int errenZutKop =  this.getNireTableroa().getErrenkadaZutKop();
-		if((pX - 1 == 0) && (pY - 1 == 0)) {
+		if((pX - 1 == -1) && (pY - 1 == -1)) {
 			izkina2Da = true;
 		}
 		return izkina2Da;
