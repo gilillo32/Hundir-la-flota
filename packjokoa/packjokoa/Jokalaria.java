@@ -10,7 +10,7 @@ public abstract class Jokalaria {
 	private int nUkituta;
 	
 	//eraikitzailea:
-	public Jokalaria(String pIzena) { //(String pIzena, short pErrenkadaZutKop)
+	public Jokalaria(String pIzena) { //(String pIzena, short pErrenkadaZutKop) 
 		int pErrenkadaZutKop=10;
 		this.nireTableroa=new Tableroa(pErrenkadaZutKop);
 		this.izena=pIzena;
