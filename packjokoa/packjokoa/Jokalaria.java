@@ -27,13 +27,14 @@ public abstract class Jokalaria {
 	
 	public void itsasontziakJarri(int pErrenkadaZutKop){
 		//salbuespenak: konprobatu posibeak direla koordenatuak, orientazioa eta ez badira zuzenak berriro jartzeko eskatuko zaio erabiltzaileari
-		short pItsas=1;
+		short pItsas=0;
 		String pOrientazioa="Ezezagun";
 		String itsasMota="Ezezagun";//bapaezpada hasieratuko dugu
 		boolean denaOndo=false;
 		
 		//itsasontziak beti orden berdinean jarriko dira
 		while(pItsas<5) {
+			pItsas++;
 			//hiztegi txiki bat sortuko dugu itsasontzentzako			
 			switch(pItsas) {
 			 case 1:
@@ -46,11 +47,10 @@ public abstract class Jokalaria {
 				 itsasMota="suntsitzailea";
 				 break;
 			 case 4:
-				 itsasMota="(portahegazkinak";
+				 itsasMota="portahegazkinak";
 				 break;
 			 }
 			//koordenatuak pantailatik eskatu
-			do {
 			String pMezua1="Orain "+itsasMota+ " jarriko duzu "+ pItsas +" laukiko itsasontzia da, mesedez sartu lehengo koordenatua ";
 			Short pX=Teklatua.getNireTeklatua().irakurriShort(pMezua1, 0, 10);
 			
@@ -61,7 +61,7 @@ public abstract class Jokalaria {
 			do {
 			 pOrientazioa=Teklatua.getNireTeklatua().irakurriString(pMezua3); //MALLL
 				try{
-					if(pOrientazioa!="B" && pOrientazioa!="b" && pOrientazioa!="H" && pOrientazioa!="h") {
+					if(pOrientazioa!="B" || pOrientazioa!="b" || pOrientazioa!="H" || pOrientazioa!="h") {
 						throw new  OrientazioExc("Sartu behar duzu H edo B");
 					}
 					denaOndo=true;
@@ -84,12 +84,9 @@ public abstract class Jokalaria {
 				}
 				catch(IndexOutOfBoundsException e) {
 					System.out.println("Sartu duzun itsasontzia ez da sartzen");
+					this.itsasontziakJarri(pErrenkadaZutKop);
 				}
-			    }
-			}
-			while(!denaOndo);
-			pItsas++;
-			
+		   }
 		}
 	}
 		/*try {

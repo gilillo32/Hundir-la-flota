@@ -45,14 +45,15 @@ public class Proba{
 
 	public void itsasontziakJarri(int pErrenkadaZutKop){
 		//salbuespenak: konprobatu posibeak direla koordenatuak, orientazioa eta ez badira zuzenak berriro jartzeko eskatuko zaio erabiltzaileari
-		short pItsas=1;
+		short pItsas=0;
 		String pOrientazioa="Ezezagun";
 		String itsasMota="Ezezagun";//bapaezpada hasieratuko dugu
 		boolean denaOndo=false;
 		
 		//itsasontziak beti orden berdinean jarriko dira
 		while(pItsas<5) {
-			//hiztegi txiki bat sortuko dugu itsasontzentzako			
+			//hiztegi txiki bat sortuko dugu itsasontzentzako	
+			pItsas++;
 			switch(pItsas) {
 			 case 1:
 				 itsasMota="txalupa";
@@ -68,38 +69,12 @@ public class Proba{
 				 break;
 			 }
 			//koordenatuak pantailatik eskatu
-			do {
+			
 			String pMezua1="Orain "+itsasMota+ " jarriko duzu "+ pItsas +" laukiko itsasontzia da, mesedez sartu lehengo koordenatua ";
 			Short pX=Teklatua.getNireTeklatua().irakurriShort(pMezua1, 0, 10);
 			
 			String pMezua2="Sartu bigarren koordenatua mesedez";
 			Short pY=Teklatua.getNireTeklatua().irakurriShort(pMezua2, 0, 10);
-			
-			String pMezua3="Sartu barkuaren orientazioa: H edo B";
-			do {
-			 pOrientazioa=Teklatua.getNireTeklatua().irakurriString(pMezua3); 
-				try{
-					if(pOrientazioa!="B" ) {
-						if(pOrientazioa!="b" ) {
-							if(pOrientazioa!="h" ) {
-								if(pOrientazioa!="H" ) {
-
-									throw new  OrientazioExc("Sartu behar duzu H edo B");
-								}
-							}
-						}
-					}
-						
-					denaOndo=true;
-				}
-				catch (OrientazioExc e){
-					e.mezuaInprimatu();
-				}
-				}
-			while(!denaOndo);
-			
-			
-		   denaOndo=false;
 		   if(pItsas!=1) {//1-eko itsasontzia ez du arazorik ematen
 			   try {
 				   if ((pX+pItsas-1>=pErrenkadaZutKop ) || (pY+pItsas-1>= pErrenkadaZutKop) ) {
@@ -110,14 +85,12 @@ public class Proba{
 				}
 				catch(IndexOutOfBoundsException e) {
 					System.out.println("Sartu duzun itsasontzia ez da sartzen");
+					this.itsasontziakJarri(10);
 				}
-			    }
-			}
-			while(!denaOndo);
-			pItsas++;
+		   }
+		}
 			
 		}
-	}
 public static void main (String [ ] args) throws OrientazioExc
 {	String pMezua="Kaixo";
 	Proba.getNireTeklatua(10).itsasontziakJarri(10);
