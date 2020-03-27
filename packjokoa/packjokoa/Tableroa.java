@@ -53,7 +53,7 @@ public class Tableroa {
 			//CREO QUE LO DE PX<0 Y LO PY<0 NO HACE FALTA!!
 			throw (new IndexOutOfBoundsException());
 		}
-=======
+
 	public void itsasontziakJarri (short pX, short pY,short pItsas, String pOrientazio)  {
 		try { if ((pX+pItsas>= this.errenZutKop) || pX<0 || pY<0 || (pY+pItsas>= this.errenZutKop) ){
 			throw (new IndexOutOfBoundsException());//esta salbuespen es de C+, la nuestra seria IndexOutOfBoundsException()
