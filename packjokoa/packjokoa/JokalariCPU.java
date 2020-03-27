@@ -414,7 +414,7 @@ public class JokalariCPU extends Jokalaria {
 											pX = (short)(pX - 1);
 											break;
 										case 1:
-											pY = (short)(pY - 1);
+											pY = (short)(pY - 1); 
 											break;
 										case 2:
 											pX = (short)(pX + 1);
