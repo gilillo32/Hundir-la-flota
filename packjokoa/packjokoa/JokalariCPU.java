@@ -7,7 +7,7 @@ public class JokalariCPU extends Jokalaria {
 		super("CPU", pErrenkadaZutKop);
 	}
 	  
-	 public void txandaBatJokatu(JokalariArrunta pJokalaria) {
+	 public void txandaBatJokatu(Jokalaria pJokalaria) {
 		boolean posibleaDa = true;
 		boolean aurrekoanUkituDu = false;
 		short jarraianAurkituDitzakeenUkitutak = 4;
