@@ -55,9 +55,9 @@ public class JokalariArrunta extends Jokalaria {
 		this.getNireTableroa().eguneratuTableroa(pX,pY,pEma);
 	}
 	
-	/*public void setIzena(String pIzena) {
+	public void setIzena(String pIzena) {
 		super.setIzena(pIzena);
-	}*/
+	}
 	
 	public boolean itsasontzirikEz() {
 		return super.itsasontzirikEz();

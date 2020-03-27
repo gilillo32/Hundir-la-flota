@@ -101,9 +101,9 @@ public abstract class Jokalaria {
 	
 	public abstract void txandaBatJokatu( Jokalaria pJokalaria);		
 	
-	/*protected void setIzena(String pIzena) {
+	protected void setIzena(String pIzena) {
 		this.izena = pIzena;
-	}*/
+	}
 	
 	protected void nUkituaInkrementatu() {
 		this.nUkituta++;

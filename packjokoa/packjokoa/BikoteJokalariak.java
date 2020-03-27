@@ -2,17 +2,17 @@ package packjokoa;
 
 public class BikoteJokalariak {
 	//atributuak:
-	private Jokalaria j1;
-	private Jokalaria j2;
+	private JokalariArrunta j1;
+	private JokalariCPU j2;
 	private static BikoteJokalariak nireBikoteJokalariak = null;
 	
 	//eraikitzailea (Singleton):
-	private BikoteJokalariak(Jokalaria pJ1, Jokalaria pJ2) {
+	private BikoteJokalariak(JokalariArrunta pJ1, JokalariCPU pJ2) {
 		this.j1 = pJ1;
 		this.j2 = pJ2;
 	}
 	
-	public static synchronized BikoteJokalariak getNireBikoteJokalariak(Jokalaria pJ1, Jokalaria pJ2) {
+	public static synchronized BikoteJokalariak getNireBikoteJokalariak(JokalariArrunta pJ1, JokalariCPU pJ2) {
 		if(BikoteJokalariak.nireBikoteJokalariak==null) {
 			BikoteJokalariak.nireBikoteJokalariak=new BikoteJokalariak(pJ1,pJ2);
 		} 
@@ -37,5 +37,11 @@ public class BikoteJokalariak {
 		
 	}
 	
+	public void jokalariakInskribatu() {
+		//lehenengo jokalariaren izena jarri
+		System.out.println("Sartu zure izena: ");
+		String izena = Teklatua.getNireTeklatua().irakurriString();
+		this.j1.setIzena(izena);
+	}
 	
 }
