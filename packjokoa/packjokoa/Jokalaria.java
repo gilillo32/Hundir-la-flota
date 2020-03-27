@@ -101,9 +101,9 @@ public abstract class Jokalaria {
 	
 	public abstract void txandaBatJokatu( Jokalaria pJokalaria);		
 	
-	protected void setIzena(String pIzena) {
+	/*protected void setIzena(String pIzena) {
 		this.izena = pIzena;
-	}
+	}*/
 	
 	protected void nUkituaInkrementatu() {
 		this.nUkituta++;
@@ -125,5 +125,10 @@ public abstract class Jokalaria {
 		return this.nireTableroa.bigarrenTiroa(pX, pY);
 		//itzuliko duen String-a hirugarren tiroan erabiliko da
 	}
+	
+	public String getIzena() {
+		return this.izena;
+	}
+	
 
 }
