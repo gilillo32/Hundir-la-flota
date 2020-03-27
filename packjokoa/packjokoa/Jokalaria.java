@@ -46,7 +46,7 @@ public abstract class Jokalaria {
 				 itsasMota="suntsitzailea";
 				 break;
 			 case 4:
-				 itsasMota="(portahegazkinak";
+				 itsasMota="portahegazkinak";
 				 break;
 			 }
 			//koordenatuak pantailatik eskatu
