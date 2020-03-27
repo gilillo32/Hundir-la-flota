@@ -1,30 +1,48 @@
 package packjokoa;
 
-import salbuespenak.OrientazioExc;
+import java.util.Scanner;
+import salbuespenak.LimiteakGainditutaExc;
+import salbuespenak.OrientazioExc;;
 
-public abstract class Jokalaria {
-	//atributuak:
+public class Proba{
+	private static Proba nireTeklatua=null;
+	private Scanner sc;
 	private Tableroa nireTableroa;
-	private String izena;
-	private Tableroa printTableroa;
-	private int nUkituta;
-	
-	//eraikitzailea:
-	public Jokalaria(String pIzena, short pErrenkadaZutKop) {
+	//eraikitzailea SINGLETON patroia
+	private Proba(int pErrenkadaZutKop) {
+		this.sc= new Scanner(System.in);
 		this.nireTableroa=new Tableroa(pErrenkadaZutKop);
-		this.izena=pIzena;
-		this.nUkituta=0;
-		this.printTableroa=new Tableroa(pErrenkadaZutKop); 
-	}
+	} 
 	
-	protected Tableroa getNireTableroa() {
-		return this.nireTableroa;
+	public static synchronized Proba getNireTeklatua ( int pErrenkadaZutKop) {
+		if(Proba.nireTeklatua==null) {
+			Proba.nireTeklatua=new Proba(pErrenkadaZutKop);
+		}
+		return Proba.nireTeklatua;
 	}
-	
-	protected Tableroa getPrintTableroa() {
-		return this.nireTableroa;
+
+	public short irakurriShort(String pMezua, int i, int j) throws NumberFormatException{
+		short emaitza = (short) (i -1);
+        boolean denaOndo=false;
+        do {
+	        System.out.println(pMezua);
+			String str = sc.nextLine();
+		try{
+			emaitza = Short.parseShort(str);
+	        if(emaitza < i || emaitza >j){
+	        	throw new LimiteakGainditutaExc("Limitetik kanpo");
+            }
+            denaOndo=true;
+		} 
+         catch (NumberFormatException e) { System.out.println("Balioa ez da numerikoa"); }
+         catch (LimiteakGainditutaExc e) {
+         e.getMessage();
+         e.mezuaInprimatu();}
+        }
+        while(!denaOndo);
+        return emaitza;
 	}
-	
+
 	public void itsasontziakJarri(int pErrenkadaZutKop){
 		//salbuespenak: konprobatu posibeak direla koordenatuak, orientazioa eta ez badira zuzenak berriro jartzeko eskatuko zaio erabiltzaileari
 		short pItsas=1;
@@ -59,11 +77,19 @@ public abstract class Jokalaria {
 			
 			String pMezua3="Sartu barkuaren orientazioa: H edo B";
 			do {
-			 pOrientazioa=Teklatua.getNireTeklatua().irakurriString(pMezua3); //MALLL
+			 pOrientazioa=Teklatua.getNireTeklatua().irakurriString(pMezua3); 
 				try{
-					if(pOrientazioa!="B" && pOrientazioa!="b" && pOrientazioa!="H" && pOrientazioa!="h") {
-						throw new  OrientazioExc("Sartu behar duzu H edo B");
+					if(pOrientazioa!="B" ) {
+						if(pOrientazioa!="b" ) {
+							if(pOrientazioa!="h" ) {
+								if(pOrientazioa!="H" ) {
+
+									throw new  OrientazioExc("Sartu behar duzu H edo B");
+								}
+							}
+						}
 					}
+						
 					denaOndo=true;
 				}
 				catch (OrientazioExc e){
@@ -92,41 +118,9 @@ public abstract class Jokalaria {
 			
 		}
 	}
-		/*try {
-			//aqui va el codigo norrmal y si no puede seguir salta
-			this
-		}
-		catch (Exception e) {
-			System.out.println("Sartu diren koordenatuak ez dira egokiak, mesedez sartu berriro.");
-			this.nireTableroa.itsasontziakJarri(pX, pY, pItsas, pOrientazio);
-		}*/
-
+public static void main (String [ ] args) throws OrientazioExc
+{	String pMezua="Kaixo";
+	Proba.getNireTeklatua(10).itsasontziakJarri(10);
+}
 	
-	public abstract void txandaBatJokatu( Jokalaria pJokalaria);		
-	
-	/*protected void setIzena(String pIzena) {
-		this.izena = pIzena;
-	}*/
-	
-	protected void nUkituaInkrementatu() {
-		this.nUkituta++;
-	}
-	
-	protected boolean itsasontzirikEz() {
-		//true ematen du itsasontzirik ez badago tableroan
-		//Dentro de arrunta y dentro de CPU comprueba cuántos se han tocado. 
-		//Si llega a 10 partidaBukatu = true. Y se acaba el juego.
-		boolean badaudeItsas=false;
-		if(this.nUkituta==10) {
-			badaudeItsas=true;
-		}
-		return badaudeItsas;
-		
-	}
-
-	protected String bigarrenTiroaEgin(short pX, short pY) {
-		return this.nireTableroa.bigarrenTiroa(pX, pY);
-		//itzuliko duen String-a hirugarren tiroan erabiliko da
-	}
-
 }

@@ -7,7 +7,13 @@ public class JokalariArrunta extends Jokalaria {
 	}
 	
 	@Override
-	public void txandaBatJokatu(short pX, short pY, Jokalaria pJokalaria) {	
+	public void txandaBatJokatu(Jokalaria pJokalaria) {	
+		//koordenatuak eskatu
+		String pMezua1="Sartu zure lehenengo koordenatua mesedez";
+		Short pX=Teklatua.getNireTeklatua().irakurriShort(pMezua1, 1, 10);
+		String pMezua2="Sartu zure lehenengo koordenatua mesedez";
+		Short pY=Teklatua.getNireTeklatua().irakurriShort(pMezua2, 1, 10);
+		
 		boolean posibleaDa=true;
 		while(posibleaDa) {
 			if(this.lehenengoTiroaEgin(pX, pY)) {
@@ -17,8 +23,11 @@ public class JokalariArrunta extends Jokalaria {
 					posibleaDa=false; 
 				}
 				else {
-					//Teklatua.getNireTeklatua()
-					//pedirle las coordenadas y cambiar 
+					//koordenatuak eskatu berriro, itsasontzia ukitu duelako
+					String pMezua11="Sartu zure lehenengo koordenatua mesedez";
+					pX=Teklatua.getNireTeklatua().irakurriShort(pMezua11, 1, 10);
+					String pMezua21="Sartu zure lehenengo koordenatua mesedez";
+				    pY=Teklatua.getNireTeklatua().irakurriShort(pMezua21, 1, 10);
 				}
 			}
 			else {

@@ -46,15 +46,21 @@ public class Tableroa {
 		
 	} 
 	
-	public void itsasontziakJarri (short pX, short pY,short pItsas, String pOrientazio)  {
-		try { if ((pX+pItsas>= this.errenZutKop) || pX<0 || pY<0 || (pY+pItsas>= this.errenZutKop) ){
-			throw (new IndexOutOfRangeException());
-			}
+	public void itsasontziakJarri (short pX, short pY,short pItsas, String pOrientazio){
+		/*try { if ((pX+pItsas>= this.errenZutKop) || pX<0 || pY<0 || (pY+pItsas>= this.errenZutKop) ){
+			//CREO QUE LO DE PX<0 Y LO PY<0 NO HACE FALTA!!
+			throw (new IndexOutOfBoundsException());
+		}
 		//salbuespena:
-		//konprobatu itsasontsia sar daitekeela koordenatu horretan, hau da 4eko itsasontsia ez gara saiatuko sartzen 9,9 kooedenatuan ez baita sartzen
+		//konprobatu itsasontzia sar daitekeela koordenatu horretan, hau da 4eko itsasontzia ez gara saiatuko sartzen 9,9 kooedenatuan ez baita sartzen
+		if ((pX+pItsas>= this.errenZutKop) || pX<0 || pY<0 || (pY+pItsas>= this.errenZutKop) ){
+				//CREO QUE LO DE PX<0 Y LO PY<0 NO HACE FALTA!!
+				throw (new IndexOutOfBoundsException());
+		}*/
+		
 		int aux=0;
 		this.tableroaBete();// tableroa uraz beteko dugu
-		//itsasontsia jarriko dugu:
+		//itsasontzia jarriko dugu:
 		if(	this.konprobatuHutsuneak(pX, pY, pItsas, pOrientazio)) {
 			//orentazioaren arabera bi modu:
 			if (pOrientazio=="H") {//pY ez da aldatzen
@@ -75,11 +81,11 @@ public class Tableroa {
 		}
 		else { 
 			//ez bada posible sartzea itsasontsia leku honetan, SALBUESPENA. BERAZ BERRIRO ESKATU BEHAR DIO KOORDENATUA HORIENTAZIOA ETA ABAR
-			System.out.print("Sartu dituzun koordenatuak ez dira egokiak, itsasontsia beste baten parean jarriko zenukeelako. Mesedez sartu koordenatu berriak:");
+			System.out.print("Sartu dituzun koordenatuak ez dira egokiak, itsasontzia beste baten parean jarriko zenukeelako. Mesedez sartu koordenatu berriak:");
 		}
 		this.tableroaInprimatu();
 		}//try
-		catch(IndexOutOfRangeException e) {
+		/*catch(IndexOutOfBoundsException e) {
 			System.out.print("Sartu dituzun koordenatuak ez dira egokiak, ez baitaude tableroaren barruan. Mesedez sartu koordenatu berriak:");
 			//pedir koordenadas
 			//pX
@@ -87,8 +93,7 @@ public class Tableroa {
 			//pOientazio
 			this.itsasontziakJarri(pX, pY, pItsas, pOrientazio);
 			
-		}
-	}
+		}*/
 	
 	public boolean konprobatuTiroa(short pX, short pY) {
 		//honako hauek salbuespenean jarriko ditugu(teklatuan)
