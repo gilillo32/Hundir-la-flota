@@ -81,6 +81,7 @@ public class Teklatua {
         while(!denaOndo);
         return emaitza;
       } 
+}
 	//paula
 	/*package packjokoa;
 
@@ -168,8 +169,8 @@ public class Teklatua {
 	}
 	///salbuespena de estar detro del rango*/
 	
-}
-*/
+	/*}
+
 	
 	//leire
 
@@ -201,8 +202,8 @@ public class Teklatua {
 	}
 	///salbuespena de estar detro del rango*/
 	
-}
-/*
+/*}
+
  * package packjokoa;
 
 import java.util.Scanner;
