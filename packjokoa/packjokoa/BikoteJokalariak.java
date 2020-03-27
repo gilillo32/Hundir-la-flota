@@ -1,5 +1,7 @@
 package packjokoa;
 
+import salbuespenak.OrientazioExc;
+
 public class BikoteJokalariak {
 	//atributuak:
 	private JokalariArrunta j1;
@@ -42,6 +44,18 @@ public class BikoteJokalariak {
 		System.out.println("Sartu zure izena: ");
 		String izena = Teklatua.getNireTeklatua().irakurriString();
 		this.j1.setIzena(izena);
+		
+		/*//bigarren jokalariari izena jarri 								BIGARREN MAILAKO ATAZA
+		 * System.out.println("Sartu zure izena: ");
+		String izena = Teklatua.getNireTeklatua().irakurriString();
+		this.j2.setIzena(izena);
+		 */
+	}
+	
+	public static void main (String [ ] args) 	{	
+		System.out.println("kAIXO LAGUN!");
+		
+		BikoteJokalariak.getNireBikoteJokalariak(pJ1, pJ2)
 	}
 	
 }
