@@ -10,34 +10,38 @@ public class JokalariCPU extends Jokalaria {
 	}
 	  
 	 public void txandaBatJokatu(Jokalaria pJokalaria) {
-		boolean posibleaDa = true;
+		boolean amaituDa = false;
 		boolean aurrekoanUkituDu = false;
+		boolean zentzuaAldatuBeharDu = false;
 		short jarraianAurkituDitzakeenUkitutak = 4;
 		short zenbatUkituDituJarraian = 0;
-		Random rand = new Random();
-		short pX = (short) ((short) rand.nextInt(10) + 1);
-		short pY = (short) ((short) rand.nextInt(10) + 1);
-		Koordenatuak koord = new Koordenatuak(pX, pY);
-		while(posibleaDa) { 
-			//Ura ukitzen duen arte errepikatuko den buklea:
-			if(this.koordenadaBaliogarriak(pX, pY)) {
-				String emaitza = pJokalaria.koordenatuanZerDagoen(pX, pY);
-				this.eguneratuPrintTableroa(pX, pY, emaitza);
-				if(emaitza != "U") {
-					//Itsasontzia ez badu ukitzen:
-					posibleaDa = false;
-				}
-				else {
-				aurrekoanUkituDu = true;
-				zenbatUkituDituJarraian++;
+		
+		while(!amaituDa) {
+			Random rand = new Random();
+			short pX = (short) ((short) rand.nextInt(10) + 1);
+			short pY = (short) ((short) rand.nextInt(10) + 1);
+			Koordenatuak koordenatuOriginalak = new Koordenatuak(pX, pY);
+			if(!aurrekoanUkituDu && !zentzuaAldatuBeharDu) {
+				//aurrekoan ezer ez badu lortu:
+				if(this.koordenadaBaliogarriak(pX, pY)) {
+					String emaitza = pJokalaria.koordenatuanZerDagoen(pX, pY);
+					this.eguneratuPrintTableroa(pX, pY, emaitza);
+					if(emaitza != "U") {
+						//Itsasontzia ez badu ukitzen:
+						zenbatUkituDituJarraian = 0;
+						amaituDa = true;
+					}
+					else {
+						this.nUkituaInkrementatu();
+						zenbatUkituDituJarraian++;
+					}
 				}
 			}
 			else {
-				//Tiroa ez bada posiblea:
-				posibleaDa = false;
-				zenbatUkituDituJarraian = 0;
+				if()
 			}
 		}
+		
 	}
 
 	public boolean koordenadaBaliogarriak(short pX, short pY) {
