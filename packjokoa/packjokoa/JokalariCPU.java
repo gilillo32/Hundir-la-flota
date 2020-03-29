@@ -32,13 +32,49 @@ public class JokalariCPU extends Jokalaria {
 						amaituDa = true;
 					}
 					else {
+						//Ukitu badu:
 						this.nUkituaInkrementatu();
 						zenbatUkituDituJarraian++;
+						aurrekoanUkituDu = true;
 					}
 				}
 			}
 			else {
-				if()
+				//aurrekoan itsasontzi bat lehenengo aldiz ukitu badu:
+				if(aurrekoanUkituDu && !zentzuaAldatuBeharDu) {
+					Koordenatuak koordenatuBerriak = new Koordenatuak();
+					koordenatuBerriak = this.albokoAusazkoKoordenatuakEratu(pX, pY);
+					short pXprima = koordenatuBerriak.getKoordenatuakX();
+					short pYprima = koordenatuBerriak.getKoordenatuakY();
+					if(this.koordenadaBaliogarriak(pXprima, pYprima)) {
+						String emaitza = pJokalaria.koordenatuanZerDagoen(pXprima, pYprima);
+						this.eguneratuPrintTableroa(pXprima, pYprima, emaitza);
+						if(emaitza != "U") {							
+							zentzuaAldatuBeharDu = true;
+							aurrekoanUkituDu = false;
+							amaituDa = true;
+						}
+						else {
+							this.nUkituaInkrementatu();
+							zenbatUkituDituJarraian++;
+							aurrekoanUkituDu = true;
+						}
+					}
+				}
+				else {
+					if(!aurrekoanUkituDu && zentzuaAldatuBeharDu) {
+						boolean baliogarriak = false;
+						while(!baliogarriak) {
+							Koordenatuak koordenatuBerriak = new Koordenatuak();
+							koordenatuBerriak = this.albokoAusazkoKoordenatuakEratu(pX, pY);
+							short pXprima = koordenatuBerriak.getKoordenatuakX();
+							short pYprima = koordenatuBerriak.getKoordenatuakY();
+							if(this.koordenadaBaliogarriak(pXprima, pYprima)) {
+								baliogarriak = true;
+							}
+						}
+					}
+				}
 			}
 		}
 		
