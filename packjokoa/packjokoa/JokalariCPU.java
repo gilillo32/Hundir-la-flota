@@ -3,7 +3,7 @@ import java.util.*;
 
 public class JokalariCPU extends Jokalaria {
 	
-	private ArrayList<Koordenatuak> ListaKoordenatuak;
+	//private ArrayList<Koordenatuak> ListaKoordenatuak;
 	
 	public JokalariCPU(short pErrenkadaZutKop) {
 		super("CPU", pErrenkadaZutKop);
@@ -265,6 +265,7 @@ public class JokalariCPU extends Jokalaria {
 		 return koord;	
 	 }
 	
+	/*
 	private boolean koordenatuHauEsanDu(Koordenatuak pKoord) {
 		boolean esanDu = false;
 		if(this.ListaKoordenatuak.contains(pKoord)) {
@@ -272,6 +273,7 @@ public class JokalariCPU extends Jokalaria {
 		}
 		return esanDu;
 	}
+	*/
 	
 	private byte kontrakoZentzua(byte pZentzua) {
 		switch(pZentzua) {

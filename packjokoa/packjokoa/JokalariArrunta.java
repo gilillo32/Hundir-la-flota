@@ -20,6 +20,7 @@ public class JokalariArrunta extends Jokalaria {
 				String emaitza = pJokalaria.koordenatuanZerDagoen(pX, pY);
 				this.eguneratuPrintTableroa(pX, pY, emaitza);
 				if(emaitza!="U") {
+					//Itsasontzia ez badu ukitzen:
 					posibleaDa=false; 
 				}
 				else {
