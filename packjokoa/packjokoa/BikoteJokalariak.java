@@ -24,6 +24,11 @@ public class BikoteJokalariak {
 	//gainontzeko metodoak:
 	
 	public void partidaBatJokatu() {
+		
+		this.itsasontziakJarri();
+		
+		
+		
 		while (!this.partidaBukatu()) {
 			this.txandaBatJolastu();			
 		}
@@ -45,6 +50,8 @@ public class BikoteJokalariak {
 	
 	
 	public void itsasontziakJarri() {
+		this.zerrenda[0].itsasontziakJarri(10);
+		this.zerrenda[1].itsasontziakJarri(10);
 		
 	}
 	
@@ -72,32 +79,44 @@ public class BikoteJokalariak {
 	
 	
 	public void txandaBatJolastu() {
-		
+		boolean posibleaDa=true;
+		//JokalariArrunta:
+		do {
 		Koordenatuak k= this.zerrenda[0].txandaBatJokatu();
 		short pX= k.getKoordenatuakX();
 		short pY = k.getKoordenatuakY();
 		
-		boolean posibleaDa=true;
-		while(posibleaDa) {
-			if(this.zerrenda[0].k  ) {//this.koordenadaBaliogarriak(pX, pY)
-				String emaitza = pJokalaria.koordenatuanZerDagoen(pX, pY);
-				this.eguneratuPrintTableroa(pX, pY, emaitza);
+			if(this.zerrenda[0].koordenadaBaliogarriak(pX, pY)  ) {
+				String emaitza = this.zerrenda[1].koordenatuanZerDagoen(pX, pY);
+				this.zerrenda[0].eguneratuPrintTableroa(pX, pY, emaitza);
 				if(emaitza!="U") {
 					//Itsasontzia ez badu ukitzen:
 					posibleaDa=false; 
-				}
-				else {
-					//koordenatuak eskatu berriro, itsasontzia ukitu duelako
-					String pMezua11="Sartu zure lehenengo koordenatua mesedez";
-					pX=Teklatua.getNireTeklatua().irakurriShort(pMezua11, 1, 10);
-					String pMezua21="Sartu zure lehenengo koordenatua mesedez";
-				    pY=Teklatua.getNireTeklatua().irakurriShort(pMezua21, 1, 10);
-				}
+				}				
 			}
 			else {
 				posibleaDa=false;
 			}
-		}
+		}while(posibleaDa) ;
+		//JokalariCPU
+		posibleaDa=true;
+		do {
+			Koordenatuak k= this.zerrenda[1].txandaBatJokatu();
+			short pX= k.getKoordenatuakX();
+			short pY = k.getKoordenatuakY();
+			
+				if(this.zerrenda[1].koordenadaBaliogarriak(pX, pY)  ) {
+					String emaitza = this.zerrenda[0].koordenatuanZerDagoen(pX, pY);
+					this.zerrenda[1].eguneratuPrintTableroa(pX, pY, emaitza);
+					if(emaitza!="U") {
+						//Itsasontzia ez badu ukitzen:
+						posibleaDa=false; 
+					}				
+				}
+				else {
+					posibleaDa=false;
+				}
+		}while(posibleaDa);	
 		
 		
 	}

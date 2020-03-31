@@ -1,5 +1,7 @@
 package packjokoa;
 
+import salbuespenak.KoordenatuEzEgokiak;
+
 public class Tableroa {
 	//atributuak:
 	private int errenZutKop;  //errenkada eta zutabe kopurua
@@ -34,7 +36,7 @@ public class Tableroa {
 		
 	}
 	
-	public void tableroaBete() { //uraz beteko dugu "-"
+	private void tableroaBete() { //uraz beteko dugu "-"
 		//hasieratu indizeak
 		int e= 0;
 		int z= 0;
@@ -48,30 +50,13 @@ public class Tableroa {
 	} 
 	
 
-	public void itsasontziakJarri (short pX, short pY,short pItsas, String pOrientazio){
-		/*try { if ((pX+pItsas>= this.errenZutKop) || pX<0 || pY<0 || (pY+pItsas>= this.errenZutKop) ){
-			//CREO QUE LO DE PX<0 Y LO PY<0 NO HACE FALTA!!
-			throw (new IndexOutOfBoundsException());
-		}
-
-	public void itsasontziakJarri (short pX, short pY,short pItsas, String pOrientazio)  {
-		try { if ((pX+pItsas>= this.errenZutKop) || pX<0 || pY<0 || (pY+pItsas>= this.errenZutKop) ){
-			throw (new IndexOutOfBoundsException());//esta salbuespen es de C+, la nuestra seria IndexOutOfBoundsException()
-			}
-
-		//salbuespena:
-		//konprobatu itsasontzia sar daitekeela koordenatu horretan, hau da 4eko itsasontzia ez gara saiatuko sartzen 9,9 kooedenatuan ez baita sartzen
-		if ((pX+pItsas>= this.errenZutKop) || pX<0 || pY<0 || (pY+pItsas>= this.errenZutKop) ){
-				//CREO QUE LO DE PX<0 Y LO PY<0 NO HACE FALTA!!
-				throw (new IndexOutOfBoundsException());
-		}*/
-		
+	public void itsasontziakJarri (short pX, short pY,short pItsas, String pOrientazio) throws KoordenatuEzEgokiak{
 		int aux=0;
 		this.tableroaBete();// tableroa uraz beteko dugu
 		//itsasontzia jarriko dugu:
-		if(	this.konprobatuHutsuneak(pX, pY, pItsas, pOrientazio)) {
+		if(	this.konprobatuHutsuneak(pX, pY, pItsas, pOrientazio) && this.konprobatuItsasontsirikEzKoordenatuan(pX, pY, pItsas, pOrientazio)) {
 			//orentazioaren arabera bi modu:
-			if (pOrientazio=="H") {//pY ez da aldatzen
+			if (pOrientazio=="H" || pOrientazio=="h" ) {//pY ez da aldatzen
 				aux= pX+pItsas;
 				
 				while(pX<aux) {
@@ -79,7 +64,7 @@ public class Tableroa {
 					pX++;
 				}
 			}
-			else if(pOrientazio=="B") {//pX ez da aldatzen
+			else if(pOrientazio=="B" || pOrientazio=="b") {//pX ez da aldatzen
 				aux	=pY+ pItsas;
 				while(pY<aux) {
 					 this.matrizea[pY][pX]= String.valueOf(pItsas);
@@ -87,27 +72,43 @@ public class Tableroa {
 				}				
 			}
 		}
-		else { 
-			//ez bada posible sartzea itsasontsia leku honetan, SALBUESPENA. BERAZ BERRIRO ESKATU BEHAR DIO KOORDENATUA HORIENTAZIOA ETA ABAR
-			System.out.print("Sartu dituzun koordenatuak ez dira egokiak, itsasontzia beste baten parean jarriko zenukeelako. Mesedez sartu koordenatu berriak:");
+		else {
+			throw new KoordenatuEzEgokiak();
 		}
+		
 		this.tableroaInprimatu();
-		}//try
-
-		/*catch(IndexOutOfBoundsException e) {
-		catch(IndexOutOfBoundsException e) {
-
-			System.out.print("Sartu dituzun koordenatuak ez dira egokiak, ez baitaude tableroaren barruan. Mesedez sartu koordenatu berriak:");
-			//pedir koordenadas
-			//pX
-			pX=Teklatua.getNireTeklatua().irakurriShort();
-			//pY
-			pY=Teklatua.getNireTeklatua().irakurriShort();
-			//pOrientazio
-			pOrientazio=Teklatua.getNireTeklatua().irakurriString();
-			this.itsasontziakJarri(pX, pY, pItsas, pOrientazio);
-			
-		}*/
+		}
+	
+	
+	private boolean konprobatuItsasontsirikEzKoordenatuan(short pX, short pY,short pItsas, String pOrientazio) {
+		//begiratzen du guk itsasontsia jarri nahi dugun koordenatuan ez dagoela jada itsasontsirik
+		//false itsasontsia badago
+		//true itsasontsirik ez badago eta gure itsasontsia jarri ahal bada
+		boolean emaitza=true;
+		int aux=0;
+		if (pOrientazio=="H" || pOrientazio=="h" ) {//pY ez da aldatzen
+			aux= pX+pItsas;
+			while(pX<aux && emaitza) {
+				if (  this.koordenatuanZerDagoen(pX, pY) == "U") {
+					emaitza=false;
+				}				 
+				pX++;
+			}			
+		}
+		else if(pOrientazio=="B" || pOrientazio=="b") {//pX ez da aldatzen
+			aux	=pY+ pItsas;
+			while(pY<aux) {
+				if (  this.koordenatuanZerDagoen(pX, pY) == "U") {
+					emaitza=false;
+				}
+				pY++;
+			}			
+		}		
+		return emaitza;
+	}
+	
+	
+	
 	
 	public boolean konprobatuTiroa(short pX, short pY) {
 		//honako hauek salbuespenean jarriko ditugu(teklatuan)
@@ -116,8 +117,7 @@ public class Tableroa {
 		boolean tiroa= false;
 		if( !this.uraDago(pX, pY) || this.matrizea[pY][pX] != "U") {
 			tiroa= true;
-		}
-		
+		}		
 		return tiroa;
 		}
 	
@@ -127,10 +127,8 @@ public class Tableroa {
 		String ema = this.matrizea[pY][pX];
 		if(ema== "1" || ema=="2" || ema=="3" || ema=="4" ) {
 			ema = "U";
-		}
-			
-		return ema ;
-		
+		}			
+		return ema ;		
 	}
 	
 	private boolean uraDago(short pX, short pY) {
