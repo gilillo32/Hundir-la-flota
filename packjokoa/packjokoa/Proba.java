@@ -113,9 +113,9 @@ public class Proba{
 		   }
 		}
 	}
-public static void main (String [ ] args) throws OrientazioExc
+/*public static void main (String [ ] args) throws OrientazioExc
 {	String pMezua="Kaixo";
 	Proba.getNireTeklatua(10).itsasontziakJarri(10);
-}
+}*/
 	
 }

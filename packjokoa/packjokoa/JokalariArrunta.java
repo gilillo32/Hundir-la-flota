@@ -1,4 +1,5 @@
 package packjokoa;
+import salbuespenak.*;
 
 public class JokalariArrunta extends Jokalaria {
 	
@@ -72,12 +73,13 @@ public class JokalariArrunta extends Jokalaria {
 	
 	
 	
-	public  void itsasontziakJarri(int pErrenkadaZutKop){
+	public  void itsasontziakJarri(int pErrenkadaZutKop) {
 		//salbuespenak: konprobatu posibeak direla koordenatuak, orientazioa eta ez badira zuzenak berriro jartzeko eskatuko zaio erabiltzaileari
 		short pItsas=0;
 		String pOrientazioa="Ezezagun";
 		String itsasMota="Ezezagun";//bapaezpada hasieratuko dugu
 		boolean denaOndo=false;
+		boolean denaOndo2=false;
 		
 		//itsasontziak beti orden berdinean jarriko dira
 		while(pItsas<5) {
@@ -96,8 +98,13 @@ public class JokalariArrunta extends Jokalaria {
 			 case 4:
 				 itsasMota="portahegazkinak";
 				 break;
-			 }
+			 } //switch
 			//koordenatuak pantailatik eskatu
+			
+			do {
+			
+			
+			
 			String pMezua1="Orain "+itsasMota+ " jarriko duzu "+ pItsas +" laukiko itsasontzia da, mesedez sartu lehengo koordenatua ";
 			Short pX=Teklatua.getNireTeklatua().irakurriShort(pMezua1, 0, 10);
 			
@@ -116,25 +123,27 @@ public class JokalariArrunta extends Jokalaria {
 				catch (OrientazioExc e){
 					e.mezuaInprimatu();
 				}
-				}
-			while(!denaOndo);
+				}while(!denaOndo);			
 			
-			
-		   denaOndo=false;
+		   
 		   if(pItsas!=1) {//1-eko itsasontzia ez du arazorik ematen
 			   try {
 				   if ((pX+pItsas-1>=pErrenkadaZutKop ) || (pY+pItsas-1>= pErrenkadaZutKop) ) {
 					   throw new IndexOutOfBoundsException();
 				   }
-					this.nireTableroa.itsasontziakJarri(pX, pY, pItsas, pOrientazioa);
-					denaOndo=true;
+				   this.getNireTableroa().itsasontziakJarri(pX, pY, pItsas, pOrientazioa);
+					denaOndo2=true;
 				}
 				catch(IndexOutOfBoundsException e) {
 					System.out.println("Sartu duzun itsasontzia ez da sartzen");
-					this.itsasontziakJarri(pErrenkadaZutKop);
+					
 				}
+			   catch(KoordenatuEzEgokiak e) {
+				   e.inprimatuMezua();
+			   }
 		   }
-		}
+		}  while(!denaOndo2);  //do
+		}//while(pItsas<5)
 	}
 	
 	

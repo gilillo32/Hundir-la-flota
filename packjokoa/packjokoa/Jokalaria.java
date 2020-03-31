@@ -1,5 +1,6 @@
 package packjokoa;
 
+import salbuespenak.KoordenatuEzEgokiak;
 import salbuespenak.OrientazioExc;
 
 public abstract class Jokalaria {

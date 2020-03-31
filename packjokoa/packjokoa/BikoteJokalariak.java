@@ -82,6 +82,7 @@ public class BikoteJokalariak {
 		boolean posibleaDa=true;
 		//JokalariArrunta:
 		do {
+		System.out.println(this.zerrenda[0].getIzena() + " zure txanda da!");
 		Koordenatuak k= this.zerrenda[0].txandaBatJokatu();
 		short pX= k.getKoordenatuakX();
 		short pY = k.getKoordenatuakY();
@@ -101,6 +102,7 @@ public class BikoteJokalariak {
 		//JokalariCPU
 		posibleaDa=true;
 		do {
+			System.out.println(this.zerrenda[1].getIzena() + "-ren txanda da!");
 			Koordenatuak k= this.zerrenda[1].txandaBatJokatu();
 			short pX= k.getKoordenatuakX();
 			short pY = k.getKoordenatuakY();
