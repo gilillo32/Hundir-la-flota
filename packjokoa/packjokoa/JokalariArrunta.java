@@ -7,13 +7,17 @@ public class JokalariArrunta extends Jokalaria {
 	}
 	
 	@Override
-	public void txandaBatJokatu(Jokalaria pJokalaria) {	
+	public Koordenatuak txandaBatJokatu() {	
 		//koordenatuak eskatu
+		
 		String pMezua1="Sartu zure lehenengo koordenatua mesedez";
 		Short pX=Teklatua.getNireTeklatua().irakurriShort(pMezua1, 1, 10);
 		String pMezua2="Sartu zure lehenengo koordenatua mesedez";
 		Short pY=Teklatua.getNireTeklatua().irakurriShort(pMezua2, 1, 10);
+		Koordenatuak k = new Koordenatuak(pX, pY);
 		
+		return k;
+		/*
 		boolean posibleaDa=true;
 		while(posibleaDa) {
 			if(this.koordenadaBaliogarriak(pX, pY)) {
@@ -34,10 +38,10 @@ public class JokalariArrunta extends Jokalaria {
 			else {
 				posibleaDa=false;
 			}
-		}
+		}*/
 	}
 
-	private boolean koordenadaBaliogarriak(short pX, short pY) {
+	public boolean koordenadaBaliogarriak(short pX, short pY) {
 		 return super.getNireTableroa().konprobatuTiroa(pX, pY);
 	}
 
@@ -47,7 +51,7 @@ public class JokalariArrunta extends Jokalaria {
 		//itzuliko duen String-a hirugarren tiroan erabiliko da
 	}
 
-	private void eguneratuPrintTableroa(short pX, short pY, String pEma) {
+	public  void eguneratuPrintTableroa(short pX, short pY, String pEma) {
 		// primeros llamamos a super.nUkituaInkrementatu y luego a tableroa.eguneratu
 		//bigarren tiroan itzuli duen String-a dagokion posizioan sartuko du
 		if(pEma=="U") {

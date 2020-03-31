@@ -99,7 +99,7 @@ public abstract class Jokalaria {
 		}*/
 
 	
-	public abstract void txandaBatJokatu( Jokalaria pJokalaria);		
+	public abstract Koordenatuak txandaBatJokatu( );		
 	
 	/*protected void setIzena(String pIzena) {
 		this.izena = pIzena;
@@ -121,14 +121,34 @@ public abstract class Jokalaria {
 		
 	}
 
-	protected String koordenatuanZerDagoen(short pX, short pY) {
-		return this.nireTableroa.bigarrenTiroa(pX, pY);
+	public String koordenatuanZerDagoen(short pX, short pY) {
+		return this.nireTableroa.koordenatuanZerDagoen(pX, pY);
 		//itzuliko duen String-a hirugarren tiroan erabiliko da
 	}
+	
+	public boolean koordenadaBaliogarriak(short pX, short pY) {
+		return this.getNireTableroa().konprobatuTiroa(pX, pY);
+	}
+
+	public void eguneratuPrintTableroa(short pX, short pY, String pEma) {
+		// primeros llamamos a super.nUkituaInkrementatu y luego a tableroa.eguneratu
+		//bigarren tiroan itzuli duen String-a dagokion posizioan sartuko du
+		if(pEma == "U") {
+			//Itsasontzia "U"kitu badu:
+			this.nUkituaInkrementatu();
+		}
+		this.getNireTableroa().eguneratuTableroa(pX, pY, pEma);
+  
+	}
+	
+	
 	
 	public String getIzena() {
 		return this.izena;
 	}
+	
+	
+	
 	
 
 }

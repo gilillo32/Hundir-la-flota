@@ -29,14 +29,14 @@ public class BikoteJokalariak {
 		}
 	
 			//inprimatu nork irabazi duen
-		if (zerrenda[0].itsasontzirikEz() && zerrenda[1].itsasontzirikEz()) {
+		if (this.zerrenda[0].itsasontzirikEz() && this.zerrenda[1].itsasontzirikEz()) {
 			System.out.println("BERDINKETA");
 		}
-		else if(zerrenda[0].itsasontzirikEz()) {
-			System.out.println("ZORIONAK " + zerrenda[0].getIzena() + "IRABAZI DUZU!!!!   :)  <3 ");
+		else if(this.zerrenda[0].itsasontzirikEz()) {
+			System.out.println("ZORIONAK " + this.zerrenda[0].getIzena() + "IRABAZI DUZU!!!!   :)  <3 ");
 		}
 		else {
-			System.out.println("GAME OVER " + zerrenda[0].getIzena() + "GALDU DUZU!!!!  :(    ");
+			System.out.println("GAME OVER " + this.zerrenda[0].getIzena() + "GALDU DUZU!!!!  :(    ");
 		}
 	}
 	
@@ -57,10 +57,10 @@ public class BikoteJokalariak {
 		// ez badago itsasontzirik, partida amaitzen da.
 		// itsasontzirikEz() erabiliko da jokalarien tableroak ikusteko.
 		boolean ema=false;
-		if(zerrenda[0].itsasontzirikEz()) {
+		if(this.zerrenda[0].itsasontzirikEz()) {
 			ema= true;
 		}
-		else if (zerrenda[1].itsasontzirikEz()) {
+		else if (this.zerrenda[1].itsasontzirikEz()) {
 			ema= true;
 		}
 		
@@ -73,12 +73,41 @@ public class BikoteJokalariak {
 	
 	public void txandaBatJolastu() {
 		
+		Koordenatuak k= this.zerrenda[0].txandaBatJokatu();
+		short pX= k.getKoordenatuakX();
+		short pY = k.getKoordenatuakY();
+		
+		boolean posibleaDa=true;
+		while(posibleaDa) {
+			if(this.zerrenda[0].k  ) {//this.koordenadaBaliogarriak(pX, pY)
+				String emaitza = pJokalaria.koordenatuanZerDagoen(pX, pY);
+				this.eguneratuPrintTableroa(pX, pY, emaitza);
+				if(emaitza!="U") {
+					//Itsasontzia ez badu ukitzen:
+					posibleaDa=false; 
+				}
+				else {
+					//koordenatuak eskatu berriro, itsasontzia ukitu duelako
+					String pMezua11="Sartu zure lehenengo koordenatua mesedez";
+					pX=Teklatua.getNireTeklatua().irakurriShort(pMezua11, 1, 10);
+					String pMezua21="Sartu zure lehenengo koordenatua mesedez";
+				    pY=Teklatua.getNireTeklatua().irakurriShort(pMezua21, 1, 10);
+				}
+			}
+			else {
+				posibleaDa=false;
+			}
+		}
+		
+		
 	}
 	
 
 	
 	
 	
+	
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	public static void main (String [ ] args) 	{	
 		
 		System.out.println("kAIXO LAGUN!");

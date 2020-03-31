@@ -121,7 +121,7 @@ public class Tableroa {
 		return tiroa;
 		}
 	
-	public String bigarrenTiroa(short pX, short pY) {
+	public String koordenatuanZerDagoen(short pX, short pY) {
 		//salbuespen del teklado SE MIRA AL PEDIR LA CORDENADA
 		//honek etsaiaren tableroan begiratuko du zer dagoen kasilan, itsasontsia baldin badago "U" bueltatzen du, bestela, han dagoena, hau da, ura "-"
 		String ema = this.matrizea[pY][pX];
