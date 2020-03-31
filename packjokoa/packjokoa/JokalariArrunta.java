@@ -39,6 +39,7 @@ public class JokalariArrunta extends Jokalaria {
 				posibleaDa=false;
 			}
 		}*/
+		
 	}
 
 	public boolean koordenadaBaliogarriak(short pX, short pY) {
