@@ -83,6 +83,7 @@ public class JokalariArrunta extends Jokalaria {
 		
 		//itsasontziak beti orden berdinean jarriko dira
 		while(pItsas<5) {
+			do {
 			pItsas++;
 			//hiztegi txiki bat sortuko dugu itsasontzentzako			
 			switch(pItsas) {
@@ -101,7 +102,7 @@ public class JokalariArrunta extends Jokalaria {
 			 } //switch
 			//koordenatuak pantailatik eskatu
 			
-			do {
+			
 			
 			
 			
@@ -112,9 +113,11 @@ public class JokalariArrunta extends Jokalaria {
 			Short pY=Teklatua.getNireTeklatua().irakurriShort(pMezua2, 0, 10);
 			
 			String pMezua3="Sartu barkuaren orientazioa: H edo B";
-			do {
-			 pOrientazioa=Teklatua.getNireTeklatua().irakurriString(pMezua3); //MALLL
-				try{
+			//do {
+			String pH="h";
+			String pB="b";
+			 pOrientazioa=Teklatua.getNireTeklatua().irakurriBaiEz(pMezua3, pH, pB); //MALLL
+				/*try{
 					if(pOrientazioa!="B" || pOrientazioa!="b" || pOrientazioa!="H" || pOrientazioa!="h") {
 						throw new  OrientazioExc("Sartu behar duzu H edo B");
 					}
@@ -122,8 +125,8 @@ public class JokalariArrunta extends Jokalaria {
 				}
 				catch (OrientazioExc e){
 					e.mezuaInprimatu();
-				}
-				}while(!denaOndo);			
+				}*/
+			//	}while(!denaOndo);			
 			
 		   
 		   if(pItsas!=1) {//1-eko itsasontzia ez du arazorik ematen
