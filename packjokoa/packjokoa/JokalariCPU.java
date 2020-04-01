@@ -21,8 +21,9 @@ public class JokalariCPU extends Jokalaria {
 		byte kontagailu = 0;
 		byte zentzuFinkoa = 0;
 		Koordenatuak koordenatuOriginalak;
-	
 		
+		
+		/*
 		while(!amaituDa) {
 			Random rand = new Random();
 			short pX = (short) ((short) rand.nextInt(10) + 1);
@@ -78,6 +79,7 @@ public class JokalariCPU extends Jokalaria {
 				}
 			}
 		}
+		*/
 		
 	}
 
