@@ -30,6 +30,21 @@ public class Teklatua {
 		return emaitza;
 	}
 
+	
+	
+	
+	public String irakurriBaiEz(String pMezua, String pH, String pB) { 
+		String emaitza; 
+		do { System.out.println(pMezua); 
+		emaitza = sc.nextLine(); 
+		}while(!emaitza.equalsIgnoreCase(pH) && !emaitza.equalsIgnoreCase(pB)); 
+		return emaitza; 
+		} 
+	
+	
+	
+	
+	
 	public String irakurriString(){
 		String mezua=this.sc.nextLine();
 		//faltaria salbuespena de si no mete una H o B
@@ -62,7 +77,7 @@ public class Teklatua {
 	
 	//short bat irakurtzeko
 
-	public short irakurriShort(String pMezua, int pNundik, int pNora) throws NumberFormatException{
+	public short irakurriShort(String pMezua, int pNundik, int pNora){
 		short emaitza = (short) (pNundik -1);
         boolean denaOndo=false;
         do {

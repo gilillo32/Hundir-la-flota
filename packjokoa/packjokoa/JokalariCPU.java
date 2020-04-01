@@ -82,7 +82,7 @@ public class JokalariCPU extends Jokalaria {
 	}
 
 	public boolean koordenadaBaliogarriak(short pX, short pY) {
-		return super.getNireTableroa().konprobatuTiroa(pX, pY);
+		return super.koordenadaBaliogarriak(pX, pY);
 	}
 
 	
@@ -93,14 +93,7 @@ public class JokalariCPU extends Jokalaria {
 
 	
 	public void eguneratuPrintTableroa(short pX, short pY, String pEma) {
-		// primeros llamamos a super.nUkituaInkrementatu y luego a tableroa.eguneratu
-		//bigarren tiroan itzuli duen String-a dagokion posizioan sartuko du
-		if(pEma == "U") {
-			//Itsasontzia "U"kitu badu:
-			super.nUkituaInkrementatu();
-		}
-		this.getNireTableroa().eguneratuTableroa(pX, pY, pEma);
-  
+		super.eguneratuPrintTableroa(pX, pY, pEma);
 	}
 	
 	/*public void setIzena() {
