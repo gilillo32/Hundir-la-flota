@@ -30,7 +30,7 @@ public class BikoteJokalariak {
 		
 		
 		while (!this.partidaBukatu()) {
-			this.txandaBatJolastu();			
+			this.KoordenatuaAukeratu();			
 		}
 	
 			//inprimatu nork irabazi duen
@@ -78,7 +78,7 @@ public class BikoteJokalariak {
 	
 	
 	
-	public void txandaBatJolastu() {
+	public void KoordenatuaAukeratu() {
 		boolean posibleaDa=true;
 		//JokalariArrunta:
 		do {

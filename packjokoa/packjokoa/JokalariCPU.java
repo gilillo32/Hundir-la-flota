@@ -9,7 +9,7 @@ public class JokalariCPU extends Jokalaria {
 		super("CPU", pErrenkadaZutKop);
 	}
 	  
-	 public void txandaBatJokatu(Jokalaria pJokalaria) {
+	 public void KoordenatuaAukeratu(Jokalaria pJokalaria) {
 		boolean amaituDa = false;
 		boolean aurrekoanUkituDu = false;
 		boolean zentzuaAldatuBeharDu = false;

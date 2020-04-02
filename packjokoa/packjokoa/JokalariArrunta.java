@@ -8,7 +8,7 @@ public class JokalariArrunta extends Jokalaria {
 	}
 	
 	@Override
-	public Koordenatuak txandaBatJokatu() {	
+	public Koordenatuak KoordenatuaAukeratu() {	
 		//koordenatuak eskatu
 		
 		String pMezua1="Sartu zure lehenengo koordenatua mesedez";
