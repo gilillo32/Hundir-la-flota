@@ -30,7 +30,7 @@ public class BikoteJokalariak {
 		
 		
 		while (!this.partidaBukatu()) {
-			this.KoordenatuaAukeratu();			
+			this.koordenatuaAukeratu();			
 		}
 	
 			//inprimatu nork irabazi duen
@@ -78,12 +78,12 @@ public class BikoteJokalariak {
 	
 	
 	
-	public void KoordenatuaAukeratu() {
+	public void koordenatuaAukeratu() {
 		boolean posibleaDa=true;
 		//JokalariArrunta:
 		do {
 		System.out.println(this.zerrenda[0].getIzena() + " zure txanda da!");
-		Koordenatuak k= this.zerrenda[0].txandaBatJokatu();
+		Koordenatuak k= this.zerrenda[0].koordenatuaAukeratu();
 		short pX= k.getKoordenatuakX();
 		short pY = k.getKoordenatuakY();
 		
@@ -103,7 +103,7 @@ public class BikoteJokalariak {
 		posibleaDa=true;
 		do {
 			System.out.println(this.zerrenda[1].getIzena() + "-ren txanda da!");
-			Koordenatuak k= this.zerrenda[1].txandaBatJokatu();
+			Koordenatuak k= this.zerrenda[1].koordenatuaAukeratu();
 			short pX= k.getKoordenatuakX();
 			short pY = k.getKoordenatuakY();
 			
