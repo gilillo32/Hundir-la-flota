@@ -22,7 +22,7 @@ public class JokalariCPU extends Jokalaria {
 	 public Koordenatuak koordenatuaAukeratu( Koordenatuak pK1,  boolean pAurrekoanAsmatu) {
 		Koordenatuak k= new Koordenatuak();	
 		boolean errepikatuta=false;
-		if(!pAurrekoanAsmatu && this.albokoKoordenatuak.size()==0 ) {
+		if(!pAurrekoanAsmatu && this.albokoKoordenatuak.size()==0 ) { //ez dago arazorik, lehen saiakear da
 			do {
 				Random rand = new Random();
 				short pX = (short) ((short) rand.nextInt(10) + 1);//1-etik 10 zenbaki bat bueltatzeko
@@ -38,18 +38,40 @@ public class JokalariCPU extends Jokalaria {
 				}					
 			} while(errepikatuta);		
 		}
-		else if(pAurrekoanAsmatu &&  this.albokoKoordenatuak.size()==0) {
+		else if(pAurrekoanAsmatu &&  this.albokoKoordenatuak.size()==0) { //lehen aldiz ikutu du
 			this.albokoKordenatuakSortu(pK1);
 			this.koordenatuOriginalak=pK1;
+			int kont=0;
 			do {
 				k=this.albokoKoordenatuak.get(this.zentzua);
+				kont++;
 				if (this.zentzua==3) {
 					this.zentzua=0;
 				}
 				else {
 					this.zentzua++;
 				}
-			}while(k.getKoordenatuakY()== (Short)null && k.getKoordenatuakX()== (Short)null);
+			}while(k.getKoordenatuakY()== (Short)null && k.getKoordenatuakX()== (Short)null && this.esandakoKoordenatuak.contains(k) && kont<=4);
+			if(this.esandakoKoordenatuak.contains(k) && kont==4) {
+				errepikatuta= false;
+				do {
+					Random rand = new Random();
+					short pX = (short) ((short) rand.nextInt(10) + 1);//1-etik 10 zenbaki bat bueltatzeko
+					short pY = (short) ((short) rand.nextInt(10) + 1);
+					k.setKoordenatuakX(pX);
+					k.setKoordenatuakY(pY);
+					if(!this.esandakoKoordenatuak.contains(k)) {
+						this.esandakoKoordenatuak.add(k);
+						errepikatuta=false;
+					}
+					else {
+						errepikatuta=true;
+					}					
+				} while(errepikatuta);	
+			}
+
+		}
+		else if(pAurrekoanAsmatu && this.albokoKoordenatuak.size()!=0) { //ez da ukitzen duen lehenengo aldia
 			
 		}
 		
@@ -60,6 +82,12 @@ public class JokalariCPU extends Jokalaria {
 	 private void albokoKordenatuakSortu(Koordenatuak pK) {
 		short auxPX = pK.getKoordenatuakX() ;
 		short auxPY = pK.getKoordenatuakY();
+		
+		/*
+		 		Koordenatuak auxK = this.zentzuBateanKoordenatuBerriak(auxPX, auxPY, (byte)0); //zentzua 0a
+		if(!this.esandakoKoordenatuak.contains(auxK)) { //jada esan dituen koordenatuak badira ez ditu zerrendan sartuko
+		this.gehituAlbokoKoordenatuak(auxK);
+		} */
 		
 		//eskuina		
 		this.gehituAlbokoKoordenatuak(this.zentzuBateanKoordenatuBerriak(auxPX, auxPY, (byte)0));
