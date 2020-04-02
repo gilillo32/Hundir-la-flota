@@ -18,78 +18,47 @@ public class Tableroa {
 	
 	private void tableroaInprimatu() {
 		//hasieratu indizeak
-		int akum=1;
+		int akum=0;
 		int e= 0;
 		int z= 1;
 		while(z<this.matrizea[e].length) {
-				 this.matrizea[e][z]= String.valueOf(akum);
-				 this.matrizea[z][e]= String.valueOf(akum);
-				 z++;
-				 akum++;
+			this.matrizea[0][0]="  ";
+			this.matrizea[e][z]= String.valueOf(" "+akum);
+			this.matrizea[z][e]= String.valueOf(akum+" ");
+			z++;
+			akum++;
 		}
 		
 		while (e< this.errenZutKop ) { //erabili daiteke This.matrizea.length
-
+			z=0;
 			while (z<this.errenZutKop) { //erabili daiteke this.matrize[e].length
 				
-				System.out.print(  this.matrizea[e][z]);		//aldi bakoitzean hurrengo lerroan inprimatzen du	
+				System.out.print(  this.matrizea[e][z]); //aldi bakoitzean hurrengo lerroan inprimatzen du
 				z++;
 			}
+			e++;
 			System.out.print("\n");
-			e++;
+			
 		}
-		
-	/*	
-		for ( e = 0; e < this.matrizea.length; ++e) {
-		      for( z = 0; z < this.matrizea[e].length; ++z) {
-		        System.out.print(this.matrizea[e][z]);
-		        }
-		      System.out.print("\n");
-		      }
-		
-		
-		*/
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	/*	
-
-		System.out.print(" "); // lehennegoz hutsune bat inprimatu
-		//Orain zutabeen indizeak imprimatuko ditu
-		while (e<this.errenZutKop ) { 
-			System.out.print(" "+e);	//linea berean inprimatzen du
-			//deasberdin egingo dugu luzera hamar baino handiagoa denean, bain ahori bigarren mailako ataza da.
-			e++;
-		}
-		System.out.print("\n");
-		e=0; //berriro hasieratuko dugu
-		while (e< this.errenZutKop ) { //erabili daiteke This.matrizea.lengthç
-
-			while (z<this.errenZutKop) { //erabili daiteke this.matrize[e].length
-
-				System.out.println(z+ " " + this.matrizea[e][z]);		//aldi bakoitzean hurrengo lerroan inprimatzen du	
-				z++;
-			}
-			e++;
-		}*/
-		
 	}
 	
 	public void tableroaBete() { //uraz beteko dugu "-"
 		//hasieratu indizeak
 		int e= 1;
 		int z= 1;
-		while (e< this.errenZutKop ) { //erabili daiteke This.matrizea.length
+		while (e< this.errenZutKop) { //erabili daiteke This.matrizea.length
+			z= 1;
 			while (z<this.errenZutKop) { //erabili daiteke this.matrize[e].length
-				this.matrizea[e][z] = "-";
+				/*if(e==10) {
+					this.matrizea[e][z] = "- ";
+				}
+				else if(z==10) {
+					this.matrizea[e][z] = "  - ";
+				}
+				else {*/
+					this.matrizea[e][z] = " -";
+				//}
+				
 				z++;
 			}	
 			e++;

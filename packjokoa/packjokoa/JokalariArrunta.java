@@ -103,10 +103,10 @@ public class JokalariArrunta extends Jokalaria {
 			
 			
 			String pMezua1="Orain "+itsasMota+ " jarriko duzu "+ pItsas +" laukiko itsasontzia da, mesedez sartu lehengo koordenatua ";
-			Short pX=Teklatua.getNireTeklatua().irakurriShort(pMezua1, 0, 10);
+			Short pX=Teklatua.getNireTeklatua().irakurriShort(pMezua1, 0, 9);
 			
 			String pMezua2="Sartu bigarren koordenatua mesedez";
-			Short pY=Teklatua.getNireTeklatua().irakurriShort(pMezua2, 0, 10);
+			Short pY=Teklatua.getNireTeklatua().irakurriShort(pMezua2, 0, 9);
 			
 			String pMezua3="Sartu barkuaren orientazioa: H edo B";
 			
