@@ -11,10 +11,6 @@ public class JokalariCPU extends Jokalaria {
 	  
 <<<<<<< HEAD
 	 public void KoordenatuaAukeratu(Jokalaria pJokalaria) {
-		boolean amaituDa = false;
-=======
-	 public void txandaBatJokatu(Jokalaria pJokalaria) {
->>>>>>> branch 'master' of https://github.com/gilillo32/JOKOA.git
 		boolean aurrekoanUkituDu = false;
 		boolean zentzuaAldatuBeharDu = false;
 		boolean zentzuaBadaki = false;
