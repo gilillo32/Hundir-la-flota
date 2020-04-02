@@ -10,6 +10,7 @@ public class JokalariCPU extends Jokalaria {
 	private boolean zentzuaBadaki = false;
 	private short jarraianAurkituDitzakeenUkitutak = 4;
 	private short zenbatUkituDituJarraian = 0;
+	private byte zentzua=0;
 	
 	public JokalariCPU(short pErrenkadaZutKop) {		
 		super("CPU", pErrenkadaZutKop);
@@ -35,18 +36,50 @@ public class JokalariCPU extends Jokalaria {
 				else {
 					errepikatuta=true;
 				}					
-			} while(errepikatuta);
-		
+			} while(errepikatuta);		
 		}
+		else if(pAurrekoanAsmatu &&  this.albokoKoordenatuak.size()==0) {
+			this.albokoKordenatuakSortu(pK1);
+			this.koordenatuOriginalak=pK1;
+			do {
+				k=this.albokoKoordenatuak.get(this.zentzua);
+				if (this.zentzua==3) {
+					this.zentzua=0;
+				}
+				else {
+					this.zentzua++;
+				}
+			}while(k.getKoordenatuakY()== (Short)null && k.getKoordenatuakX()== (Short)null);
+			
+		}
+		
 		
 		return  k ;
 	}
 	 
+	 private void albokoKordenatuakSortu(Koordenatuak pK) {
+		short auxPX = pK.getKoordenatuakX() ;
+		short auxPY = pK.getKoordenatuakY();
+		
+		//eskuina		
+		this.gehituAlbokoKoordenatuak(this.zentzuBateanKoordenatuBerriak(auxPX, auxPY, (byte)0));
+		 		 
+		//gora
+		this.gehituAlbokoKoordenatuak(this.zentzuBateanKoordenatuBerriak(auxPX, auxPY, (byte)1));
+		 
+		//ezkerra
+		this.gehituAlbokoKoordenatuak(this.zentzuBateanKoordenatuBerriak(auxPX, auxPY, (byte)2));
+		 
+		//behera
+		this.gehituAlbokoKoordenatuak(this.zentzuBateanKoordenatuBerriak(auxPX, auxPY, (byte)3));
+	 }
 	 
-
+	 
 	private void gehituEsandakoKoordenatuak (Koordenatuak pK) {
 		this.esandakoKoordenatuak.add(pK);
 	}
+	
+	
 	
 	private void gehituAlbokoKoordenatuak (Koordenatuak pK) {
 		this.albokoKoordenatuak.add(pK);
