@@ -9,8 +9,12 @@ public class JokalariCPU extends Jokalaria {
 		super("CPU", pErrenkadaZutKop);
 	}
 	  
+<<<<<<< HEAD
 	 public void KoordenatuaAukeratu(Jokalaria pJokalaria) {
 		boolean amaituDa = false;
+=======
+	 public void txandaBatJokatu(Jokalaria pJokalaria) {
+>>>>>>> branch 'master' of https://github.com/gilillo32/JOKOA.git
 		boolean aurrekoanUkituDu = false;
 		boolean zentzuaAldatuBeharDu = false;
 		boolean zentzuaBadaki = false;
@@ -21,66 +25,57 @@ public class JokalariCPU extends Jokalaria {
 		byte kontagailu = 0;
 		byte zentzuFinkoa = 0;
 		Koordenatuak koordenatuOriginalak;
-		
-		
-		/*
-		while(!amaituDa) {
-			Random rand = new Random();
-			short pX = (short) ((short) rand.nextInt(10) + 1);
-			short pY = (short) ((short) rand.nextInt(10) + 1);
-			koordenatuOriginalak = new Koordenatuak(pX, pY);
-			if(!aurrekoanUkituDu && !zentzuaAldatuBeharDu) {
-				//arazorik ez badago
-				if(this.koordenadaBaliogarriak(pX, pY)) {
-					String emaitza = pJokalaria.koordenatuanZerDagoen(pX, pY);
-					this.eguneratuPrintTableroa(pX, pY, emaitza);
-					if(emaitza != "U") {
-						amaituDa = true;
-					}
-					else {
-						aurrekoanUkituDu = true;
-						zenbatUkituDituJarraian++;
-					}
+				 
+		Random rand = new Random();
+		short pX = (short) ((short) rand.nextInt(10) + 1);
+		short pY = (short) ((short) rand.nextInt(10) + 1);
+		koordenatuOriginalak = new Koordenatuak(pX, pY);
+		if(!aurrekoanUkituDu && !zentzuaAldatuBeharDu) {
+			//arazorik ez badago
+			if(this.koordenadaBaliogarriak(pX, pY)) {
+				String emaitza = pJokalaria.koordenatuanZerDagoen(pX, pY);
+				this.eguneratuPrintTableroa(pX, pY, emaitza);
+				if(emaitza == "U") {
+					aurrekoanUkituDu = true;
+					zenbatUkituDituJarraian++;
 				}
-			}
-			else {
-				if(aurrekoanUkituDu) {
-					if(!zentzuaAldatuBeharDu && !zentzuaBadaki) {
-						boolean ahalDa = false;
-						while(!ahalDa && kontagailu <= 3) {
-							Koordenatuak koordenatuBerriak = this.zentzuBateanKoordenatuBerriak(pX, pY, kontagailu);
-							pXprima = koordenatuBerriak.getKoordenatuakX();
-							pYprima = koordenatuBerriak.getKoordenatuakY();
-							if(pXprima != (Short)null && pYprima != (Short)null) {
-								ahalDa = this.koordenadaBaliogarriak(pXprima, pYprima);
-							}
-							else {
-								kontagailu++;
-							}
-						}
-						String emaitza = pJokalaria.koordenatuanZerDagoen(pXprima, pYprima);
-						this.eguneratuPrintTableroa(pXprima, pYprima, emaitza);
-						if(emaitza != "U") {
-							zentzuaAldatuBeharDu = true;
-							amaituDa = true;
-						}
-						else {
-							zenbatUkituDituJarraian++;
-							if(zenbatUkituDituJarraian == 2) {
-								zentzuFinkoa = kontagailu;
-								zentzuaBadaki = true;
-							}
-							zentzuaAldatuBeharDu = false;
-							pX = pXprima;
-							pY = pYprima;
-						}
-					}
-					
-				}
+				
 			}
 		}
-		*/
-		
+		else {
+			if(aurrekoanUkituDu) {
+				if(!zentzuaAldatuBeharDu && !zentzuaBadaki) {
+					boolean ahalDa = false;
+					while(!ahalDa && kontagailu <= 3) {
+						Koordenatuak koordenatuBerriak = this.zentzuBateanKoordenatuBerriak(pX, pY, kontagailu);
+						pXprima = koordenatuBerriak.getKoordenatuakX();
+						pYprima = koordenatuBerriak.getKoordenatuakY();
+						if(pXprima != (Short)null && pYprima != (Short)null) {
+							ahalDa = this.koordenadaBaliogarriak(pXprima, pYprima);
+						}
+						else {
+							kontagailu++;
+						}
+					}
+					String emaitza = pJokalaria.koordenatuanZerDagoen(pXprima, pYprima);
+					this.eguneratuPrintTableroa(pXprima, pYprima, emaitza);
+					if(emaitza != "U") {
+						zentzuaAldatuBeharDu = true;
+					}
+					else {
+						zenbatUkituDituJarraian++;
+						if(zenbatUkituDituJarraian == 2) {
+							zentzuFinkoa = kontagailu;
+							zentzuaBadaki = true;
+						}
+						zentzuaAldatuBeharDu = false;
+						pX = pXprima;
+						pY = pYprima;
+					}
+				}
+				
+			}
+		}
 	}
 
 	public boolean koordenadaBaliogarriak(short pX, short pY) {
