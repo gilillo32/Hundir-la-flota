@@ -20,7 +20,7 @@ public class JokalariCPU extends Jokalaria {
 		byte kontagailu = 0;
 		byte zentzuFinkoa = 0;
 		Koordenatuak koordenatuOriginalak;
-				
+				 
 		Random rand = new Random();
 		short pX = (short) ((short) rand.nextInt(10) + 1);
 		short pY = (short) ((short) rand.nextInt(10) + 1);
