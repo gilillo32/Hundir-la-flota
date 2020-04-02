@@ -81,10 +81,13 @@ public class BikoteJokalariak {
 	
 	public void koordenatuaAukeratu() {
 		boolean posibleaDa=true;
+		boolean aurrekoanAsmatu =false;
+		
+		
 		//JokalariArrunta:
 		do {
 		System.out.println(this.zerrenda[0].getIzena() + " zure txanda da!");
-		Koordenatuak k= this.zerrenda[0].koordenatuaAukeratu();
+		Koordenatuak k= ((JokalariArrunta)this.zerrenda[0]).koordenatuaAukeratu();
 		short pX= k.getKoordenatuakX();
 		short pY = k.getKoordenatuakY();
 		
@@ -104,9 +107,10 @@ public class BikoteJokalariak {
 		posibleaDa=true;
 		do {
 			System.out.println(this.zerrenda[1].getIzena() + "-ren txanda da!");
-			Koordenatuak k= this.zerrenda[1].koordenatuaAukeratu();
-			short pX= k.getKoordenatuakX();
-			short pY = k.getKoordenatuakY();
+			Koordenatuak k1= new Koordenatuak();
+			k1= ((JokalariCPU)this.zerrenda[1]).koordenatuaAukeratu(k1,   aurrekoanAsmatu);
+			short pX= k1.getKoordenatuakX();
+			short pY = k1.getKoordenatuakY();
 			
 				if(this.zerrenda[1].koordenadaBaliogarriak(pX, pY)  ) {
 					String emaitza = this.zerrenda[0].koordenatuanZerDagoen(pX, pY);
@@ -114,7 +118,13 @@ public class BikoteJokalariak {
 					if(emaitza!="U") {
 						//Itsasontzia ez badu ukitzen:
 						posibleaDa=false; 
-					}				
+						aurrekoanAsmatu=false;
+						
+					}
+					else {
+						aurrekoanAsmatu=true;
+						
+					}
 				}
 				else {
 					posibleaDa=false;

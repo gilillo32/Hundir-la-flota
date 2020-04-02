@@ -29,7 +29,7 @@ public abstract class Jokalaria {
 	public abstract void itsasontziakJarri(int pErrenkadaZutKop);
 
 	
-	public abstract Koordenatuak koordenatuaAukeratu( );		
+	//public abstract Koordenatuak koordenatuaAukeratu(Koordenatuak pK1, int pAkum, boolean pAurrekoanAsmatu );		
 	
 	/*protected void setIzena(String pIzena) {
 		this.izena = pIzena;
@@ -76,6 +76,8 @@ public abstract class Jokalaria {
 	public String getIzena() {
 		return this.izena;
 	}
+
+	
 	
 	
 	

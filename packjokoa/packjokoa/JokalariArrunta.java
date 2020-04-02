@@ -7,7 +7,7 @@ public class JokalariArrunta extends Jokalaria {
 		super(pIzena, pErrenkadaZutKop); 
 	}
 	
-	@Override
+
 	public Koordenatuak koordenatuaAukeratu() {	
 		//koordenatuak eskatu
 		
