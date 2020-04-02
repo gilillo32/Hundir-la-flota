@@ -116,7 +116,7 @@ public class JokalariArrunta extends Jokalaria {
 			//do {
 			String pH="h";
 			String pB="b";
-			 pOrientazioa=Teklatua.getNireTeklatua().irakurriBaiEz(pMezua3, pH, pB); //MALLL
+			 pOrientazioa=Teklatua.getNireTeklatua().irakurriOrientazioa(pMezua3, pH, pB); //MALLL
 				/*try{
 					if(pOrientazioa!="B" || pOrientazioa!="b" || pOrientazioa!="H" || pOrientazioa!="h") {
 						throw new  OrientazioExc("Sartu behar duzu H edo B");

@@ -13,70 +13,73 @@ public class JokalariCPU extends Jokalaria {
 		boolean amaituDa = false;
 		boolean aurrekoanUkituDu = false;
 		boolean zentzuaAldatuBeharDu = false;
+		boolean zentzuaBadaki = false;
 		short jarraianAurkituDitzakeenUkitutak = 4;
 		short zenbatUkituDituJarraian = 0;
+		short pXprima = (Short)null;
+		short pYprima = (Short)null;
+		byte kontagailu = 0;
+		byte zentzuFinkoa = 0;
+		Koordenatuak koordenatuOriginalak;
 		
+		
+		/*
 		while(!amaituDa) {
 			Random rand = new Random();
 			short pX = (short) ((short) rand.nextInt(10) + 1);
 			short pY = (short) ((short) rand.nextInt(10) + 1);
-			Koordenatuak koordenatuOriginalak = new Koordenatuak(pX, pY);
+			koordenatuOriginalak = new Koordenatuak(pX, pY);
 			if(!aurrekoanUkituDu && !zentzuaAldatuBeharDu) {
-				//aurrekoan ezer ez badu lortu:
+				//arazorik ez badago
 				if(this.koordenadaBaliogarriak(pX, pY)) {
 					String emaitza = pJokalaria.koordenatuanZerDagoen(pX, pY);
 					this.eguneratuPrintTableroa(pX, pY, emaitza);
 					if(emaitza != "U") {
-						//Itsasontzia ez badu ukitzen:
-						zenbatUkituDituJarraian = 0;
 						amaituDa = true;
 					}
 					else {
-						//Ukitu badu:
-						this.nUkituaInkrementatu();
-						zenbatUkituDituJarraian++;
 						aurrekoanUkituDu = true;
+						zenbatUkituDituJarraian++;
 					}
 				}
 			}
 			else {
-				//aurrekoan itsasontzi bat lehenengo aldiz ukitu badu:
-				if(aurrekoanUkituDu && !zentzuaAldatuBeharDu) {
-					Koordenatuak koordenatuBerriak = new Koordenatuak();
-					koordenatuBerriak = this.albokoAusazkoKoordenatuakEratu(pX, pY);
-					short pXprima = koordenatuBerriak.getKoordenatuakX();
-					short pYprima = koordenatuBerriak.getKoordenatuakY();
-					if(this.koordenadaBaliogarriak(pXprima, pYprima)) {
+				if(aurrekoanUkituDu) {
+					if(!zentzuaAldatuBeharDu && !zentzuaBadaki) {
+						boolean ahalDa = false;
+						while(!ahalDa && kontagailu <= 3) {
+							Koordenatuak koordenatuBerriak = this.zentzuBateanKoordenatuBerriak(pX, pY, kontagailu);
+							pXprima = koordenatuBerriak.getKoordenatuakX();
+							pYprima = koordenatuBerriak.getKoordenatuakY();
+							if(pXprima != (Short)null && pYprima != (Short)null) {
+								ahalDa = this.koordenadaBaliogarriak(pXprima, pYprima);
+							}
+							else {
+								kontagailu++;
+							}
+						}
 						String emaitza = pJokalaria.koordenatuanZerDagoen(pXprima, pYprima);
 						this.eguneratuPrintTableroa(pXprima, pYprima, emaitza);
-						if(emaitza != "U") {							
+						if(emaitza != "U") {
 							zentzuaAldatuBeharDu = true;
-							aurrekoanUkituDu = false;
 							amaituDa = true;
 						}
 						else {
-							this.nUkituaInkrementatu();
 							zenbatUkituDituJarraian++;
-							aurrekoanUkituDu = true;
-						}
-					}
-				}
-				else {
-					if(!aurrekoanUkituDu && zentzuaAldatuBeharDu) {
-						boolean baliogarriak = false;
-						while(!baliogarriak) {
-							Koordenatuak koordenatuBerriak = new Koordenatuak();
-							koordenatuBerriak = this.albokoAusazkoKoordenatuakEratu(pX, pY);
-							short pXprima = koordenatuBerriak.getKoordenatuakX();
-							short pYprima = koordenatuBerriak.getKoordenatuakY();
-							if(this.koordenadaBaliogarriak(pXprima, pYprima)) {
-								baliogarriak = true;
+							if(zenbatUkituDituJarraian == 2) {
+								zentzuFinkoa = kontagailu;
+								zentzuaBadaki = true;
 							}
+							zentzuaAldatuBeharDu = false;
+							pX = pXprima;
+							pY = pYprima;
 						}
 					}
+					
 				}
 			}
 		}
+		*/
 		
 	}
 
@@ -336,6 +339,7 @@ public class JokalariCPU extends Jokalaria {
 	 * 3- se dice la coordenada de abajo
 	 */
 	
+	/*
 	private Koordenatuak albokoAusazkoKoordenatuakEratu(short pX, short pY) {
 		//Arazorik ez badago, lau aukera ditu koordenatua eratzeko:
 		if(this.zeinErtzaDa(pX, pY) == 0 && this.zeinIzkinaDa(pX, pY) == 0) {
