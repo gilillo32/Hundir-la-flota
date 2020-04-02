@@ -50,7 +50,9 @@ public class BikoteJokalariak {
 	
 	
 	public void itsasontziakJarri() {
+		this.zerrenda[0].getNireTableroa().tableroaBete();
 		this.zerrenda[0].itsasontziakJarri(10);
+		this.zerrenda[1].getNireTableroa().tableroaBete();
 		this.zerrenda[1].itsasontziakJarri(10);
 		
 	}
@@ -69,8 +71,7 @@ public class BikoteJokalariak {
 		}
 		else if (this.zerrenda[1].itsasontzirikEz()) {
 			ema= true;
-		}
-		
+		}		
 		return ema;
 	}
 	
@@ -118,9 +119,7 @@ public class BikoteJokalariak {
 				else {
 					posibleaDa=false;
 				}
-		}while(posibleaDa);	
-		
-		
+		}while(posibleaDa);			
 	}
 	
 
@@ -135,7 +134,7 @@ public class BikoteJokalariak {
 		System.out.println("ONGI ETORRI!");
 		System.out.println("Sartu zure izena: ");
 		String izena = Teklatua.getNireTeklatua().irakurriString();
-		short i=10;		
+		short i=10;	//erenkada kopurua	
 		BikoteJokalariak.getNireBikoteJokalariak().zerrenda[0] = new JokalariArrunta(izena, i );
 		BikoteJokalariak.getNireBikoteJokalariak().zerrenda[1] = new JokalariCPU( i );
 		

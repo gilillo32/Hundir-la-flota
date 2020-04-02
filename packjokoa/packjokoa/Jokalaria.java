@@ -67,7 +67,7 @@ public abstract class Jokalaria {
 			//Itsasontzia "U"kitu badu:
 			this.nUkituaInkrementatu();
 		}
-		this.getNireTableroa().eguneratuTableroa(pX, pY, pEma);
+		this.getPrintTableroa().eguneratuTableroa(pX, pY, pEma);
   
 	}
 	

@@ -78,7 +78,6 @@ public class JokalariArrunta extends Jokalaria {
 		short pItsas=0;
 		String pOrientazioa="Ezezagun";
 		String itsasMota="Ezezagun";//bapaezpada hasieratuko dugu
-		boolean denaOndo=false;
 		boolean denaOndo2=false;
 		
 		//itsasontziak beti orden berdinean jarriko dira
@@ -103,9 +102,6 @@ public class JokalariArrunta extends Jokalaria {
 			//koordenatuak pantailatik eskatu
 			
 			
-			
-			
-			
 			String pMezua1="Orain "+itsasMota+ " jarriko duzu "+ pItsas +" laukiko itsasontzia da, mesedez sartu lehengo koordenatua ";
 			Short pX=Teklatua.getNireTeklatua().irakurriShort(pMezua1, 0, 10);
 			
@@ -113,23 +109,13 @@ public class JokalariArrunta extends Jokalaria {
 			Short pY=Teklatua.getNireTeklatua().irakurriShort(pMezua2, 0, 10);
 			
 			String pMezua3="Sartu barkuaren orientazioa: H edo B";
-			//do {
+			
 			String pH="h";
 			String pB="b";
-			 pOrientazioa=Teklatua.getNireTeklatua().irakurriOrientazioa(pMezua3, pH, pB); //MALLL
-				/*try{
-					if(pOrientazioa!="B" || pOrientazioa!="b" || pOrientazioa!="H" || pOrientazioa!="h") {
-						throw new  OrientazioExc("Sartu behar duzu H edo B");
-					}
-					denaOndo=true;
-				}
-				catch (OrientazioExc e){
-					e.mezuaInprimatu();
-				}*/
-			//	}while(!denaOndo);			
+			 pOrientazioa=Teklatua.getNireTeklatua().irakurriOrientazioa(pMezua3, pH, pB); 		
 			
 		   
-		   if(pItsas!=1) {//1-eko itsasontzia ez du arazorik ematen
+		   //if(pItsas!=1) {//1-eko itsasontzia ez du arazorik ematen
 			   try {
 				   if ((pX+pItsas-1>=pErrenkadaZutKop ) || (pY+pItsas-1>= pErrenkadaZutKop) ) {
 					   throw new IndexOutOfBoundsException();
@@ -144,7 +130,7 @@ public class JokalariArrunta extends Jokalaria {
 			   catch(KoordenatuEzEgokiak e) {
 				   e.inprimatuMezua();
 			   }
-		   }
+		   //}
 		}  while(!denaOndo2);  //do
 		}//while(pItsas<5)
 	}

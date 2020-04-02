@@ -9,50 +9,98 @@ public class Tableroa {
 	
 	//eraikitzailea:
 	public Tableroa(int pTamaina) { /*BIGARREN MAILAKO ATAZA*/
-		this.errenZutKop = pTamaina;
+		this.errenZutKop = pTamaina + 1;
 		
 		this.matrizea = new String[this.errenZutKop][this.errenZutKop];
 	}
 	
 	//gainontzeko metodoak:
 	
-	public void tableroaInprimatu() {
+	private void tableroaInprimatu() {
 		//hasieratu indizeak
+		int akum=1;
 		int e= 0;
-		int z= 0;
+		int z= 1;
+		while(z<this.matrizea[e].length) {
+				 this.matrizea[e][z]= String.valueOf(akum);
+				 this.matrizea[z][e]= String.valueOf(akum);
+				 z++;
+				 akum++;
+		}
+		
+		while (e< this.errenZutKop ) { //erabili daiteke This.matrizea.length
+
+			while (z<this.errenZutKop) { //erabili daiteke this.matrize[e].length
+				
+				System.out.print(  this.matrizea[e][z]);		//aldi bakoitzean hurrengo lerroan inprimatzen du	
+				z++;
+			}
+			System.out.print("\n");
+			e++;
+		}
+		
+	/*	
+		for ( e = 0; e < this.matrizea.length; ++e) {
+		      for( z = 0; z < this.matrizea[e].length; ++z) {
+		        System.out.print(this.matrizea[e][z]);
+		        }
+		      System.out.print("\n");
+		      }
+		
+		
+		*/
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	/*	
+
 		System.out.print(" "); // lehennegoz hutsune bat inprimatu
 		//Orain zutabeen indizeak imprimatuko ditu
-		while (e<this.errenZutKop + 1) { 
+		while (e<this.errenZutKop ) { 
 			System.out.print(" "+e);	//linea berean inprimatzen du
 			//deasberdin egingo dugu luzera hamar baino handiagoa denean, bain ahori bigarren mailako ataza da.
 			e++;
 		}
+		System.out.print("\n");
 		e=0; //berriro hasieratuko dugu
-		while (e< this.errenZutKop + 1) { //erabili daiteke This.matrizea.length
-			while (z<this.errenZutKop+1) { //erabili daiteke this.matrize[e].length
-				System.out.println(e+ " " + this.matrizea[e][z]);		//aldi bakoitzean hurrengo lerroan inprimatzen du		
-			}			
-		}
+		while (e< this.errenZutKop ) { //erabili daiteke This.matrizea.lengthç
+
+			while (z<this.errenZutKop) { //erabili daiteke this.matrize[e].length
+
+				System.out.println(z+ " " + this.matrizea[e][z]);		//aldi bakoitzean hurrengo lerroan inprimatzen du	
+				z++;
+			}
+			e++;
+		}*/
 		
 	}
 	
-	private void tableroaBete() { //uraz beteko dugu "-"
+	public void tableroaBete() { //uraz beteko dugu "-"
 		//hasieratu indizeak
-		int e= 0;
-		int z= 0;
-		while (e< this.errenZutKop + 1) { //erabili daiteke This.matrizea.length
-			while (z<this.errenZutKop+1) { //erabili daiteke this.matrize[e].length
-				this.matrizea[e][z] = "-";				
-			}			
+		int e= 1;
+		int z= 1;
+		while (e< this.errenZutKop ) { //erabili daiteke This.matrizea.length
+			while (z<this.errenZutKop) { //erabili daiteke this.matrize[e].length
+				this.matrizea[e][z] = "-";
+				z++;
+			}	
+			e++;
 		}	
-		
-		
+		this.tableroaInprimatu();		
 	} 
 	
 
 	public void itsasontziakJarri (short pX, short pY,short pItsas, String pOrientazio) throws KoordenatuEzEgokiak{
 		int aux=0;
-		this.tableroaBete();// tableroa uraz beteko dugu
+
 		//itsasontzia jarriko dugu:
 		if(	this.konprobatuHutsuneak(pX, pY, pItsas, pOrientazio) && this.konprobatuItsasontsirikEzKoordenatuan(pX, pY, pItsas, pOrientazio)) {
 			//orentazioaren arabera bi modu:
