@@ -1,4 +1,5 @@
 package packjokoa;
+import java.io.*;
 import java.util.*;
 import salbuespenak.OrientazioExc;
 
@@ -132,14 +133,24 @@ public class BikoteJokalariak {
 		}while(posibleaDa);			
 	}
 	
-
 	
 	
 	
 	
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	public static void main (String [ ] args) 	{	
-		
+		Scanner input = null;
+		try {
+			input = new Scanner(new File("\\packjokoa\\packjokoa\\HASIERA_TESTUA.txt"));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		while (input.hasNextLine())
+		{
+		   System.out.println(input.nextLine());
+		}
 		System.out.println("kAIXO LAGUN!");
 		System.out.println("ONGI ETORRI!");
 		System.out.println("Sartu zure izena: ");
