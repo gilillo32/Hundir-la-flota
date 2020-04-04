@@ -149,7 +149,7 @@ public class BikoteJokalariak {
 		}
 
 		while (input.hasNextLine())
-		{
+		{ 
 		   System.out.println(input.nextLine());
 		}
 		System.out.println("kAIXO LAGUN!");
