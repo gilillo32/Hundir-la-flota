@@ -141,12 +141,9 @@ public class BikoteJokalariak {
 	public static void main (String [ ] args) 	{	
 		Scanner input = null;
 		//Hasierako pantaila inprimatzeko:
-		String basePath = new File("HASIERA_TESTUA.txt").getAbsolutePath();
-	    System.out.println(basePath);
-	    String path = new File("packjokoa/packjokoa/HASIERA_TESTUA.txt").getAbsolutePath();
-	    System.out.println(path);
+		File f = new File("HASIERA_TESTUA.txt");
 		try {
-			input = new Scanner(new File(path));
+			input = new Scanner(f);
 		} catch (FileNotFoundException e) {
 			System.out.println("Ez da aurkitu fitxategia");
 		}
