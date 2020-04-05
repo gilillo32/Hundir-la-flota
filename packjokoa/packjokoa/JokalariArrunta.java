@@ -119,9 +119,11 @@ public class JokalariArrunta extends Jokalaria {
 		   
 		 
 			   try {
-				   if ((pX+pItsas-1>=pErrenkadaZutKop ) || (pY+pItsas-1>= pErrenkadaZutKop) ) {
+				   if ((pX+pItsas-1>= (pErrenkadaZutKop+1) ) || (pY+pItsas-1>= ( pErrenkadaZutKop) +1)) {
+					   System.out.println("A VER SI ENTRAAA     IndexOutOfBoundsException");
 					   throw new IndexOutOfBoundsException();
 				   }
+				   System.out.println("A VER SI ENTRAAA     IndexOutOfBoundsException  DESPUES DE THROW");
 				   this.getNireTableroa().itsasontziakJarri(pX, pY, pItsas, pOrientazioa);
 					denaOndo2=true;
 				}
@@ -131,11 +133,13 @@ public class JokalariArrunta extends Jokalaria {
 					
 				}
 			   catch(KoordenatuEzEgokiak e) {
+				   denaOndo2=false;
 				   e.inprimatuMezua();
 				   System.out.println(" ");
 			   }
 		   //}
 		}  while(!denaOndo2);  //do
+			denaOndo2=false;
 			pItsas++;
 		}//while(pItsas<5)
 	}
