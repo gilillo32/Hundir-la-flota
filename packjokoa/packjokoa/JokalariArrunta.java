@@ -127,6 +127,7 @@ public class JokalariArrunta extends Jokalaria {
 				}
 				catch(IndexOutOfBoundsException e) {
 					System.out.println("Sartu duzun itsasontzia ez da sartzen");
+					denaOndo2=false;
 					
 				}
 			   catch(KoordenatuEzEgokiak e) {
