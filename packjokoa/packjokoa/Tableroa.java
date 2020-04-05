@@ -180,8 +180,8 @@ public class Tableroa {
 		if ( pOrientazio.equals("H")  || pOrientazio.equals("h") ) { 
 			System.out.println( " konprobatuHutsuneak PRIMER IF  H ");
 			//horizontalean
-			amaierakoEr= (short )(pY + pItsas);
-			amaierakoZut= pX;
+			amaierakoEr= (short )(pX + pItsas);
+			amaierakoZut= pY;
 			if(pX!=1) {
 				System.out.println( " konprobatuHutsuneak  IF PX!=1 ");
 				if( this.koordenatuanZerDagoen((short)(pX-1), pY).equals("U") ) { //EZKERREKO KASILAN BEGIRATU
