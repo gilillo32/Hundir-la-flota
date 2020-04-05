@@ -57,32 +57,33 @@ public class Tableroa {
 
 	public void itsasontziakJarri (short pX, short pY,short pItsas, String pOrientazio) throws KoordenatuEzEgokiak{
 		int aux=0;
-
+		System.out.println( " ANTESSSSSSSSSSSSSSSSSSSS itsasontziakJarri primer if ");
 		//itsasontzia jarriko dugu:
 		if(	 this.konprobatuItsasontsirikEzKoordenatuan(pX, pY, pItsas, pOrientazio) && this.konprobatuHutsuneak(pX, pY, pItsas, pOrientazio)) {
 			//orentazioaren arabera bi modu:	
 			System.out.println( " itsasontziakJarri primer if ");
 			if (pOrientazio.equals("H")  || pOrientazio.equals("h") ) {//pY ez da aldatzen  
-				
+				System.out.println( " itsasontziakJarri primer if hhhhhhhhhhhhhhhhhh ");
 				aux= pX+pItsas;
 				
 				while(pX<aux) {
-					
+					System.out.println( " itsasontziakJarri primer  H WHILEEEEEE ");
 					 this.matrizea[pY][pX]=  (" " + String.valueOf(pItsas));
 					pX++;
 				}
 			}
 			else if(pOrientazio.equals("B") || pOrientazio.equals("b") ) {//pX ez da aldatzen   
-				
+				System.out.println( " itsasontziakJarri primer if BBBBBBBBBBBBBBBBBBBBBBBBBBBB ");
 				aux	=pY+ pItsas;
 				while(pY<aux) {
-					
+					System.out.println( " itsasontziakJarri primer B WHILEEEEEEEE ");
 					 this.matrizea[pY][pX]= (" " + String.valueOf(pItsas));
 					pY++;
 				}				
 			}
 		}
 		else {
+			System.out.println( " EXCEPTION KoordenatuEzEgokiak          GGGGGGGGGG ");
 			throw new KoordenatuEzEgokiak();
 		}
 		
