@@ -83,14 +83,14 @@ public class BikoteJokalariak {
 	public void koordenatuaAukeratu() {
 		boolean posibleaDa=true;
 		boolean aurrekoanAsmatu =false;
-		
+		Koordenatuak k1= new Koordenatuak();
 		
 		//JokalariArrunta:
 		do {
 		System.out.println(this.zerrenda[0].getIzena() + " zure txanda da!");
 		Koordenatuak k= ((JokalariArrunta)this.zerrenda[0]).koordenatuaAukeratu();
-		short pX= k.getKoordenatuakX();
-		short pY = k.getKoordenatuakY();
+		short pX= (short) (k.getKoordenatuakX() + 1);
+		short pY = (short) ( k.getKoordenatuakY()+1);
 		
 			if(this.zerrenda[0].koordenadaBaliogarriak(pX, pY)  ) {
 				String emaitza = this.zerrenda[1].koordenatuanZerDagoen(pX, pY);
@@ -108,10 +108,10 @@ public class BikoteJokalariak {
 		posibleaDa=true;
 		do {
 			System.out.println(this.zerrenda[1].getIzena() + "-ren txanda da!");
-			Koordenatuak k1= new Koordenatuak();
+			
 			k1= ((JokalariCPU)this.zerrenda[1]).koordenatuaAukeratu(k1,   aurrekoanAsmatu);
-			short pX= k1.getKoordenatuakX();
-			short pY = k1.getKoordenatuakY();
+			short pX= (short) (k1.getKoordenatuakX()+ 1 );
+			short pY = (short) (k1.getKoordenatuakY()+1);
 			
 				if(this.zerrenda[1].koordenadaBaliogarriak(pX, pY)  ) {
 					String emaitza = this.zerrenda[0].koordenatuanZerDagoen(pX, pY);

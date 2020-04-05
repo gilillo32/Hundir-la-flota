@@ -106,7 +106,7 @@ public class Tableroa {
 		if (pOrientazio=="H" || pOrientazio=="h" ) {//pY ez da aldatzen
 			aux= pX+pItsas;
 			while(pX<aux && emaitza) {
-				if (  this.koordenatuanZerDagoen(pX, pY) == "U") {
+				if (  this.koordenatuanZerDagoen(pX, pY) == "U") { //U bat bueltazen badu esan nahi du itsasontsi bat dagoela han
 					emaitza=false;
 				}				 
 				pX++;
@@ -170,34 +170,40 @@ public class Tableroa {
 		//true bueltatzen du itsasontzien hartean hiutsuneak egongo badira itsasontsia koordenatu horretan jarrri ostean, bestela false, hau da, itsasontzia ezin da han jarri
 		//pItsas esango digu zein motatak itsasontsia den, guk jakitek zein koordenatuan amaituko den itsasontzia
 		//itsasontsien hartean gutxienez kasila bat tartean egon behar da
-		boolean hutsune = false;
-		int aux=0;
-		int amaierakoEr=0;
-		int amaierakoZut=0;
+		boolean hutsune = true;
+		short aux=0;
+		short amaierakoEr=0;
+		short amaierakoZut=0;
 		//orientazioaren arabera prozedura desberdina izango da
 		if (pOrientazio=="H") { 
 			//horizontalean
-			amaierakoEr=  pX + pItsas;
+			amaierakoEr= (short )(pX + pItsas);
 			amaierakoZut= pY;
-			if(this.matrizea[pY][pX-1]=="-") { //EZKERREKO KASILAN BEGIRATU
-				hutsune = true;
-			}
-			else if(this.matrizea[amaierakoEr][amaierakoZut]=="-") { //ESKUINEKO KASILAN BEGIRATU
-				hutsune = true;	
-			}
-			aux=pX;
-			while(!hutsune && aux< amaierakoEr) {		//GOIKO ERRENKETAKO KASILAK BEGIRATU		
-				if(this.matrizea[pY-1][aux]=="-") {
-					hutsune = true;
+			if(pX!=1) {
+				if( this.koordenatuanZerDagoen((short)(pX-1), pY) == "U") { //EZKERREKO KASILAN BEGIRATU
+					hutsune = false;
+				}}
+			if(pX != this.errenZutKop) {
+				if(this.koordenatuanZerDagoen( amaierakoEr, amaierakoZut) == "U") { //ESKUINEKO KASILAN BEGIRATU
+				hutsune = false;	
+				}}
+			aux=(short)(pX-1);
+			if(pY!=1) {
+			while(hutsune && aux< (amaierakoEr+1)) {		//GOIKO ERRENKETAKO KASILAK BEGIRATU		
+				if(this.koordenatuanZerDagoen(aux, (short)(pY-1)) == "U") {
+						hutsune = false;
+					}
+					aux++;
 				}
-				aux++;
 			}
-			aux=pX;
-			while(!hutsune && aux< amaierakoEr) {				
-				if(this.matrizea[pY+1][aux]=="-") { //BEHEKO ERRENKADAKO KASILETAN BEGIRATU
-					hutsune = true;
+			aux=(short)(pX-1) ;
+			if(pY != this.errenZutKop) {
+				while(hutsune && aux< (amaierakoEr+1)) {				
+					if(this.koordenatuanZerDagoen(aux, (short)(pY+1)) == "U") { //BEHEKO ERRENKADAKO KASILETAN BEGIRATU
+						hutsune = false;
+					}
+					aux++;
 				}
-				aux++;
 			}
 			
 			///QUE NO SSE OLVIDEN LAS SALBUESPENAS, ESQUINAS ETC....			
@@ -206,25 +212,25 @@ public class Tableroa {
 		else if (pOrientazio=="B") {
 			//Bertikalean
 			amaierakoEr=  pX;
-			amaierakoZut= pY + pItsas;
+			amaierakoZut= (short )(pY + pItsas);
 	
-			if(this.matrizea[pY-1][pX]=="-") { //gOIKO KASILAN BEGIRATU
-				hutsune = true;
+			if(this.koordenatuanZerDagoen(pX, (short)(pY-1)) == "U") { //gOIKO KASILAN BEGIRATU
+				hutsune = false;
 			}
-			else if(this.matrizea[amaierakoEr][amaierakoZut]=="-") { //BEHEKO KASILAN BEGIRATU
-				hutsune = true;	
+			else if(this.koordenatuanZerDagoen( amaierakoEr, amaierakoZut) == "U") { //BEHEKO KASILAN BEGIRATU
+				hutsune = false;	
 			}
-			aux=pY;
-			while(!hutsune && aux< amaierakoZut) {		//EZKERREKO ZUTABEKOKASILAK BEGIRATU		
-				if(this.matrizea[aux][pX-1]=="-") {
-					hutsune = true;
+			aux=(short) (pY-1);
+			while(hutsune && aux< (amaierakoZut+1)) {		//EZKERREKO ZUTABEKOKASILAK BEGIRATU		
+				if( this.koordenatuanZerDagoen((short) (pX-1), aux) == "U") {
+					hutsune = false;
 				}
 				aux++;
 			}
-			aux=pY;
-			while(!hutsune && aux< amaierakoZut) {			//ESKUINEKO ZUTABEKOKASILAK BEGIRATU	
-				if(this.matrizea[aux][pX+1]=="-") {
-					hutsune = true;
+			aux=(short) (pY-1);
+			while(hutsune && aux< (amaierakoZut+1)) {			//ESKUINEKO ZUTABEKOKASILAK BEGIRATU	
+				if(this.koordenatuanZerDagoen((short) (pX+1), aux) == "U") {
+					hutsune = false;
 				}
 				aux++;
 			}

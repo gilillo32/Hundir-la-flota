@@ -75,15 +75,15 @@ public class JokalariArrunta extends Jokalaria {
 	
 	public  void itsasontziakJarri(int pErrenkadaZutKop) {
 		//salbuespenak: konprobatu posibeak direla koordenatuak, orientazioa eta ez badira zuzenak berriro jartzeko eskatuko zaio erabiltzaileari
-		short pItsas=0;
-		String pOrientazioa="Ezezagun";
+		short pItsas=1;
+		String pOrientazioa="H";
 		String itsasMota="Ezezagun";//bapaezpada hasieratuko dugu
 		boolean denaOndo2=false;
 		
 		//itsasontziak beti orden berdinean jarriko dira
 		while(pItsas<5) {
 			do {
-			pItsas++;
+			
 			//hiztegi txiki bat sortuko dugu itsasontzentzako			
 			switch(pItsas) {
 			 case 1:
@@ -101,21 +101,23 @@ public class JokalariArrunta extends Jokalaria {
 			 } //switch
 			//koordenatuak pantailatik eskatu
 			
-			
+			System.out.println(" ");
 			String pMezua1="Orain "+itsasMota+ " jarriko duzu "+ pItsas +" laukiko itsasontzia da, mesedez sartu lehengo koordenatua ";
-			Short pX=Teklatua.getNireTeklatua().irakurriShort(pMezua1, 0, 9);
+			Short pX= (short) (Teklatua.getNireTeklatua().irakurriShort(pMezua1, 0, 9)+1);
 			
 			String pMezua2="Sartu bigarren koordenatua mesedez";
-			Short pY=Teklatua.getNireTeklatua().irakurriShort(pMezua2, 0, 9);
+			Short pY= (short) (Teklatua.getNireTeklatua().irakurriShort(pMezua2, 0, 9)+1);
 			
-			String pMezua3="Sartu barkuaren orientazioa: H edo B";
+			System.out.println(pY + pX + pOrientazioa);
 			
+			 if(pItsas!=1) {//1-eko itsasontzia ez du arazorik ematen			
+			String pMezua3="Sartu barkuaren orientazioa: H edo B";			
 			String pH="h";
 			String pB="b";
-			 pOrientazioa=Teklatua.getNireTeklatua().irakurriOrientazioa(pMezua3, pH, pB); 		
-			
+			pOrientazioa=Teklatua.getNireTeklatua().irakurriOrientazioa(pMezua3, pH, pB); 		
+			 }
 		   
-		   //if(pItsas!=1) {//1-eko itsasontzia ez du arazorik ematen
+		 
 			   try {
 				   if ((pX+pItsas-1>=pErrenkadaZutKop ) || (pY+pItsas-1>= pErrenkadaZutKop) ) {
 					   throw new IndexOutOfBoundsException();
@@ -129,9 +131,11 @@ public class JokalariArrunta extends Jokalaria {
 				}
 			   catch(KoordenatuEzEgokiak e) {
 				   e.inprimatuMezua();
+				   System.out.println(" ");
 			   }
 		   //}
 		}  while(!denaOndo2);  //do
+			pItsas++;
 		}//while(pItsas<5)
 	}
 	

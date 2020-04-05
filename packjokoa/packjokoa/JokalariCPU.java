@@ -6,10 +6,10 @@ public class JokalariCPU extends Jokalaria {
 	private ArrayList<Koordenatuak> esandakoKoordenatuak;//esan dituen koorenatu guztiak gordetzen dira, ez errepikatzeko
 	private ArrayList<Koordenatuak> albokoKoordenatuak;
 	private Koordenatuak koordenatuOriginalak = new Koordenatuak();
-	private boolean zentzuaAldatuBeharDu = false;
-	private boolean zentzuaBadaki = false;
-	private short jarraianAurkituDitzakeenUkitutak = 4;
-	private short zenbatUkituDituJarraian = 0;
+	//private boolean zentzuaAldatuBeharDu = false;
+	//private boolean zentzuaBadaki = false;
+	//private short jarraianAurkituDitzakeenUkitutak = 4;
+//private short zenbatUkituDituJarraian = 0;
 	private byte zentzua=0;
 	
 	public JokalariCPU(short pErrenkadaZutKop) {		
@@ -24,11 +24,7 @@ public class JokalariCPU extends Jokalaria {
 		boolean errepikatuta=false;
 		if(!pAurrekoanAsmatu && this.albokoKoordenatuak.size()==0 ) { //ez dago arazorik, lehen saiakear da
 			do {
-				Random rand = new Random();
-				short pX = (short) ((short) rand.nextInt(10) + 1);//1-etik 10 zenbaki bat bueltatzeko
-				short pY = (short) ((short) rand.nextInt(10) + 1);
-				k.setKoordenatuakX(pX);
-				k.setKoordenatuakY(pY);
+				k= this.koordenatuRandom();
 				if(!this.esandakoKoordenatuak.contains(k)) {
 					this.esandakoKoordenatuak.add(k);
 					errepikatuta=false;
@@ -55,11 +51,7 @@ public class JokalariCPU extends Jokalaria {
 			if( kont==4) {
 				errepikatuta= false;
 				do {
-					Random rand = new Random();
-					short pX = (short) ((short) rand.nextInt(10) + 1);//1-etik 10 zenbaki bat bueltatzeko
-					short pY = (short) ((short) rand.nextInt(10) + 1);
-					k.setKoordenatuakX(pX);
-					k.setKoordenatuakY(pY);
+					k= this.koordenatuRandom();
 					if(!this.esandakoKoordenatuak.contains(k)) {
 						this.esandakoKoordenatuak.add(k);
 						errepikatuta=false;
@@ -69,9 +61,8 @@ public class JokalariCPU extends Jokalaria {
 					}					
 				} while(errepikatuta);	
 			}
-
 		}
-		else if(pAurrekoanAsmatu && this.albokoKoordenatuak.size()!=0) { //ez da ukitzen duen lehenengo aldia
+		else if(pAurrekoanAsmatu && this.albokoKoordenatuak.size()!=0) { //ez da ukitzen duen lehenengo aldia, hau da zentzua asmatu du.
 			//zentzua jakiteko:s
 			if (this.zentzua==0) {
 				this.zentzua=3;
@@ -89,11 +80,7 @@ public class JokalariCPU extends Jokalaria {
 			if(this.esandakoKoordenatuak.contains(k) ) {
 				errepikatuta= false;
 				do {
-					Random rand = new Random();
-					short pX = (short) ((short) rand.nextInt(10) + 1);//1-etik 10 zenbaki bat bueltatzeko
-					short pY = (short) ((short) rand.nextInt(10) + 1);
-					k.setKoordenatuakX(pX);
-					k.setKoordenatuakY(pY);
+					k= this.koordenatuRandom();
 					if(!this.esandakoKoordenatuak.contains(k)) {
 						this.esandakoKoordenatuak.add(k);
 						errepikatuta=false;
@@ -121,11 +108,7 @@ public class JokalariCPU extends Jokalaria {
 			if( aux== 4-zentzua) {
 				errepikatuta= false;
 				do {
-					Random rand = new Random();
-					short pX = (short) ((short) rand.nextInt(10) + 1);//1-etik 10 zenbaki bat bueltatzeko
-					short pY = (short) ((short) rand.nextInt(10) + 1);
-					k.setKoordenatuakX(pX);
-					k.setKoordenatuakY(pY);
+					k= this.koordenatuRandom();
 					if(!this.esandakoKoordenatuak.contains(k)) {
 						this.esandakoKoordenatuak.add(k);
 						errepikatuta=false;
@@ -138,10 +121,20 @@ public class JokalariCPU extends Jokalaria {
 			if (this.zentzua==0) {
 				this.erreseteatuAlbokoKoordenatuak();//alboko koordenatuak erreseteatu
 			}
-		}
-		
+		}		
 		return  k ;
 	}
+	 
+	 
+	 private Koordenatuak koordenatuRandom() {
+		 Koordenatuak k = new Koordenatuak();
+		 Random rand = new Random();
+			short pX = (short) ((short) rand.nextInt(10) + 1);//1-etik 10 zenbaki bat bueltatzeko
+			short pY = (short) ((short) rand.nextInt(10) + 1);
+			k.setKoordenatuakX(pX);
+			k.setKoordenatuakY(pY);
+			return k;
+	 }
 	 
 	 
 	 private void albokoKordenatuakSortu(Koordenatuak pK) {
