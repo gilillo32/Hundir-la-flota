@@ -73,7 +73,7 @@ public class JokalariArrunta extends Jokalaria {
 	
 	
 	
-	public  void itsasontziakJarri(int pErrenkadaZutKop) {
+	public void itsasontziakJarri(int pErrenkadaZutKop) {
 		//salbuespenak: konprobatu posibeak direla koordenatuak, orientazioa eta ez badira zuzenak berriro jartzeko eskatuko zaio erabiltzaileari
 		short pItsas=1;
 		String pOrientazioa="H";

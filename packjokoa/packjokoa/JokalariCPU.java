@@ -1,10 +1,13 @@
 package packjokoa;
 import java.util.*;
 
+import salbuespenak.KoordenatuEzEgokiak;
+
 public class JokalariCPU extends Jokalaria {
 	
 	private ArrayList<Koordenatuak> esandakoKoordenatuak;//esan dituen koorenatu guztiak gordetzen dira, ez errepikatzeko
 	private ArrayList<Koordenatuak> albokoKoordenatuak;
+	private ArrayList<Koordenatuak> nireItsasontziakEtaAlbokoKoordenatuak;
 	private Koordenatuak koordenatuOriginalak = new Koordenatuak();
 	//private boolean zentzuaAldatuBeharDu = false;
 	//private boolean zentzuaBadaki = false;
@@ -129,11 +132,106 @@ public class JokalariCPU extends Jokalaria {
 	 private Koordenatuak koordenatuRandom() {
 		 Koordenatuak k = new Koordenatuak();
 		 Random rand = new Random();
-			short pX = (short) ((short) rand.nextInt(10) + 1);//1-etik 10 zenbaki bat bueltatzeko
-			short pY = (short) ((short) rand.nextInt(10) + 1);
-			k.setKoordenatuakX(pX);
-			k.setKoordenatuakY(pY);
-			return k;
+		 short pX = (short) ((short) rand.nextInt(10) + 1);//1-etik 10 zenbaki bat bueltatzeko
+		 short pY = (short) ((short) rand.nextInt(10) + 1);
+		 k.setKoordenatuakX(pX);
+		 k.setKoordenatuakY(pY);
+		 return k;
+	 }
+	 
+	 public void itsasontziakJarri(int pErrenkadaZutKop) {
+		 short pItsas = 1;
+		 short limitX = (Short) null;
+		 short limitY = (Short) null;
+		 short pX, pY;
+		 String pOrientazioa = "";
+		 String itsasMota = "Ezezagun";
+		 boolean denaOndo2 = false;
+		 Koordenatuak k = null;
+		 
+		 
+		 //itsasontziak ordenean jarri:
+		 while(pItsas<5) {
+				do {
+					//Lehenengo orientazioa aukeratuko du:
+					Random rand = new Random();
+					byte orientazioZenb = (Byte) null;               //ORIENTAZIOA AUKERATU
+					orientazioZenb = (byte) rand.nextInt(1);
+					switch(orientazioZenb) {
+					case 0:
+						pOrientazioa = "h";
+						limitX = (short) (11 - pItsas);
+						limitY = 10;
+						break;
+					case 1:
+						pOrientazioa = "b";
+						limitX = 10;
+						limitY = (short)(11 - pItsas);
+						break;
+					}
+					
+					//Koordenatuak aukeratu eta ArrayListean sartu esandakoak eta albokoak:
+					
+					if(orientazioZenb == 0) { // Horizontalean bada
+						pX = (short) (rand.nextInt(limitX) + 1); //From 1 to x limit
+						pY = (short) (rand.nextInt(limitY) + 1); //From 1 to y limit
+						k.setKoordenatuakX(pX);
+						k.setKoordenatuakY(pY);
+						this.nireItsasontziakEtaAlbokoKoordenatuak.add(k);
+						for(int i = 0; i <= pItsas; i++) {//Añadir la fila del barco, desde la coordenada elegida, hasta la siguiente al barco
+							pX++;
+							this.nireItsasontziakEtaAlbokoKoordenatuak.add(this.zentzuBateanKoordenatuBerriak(pX, pY, (byte)0));
+						}
+						pX--;
+						pY--;
+						for(int i = 1; i <= pItsas + 2; i++) { //Añadir la fila de arriba del barco
+							pX++;
+							this.nireItsasontziakEtaAlbokoKoordenatuak.add(this.zentzuBateanKoordenatuBerriak(pX, pY, (byte)0));
+						}
+						//TODO
+					}
+					
+					
+				
+					String pMezua1="Orain "+itsasMota+ " jarriko duzu "+ pItsas +" laukiko itsasontzia da, mesedez sartu lehengo koordenatua ";
+					
+					
+					String pMezua2="Sartu bigarren koordenatua mesedez";
+					Short pY= (short) (Teklatua.getNireTeklatua().irakurriShort(pMezua2, 0, 9)+1);
+					
+					System.out.println(pY + pX + pOrientazioa);
+					
+					 if(pItsas!=1) {//1-eko itsasontzia ez du arazorik ematen			
+					String pMezua3="Sartu barkuaren orientazioa: H edo B";			
+					String pH="h";
+					String pB="b";
+					pOrientazioa=Teklatua.getNireTeklatua().irakurriOrientazioa(pMezua3, pH, pB); 		
+					 }
+				   
+				 
+					   try {
+						   if ((pX+pItsas-1>= (pErrenkadaZutKop+1) ) || (pY+pItsas-1>= ( pErrenkadaZutKop) +1)) {
+							   throw new IndexOutOfBoundsException();
+						   }
+						  this.getNireTableroa().itsasontziakJarri(pX, pY, pItsas, pOrientazioa);
+							denaOndo2=true;
+						}
+						catch(IndexOutOfBoundsException e) {
+							System.out.println("Sartu duzun itsasontzia ez da sartzen");
+							denaOndo2=false;
+							
+						}
+					   catch(KoordenatuEzEgokiak e) {
+						   denaOndo2=false;
+						   e.inprimatuMezua();
+						   System.out.println(" ");
+					   }
+			   //}
+			}  while(!denaOndo2);  //do
+				denaOndo2=false;
+				pItsas++;
+			}//while(pItsas<5)
+		}
 	 }
 	 
 	 
@@ -154,11 +252,11 @@ public class JokalariCPU extends Jokalaria {
 		this.gehituAlbokoKoordenatuak(this.zentzuBateanKoordenatuBerriak(auxPX, auxPY, (byte)3));
 	 }
 	 
-	 
+	 /* Ez da erabiltzen metodo hau
 	private void gehituEsandakoKoordenatuak (Koordenatuak pK) {
 		this.esandakoKoordenatuak.add(pK);
 	}
-	
+	*/
 	
 	
 	private void gehituAlbokoKoordenatuak (Koordenatuak pK) {
@@ -202,6 +300,7 @@ public class JokalariCPU extends Jokalaria {
 	 */
 	private Koordenatuak zentzuBateanKoordenatuBerriak(short pX, short pY, byte pZentzua) {
 		 //Arazorik ez badago:
+		Object o = null;
 		 if(this.zeinErtzaDa(pX, pY) == 0 && this.zeinIzkinaDa(pX, pY) == 0) {
 			 switch(pZentzua) {
 			 case 0:
@@ -374,6 +473,10 @@ public class JokalariCPU extends Jokalaria {
 												 pY = (Short)null;
 												 break;
 											 }
+										 }
+										 else {
+											 pX = (Short)null;
+											 pY = (Short)null;
 										 }
 									 }
 								 }
