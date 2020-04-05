@@ -188,7 +188,7 @@ public class JokalariCPU extends Jokalaria {
 							pX++;
 							this.nireItsasontziakEtaAlbokoKoordenatuak.add(this.zentzuBateanKoordenatuBerriak(pX, pY, (byte)0));
 						}
-						//TODO
+						//TODO 
 					}
 					
 					
