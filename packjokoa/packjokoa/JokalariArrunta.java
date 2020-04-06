@@ -3,7 +3,7 @@ import salbuespenak.*;
 
 public class JokalariArrunta extends Jokalaria {
 	
-	public JokalariArrunta(String pIzena, Short pErrenkadaZutKop) {
+	public JokalariArrunta(String pIzena, short pErrenkadaZutKop) {
 		super(pIzena, pErrenkadaZutKop); 
 	}
 	
@@ -12,9 +12,9 @@ public class JokalariArrunta extends Jokalaria {
 		//koordenatuak eskatu
 		
 		String pMezua1="Sartu zure lehenengo koordenatua mesedez";
-		Short pX=Teklatua.getNireTeklatua().irakurriShort(pMezua1, 1, 10);
+		short pX=Teklatua.getNireTeklatua().irakurriShort(pMezua1, 1, 10);
 		String pMezua2="Sartu zure lehenengo koordenatua mesedez";
-		Short pY=Teklatua.getNireTeklatua().irakurriShort(pMezua2, 1, 10);
+		short pY=Teklatua.getNireTeklatua().irakurriShort(pMezua2, 1, 10);
 		Koordenatuak k = new Koordenatuak(pX, pY);
 		
 		return k;
@@ -102,11 +102,11 @@ public class JokalariArrunta extends Jokalaria {
 			//koordenatuak pantailatik eskatu
 			
 			System.out.println(" ");
-			String pMezua1="Orain "+itsasMota+ " jarriko duzu "+ pItsas +" laukiko itsasontzia da, mesedez sartu lehengo koordenatua ";
-			Short pY= (short) (Teklatua.getNireTeklatua().irakurriShort(pMezua1, 0, 9)+1);
+			String pMezua1="Orain "+itsasMota+ " jarriko duzu "+ pItsas +" laukiko itsasontzia da, mesedez sartu zutabea ";
+			short pX= (short) (Teklatua.getNireTeklatua().irakurriShort(pMezua1, 0, 9)+1);
 			
-			String pMezua2="Sartu bigarren koordenatua mesedez";
-			Short pX= (short) (Teklatua.getNireTeklatua().irakurriShort(pMezua2, 0, 9)+1);
+			String pMezua2="Sartu errenkada mesedez";
+			short pY= (short) (Teklatua.getNireTeklatua().irakurriShort(pMezua2, 0, 9)+1);
 			
 			System.out.println(pY + pX + pOrientazioa);
 			
