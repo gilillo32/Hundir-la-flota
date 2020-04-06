@@ -310,6 +310,7 @@ public class Tableroa {
 			pEmaitza= "X"; //jarriko du X bat gero konprobatuTiroa jakiteko ea koordenatu hori lehenik esan dugun ala ez
 		}
 		this.matrizea[pY][pX] = pEmaitza;
+		this.tableroaInprimatu();
 	}
 	
 

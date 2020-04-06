@@ -59,7 +59,8 @@ public class JokalariArrunta extends Jokalaria {
 		if(pEma=="U") {
 			super.nUkituaInkrementatu();
 		}
-		this.getNireTableroa().eguneratuTableroa(pX,pY,pEma);
+		
+		this.getPrintTableroa().eguneratuTableroa(pX,pY,pEma);
 	}
 	
 	/*public void setIzena(String pIzena) {

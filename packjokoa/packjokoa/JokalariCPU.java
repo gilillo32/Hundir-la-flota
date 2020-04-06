@@ -190,7 +190,11 @@ public class JokalariCPU extends Jokalaria {
 				denaOndo2=false;
 				pItsas++;
 			}//while(pItsas<5)
-		}
+		 if(pItsas==5) {
+		this.getNireTableroa().tableroaInprimatu();
+		 }
+	 }
+	 
 	 
 	 
 	 private void albokoKordenatuakSortu(Koordenatuak pK) {
