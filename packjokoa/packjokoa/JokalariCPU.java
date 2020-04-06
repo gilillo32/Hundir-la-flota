@@ -171,8 +171,6 @@ public class JokalariCPU extends Jokalaria {
 					//Koordenatuak aukeratu
 					pX = (short) (rand.nextInt(limitX) + 1); //From 1 to x limit
 					pY = (short) (rand.nextInt(limitY) + 1); //From 1 to y limit
-				 
-				 
 				    try {
 				    	if ((pX+pItsas-1>= (pErrenkadaZutKop+1) ) || (pY+pItsas-1>= ( pErrenkadaZutKop) +1)) {
 						   throw new IndexOutOfBoundsException();
