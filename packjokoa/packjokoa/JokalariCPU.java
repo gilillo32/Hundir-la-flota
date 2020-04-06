@@ -145,9 +145,7 @@ public class JokalariCPU extends Jokalaria {
 		 short limitY = (Short) null;
 		 short pX, pY;
 		 String pOrientazioa = "";
-		 String itsasMota = "Ezezagun";
 		 boolean denaOndo2 = false;
-		 Koordenatuak k = null;
 		 
 		 
 		 //itsasontziak ordenean jarri:
@@ -156,7 +154,7 @@ public class JokalariCPU extends Jokalaria {
 					//Lehenengo orientazioa aukeratuko du:
 					Random rand = new Random();
 					byte orientazioZenb = (Byte) null;               //ORIENTAZIOA AUKERATU
-					orientazioZenb = (byte) rand.nextInt(1);
+					orientazioZenb = (byte) rand.nextInt(2);
 					switch(orientazioZenb) {
 					case 0:
 						pOrientazioa = "h";
@@ -170,69 +168,30 @@ public class JokalariCPU extends Jokalaria {
 						break;
 					}
 					
-					//Koordenatuak aukeratu eta ArrayListean sartu esandakoak eta albokoak:
-					
-					if(orientazioZenb == 0) { // Horizontalean bada
-						pX = (short) (rand.nextInt(limitX) + 1); //From 1 to x limit
-						pY = (short) (rand.nextInt(limitY) + 1); //From 1 to y limit
-						k.setKoordenatuakX(pX);
-						k.setKoordenatuakY(pY);
-						this.nireItsasontziakEtaAlbokoKoordenatuak.add(k);
-						for(int i = 0; i <= pItsas; i++) {//Añadir la fila del barco, desde la coordenada elegida, hasta la siguiente al barco
-							pX++;
-							this.nireItsasontziakEtaAlbokoKoordenatuak.add(this.zentzuBateanKoordenatuBerriak(pX, pY, (byte)0));
-						}
-						pX--;
-						pY--;
-						for(int i = 1; i <= pItsas + 2; i++) { //Añadir la fila de arriba del barco
-							pX++;
-							this.nireItsasontziakEtaAlbokoKoordenatuak.add(this.zentzuBateanKoordenatuBerriak(pX, pY, (byte)0));
-						}
-						//TODO 
-					}
-					
-					
-				
-					String pMezua1="Orain "+itsasMota+ " jarriko duzu "+ pItsas +" laukiko itsasontzia da, mesedez sartu lehengo koordenatua ";
-					
-					
-					String pMezua2="Sartu bigarren koordenatua mesedez";
-					Short pY= (short) (Teklatua.getNireTeklatua().irakurriShort(pMezua2, 0, 9)+1);
-					
-					System.out.println(pY + pX + pOrientazioa);
-					
-					 if(pItsas!=1) {//1-eko itsasontzia ez du arazorik ematen			
-					String pMezua3="Sartu barkuaren orientazioa: H edo B";			
-					String pH="h";
-					String pB="b";
-					pOrientazioa=Teklatua.getNireTeklatua().irakurriOrientazioa(pMezua3, pH, pB); 		
-					 }
-				   
+					//Koordenatuak aukeratu
+					pX = (short) (rand.nextInt(limitX) + 1); //From 1 to x limit
+					pY = (short) (rand.nextInt(limitY) + 1); //From 1 to y limit
 				 
-					   try {
-						   if ((pX+pItsas-1>= (pErrenkadaZutKop+1) ) || (pY+pItsas-1>= ( pErrenkadaZutKop) +1)) {
-							   throw new IndexOutOfBoundsException();
-						   }
-						  this.getNireTableroa().itsasontziakJarri(pX, pY, pItsas, pOrientazioa);
-							denaOndo2=true;
-						}
-						catch(IndexOutOfBoundsException e) {
-							System.out.println("Sartu duzun itsasontzia ez da sartzen");
-							denaOndo2=false;
-							
-						}
-					   catch(KoordenatuEzEgokiak e) {
-						   denaOndo2=false;
-						   e.inprimatuMezua();
-						   System.out.println(" ");
-					   }
+				 
+				    try {
+				    	if ((pX+pItsas-1>= (pErrenkadaZutKop+1) ) || (pY+pItsas-1>= ( pErrenkadaZutKop) +1)) {
+						   throw new IndexOutOfBoundsException();
+				    	}
+				    	this.getNireTableroa().itsasontziakJarri(pX, pY, pItsas, pOrientazioa);
+						denaOndo2=true;
+					}
+				    catch(IndexOutOfBoundsException e) {
+						denaOndo2=false;						
+					}
+				    catch(KoordenatuEzEgokiak e) {
+					    denaOndo2=false;
+				   }
 			   //}
 			}  while(!denaOndo2);  //do
 				denaOndo2=false;
 				pItsas++;
 			}//while(pItsas<5)
 		}
-	 }
 	 
 	 
 	 private void albokoKordenatuakSortu(Koordenatuak pK) {
