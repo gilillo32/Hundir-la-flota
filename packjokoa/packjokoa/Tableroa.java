@@ -15,7 +15,7 @@ public class Tableroa {
 	
 	//gainontzeko metodoak:
 	
-	private void tableroaInprimatu() {
+	public void tableroaInprimatu() {
 		//hasieratu indizeak
 		int akum=0;
 		int e= 0;
@@ -87,7 +87,6 @@ public class Tableroa {
 			throw new KoordenatuEzEgokiak();
 		}
 		
-		this.tableroaInprimatu();
 		}
 	
 	

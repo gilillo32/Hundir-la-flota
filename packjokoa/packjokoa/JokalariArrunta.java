@@ -84,7 +84,7 @@ public class JokalariArrunta extends Jokalaria {
 		while(pItsas<5) {
 			do {
 			
-			//hiztegi txiki bat sortuko dugu itsasontzentzako			
+			//hiztegi txiki bat sortuko dugu itsasontzientzako			
 			switch(pItsas) {
 			 case 1:
 				 itsasMota="txalupa";
@@ -149,6 +149,7 @@ public class JokalariArrunta extends Jokalaria {
 		}  while(!denaOndo2);  //do
 			denaOndo2=false;
 			pItsas++;
+			this.getNireTableroa().tableroaInprimatu();
 		}//while(pItsas<5)
 	}
 	
