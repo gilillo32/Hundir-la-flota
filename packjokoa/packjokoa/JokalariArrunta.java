@@ -108,8 +108,7 @@ public class JokalariArrunta extends Jokalaria {
 			String pMezua2="Sartu errenkada mesedez";
 			short pY= (short) (Teklatua.getNireTeklatua().irakurriShort(pMezua2, 0, 9)+1);
 			
-			System.out.println(pY + pX + pOrientazioa);
-			
+		
 			 if(pItsas!=1) {//1-eko itsasontzia ez du arazorik ematen			
 			String pMezua3="Sartu barkuaren orientazioa: H edo B";			
 			String pH="h";
@@ -119,13 +118,13 @@ public class JokalariArrunta extends Jokalaria {
 		   
 		 
 			   try {
-				   if( pOrientazioa.equals("B") || pOrientazioa.equals("b")) {//nuevo
+				   if( pOrientazioa.equals("B") || pOrientazioa.equals("b")) {
 					   if ((pY+pItsas-1>= ( pErrenkadaZutKop) +1)) {
 						  // System.out.println("A VER SI ENTRAAA     IndexOutOfBoundsException");
 						   throw new IndexOutOfBoundsException();
 					   }
 				   }
-				   else if(pOrientazioa.equals("H") || pOrientazioa.equals("h")) {//nuevo
+				   else if(pOrientazioa.equals("H") || pOrientazioa.equals("h")) {
 					   if ((pX+pItsas-1>= (pErrenkadaZutKop+1))) {
 						  //System.out.println("A VER SI ENTRAAA     IndexOutOfBoundsException");
 						   throw new IndexOutOfBoundsException();
