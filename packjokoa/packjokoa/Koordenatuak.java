@@ -5,9 +5,10 @@ public class Koordenatuak {
 	private short x;
 	private short y;
 	
+
 	public Koordenatuak() {
-		this.x = (Short) null;
-		this.y = (Short) null;
+		this.x = -1;
+		this.y = -1;
 	}
 	
 	public Koordenatuak(short pX, short pY) {

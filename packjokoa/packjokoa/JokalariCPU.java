@@ -8,7 +8,7 @@ public class JokalariCPU extends Jokalaria {
 	private ArrayList<Koordenatuak> esandakoKoordenatuak;//esan dituen koorenatu guztiak gordetzen dira, ez errepikatzeko
 	private ArrayList<Koordenatuak> albokoKoordenatuak;
 	private ArrayList<Koordenatuak> nireItsasontziakEtaAlbokoKoordenatuak;
-	private Koordenatuak koordenatuOriginalak = new Koordenatuak();
+	private Koordenatuak koordenatuOriginalak;
 	//private boolean zentzuaAldatuBeharDu = false;
 	//private boolean zentzuaBadaki = false;
 	//private short jarraianAurkituDitzakeenUkitutak = 4;
@@ -19,13 +19,14 @@ public class JokalariCPU extends Jokalaria {
 		super("CPU", pErrenkadaZutKop);
 		this.esandakoKoordenatuak= new ArrayList<Koordenatuak>();
 		this.albokoKoordenatuak = new ArrayList<Koordenatuak>();
+		this.koordenatuOriginalak = new Koordenatuak();
 	}
 	
 
 	 public Koordenatuak koordenatuaAukeratu( Koordenatuak pK1,  boolean pAurrekoanAsmatu) {
 		Koordenatuak k= new Koordenatuak();	
 		boolean errepikatuta=false;
-		if(!pAurrekoanAsmatu && this.albokoKoordenatuak.size()==0 ) { //ez dago arazorik, lehen saiakear da
+		if(!pAurrekoanAsmatu && this.albokoKoordenatuak.size()==0 ) { //ez dago arazorik, lehen saiakera da
 			do {
 				k= this.koordenatuRandom();
 				if(!this.esandakoKoordenatuak.contains(k)) {
@@ -50,7 +51,7 @@ public class JokalariCPU extends Jokalaria {
 				else {
 					this.zentzua++;
 				}
-			}while(k.getKoordenatuakY()== (Short)null && k.getKoordenatuakX()== (Short)null && this.esandakoKoordenatuak.contains(k) && kont<=4);
+			}while(k.getKoordenatuakY()== -1 && k.getKoordenatuakX()== -1 && this.esandakoKoordenatuak.contains(k) && kont<=4);
 			if( kont==4) {
 				errepikatuta= false;
 				do {
@@ -74,7 +75,7 @@ public class JokalariCPU extends Jokalaria {
 				this.zentzua--;
 			}
 			k= this.zentzuBateanKoordenatuBerriak(pK1.getKoordenatuakX(), pK1.getKoordenatuakY(), this.zentzua);
-			if (k.getKoordenatuakY()== (Short)null && k.getKoordenatuakX()== (Short)null) {
+			if (k.getKoordenatuakY()== -1 && k.getKoordenatuakX()== -1) {
 				this.kontrakoZentzua();
 				this.erreseteatuAlbokoKoordenatuak();
 				k= this.zentzuBateanKoordenatuBerriak(this.koordenatuOriginalak.getKoordenatuakX(), this.koordenatuOriginalak.getKoordenatuakY(), this.zentzua);
@@ -107,7 +108,7 @@ public class JokalariCPU extends Jokalaria {
 					this.zentzua++;
 				}
 				
-			}while(k.getKoordenatuakY()== (Short)null && k.getKoordenatuakX()== (Short)null && this.esandakoKoordenatuak.contains(k) && aux< 4-zentzua);
+			}while(k.getKoordenatuakY()== -1 && k.getKoordenatuakX()==-1 && this.esandakoKoordenatuak.contains(k) && aux< 4-zentzua);
 			if( aux== 4-zentzua) {
 				errepikatuta= false;
 				do {
@@ -141,8 +142,8 @@ public class JokalariCPU extends Jokalaria {
 	 
 	 public void itsasontziakJarri(int pErrenkadaZutKop) {
 		 short pItsas = 1;
-		 short limitX = (Short) null;
-		 short limitY = (Short) null;
+		 short limitX = -1;
+		 short limitY = -1;
 		 short pX, pY;
 		 String pOrientazioa = "";
 		 boolean denaOndo2 = false;
@@ -153,7 +154,7 @@ public class JokalariCPU extends Jokalaria {
 				do {
 					//Lehenengo orientazioa aukeratuko du:
 					Random rand = new Random();
-					byte orientazioZenb = (Byte) null;               //ORIENTAZIOA AUKERATU
+					byte orientazioZenb = -1;               //ORIENTAZIOA AUKERATU
 					orientazioZenb = (byte) rand.nextInt(2);
 					switch(orientazioZenb) {
 					case 0:
@@ -257,7 +258,6 @@ public class JokalariCPU extends Jokalaria {
 	 */
 	private Koordenatuak zentzuBateanKoordenatuBerriak(short pX, short pY, byte pZentzua) {
 		 //Arazorik ez badago:
-		Object o = null;
 		 if(this.zeinErtzaDa(pX, pY) == 0 && this.zeinIzkinaDa(pX, pY) == 0) {
 			 switch(pZentzua) {
 			 case 0:
@@ -279,8 +279,8 @@ public class JokalariCPU extends Jokalaria {
 			 if(this.zeinErtzaDa(pX, pY) == 1) {
 				 switch(pZentzua) {
 				 case 0:
-					 pX = (Short) null;
-					 pY = (Short) null;
+					 pX = -1;
+					 pY = -1;
 					 break;
 				 case 1:
 					 pY = (short)(pY - 1);
@@ -298,12 +298,12 @@ public class JokalariCPU extends Jokalaria {
 				 if(this.zeinIzkinaDa(pX, pY) == 1) {
 					 switch(pZentzua) {
 					 case 0:
-						 pX = (Short)null;
-						 pY = (Short)null;
+						 pX = -1;
+						 pY = -1;
 						 break;
 					 case 1:
-						 pX = (Short)null;
-						 pY = (Short)null;
+						 pX = -1;
+						 pY = -1;
 						 break;
 					 case 2:
 						 pX =(short)(pX - 1);
@@ -321,8 +321,8 @@ public class JokalariCPU extends Jokalaria {
 							 pX = (short)(pX + 1);
 							 break;
 						 case 1:
-							 pX = (Short)null;
-							 pY = (Short)null;
+							 pX = -1;
+							 pY = -1;
 							 break;
 						 case 2:
 							 pX = (short)(pX - 1);
@@ -341,12 +341,12 @@ public class JokalariCPU extends Jokalaria {
 								 pX = (short)(pX + 1);
 								 break;
 							 case 1:
-								 pX = (Short)null;
-								 pY = (Short)null;
+								 pX = -1;
+								 pY = -1;
 								 break;
 							 case 2:
-								 pX = (Short)null;
-								 pY = (Short)null;
+								 pX = -1;
+								 pY = -1;
 								 break;
 							 case 3:
 								 pY = (short)(pY + 1);
@@ -364,8 +364,8 @@ public class JokalariCPU extends Jokalaria {
 									 pY = (short)(pY - 1);
 									 break;
 								 case 2:
-									 pX = (Short)null;
-									 pY = (Short)null;
+									 pX = -1;
+									 pY = -1;
 									 break;
 								 case 3:
 									 pY = (short)(pY + 1);
@@ -383,12 +383,12 @@ public class JokalariCPU extends Jokalaria {
 										 pY = (short)(pY - 1);
 										 break;
 									 case 2:
-										 pX = (Short)null;
-										 pY = (Short)null;
+										 pX = -1;
+										 pY = -1;
 										 break;
 									 case 3:
-										 pX = (Short)null;
-										 pY = (Short)null;
+										 pX = -1;
+										 pY = -1;
 										 break;
 									 }
 								 }
@@ -406,8 +406,8 @@ public class JokalariCPU extends Jokalaria {
 											 pX = (short)(pX - 1);
 											 break;
 										 case 3:
-											 pX = (Short)null;
-											 pY = (Short)null;
+											 pX = -1;
+											 pY = -1;
 											 break;
 										 }
 									 }
@@ -416,8 +416,8 @@ public class JokalariCPU extends Jokalaria {
 										 if(this.zeinIzkinaDa(pX, pY) == 4) {
 											 switch(pZentzua) {
 											 case 0:
-												 pX = (Short)null;
-												 pY = (Short)null;
+												 pX = -1;
+												 pY = -1;
 												 break;
 											 case 1:
 												 pY = (short)(pY - 1);
@@ -426,14 +426,14 @@ public class JokalariCPU extends Jokalaria {
 												 pX = (short)(pX - 1);
 												 break;
 											 case 3:
-												 pX = (Short)null;
-												 pY = (Short)null;
+												 pX = -1;
+												 pY = -1;
 												 break;
 											 }
 										 }
 										 else {
-											 pX = (Short)null;
-											 pY = (Short)null;
+											 pX = -1;
+											 pY = -1;
 										 }
 									 }
 								 }

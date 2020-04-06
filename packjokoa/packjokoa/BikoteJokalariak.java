@@ -158,7 +158,7 @@ public class BikoteJokalariak {
 		String izena = Teklatua.getNireTeklatua().irakurriString();
 		short i=10;	//erenkada kopurua	
 		BikoteJokalariak.getNireBikoteJokalariak().zerrenda[0] = new JokalariArrunta(izena, i );
-		//BikoteJokalariak.getNireBikoteJokalariak().zerrenda[1] = new JokalariCPU( i );
+		BikoteJokalariak.getNireBikoteJokalariak().zerrenda[1] = new JokalariCPU( i );
 		
 		System.out.println("Partida hasiko da!");
 		BikoteJokalariak.getNireBikoteJokalariak().partidaBatJokatu();
