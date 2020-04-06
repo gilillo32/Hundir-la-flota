@@ -121,17 +121,17 @@ public class JokalariArrunta extends Jokalaria {
 			   try {
 				   if( pOrientazioa.equals("B") || pOrientazioa.equals("b")) {//nuevo
 					   if ((pY+pItsas-1>= ( pErrenkadaZutKop) +1)) {
-						   System.out.println("A VER SI ENTRAAA     IndexOutOfBoundsException");
+						  // System.out.println("A VER SI ENTRAAA     IndexOutOfBoundsException");
 						   throw new IndexOutOfBoundsException();
 					   }
 				   }
 				   else if(pOrientazioa.equals("H") || pOrientazioa.equals("h")) {//nuevo
 					   if ((pX+pItsas-1>= (pErrenkadaZutKop+1))) {
-						   System.out.println("A VER SI ENTRAAA     IndexOutOfBoundsException");
+						  //System.out.println("A VER SI ENTRAAA     IndexOutOfBoundsException");
 						   throw new IndexOutOfBoundsException();
 					   }
 				   }
-				   System.out.println("A VER SI ENTRAAA     IndexOutOfBoundsException  DESPUES DE THROW");
+				   //System.out.println("A VER SI ENTRAAA     IndexOutOfBoundsException  DESPUES DE THROW");
 				   this.getNireTableroa().itsasontziakJarri(pX, pY, pItsas, pOrientazioa);
 				   denaOndo2=true;
 				   
