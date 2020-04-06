@@ -90,7 +90,7 @@ public class JokalariArrunta extends Jokalaria {
 				 itsasMota="txalupa";
 				 break;
 			 case 2:
-				 itsasMota="itsaspeko";
+				 itsasMota="itsaspeko"; 
 				 break;
 			 case 3:
 				 itsasMota="suntsitzailea";
