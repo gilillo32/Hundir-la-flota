@@ -259,7 +259,7 @@ public class Tableroa {
 				}
 			}
 				aux=(short) (pY-1);
-			if(pX!=1 && pY != this.errenZutKop-1  ) {
+			if(pX!=1  && amEr != this.errenZutKop-1 ) { //pY != this.errenZutKop-1
 				System.out.println( " konprobatuHutsuneak pX!=1 EZKERREKO");
 				while(hutsune && aux<= (amEr+1)) {		//EZKERREKO ZUTABEKOKASILAK BEGIRATU		
 					if( this.koordenatuanZerDagoen((short) (pX-1), aux) == "U") {
@@ -269,7 +269,7 @@ public class Tableroa {
 					aux++;
 				}
 			}
-			else if(pX!=1 && pY == this.errenZutKop-1 ) {
+			else if(pX!=1  && amEr == this.errenZutKop-1) {
 				System.out.println( " else if konprobatuHutsuneak pX!=1 EZKERREKO bis");
 				while(hutsune && aux<= amEr) {		//EZKERREKO ZUTABEKOKASILAK BEGIRATU		
 					if( this.koordenatuanZerDagoen((short) (pX-1), aux) == "U") {
@@ -280,7 +280,7 @@ public class Tableroa {
 				}
 			}
 				aux=(short) (pY-1);
-			if(pX != this.errenZutKop-1 && pY != this.errenZutKop-1  ) {
+			if(pX != this.errenZutKop-1 && amEr != this.errenZutKop-1  ) {  //&& pY != this.errenZutKop-1 
 				System.out.println( " konprobatuHutsuneak pX != this.errenZutKop ESKUINEKO");
 				while(hutsune && aux<= (amEr+1)) {			//ESKUINEKO ZUTABEKOKASILAK BEGIRATU	
 					if(this.koordenatuanZerDagoen((short) (pX+1), aux) == "U") {
@@ -290,7 +290,7 @@ public class Tableroa {
 					aux++;
 				}
 			}
-			else if(pX != this.errenZutKop-1 &&  pY == this.errenZutKop-1 ) {
+			else if(pX != this.errenZutKop-1 &&  amEr == this.errenZutKop-1 ) {
 				System.out.println( "else if konprobatuHutsuneak pY != this.errenZutKop ESKUINEKO bis");
 				while(hutsune && aux<= amEr) {			//ESKUINEKO ZUTABEKOKASILAK BEGIRATU	
 					if(this.koordenatuanZerDagoen((short) (pX+1), aux) == "U") {
