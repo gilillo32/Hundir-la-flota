@@ -664,7 +664,7 @@ public class JokalariCPU extends Jokalaria {
 			ertz1Da = true;
 		}
 		
-		return true;
+		return ertz1Da;
 	}
 	
 	private boolean ertz2Da(short pX, short pY) {

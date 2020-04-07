@@ -24,7 +24,7 @@ public class JokalariArrunta extends Jokalaria {
 			if(this.koordenadaBaliogarriak(pX, pY)) {
 				String emaitza = pJokalaria.koordenatuanZerDagoen(pX, pY);
 				this.eguneratuPrintTableroa(pX, pY, emaitza);
-				if(emaitza!="U") {
+				if(emaitza!=" U") {
 					//Itsasontzia ez badu ukitzen:
 					posibleaDa=false; 
 				}
@@ -56,7 +56,7 @@ public class JokalariArrunta extends Jokalaria {
 	public  void eguneratuPrintTableroa(short pX, short pY, String pEma) {
 		// primeros llamamos a super.nUkituaInkrementatu y luego a tableroa.eguneratu
 		//bigarren tiroan itzuli duen String-a dagokion posizioan sartuko du
-		if(pEma=="U") {
+		if(pEma==" U") {
 			super.nUkituaInkrementatu();
 		}
 		

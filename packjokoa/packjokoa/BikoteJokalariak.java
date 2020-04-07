@@ -95,7 +95,7 @@ public class BikoteJokalariak {
 			if(this.zerrenda[0].koordenadaBaliogarriak(pX, pY)  ) {
 				String emaitza = this.zerrenda[1].koordenatuanZerDagoen(pX, pY);
 				this.zerrenda[0].eguneratuPrintTableroa(pX, pY, emaitza);
-				if(emaitza!="U") {
+				if(emaitza!=" U") {
 					//Itsasontzia ez badu ukitzen:
 					posibleaDa=false; 
 				}				
@@ -116,7 +116,7 @@ public class BikoteJokalariak {
 				if(this.zerrenda[1].koordenadaBaliogarriak(pX, pY)  ) {
 					String emaitza = this.zerrenda[0].koordenatuanZerDagoen(pX, pY);
 					this.zerrenda[1].eguneratuPrintTableroa(pX, pY, emaitza);
-					if(emaitza!="U") {
+					if(emaitza!=" U") {
 						//Itsasontzia ez badu ukitzen:
 						posibleaDa=false; 
 						aurrekoanAsmatu=false;

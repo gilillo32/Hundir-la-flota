@@ -102,7 +102,7 @@ public class Tableroa {
 			while(pX<aux && emaitza) {
 				//System.out.println( " konprobatuItsasontsirikEzKoordenatuan WHILE ");
 				//System.out.println( this.koordenatuanZerDagoen(pX, pY));
-				if (  this.koordenatuanZerDagoen(pX, pY).equals("U")) { //U bat bueltazen badu esan nahi du itsasontsi bat dagoela han
+				if (  this.koordenatuanZerDagoen(pX, pY).equals(" U")) { //U bat bueltazen badu esan nahi du itsasontsi bat dagoela han
 					emaitza=false;
 					//System.out.println( " konprobatuItsasontsirikEzKoordenatuan SEGUNDO IF ");
 				}				 
@@ -114,7 +114,7 @@ public class Tableroa {
 			aux	=pY+ pItsas;
 			while(pY<aux) {
 				//System.out.println( " konprobatuItsasontsirikEzKoordenatuan SEGUNDO WHILE ");
-				if (  this.koordenatuanZerDagoen(pX, pY).equals("U")) {
+				if (  this.koordenatuanZerDagoen(pX, pY).equals(" U")) {
 					//System.out.println( " konprobatuItsasontsirikEzKoordenatuan TERCER IF ");
 					emaitza=false;
 				}
@@ -132,7 +132,7 @@ public class Tableroa {
 		//konprobatuko dugu ez duela lehen erabili, ez badago U edo - (U itsasontzia ukituta dagoela esan nahi du, GOGORATU!!!
 		//konprobaketa bere asmakuntzen tableroan begiratuko du
 		boolean tiroa= false;
-		if( !this.uraDago(pX, pY) || this.matrizea[pY][pX] != "U") {
+		if( !this.uraDago(pX, pY) || this.matrizea[pY][pX] != " U") {
 			tiroa= true;
 		}		
 		return tiroa;
@@ -140,7 +140,7 @@ public class Tableroa {
 	
 	public String koordenatuanZerDagoen(short pX, short pY) {
 		//salbuespen del teklado SE MIRA AL PEDIR LA CORDENADA
-		//honek etsaiaren tableroan begiratuko du zer dagoen kasilan, itsasontsia baldin badago "U" bueltatzen du, bestela, han dagoena, hau da, ura "-"
+		//honek etsaiaren tableroan begiratuko du zer dagoen kasilan, itsasontsia baldin badago " U" bueltatzen du, bestela, han dagoena, hau da, ura "-"
 		String ema= this.matrizea[pY][pX];
 		String bat=" 1";
 		String bi = " 2";
@@ -149,7 +149,7 @@ public class Tableroa {
 		//System.out.println( "matrizean dagoenaaaaaaaa   !m" + this.matrizea[pY][pX] );
 		//System.out.println("EMA hasierako balioa .... " + ema);
 		if( ema.equals(bat)  || ema.equals(bi)  || ema.equals(hiru)  || ema.equals(lau) ) { //   ||this.matrizea[pY][pX].equals(bi)  || this.matrizea[pY][pX].equals(hiru)  || this.matrizea[pY][pX].equals(lau)
-			ema = "U";
+			ema = " U";
 			//System.out.println("EMA LO QUE se supne que hay si entra en el if " + ema);
 		}	
 		//System.out.println("EMA LO QUE devuelve " + ema);
@@ -183,13 +183,13 @@ public class Tableroa {
 			amEr= pY;
 			if(pX!=1) {
 				//System.out.println( " konprobatuHutsuneak  IF PX!=1 EZKERREKO");
-				if( this.koordenatuanZerDagoen((short)(pX-1), pY).equals("U") ) { //EZKERREKO KASILAN BEGIRATU
+				if( this.koordenatuanZerDagoen((short)(pX-1), pY).equals(" U") ) { //EZKERREKO KASILAN BEGIRATU
 					//System.out.println( " konprobatuHutsuneak  EZK1 jjdsjdjdjj");
 					hutsune = false;
 				}}
 			if(pX != this.errenZutKop-1) {
 				//System.out.println( " konprobatuHutsuneak  IF PX!=this.errenZutKop ESKUINEKO ");
-				if(this.koordenatuanZerDagoen( amZut, amEr) == "U") { //ESKUINEKO KASILAN BEGIRATU
+				if(this.koordenatuanZerDagoen( amZut, amEr) == " U") { //ESKUINEKO KASILAN BEGIRATU
 				hutsune = false;	
 				//System.out.println( " konprobatuHutsuneak  ESK1");
 				}}
@@ -197,7 +197,7 @@ public class Tableroa {
 			if(pY!=1 && amZut != this.errenZutKop-1 ) { 
 				//System.out.println( " konprobatuHutsuneak  pY!=1  GOIKO");
 			while(hutsune && aux<= (amZut+1)) {		//GOIKO ERRENKETAKO KASILAK BEGIRATU		
-				if(this.koordenatuanZerDagoen(aux, (short)(pY-1)) == "U") {
+				if(this.koordenatuanZerDagoen(aux, (short)(pY-1)) == " U") {
 						hutsune = false;
 						//System.out.println( " konprobatuHutsuneak  GOI");
 					}
@@ -207,7 +207,7 @@ public class Tableroa {
 			else if(pY!=1 && amZut == this.errenZutKop-1 ) {
 				//System.out.println( " konprobatuHutsuneak  pY!=1  GOIKO bisssss");
 				while(hutsune && aux<= amZut) {		//GOIKO ERRENKETAKO KASILAK BEGIRATU		
-					if(this.koordenatuanZerDagoen(aux, (short)(pY-1)) == "U") {
+					if(this.koordenatuanZerDagoen(aux, (short)(pY-1)) == " U") {
 							hutsune = false;
 							//System.out.println( " konprobatuHutsuneak  GOI");
 						}
@@ -219,7 +219,7 @@ public class Tableroa {
 			if(pY != this.errenZutKop-1  && amZut != this.errenZutKop-1) {
 				//System.out.println( " konprobatuHutsuneak  (pY != this.errenZutKop   BEHEKO");
 				while(hutsune && aux<= (amZut+1)) {				
-					if(this.koordenatuanZerDagoen(aux, (short)(pY+1)) == "U") { //BEHEKO ERRENKADAKO KASILETAN BEGIRATU
+					if(this.koordenatuanZerDagoen(aux, (short)(pY+1)) == " U") { //BEHEKO ERRENKADAKO KASILETAN BEGIRATU
 						hutsune = false;
 						//System.out.println( " konprobatuHutsuneak  BEHE");
 					}
@@ -229,7 +229,7 @@ public class Tableroa {
 			else if (pY != this.errenZutKop-1 && amZut == this.errenZutKop-1 ) {
 				//System.out.println( " konprobatuHutsuneak  (pY != this.errenZutKop   BEHEKO bisssss");
 				while(hutsune && aux<= amZut) {				
-					if(this.koordenatuanZerDagoen(aux, (short)(pY+1)) == "U") { //BEHEKO ERRENKADAKO KASILETAN BEGIRATU
+					if(this.koordenatuanZerDagoen(aux, (short)(pY+1)) == " U") { //BEHEKO ERRENKADAKO KASILETAN BEGIRATU
 						hutsune = false;
 						//System.out.println( " konprobatuHutsuneak  BEHE");
 					}
@@ -245,7 +245,7 @@ public class Tableroa {
 			amZut= pX;
 			if(pY!=1 ) {
 				//System.out.println( " konprobatuHutsuneak  pY!=1 gOIKO");
-				if(this.koordenatuanZerDagoen(pX, (short)(pY-1)) == "U") { //gOIKO KASILAN BEGIRATU
+				if(this.koordenatuanZerDagoen(pX, (short)(pY-1)) == " U") { //gOIKO KASILAN BEGIRATU
 					//System.out.println( " konprobatuHutsuneak  GOI");
 					hutsune = false;
 				}
@@ -253,7 +253,7 @@ public class Tableroa {
 			
 			if(pY != this.errenZutKop-1 ) {   
 				//System.out.println( " konprobatuHutsuneak  pY != this.errenZutKop BEHEKO");
-				if(this.koordenatuanZerDagoen( amEr, amZut) == "U") { //BEHEKO KASILAN BEGIRATU
+				if(this.koordenatuanZerDagoen( amEr, amZut) == " U") { //BEHEKO KASILAN BEGIRATU
 					hutsune = false;	
 				}
 			}
@@ -261,7 +261,7 @@ public class Tableroa {
 			if(pX!=1  && amEr != this.errenZutKop-1 ) { //pY != this.errenZutKop-1
 				//System.out.println( " konprobatuHutsuneak pX!=1 EZKERREKO");
 				while(hutsune && aux<= (amEr+1)) {		//EZKERREKO ZUTABEKOKASILAK BEGIRATU		
-					if( this.koordenatuanZerDagoen((short) (pX-1), aux) == "U") {
+					if( this.koordenatuanZerDagoen((short) (pX-1), aux) == " U") {
 						//System.out.println( " konprobatuHutsuneak EZK");
 						hutsune = false;
 					}
@@ -271,7 +271,7 @@ public class Tableroa {
 			else if(pX!=1  && amEr == this.errenZutKop-1) {
 				//System.out.println( " else if konprobatuHutsuneak pX!=1 EZKERREKO bis");
 				while(hutsune && aux<= amEr) {		//EZKERREKO ZUTABEKOKASILAK BEGIRATU		
-					if( this.koordenatuanZerDagoen((short) (pX-1), aux) == "U") {
+					if( this.koordenatuanZerDagoen((short) (pX-1), aux) == " U") {
 						//System.out.println( " konprobatuHutsuneak EZK");
 						hutsune = false;
 					}
@@ -282,7 +282,7 @@ public class Tableroa {
 			if(pX != this.errenZutKop-1 && amEr != this.errenZutKop-1  ) {  //&& pY != this.errenZutKop-1 
 				//System.out.println( " konprobatuHutsuneak pX != this.errenZutKop ESKUINEKO");
 				while(hutsune && aux<= (amEr+1)) {			//ESKUINEKO ZUTABEKOKASILAK BEGIRATU	
-					if(this.koordenatuanZerDagoen((short) (pX+1), aux) == "U") {
+					if(this.koordenatuanZerDagoen((short) (pX+1), aux) == " U") {
 						//System.out.println( " konprobatuHutsuneak ESK");
 						hutsune = false;
 					}
@@ -292,7 +292,7 @@ public class Tableroa {
 			else if(pX != this.errenZutKop-1 &&  amEr == this.errenZutKop-1 ) {
 				//System.out.println( "else if konprobatuHutsuneak pY != this.errenZutKop ESKUINEKO bis");
 				while(hutsune && aux<= amEr) {			//ESKUINEKO ZUTABEKOKASILAK BEGIRATU	
-					if(this.koordenatuanZerDagoen((short) (pX+1), aux) == "U") {
+					if(this.koordenatuanZerDagoen((short) (pX+1), aux) == " U") {
 						//System.out.println( " konprobatuHutsuneak ESK");
 						hutsune = false;
 					}
@@ -306,7 +306,7 @@ public class Tableroa {
 	
 	public void eguneratuTableroa( short pX, short pY, String pEmaitza) {
 		//etsaiak koordenatu horretan duena zure tableroan jarriko du metodo honek
-		if ( pEmaitza != "U") {
+		if ( pEmaitza != " U") {
 			pEmaitza= "X"; //jarriko du X bat gero konprobatuTiroa jakiteko ea koordenatu hori lehenik esan dugun ala ez
 		}
 		this.matrizea[pY][pX] = pEmaitza;

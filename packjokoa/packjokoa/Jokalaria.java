@@ -63,8 +63,8 @@ public abstract class Jokalaria {
 	public void eguneratuPrintTableroa(short pX, short pY, String pEma) {
 		// primeros llamamos a super.nUkituaInkrementatu y luego a tableroa.eguneratu
 		//bigarren tiroan itzuli duen String-a dagokion posizioan sartuko du
-		if(pEma == "U") {
-			//Itsasontzia "U"kitu badu:
+		if(pEma == " U") {
+			//Itsasontzia " U"kitu badu:
 			this.nUkituaInkrementatu();
 		}
 		this.getPrintTableroa().eguneratuTableroa(pX, pY, pEma);
