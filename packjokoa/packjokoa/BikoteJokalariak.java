@@ -48,8 +48,6 @@ public class BikoteJokalariak {
 	
 	
 	
-	
-	
 	public void itsasontziakJarri() {
 		this.zerrenda[0].getNireTableroa().tableroaBete();
 		this.zerrenda[0].itsasontziakJarri(10);
@@ -97,12 +95,15 @@ public class BikoteJokalariak {
 				this.zerrenda[0].eguneratuPrintTableroa(pX, pY, emaitza);
 				if(emaitza!=" U") {
 					//Itsasontzia ez badu ukitzen:
-					posibleaDa=false; 
+					posibleaDa=false;
+					System.out.println("OOH!!! Ez duzu itsasontzirik ukitu");
 				}				
 			}
 			else {
 				posibleaDa=false;
+				System.out.println("Sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu");
 			}
+			
 		}while(posibleaDa) ;
 		//JokalariCPU
 		posibleaDa=true;

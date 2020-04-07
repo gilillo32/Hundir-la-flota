@@ -23,7 +23,7 @@ public abstract class Jokalaria {
 	}
 	
 	protected Tableroa getPrintTableroa() {
-		return this.nireTableroa;
+		return this.printTableroa;
 	}
 	
 	public abstract void itsasontziakJarri(int pErrenkadaZutKop);

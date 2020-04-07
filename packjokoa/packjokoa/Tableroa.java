@@ -59,8 +59,8 @@ public class Tableroa {
 		int aux=0;
 		//System.out.println( " ANTESSSSSSSSSSSSSSSSSSSS itsasontziakJarri primer if ");
 		//itsasontzia jarriko dugu:
-		if(	 this.konprobatuItsasontsirikEzKoordenatuan(pX, pY, pItsas, pOrientazio) && this.konprobatuHutsuneak(pX, pY, pItsas, pOrientazio)) {
-			//orentazioaren arabera bi modu:	
+		if(	 this.konprobatuItsasontzirikEzKoordenatuan(pX, pY, pItsas, pOrientazio) && this.konprobatuHutsuneak(pX, pY, pItsas, pOrientazio)) {
+			//orientazioaren arabera bi modu:	
 			//System.out.println( " itsasontziakJarri primer if ");
 			if (pOrientazio.equals("H")  || pOrientazio.equals("h") ) {//pY ez da aldatzen  
 				//System.out.println( " itsasontziakJarri primer if hhhhhhhhhhhhhhhhhh ");
@@ -90,7 +90,7 @@ public class Tableroa {
 		}
 	
 	
-	private boolean konprobatuItsasontsirikEzKoordenatuan(short pX, short pY,short pItsas, String pOrientazio) {
+	private boolean konprobatuItsasontzirikEzKoordenatuan(short pX, short pY,short pItsas, String pOrientazio) {
 		//begiratzen du guk itsasontsia jarri nahi dugun koordenatuan ez dagoela jada itsasontsirik
 		//false itsasontsia badago
 		//true itsasontsirik ez badago eta gure itsasontsia jarri ahal bada
@@ -112,7 +112,7 @@ public class Tableroa {
 		else if( pOrientazio.equals("B") || pOrientazio.equals("b") ) {//pX ez da aldatzen
 			//System.out.println( " konprobatuItsasontsirikEzKoordenatuan ELSE IF ");
 			aux	=pY+ pItsas;
-			while(pY<aux) {
+			while(pY<aux && emaitza) {
 				//System.out.println( " konprobatuItsasontsirikEzKoordenatuan SEGUNDO WHILE ");
 				if (  this.koordenatuanZerDagoen(pX, pY).equals(" U")) {
 					//System.out.println( " konprobatuItsasontsirikEzKoordenatuan TERCER IF ");
@@ -158,7 +158,7 @@ public class Tableroa {
 	
 	private boolean uraDago(short pX, short pY) {
 		boolean dago=false;
-		if( this.matrizea[pY][pX] == "-") {
+		if( this.matrizea[pY][pX] == " -") {
 			dago=true;
 		}		
 		return dago;		
