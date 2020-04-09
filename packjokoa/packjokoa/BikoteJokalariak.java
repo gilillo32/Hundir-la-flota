@@ -48,7 +48,7 @@ public class BikoteJokalariak {
 	
 	
 	
-	public void itsasontziakJarri() {
+	private void itsasontziakJarri() {
 		this.zerrenda[0].getNireTableroa().tableroaBete();
 		this.zerrenda[0].itsasontziakJarri(10);
 		this.zerrenda[1].getNireTableroa().tableroaBete();
@@ -60,7 +60,7 @@ public class BikoteJokalariak {
 	
 	
 	
-	public boolean partidaBukatu() {
+	private boolean partidaBukatu() {
 		// bi jokalarien tableroak begiratzen ditu eta 
 		// ez badago itsasontzirik, partida amaitzen da.
 		// itsasontzirikEz() erabiliko da jokalarien tableroak ikusteko.
@@ -78,7 +78,7 @@ public class BikoteJokalariak {
 	
 	
 	
-	public void koordenatuaAukeratu() {
+	private void koordenatuaAukeratu() {
 		boolean posibleaDa=true;
 		boolean aurrekoanAsmatu =false;
 		Koordenatuak k1= new Koordenatuak();
