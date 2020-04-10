@@ -2,7 +2,6 @@ package packjokoa;
 
 import java.util.Scanner;
 import salbuespenak.LimiteakGainditutaExc;
-import salbuespenak.OrientazioExc;;
 
 public class Proba{
 	private static Proba nireTeklatua=null;

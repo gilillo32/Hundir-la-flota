@@ -1,7 +1,6 @@
 package packjokoa;
 import java.io.*;
 import java.util.*;
-import salbuespenak.OrientazioExc;
 
 public class BikoteJokalariak {
 	//atributuak:

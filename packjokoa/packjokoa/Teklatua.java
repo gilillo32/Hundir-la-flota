@@ -3,7 +3,6 @@ package packjokoa;
 import java.util.Scanner;
 
 import salbuespenak.LimiteakGainditutaExc;
-import salbuespenak.OrientazioExc;
 
 public class Teklatua {
 	private static Teklatua nireTeklatua=null;
