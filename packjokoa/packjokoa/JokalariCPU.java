@@ -33,21 +33,21 @@ public class JokalariCPU extends Jokalaria {
 				}					
 			} while(errepikatuta);		
 		}
-		else if(pAurrekoanAsmatu &&  this.albokoKoordenatuak.size()==0) { //lehen aldiz ikutu du
+		else if(pAurrekoanAsmatu &&  this.albokoKoordenatuak.size()==0) { //lehen aldiz ikutu du eta zentzua asmatu behar du
 			this.albokoKordenatuakSortu(pK1);
 			this.koordenatuOriginalak=pK1;
-			int kont=0;
+			int konti=0;
 			do {
 				k=this.albokoKoordenatuak.get(this.zentzua);
-				kont++;
+				konti++;
 				if (this.zentzua==3) {
 					this.zentzua=0;
 				}
 				else {
 					this.zentzua++;
 				}
-			}while(k.getKoordenatuakY()== -1 && k.getKoordenatuakX()== -1 && this.esandakoKoordenatuak.contains(k) && kont<=4);
-			if( kont==4) {
+			}while(k.getKoordenatuakY()== -1 && k.getKoordenatuakX()== -1 && this.esandakoKoordenatuak.contains(k) && konti<=4);
+			if(konti==4) {
 				errepikatuta= false;
 				do {
 					k= this.koordenatuRandom();
@@ -195,18 +195,11 @@ public class JokalariCPU extends Jokalaria {
 	 private void albokoKordenatuakSortu(Koordenatuak pK) {
 		short auxPX = pK.getKoordenatuakX() ;
 		short auxPY = pK.getKoordenatuakY();
-		
-		//eskuina		
-		this.gehituAlbokoKoordenatuak(this.zentzuBateanKoordenatuBerriak(auxPX, auxPY, (byte)0));
-		 		 
-		//gora
-		this.gehituAlbokoKoordenatuak(this.zentzuBateanKoordenatuBerriak(auxPX, auxPY, (byte)1));
-		 
-		//ezkerra
-		this.gehituAlbokoKoordenatuak(this.zentzuBateanKoordenatuBerriak(auxPX, auxPY, (byte)2));
-		 
-		//behera
-		this.gehituAlbokoKoordenatuak(this.zentzuBateanKoordenatuBerriak(auxPX, auxPY, (byte)3));
+		byte kont=0;
+		while (kont<4) {
+			this.gehituAlbokoKoordenatuak(this.zentzuBateanKoordenatuBerriak(auxPX, auxPY, kont));
+			kont++;
+		}
 	 }
 	 
 	 /* Ez da erabiltzen metodo hau
@@ -214,7 +207,6 @@ public class JokalariCPU extends Jokalaria {
 		this.esandakoKoordenatuak.add(pK);
 	}
 	*/
-	
 	
 	private void gehituAlbokoKoordenatuak (Koordenatuak pK) {
 		this.albokoKoordenatuak.add(pK);
@@ -625,7 +617,7 @@ public class JokalariCPU extends Jokalaria {
 	private boolean ertz1Da(short pX, short pY) {
 		boolean ertz1Da = false;
 		int errenkadaZutKop = this.getNireTableroa().getErrenkadaZutKop();
-		if(pX + 1 > errenkadaZutKop) {
+		if(pX + 1 == errenkadaZutKop) {
 			ertz1Da = true;
 		}
 		
@@ -634,7 +626,7 @@ public class JokalariCPU extends Jokalaria {
 	
 	private boolean ertz2Da(short pX, short pY) {
 		boolean ertz2Da = false;
-		if(pY - 1 == -1) {
+		if(pY - 1 == 0) {
 			ertz2Da = true;
 		}
 		return ertz2Da;
@@ -642,7 +634,7 @@ public class JokalariCPU extends Jokalaria {
 	
 	private boolean ertz3Da(short pX, short pY) {
 		boolean ertz3Da = false;
-		if(pX - 1 == -1) {
+		if(pX - 1 == 0) {
 			ertz3Da = true;
 		}
 		return ertz3Da;
@@ -651,7 +643,7 @@ public class JokalariCPU extends Jokalaria {
 	private boolean ertz4Da(short pX, short pY) {
 		boolean ertz4Da = false;
 		int errenkadaZutKop = this.getNireTableroa().getErrenkadaZutKop();
-		if(pY + 1 > errenkadaZutKop) {
+		if(pY + 1 == errenkadaZutKop) {
 			ertz4Da = true;
 		}
 		return ertz4Da;
@@ -662,19 +654,19 @@ public class JokalariCPU extends Jokalaria {
 		short ertzZenb = 0;
 		if(this.zeinIzkinaDa(pX, pY) == 0) {
 			//Izkina ez bada ertza bada konprobatuko du
-			if(ertz1Da(pX, pY)) {
+			if(this.ertz1Da(pX, pY)) {
 				ertzZenb = 1;
 			}
 			else {
-				if(ertz2Da(pX, pY)) {
+				if(this.ertz2Da(pX, pY)) {
 					ertzZenb = 2;
 				}
 				else{
-					if(ertz3Da(pX, pY)) {
+					if(this.ertz3Da(pX, pY)) {
 						ertzZenb = 3;
 					}
 					else {
-						if(ertz4Da(pX, pY)) {
+						if(this.ertz4Da(pX, pY)) {
 							ertzZenb = 4;
 						}
 					}
@@ -696,7 +688,7 @@ public class JokalariCPU extends Jokalaria {
 	private boolean izkina1Da(short pX, short pY) {
 		boolean izkina1Da = false;
 		int errenZutKop = this.getNireTableroa().getErrenkadaZutKop();
-		if((pY - 1 == -1) && (pX + 1 > errenZutKop)) {
+		if((pY - 1 == 0) && (pX + 1 == errenZutKop)) {
 			izkina1Da = true;
 		}
 		return izkina1Da;
@@ -704,8 +696,8 @@ public class JokalariCPU extends Jokalaria {
 	
 	private boolean izkina2Da(short pX, short pY) {
 		boolean izkina2Da = false;
-		int errenZutKop =  this.getNireTableroa().getErrenkadaZutKop();
-		if((pX - 1 == -1) && (pY - 1 == -1)) {
+		//int errenZutKop =  this.getNireTableroa().getErrenkadaZutKop();
+		if((pX - 1 == 0) && (pY - 1 == 0)) {
 			izkina2Da = true;
 		}
 		return izkina2Da;
@@ -714,7 +706,7 @@ public class JokalariCPU extends Jokalaria {
 	private boolean izkina3Da(short pX, short pY) {
 		boolean izkina3Da = false;
 		int errenZutKop = this.getNireTableroa().getErrenkadaZutKop();
-		if((pY + 1 > errenZutKop) && (pX - 1 == 0)) {
+		if((pY + 1 == errenZutKop) && (pX - 1 == 0)) {
 			izkina3Da = true;
 		}
 		return izkina3Da;
@@ -723,7 +715,7 @@ public class JokalariCPU extends Jokalaria {
 	private boolean izkina4Da(short pX, short pY) {
 		boolean izkina4Da = false;
 		int errenZutKop = this.getNireTableroa().getErrenkadaZutKop();
-		if((pX + 1 > errenZutKop) && (pY + 1 > errenZutKop)) {
+		if((pX + 1 == errenZutKop) && (pY + 1 == errenZutKop)) {
 			izkina4Da = true;
 		}
 		return izkina4Da;
