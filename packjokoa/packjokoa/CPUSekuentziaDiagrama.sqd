@@ -360,8 +360,8 @@
             <constraint>
               <height>115</height>
               <width>262</width>
-              <x>250</x>
-              <y>285</y>
+              <x>249</x>
+              <y>265</y>
             </constraint>
             <sourceConnections/>
             <targetConnections/>
@@ -1925,8 +1925,8 @@ if(konti==4) {</old>
             <constraint>
               <height>115</height>
               <width>306</width>
-              <x>249</x>
-              <y>2086</y>
+              <x>250</x>
+              <y>2085</y>
             </constraint>
             <sourceConnections/>
             <targetConnections/>
@@ -3643,8 +3643,8 @@ else {&#xd;
             <constraint>
               <height>126</height>
               <width>317</width>
-              <x>253</x>
-              <y>2873</y>
+              <x>251</x>
+              <y>2864</y>
             </constraint>
             <sourceConnections/>
             <targetConnections/>
@@ -3757,8 +3757,8 @@ do {&#xd;
             <constraint>
               <height>120</height>
               <width>318</width>
-              <x>251</x>
-              <y>3432</y>
+              <x>248</x>
+              <y>3419</y>
             </constraint>
             <sourceConnections/>
             <targetConnections/>
@@ -4757,7 +4757,7 @@ else {&#xd;
                             <height>30</height>
                             <width>10</width>
                             <x>224</x>
-                            <y>276</y>
+                            <y>263</y>
                           </constraint>
                           <sourceConnections/>
                           <targetConnections>
@@ -4807,7 +4807,7 @@ else {&#xd;
                             <height>30</height>
                             <width>10</width>
                             <x>224</x>
-                            <y>2082</y>
+                            <y>2079</y>
                           </constraint>
                           <sourceConnections/>
                           <targetConnections>
@@ -5107,7 +5107,7 @@ else {&#xd;
                             <height>30</height>
                             <width>10</width>
                             <x>224</x>
-                            <y>2861</y>
+                            <y>2854</y>
                           </constraint>
                           <sourceConnections/>
                           <targetConnections>
@@ -5157,7 +5157,7 @@ else {&#xd;
                             <height>30</height>
                             <width>10</width>
                             <x>224</x>
-                            <y>3419</y>
+                            <y>3403</y>
                           </constraint>
                           <sourceConnections/>
                           <targetConnections>
