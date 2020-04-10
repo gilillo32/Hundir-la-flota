@@ -8209,10 +8209,10 @@ psibleaDa=false</old>
         </java.beans.PropertyChangeSupport>
       </listeners>
       <constraint>
-        <height>117</height>
-        <width>331</width>
-        <x>770</x>
-        <y>2247</y>
+        <height>106</height>
+        <width>426</width>
+        <x>815</x>
+        <y>2191</y>
       </constraint>
       <sourceConnections/>
       <targetConnections/>
