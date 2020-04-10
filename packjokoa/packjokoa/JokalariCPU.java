@@ -7,12 +7,7 @@ public class JokalariCPU extends Jokalaria {
 	
 	private ArrayList<Koordenatuak> esandakoKoordenatuak;//esan dituen koorenatu guztiak gordetzen dira, ez errepikatzeko
 	private ArrayList<Koordenatuak> albokoKoordenatuak;
-	private ArrayList<Koordenatuak> nireItsasontziakEtaAlbokoKoordenatuak;
 	private Koordenatuak koordenatuOriginalak;
-	//private boolean zentzuaAldatuBeharDu = false;
-	//private boolean zentzuaBadaki = false;
-	//private short jarraianAurkituDitzakeenUkitutak = 4;
-//private short zenbatUkituDituJarraian = 0;
 	private byte zentzua=0;
 	
 	public JokalariCPU(short pErrenkadaZutKop) {		
@@ -228,29 +223,7 @@ public class JokalariCPU extends Jokalaria {
 	private void erreseteatuAlbokoKoordenatuak() {
 		this.albokoKoordenatuak.clear();
 	}
-/*	 
-	public boolean koordenadaBaliogarriak(short pX, short pY) {
-		return super.koordenadaBaliogarriak(pX, pY);
-	}
 
-	
-	public String koordenatuanZerDagoen(short pX, short pY) {
-		return super.koordenatuanZerDagoen(pX, pY);
-		//itzuliko duen String-a hirugarren tiroan erabiliko da
-	}
-
-	
-	public void eguneratuPrintTableroa(short pX, short pY, String pEma) {
-		super.eguneratuPrintTableroa(pX, pY, pEma);
-	}
-	
-	public void setIzena() {
-		super("CPU");
-	}
-	
-	public boolean itsasontzirikEz() {
-		return super.itsasontzirikEz();
-	}*/
 	
 	/*
 	 * Metodo honek zentzu bat jarraitzen duen hurrengo koordenatua emango du
@@ -451,15 +424,7 @@ public class JokalariCPU extends Jokalaria {
 		 return koord;	
 	 }
 	
-	/*
-	private boolean koordenatuHauEsanDu(Koordenatuak pKoord) {
-		boolean esanDu = false;
-		if(this.ListaKoordenatuak.contains(pKoord)) {
-			esanDu = true;
-		}
-		return esanDu;
-	}
-	*/
+	
 	
 	private void kontrakoZentzua() {
 		switch(this.zentzua) {
