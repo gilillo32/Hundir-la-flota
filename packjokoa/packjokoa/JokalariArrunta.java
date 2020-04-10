@@ -43,7 +43,7 @@ public class JokalariArrunta extends Jokalaria {
 		
 	}
 
-	public boolean koordenadaBaliogarriak(short pX, short pY) {
+	/*public boolean koordenadaBaliogarriak(short pX, short pY) {
 		 return super.getNireTableroa().konprobatuTiroa(pX, pY);
 	}
 
@@ -61,15 +61,15 @@ public class JokalariArrunta extends Jokalaria {
 		}
 		
 		this.getPrintTableroa().eguneratuTableroa(pX,pY,pEma);
-	}
+	}*/
 	
 	/*public void setIzena(String pIzena) {
 		super.setIzena(pIzena);
 	}*/
 	
-	public boolean itsasontzirikEz() {
+	/*public boolean itsasontzirikEz() {
 		return super.itsasontzirikEz();
-	}   
+	}  */ 
 	
 	
 	

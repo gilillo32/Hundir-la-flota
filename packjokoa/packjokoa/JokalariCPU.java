@@ -228,7 +228,7 @@ public class JokalariCPU extends Jokalaria {
 	private void erreseteatuAlbokoKoordenatuak() {
 		this.albokoKoordenatuak.clear();
 	}
-	 
+/*	 
 	public boolean koordenadaBaliogarriak(short pX, short pY) {
 		return super.koordenadaBaliogarriak(pX, pY);
 	}
@@ -244,13 +244,13 @@ public class JokalariCPU extends Jokalaria {
 		super.eguneratuPrintTableroa(pX, pY, pEma);
 	}
 	
-	/*public void setIzena() {
+	public void setIzena() {
 		super("CPU");
-	}*/
+	}
 	
 	public boolean itsasontzirikEz() {
 		return super.itsasontzirikEz();
-	}
+	}*/
 	
 	/*
 	 * Metodo honek zentzu bat jarraitzen duen hurrengo koordenatua emango du

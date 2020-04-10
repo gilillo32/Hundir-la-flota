@@ -49,9 +49,9 @@ public class BikoteJokalariak {
 	
 	
 	private void itsasontziakJarri() {
-		this.zerrenda[0].getNireTableroa().tableroaBete();
+		this.zerrenda[0].nireTableroaBete();
 		this.zerrenda[0].itsasontziakJarri(10);
-		this.zerrenda[1].getNireTableroa().tableroaBete();
+		this.zerrenda[1].nireTableroaBete();
 		this.zerrenda[1].itsasontziakJarri(10);
 		
 	}
