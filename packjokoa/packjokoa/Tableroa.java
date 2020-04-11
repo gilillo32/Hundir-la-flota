@@ -129,10 +129,10 @@ public class Tableroa {
 	
 	public boolean konprobatuTiroa(short pX, short pY) {
 		//honako hauek salbuespenean jarriko ditugu(teklatuan)
-		//konprobatuko dugu ez duela lehen erabili, ez badago U edo - (U itsasontzia ukituta dagoela esan nahi du, GOGORATU!!!
+		//konprobatuko dugu ez duela lehen erabili, ez badago U edo  (U itsasontzia ukituta dagoela esan nahi du, GOGORATU!!!
 		//konprobaketa bere asmakuntzen tableroan begiratuko du
 		boolean tiroa= false;
-		if( !this.uraDago(pX, pY) || this.matrizea[pY][pX] != " U") {
+		if(this.uraDago(pX, pY)) {
 			tiroa= true;
 		}		
 		return tiroa;
@@ -307,7 +307,7 @@ public class Tableroa {
 	public void eguneratuTableroa( short pX, short pY, String pEmaitza) {
 		//etsaiak koordenatu horretan duena zure tableroan jarriko du metodo honek
 		if ( pEmaitza != " U") {
-			pEmaitza= "X"; //jarriko du X bat gero konprobatuTiroa jakiteko ea koordenatu hori lehenik esan dugun ala ez
+			pEmaitza= " X"; //jarriko du X bat gero konprobatuTiroa jakiteko ea koordenatu hori lehenik esan dugun ala ez
 		}
 		this.matrizea[pY][pX] = pEmaitza;
 		this.tableroaInprimatu();
@@ -319,5 +319,9 @@ public class Tableroa {
 	public int getErrenkadaZutKop() {
 		return this.errenZutKop;
 	}
-
+	
+	//Testak egiteko behar dugun metodoa:
+	public void KoordenatuanJarri ( int pX, int pY, String pJarri) {
+	this.matrizea[pY][pX] = pJarri;
+	}
 }

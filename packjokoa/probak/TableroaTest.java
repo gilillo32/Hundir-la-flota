@@ -6,34 +6,42 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TableroaTest {
+import packjokoa.Tableroa;
+import salbuespenak.KoordenatuEzEgokiak;
 
+public class TableroaTest {
+	private Tableroa  nireT, printT;
 	@Before
 	public void setUp() throws Exception {
+		nireT = new Tableroa(10);
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		nireT = null;
 	}
 
 	@Test
 	public void testTableroa() {
-		fail("Not yet implemented");
+		assertNotNull(nireT);
 	}
 
 	@Test
 	public void testTableroaInprimatu() {
-		fail("Not yet implemented");
+		System.out.println(" testTableroaInprimatu, tableroa hutsit inprimatuko da, indizeak inprimatuko dira soilik"); 
+		nireT.tableroaInprimatu();
 	}
 
 	@Test
 	public void testTableroaBete() {
-		fail("Not yet implemented");
+		System.out.println(" testTableroaBete frogatzeko, inprimatuko dugu tableroa :"); 
+		nireT.tableroaBete();
+		
 	}
 
-	@Test
+	@Test(expected = KoordenatuEzEgokiak.class)
 	public void testItsasontziakJarri() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
@@ -53,6 +61,11 @@ public class TableroaTest {
 
 	@Test
 	public void testGetErrenkadaZutKop() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void KoordenatuanJarri() {
 		fail("Not yet implemented");
 	}
 

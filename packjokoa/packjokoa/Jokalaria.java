@@ -15,6 +15,7 @@ public abstract class Jokalaria {
 		this.izena=pIzena;
 		this.nUkituta=0;
 		this.printTableroa=new Tableroa(pErrenkadaZutKop); 
+		this.printTableroa.tableroaBete();
 	}
 	
 	protected Tableroa getNireTableroa() {
