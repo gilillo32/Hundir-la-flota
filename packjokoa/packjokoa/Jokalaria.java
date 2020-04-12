@@ -18,6 +18,7 @@ public abstract class Jokalaria {
 		this.printTableroa.tableroaBete();
 	}
 	
+	
 	protected Tableroa getNireTableroa() {
 		return this.nireTableroa;
 	}
@@ -76,9 +77,14 @@ public abstract class Jokalaria {
 	public String getIzena() {
 		return this.izena;
 	}
-
+	public int  getNUkituta() {
+		return this.nUkituta;
+	}
 	
 	
+	public void  setNUkituta(int pUkituta) {
+		 this.nUkituta = pUkituta;
+	}
 	
 	
 	

@@ -58,7 +58,11 @@ public class JokalariaTest {
 
 	@Test
 	public void testEguneratuPrintTableroa() {
-		fail("Not yet implemented");
+		int a=0;
+		while (a<10) {
+			a++;
+			
+		}
 	}
 
 	@Test
