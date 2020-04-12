@@ -48,7 +48,7 @@ public class TableroaTest {
 	public void testItsasontziakJarri() throws KoordenatuEzEgokiak {
 		//sartuko dugu itsasontzi bat edozein koordenatuan, beraz ez dago arazorik
 		nireT.itsasontziakJarri((short)(4), (short)(4), (short)(1), "h");
-		assertFail(nireT.itsasontziakJarri((short)(4), (short)(4), (short)(2), "h"));
+		assertFail(nireT.itsasontziakJarri((short)(4), (short)(4), (short)(2), "h"));//mal
 	}
 
 	@Test
