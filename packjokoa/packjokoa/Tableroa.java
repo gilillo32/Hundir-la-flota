@@ -91,9 +91,9 @@ public class Tableroa {
 	
 	
 	private boolean konprobatuItsasontzirikEzKoordenatuan(short pX, short pY,short pItsas, String pOrientazio) {
-		//begiratzen du guk itsasontsia jarri nahi dugun koordenatuan ez dagoela jada itsasontsirik
-		//false itsasontsia badago
-		//true itsasontsirik ez badago eta gure itsasontsia jarri ahal bada
+		//begiratzen du guk itsasontzia jarri nahi dugun koordenatuan ez dagoela jada itsasontsirik
+		//false itsasontzia badago
+		//true itsasontsirik ez badago eta gure itsasontzia jarri ahal bada
 		boolean emaitza=true;
 		int aux=0;
 		if ( pOrientazio.equals("H")  || pOrientazio.equals("h") ) {//pY ez da aldatzen
@@ -140,7 +140,7 @@ public class Tableroa {
 	
 	public String koordenatuanZerDagoen(short pX, short pY) {
 		//salbuespen del teklado SE MIRA AL PEDIR LA CORDENADA
-		//honek etsaiaren tableroan begiratuko du zer dagoen kasilan, itsasontsia baldin badago " U" bueltatzen du, bestela, han dagoena, hau da, ura "-"
+		//honek etsaiaren tableroan begiratuko du zer dagoen kasilan, itsasontzia baldin badago " U" bueltatzen du, bestela, han dagoena, hau da, ura "-"
 		String ema= this.matrizea[pY][pX];
 		String bat=" 1";
 		String bi = " 2";
@@ -168,9 +168,9 @@ public class Tableroa {
 	
 	private boolean konprobatuHutsuneak(short pX, short pY, short pItsas, String pOrientazio ) {		
 	
-		//true bueltatzen du itsasontzien hartean hiutsuneak egongo badira itsasontsia koordenatu horretan jarrri ostean, bestela false, hau da, itsasontzia ezin da han jarri
-		//pItsas esango digu zein motatak itsasontsia den, guk jakitek zein koordenatuan amaituko den itsasontzia
-		//itsasontsien hartean gutxienez kasila bat tartean egon behar da
+		//true bueltatzen du itsasontzien hartean hiutsuneak egongo badira itsasontzia koordenatu horretan jarrri ostean, bestela false, hau da, itsasontzia ezin da han jarri
+		//pItsas esango digu zein motatak itsasontzia den, guk jakitek zein koordenatuan amaituko den itsasontzia
+		//itsasontzien hartean gutxienez kasila bat tartean egon behar da
 		boolean hutsune = true;
 		short aux=0;
 		short amZut=0;
@@ -179,7 +179,7 @@ public class Tableroa {
 		if ( pOrientazio.equals("H")  || pOrientazio.equals("h") ) { 
 			//System.out.println( " konprobatuHutsuneak PRIMER IF  H ");
 			//horizontalean
-			amZut= (short )(pX + pItsas-1);//-1 EGITEN DUGU, JAKITEKO ITSASONTSIAREN AZKENENGO KASILA
+			amZut= (short )(pX + pItsas-1);//-1 EGITEN DUGU, JAKITEKO ITSASONTZIAREN AZKENENGO KASILA
 			amEr= pY;
 			if(pX!=1) {
 				//System.out.println( " konprobatuHutsuneak  IF PX!=1 EZKERREKO");
@@ -241,7 +241,7 @@ public class Tableroa {
 		else if (pOrientazio.equals("B") || pOrientazio.equals("b")) {
 			//System.out.println( " konprobatuHutsuneak PRIMER IF  B ");
 			//Bertikalean
-			amEr= (short )(pY + pItsas -1); //-1 EGITEN DUGU, JAKITEKO ITSASONTSIAREN AZKENENGO KASILA
+			amEr= (short )(pY + pItsas -1); //-1 EGITEN DUGU, JAKITEKO ITSASONTZIAREN AZKENENGO KASILA
 			amZut= pX;
 			if(pY!=1 ) {
 				//System.out.println( " konprobatuHutsuneak  pY!=1 gOIKO");
