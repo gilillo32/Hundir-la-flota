@@ -18,6 +18,7 @@ public abstract class Jokalaria {
 		this.printTableroa.tableroaBete();
 	}
 	
+	
 	protected Tableroa getNireTableroa() {
 		return this.nireTableroa;
 	}
