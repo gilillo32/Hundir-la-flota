@@ -31,12 +31,12 @@ public class JokalariaTest {
 
 	@Test
 	public void testGetNireTableroa() {
-		fail("Not yet implemented");
+		//PROTECTED DA, EZIN DA ATZITU
 	}
 
 	@Test
 	public void testGetPrintTableroa() {
-		
+		//PROTECTED DA, EZIN DA ATZITU
 	}
 
 	@Test
@@ -47,7 +47,7 @@ public class JokalariaTest {
 
 	@Test
 	public void testItsasontziakJarri() {
-
+		//jeje ABSTRACT
 	}
 
 	@Test
@@ -72,17 +72,17 @@ public class JokalariaTest {
 
 	@Test
 	public void testKoordenatuanZerDagoen() {
-		fail("Not yet implemented");
+		//ezi nda konprobaru tableroa ezin bada atzitu
 	}
 
 	@Test
 	public void testKoordenadaBaliogarriak() {
-		fail("Not yet implemented");
+		//ezin da konprobaru tableroa ezin bada atzitu
 	}
 
 	@Test
 	public void testEguneratuPrintTableroa() {
-		fail("Not yet implemented");
+		//ezin da konprobaru tableroa ezin bada atzitu
 	}
 
 	@Test
