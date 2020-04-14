@@ -33,7 +33,7 @@ public class TableroaTest {
 
 	@Test
 	public void testTableroaInprimatu() {
-		System.out.println(" testTableroaInprimatu, tableroa hutsit inprimatuko da, indizeak inprimatuko dira soilik"); 
+		System.out.println(" testTableroaInprimatu"); 
 		nireT.tableroaInprimatu();
 	}
 
@@ -43,13 +43,25 @@ public class TableroaTest {
 		nireT.tableroaBete();
 		
 	}
+	
+	
+	@Test
+	public void konprobatuItsasontziakJarri() {
+		//sartuko dugu itsasontzi bat edozein koordenatuan, beraz ez dago arazorik
+		assertTrue(nireT.konprobatuItsasontziakJarri((short)(4), (short)(4), (short)(1), "h"));
+		//Lehen sartu dugun koordenatu berdineta saiatu gara itsasontzi bat jartzen.
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(4), (short)(4), (short)(2), "h"));
+		
+	}
+	
+	
 
-	@Test(expected = KoordenatuEzEgokiak.class)
+/*	@Test(expected = KoordenatuEzEgokiak.class)
 	public void testItsasontziakJarri() throws KoordenatuEzEgokiak {
 		//sartuko dugu itsasontzi bat edozein koordenatuan, beraz ez dago arazorik
 		nireT.itsasontziakJarri((short)(4), (short)(4), (short)(1), "h");
-		assertFail(nireT.itsasontziakJarri((short)(4), (short)(4), (short)(2), "h"));//mal
-	}
+		nireT.itsasontziakJarri((short)(4), (short)(4), (short)(2), "h");//mal
+	}*/
 
 	@Test
 	public void testKonprobatuTiroa() {

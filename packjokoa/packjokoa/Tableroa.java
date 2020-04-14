@@ -53,7 +53,17 @@ public class Tableroa {
 		}	
 		this.tableroaInprimatu();		
 	} 
-	
+	public boolean konprobatuItsasontziakJarri(short pX, short pY,short pItsas, String pOrientazio) {
+		boolean emaitza= true;
+		try {
+			this.itsasontziakJarri(pX, pY, pItsas, pOrientazio);
+			
+		}
+		catch (KoordenatuEzEgokiak e){
+			emaitza= false;
+		}
+		return emaitza;
+	}
 
 	public void itsasontziakJarri (short pX, short pY,short pItsas, String pOrientazio) throws KoordenatuEzEgokiak{
 		int aux=0;
