@@ -45,10 +45,7 @@ public class JokalariaTest {
 		j1.nireTableroaBete();
 	}
 
-	@Test
-	public void testItsasontziakJarri() {
-		//jeje ABSTRACT
-	}
+
 
 	@Test
 	public void testItsasontzirikEz() {
