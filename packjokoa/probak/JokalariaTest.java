@@ -76,18 +76,17 @@ public class JokalariaTest {
 
 	@Test
 	public void test5KoordenatuanZerDagoen() {
+		//nire tableroan begiratzen du
 		Tableroa nireT = j1.getNireTableroa();
-		
+//	1		
 		//hasieran uraz - beteta dago
 		String ema = nireT.koordenatuanZerDagoen((short)1,(short) 1);
 		assertEquals(" -" , ema);
-//	1		
 		
 		//koordenatu horretan " 1" jarriko dugu eta metodoa " U" buletatuko du
 		nireT.KoordenatuanJarri(1, 1, " 1");
 		ema = nireT.koordenatuanZerDagoen((short)1,(short) 1);
-		assertEquals(" U" , ema);
-	
+		assertEquals(" U" , ema);	
 //	2
 		//hasieran uraz - beteta dago
 		ema = nireT.koordenatuanZerDagoen((short)5,(short) 1);
@@ -101,18 +100,18 @@ public class JokalariaTest {
 		//hasieran uraz - beteta dago
 		ema = nireT.koordenatuanZerDagoen((short)7,(short) 2);
 		assertEquals(" -" , ema);
-		nireT.KoordenatuanJarri(7, 2, " 3");
 		
-		//koordenatu horretan " 1" jarriko dugu eta metodoa " U" buletatuko du
+		//koordenatu horretan " 3" jarriko dugu eta metodoa " U" buletatuko du
+		nireT.KoordenatuanJarri(7, 2, " 3");		
 		ema = nireT.koordenatuanZerDagoen((short)7,(short) 2);
 		assertEquals(" U" , ema);
 //  4
 		//hasieran uraz - beteta dago
 		ema = nireT.koordenatuanZerDagoen((short)9,(short) 3);
 		assertEquals(" -" , ema);
-		nireT.KoordenatuanJarri(9, 3, " 4");
 		
-		//koordenatu horretan " 1" jarriko dugu eta metodoa " U" buletatuko du
+		//koordenatu horretan " 4" jarriko dugu eta metodoa " U" buletatuko du
+		nireT.KoordenatuanJarri(9, 3, " 4");		
 		ema = nireT.koordenatuanZerDagoen((short)9,(short) 3);
 		assertEquals(" U" , ema);	
 	
@@ -120,7 +119,53 @@ public class JokalariaTest {
 
 	@Test
 	public void test6KoordenadaBaliogarriak() {
-		//ezin da konprobaru tableroa ezin bada atzitu
+		//nire tableroan begiratzen du
+		Tableroa nireT = j1.getNireTableroa();
+//	1	
+		//hasieran uraz - beteta dago, beraz true bueltatuko du
+		String ema = nireT.koordenatuanZerDagoen((short)1,(short) 1);
+		assertEquals(" -" , ema);
+		assertTrue(j1.koordenadaBaliogarriak((short)1,(short) 1) );
+		
+		//koordenatu horretan " 1" jarriko dugu eta koordenatuanZerDagoen metodoa " U" buletatuko du, beraz false bueltatuko du
+		nireT.KoordenatuanJarri(1, 1, " 1");
+		ema = nireT.koordenatuanZerDagoen((short)1,(short) 1);
+		assertEquals(" U" , ema);		
+		assertFalse(j1.koordenadaBaliogarriak((short)1,(short) 1) );		
+//	2
+		//hasieran uraz - beteta dago
+		ema = nireT.koordenatuanZerDagoen((short)5,(short) 1);
+		assertEquals(" -" , ema);
+		assertTrue(j1.koordenadaBaliogarriak( (short)5,(short) 1) );
+				
+		//koordenatu horretan " 2" jarriko dugu eta koordenatuanZerDagoen metodoa " U" buletatuko du, beraz false bueltatuko du
+		nireT.KoordenatuanJarri(5, 1, " 2");
+		ema = nireT.koordenatuanZerDagoen((short)5,(short) 1);
+		assertEquals(" U" , ema);
+		assertFalse(j1.koordenadaBaliogarriak( (short)5,(short) 1)  );
+//  3
+		//hasieran uraz - beteta dago
+		ema = nireT.koordenatuanZerDagoen((short)7,(short) 2);
+		assertEquals(" -" , ema);
+		assertTrue(j1.koordenadaBaliogarriak( (short)7,(short) 2) );
+		
+		//koordenatu horretan " 3" jarriko dugu koordenatuanZerDagoen metodoa " U" buletatuko du, beraz false bueltatuko du
+		nireT.KoordenatuanJarri(7, 2, " 3");		
+		ema = nireT.koordenatuanZerDagoen((short)7,(short) 2);
+		assertEquals(" U" , ema);
+		assertFalse(j1.koordenadaBaliogarriak(  (short)7,(short) 2) );
+//  4
+		//hasieran uraz - beteta dago
+		ema = nireT.koordenatuanZerDagoen((short)9,(short) 3);
+		assertEquals(" -" , ema);
+		assertTrue(j1.koordenadaBaliogarriak( (short)9,(short) 3) );
+		
+		//koordenatu horretan " 4" jarriko dugu koordenatuanZerDagoen metodoa " U" buletatuko du, beraz false bueltatuko du
+		nireT.KoordenatuanJarri(9, 3, " 4");		
+		ema = nireT.koordenatuanZerDagoen((short)9,(short) 3);
+		assertEquals(" U" , ema);	
+		assertFalse(j1.koordenadaBaliogarriak( (short)9,(short) 3) );
+		
 	}
 
 	@Test
