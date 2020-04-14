@@ -20,11 +20,11 @@ public abstract class Jokalaria {
 	}
 	
 	
-	protected Tableroa getNireTableroa() {
+	public Tableroa getNireTableroa() {
 		return this.nireTableroa;
 	}
 	
-	protected Tableroa getPrintTableroa() {
+	public Tableroa getPrintTableroa() {
 		return this.printTableroa;
 	}
 	
