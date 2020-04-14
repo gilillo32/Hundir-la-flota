@@ -76,7 +76,46 @@ public class JokalariaTest {
 
 	@Test
 	public void test5KoordenatuanZerDagoen() {
-		//ezi nda konprobaru tableroa ezin bada atzitu
+		Tableroa nireT = j1.getNireTableroa();
+		
+		//hasieran uraz - beteta dago
+		String ema = nireT.koordenatuanZerDagoen((short)1,(short) 1);
+		assertEquals(" -" , ema);
+//	1		
+		
+		//koordenatu horretan " 1" jarriko dugu eta metodoa " U" buletatuko du
+		nireT.KoordenatuanJarri(1, 1, " 1");
+		ema = nireT.koordenatuanZerDagoen((short)1,(short) 1);
+		assertEquals(" U" , ema);
+	
+//	2
+		//hasieran uraz - beteta dago
+		ema = nireT.koordenatuanZerDagoen((short)5,(short) 1);
+		assertEquals(" -" , ema);
+				
+		//koordenatu horretan " 2" jarriko dugu eta metodoa " U" buletatuko du
+		nireT.KoordenatuanJarri(5, 1, " 2");
+		ema = nireT.koordenatuanZerDagoen((short)5,(short) 1);
+		assertEquals(" U" , ema);
+//  3
+		//hasieran uraz - beteta dago
+		ema = nireT.koordenatuanZerDagoen((short)7,(short) 2);
+		assertEquals(" -" , ema);
+		nireT.KoordenatuanJarri(7, 2, " 3");
+		
+		//koordenatu horretan " 1" jarriko dugu eta metodoa " U" buletatuko du
+		ema = nireT.koordenatuanZerDagoen((short)7,(short) 2);
+		assertEquals(" U" , ema);
+//  4
+		//hasieran uraz - beteta dago
+		ema = nireT.koordenatuanZerDagoen((short)9,(short) 3);
+		assertEquals(" -" , ema);
+		nireT.KoordenatuanJarri(9, 3, " 4");
+		
+		//koordenatu horretan " 1" jarriko dugu eta metodoa " U" buletatuko du
+		ema = nireT.koordenatuanZerDagoen((short)9,(short) 3);
+		assertEquals(" U" , ema);	
+	
 	}
 
 	@Test
