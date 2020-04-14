@@ -51,7 +51,7 @@ public class Tableroa {
 			}	
 			e++;
 		}	
-		this.tableroaInprimatu();		
+		//this.tableroaInprimatu();		
 	} 
 	
 
@@ -196,13 +196,13 @@ public class Tableroa {
 			aux=(short)(pX-1);
 			if(pY!=1 && amZut != this.errenZutKop-1 ) { 
 				//System.out.println( " konprobatuHutsuneak  pY!=1  GOIKO");
-			while(hutsune && aux<= (amZut+1)) {		//GOIKO ERRENKETAKO KASILAK BEGIRATU		
-				if(this.koordenatuanZerDagoen(aux, (short)(pY-1)) == " U") {
-						hutsune = false;
-						//System.out.println( " konprobatuHutsuneak  GOI");
+				while(hutsune && aux<= (amZut+1)) {		//GOIKO ERRENKETAKO KASILAK BEGIRATU		
+					if(this.koordenatuanZerDagoen(aux, (short)(pY-1)) == " U") {
+							hutsune = false;
+							//System.out.println( " konprobatuHutsuneak  GOI");
+						}
+						aux++;
 					}
-					aux++;
-				}
 			}
 			else if(pY!=1 && amZut == this.errenZutKop-1 ) {
 				//System.out.println( " konprobatuHutsuneak  pY!=1  GOIKO bisssss");
@@ -253,7 +253,7 @@ public class Tableroa {
 			
 			if(pY != this.errenZutKop-1 ) {   
 				//System.out.println( " konprobatuHutsuneak  pY != this.errenZutKop BEHEKO");
-				if(this.koordenatuanZerDagoen( amEr, amZut) == " U") { //BEHEKO KASILAN BEGIRATU
+				if(this.koordenatuanZerDagoen( amZut, amEr) == " U") { //BEHEKO KASILAN BEGIRATU
 					hutsune = false;	
 				}
 			}

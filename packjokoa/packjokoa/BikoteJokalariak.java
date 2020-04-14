@@ -138,6 +138,7 @@ public class BikoteJokalariak {
 	
 	
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+	
 	public static void main (String [ ] args) 	{	
 		Scanner input = null;
 		//Hasierako pantaila inprimatzeko:
@@ -161,8 +162,8 @@ public class BikoteJokalariak {
 		BikoteJokalariak.getNireBikoteJokalariak().zerrenda[1] = new JokalariCPU( i );
 		
 		System.out.println("Partida hasiko da!");
-		BikoteJokalariak.getNireBikoteJokalariak().partidaBatJokatu();
-		
+		BikoteJokalariak.getNireBikoteJokalariak().partidaBatJokatu();		
 	}
 	
 }
+

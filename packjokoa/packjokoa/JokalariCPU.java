@@ -146,11 +146,17 @@ public class JokalariCPU extends Jokalaria {
 		 
 		 //itsasontziak ordenean jarri:
 		 while(pItsas<5) {
+			 
 				do {
 					//Lehenengo orientazioa aukeratuko du:
 					Random rand = new Random();
-					byte orientazioZenb = -1;               //ORIENTAZIOA AUKERATU
-					orientazioZenb = (byte) rand.nextInt(2);
+					byte orientazioZenb = -1;             //ORIENTAZIOA AUKERATU
+					if(pItsas == 1) {
+						orientazioZenb = (byte)0;
+					}
+					else {
+						orientazioZenb = (byte) rand.nextInt(2);
+					}
 					switch(orientazioZenb) {
 					case 0:
 						pOrientazioa = "h";
@@ -163,10 +169,11 @@ public class JokalariCPU extends Jokalaria {
 						limitY = (short)(11 - pItsas);
 						break;
 					}
+						
 					
 					//Koordenatuak aukeratu
-					pX = (short) (rand.nextInt(limitX) + 1); //From 1 to x limit
-					pY = (short) (rand.nextInt(limitY) + 1); //From 1 to y limit
+					pX = (short) (rand.nextInt(limitX) + 1); //From 1 to x limit incluído
+					pY = (short) (rand.nextInt(limitY) + 1); //From 1 to y limit incluído
 				    try {
 				    	if ((pX+pItsas-1>= (pErrenkadaZutKop+1) ) || (pY+pItsas-1>= ( pErrenkadaZutKop) +1)) {
 						   throw new IndexOutOfBoundsException();

@@ -16,6 +16,7 @@ public abstract class Jokalaria {
 		this.nUkituta=0;
 		this.printTableroa=new Tableroa(pErrenkadaZutKop); 
 		this.printTableroa.tableroaBete();
+		this.nireTableroa.tableroaBete();
 	}
 	
 	
@@ -28,7 +29,7 @@ public abstract class Jokalaria {
 	}
 	
 	public void nireTableroaBete() {
-		this.nireTableroa.tableroaBete();
+		this.nireTableroa.tableroaInprimatu();
 	}
 	
 	public abstract void itsasontziakJarri(int pErrenkadaZutKop);
