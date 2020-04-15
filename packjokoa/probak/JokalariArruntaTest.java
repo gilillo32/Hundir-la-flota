@@ -10,17 +10,16 @@ import packjokoa.JokalariArrunta;
 
 public class JokalariArruntaTest {
 
-	private JokalariArrunta j1; //, j2;
+	private JokalariArrunta j1; 
 	@Before
 	public void setUp() throws Exception {
 		j1= new JokalariArrunta("lei",(short) 10);
-		//j2= new JokalariArrunta("pau",(short) 10);
+		
 	}
 
 	@After
 	public void tearDown() throws Exception {
 		j1=null;
-		//j2=null;
 	}
 
 	@Test
@@ -52,6 +51,7 @@ public class JokalariArruntaTest {
 		System.out.println("-Itsasontsiren bat Tableroan ez dagoen koordenatu batTableroan ez dagoen koordenatu bat");
 		j1.itsasontziakJarri(10);
 	}
+	//test4ItsasontziakJarri() etab
 
 	@Test
 	public void testJokalariArrunta() {
