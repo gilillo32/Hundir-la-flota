@@ -7,7 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import packjokoa.Tableroa;
-import salbuespenak.KoordenatuEzEgokiak;
 
 public class TableroaTest {
 	private Tableroa  nireT, printT;
@@ -106,19 +105,19 @@ public class TableroaTest {
 		
 		//sartuko dugu itsasontzi bat GOIKO ERTZAN
 		assertTrue(nireT.konprobatuItsasontziakJarri((short)(4), (short)(0), (short)(2), "h"));
-		nireT.tableroaInprimatu();
+		//nireT.tableroaInprimatu();
 		
 		//sartuko dugu itsasontzi bat BEHEKO ERTZAN
 		assertTrue(nireT.konprobatuItsasontziakJarri((short)(4), (short)(9), (short)(2), "h"));
-		nireT.tableroaInprimatu();
+		//nireT.tableroaInprimatu();
 		
 		//sartuko dugu itsasontzi bat ESKUINEKO ERTZAN (kontutan izan behar dugu itsasontziaren lehenenego koordenatua sartzen dugula)
 		assertTrue(nireT.konprobatuItsasontziakJarri((short)(8), (short)(4), (short)(2), "h"));
-		nireT.tableroaInprimatu();	
+		//nireT.tableroaInprimatu();	
 		
 		//sartuko dugu itsasontzi bat EZKERREKO ERTZAN
 		assertTrue(nireT.konprobatuItsasontziakJarri((short)(0), (short)(4), (short)(2), "h"));
-		nireT.tableroaInprimatu();
+		//nireT.tableroaInprimatu();
 		
 	}
 	
@@ -128,22 +127,22 @@ public class TableroaTest {
 									//GUZTIAK FALSE
 		//sartuko dugu itsasontzi bat IZKINAN (GOIAN EZKERREAN)
 		nireT.KoordenatuanJarri((short)(0), (short)(1), " 1");
-		nireT.tableroaInprimatu();
+		//nireT.tableroaInprimatu();
 		assertFalse(nireT.konprobatuItsasontziakJarri((short)(0), (short)(0), (short)(2), "h"));
 		
 		//sartuko dugu itsasontzi bat IZKINAN (GOIAN ESKUINEAN)
 		nireT.KoordenatuanJarri((short)(9), (short)(1), " 1");
-		nireT.tableroaInprimatu();
+		//nireT.tableroaInprimatu();
 		assertFalse(nireT.konprobatuItsasontziakJarri((short)(8), (short)(0), (short)(2), "h"));
 		
 		//sartuko dugu itsasontzi bat IZKINAN (BEHEAN ESKUINEAN)
 		nireT.KoordenatuanJarri((short)(9), (short)(8), " 1");
-		nireT.tableroaInprimatu();
+		//nireT.tableroaInprimatu();
 		assertFalse(nireT.konprobatuItsasontziakJarri((short)(8), (short)(9), (short)(2), "h"));
 		
 		//sartuko dugu itsasontzi bat IZKINAN (BEHEAN EZKERREAN)
 		nireT.KoordenatuanJarri((short)(0), (short)(8), " 1");
-		nireT.tableroaInprimatu();
+		//nireT.tableroaInprimatu();
 		assertFalse(nireT.konprobatuItsasontziakJarri((short)(0), (short)(9), (short)(2), "h"));
 	}
 	
@@ -154,19 +153,19 @@ public class TableroaTest {
 										//GUZTIAK TRUE
 		//sartuko dugu itsasontzi bat IZKINAN (GOIAN EZKERREAN)
 		assertTrue(nireT.konprobatuItsasontziakJarri((short)(1), (short)(0), (short)(2), "h"));
-		nireT.tableroaInprimatu();
+		//nireT.tableroaInprimatu();
 		
 		//sartuko dugu itsasontzi bat IZKINAN (GOIAN ESKUINEAN)
 		assertTrue(nireT.konprobatuItsasontziakJarri((short)(0), (short)(9), (short)(2), "h"));
-		nireT.tableroaInprimatu();
+		//nireT.tableroaInprimatu();
 		
 		//sartuko dugu itsasontzi bat IZKINAN (BEHEAN ESKUINEAN)
 		assertTrue(nireT.konprobatuItsasontziakJarri((short)(8), (short)(9), (short)(2), "h"));
-		nireT.tableroaInprimatu();
+		//nireT.tableroaInprimatu();
 		
 		//sartuko dugu itsasontzi bat IZKINAN (BEHEAN EZKERREAN)
 		assertTrue(nireT.konprobatuItsasontziakJarri((short)(0), (short)(9), (short)(2), "h"));
-		nireT.tableroaInprimatu();
+		//nireT.tableroaInprimatu();
 	}
 	
 	@Test
