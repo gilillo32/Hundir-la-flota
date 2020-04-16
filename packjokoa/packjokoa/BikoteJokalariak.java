@@ -11,7 +11,8 @@ public class BikoteJokalariak {
 	
 	//eraikitzailea (Singleton):
 	private BikoteJokalariak() {   //JokalariArrunta pJ1, JokalariCPU pJ2
-		this.zerrenda = new Jokalaria [2];
+		this.zerrenda=new Jokalaria [2];
+		
 	}
 	
 	public static synchronized BikoteJokalariak getNireBikoteJokalariak() {
@@ -23,6 +24,13 @@ public class BikoteJokalariak {
 	
 	//gainontzeko metodoak:
 	
+	
+	public Jokalaria[] getZerrenda() {
+		return zerrenda;
+	}
+
+	
+
 	public void partidaBatJokatu() {
 		
 		this.itsasontziakJarri();
@@ -34,40 +42,47 @@ public class BikoteJokalariak {
 		}
 	
 			//inprimatu nork irabazi duen
-		if (this.zerrenda[0].itsasontzirikEz() && this.zerrenda[1].itsasontzirikEz()) {
+		if (this.getZerrenda()[0].itsasontzirikEz() && this.getZerrenda()[1].itsasontzirikEz()) {
 			System.out.println("BERDINKETA");
 		}
-		else if(this.zerrenda[0].itsasontzirikEz()) {
-			System.out.println("ZORIONAK " + this.zerrenda[0].getIzena() + "IRABAZI DUZU!!!!   :)  <3 ");
+		else if(this.getZerrenda()[0].itsasontzirikEz()) {
+			System.out.println("ZORIONAK " + this.getZerrenda()[0].getIzena() + "IRABAZI DUZU!!!!   :)  <3 ");
 		}
 		else {
-			System.out.println("GAME OVER " + this.zerrenda[0].getIzena() + "GALDU DUZU!!!!  :(    ");
+			System.out.println("GAME OVER " + this.getZerrenda()[0].getIzena() + "GALDU DUZU!!!!  :(    ");
 		}
 	}
 	
 	
 	
+	public void getItsasontziak(){
+		this.itsasontziakJarri();
+	}
+	
+
 	private void itsasontziakJarri() {
-		this.zerrenda[0].nireTableroaBete();
-		this.zerrenda[0].itsasontziakJarri(10);
-		this.zerrenda[1].nireTableroaBete();
-		this.zerrenda[1].itsasontziakJarri(10);
+		this.getZerrenda()[0].nireTableroaBete();
+		this.getZerrenda()[0].itsasontziakJarri(10);
+		this.getZerrenda()[1].nireTableroaBete();
+		this.getZerrenda()[1].itsasontziakJarri(10);
 		
 	}
 	
 	
 	
-	
+	public boolean getPartidaBukatu(){
+		return this.partidaBukatu();
+	}
 	
 	private boolean partidaBukatu() {
 		// bi jokalarien tableroak begiratzen ditu eta 
 		// ez badago itsasontzirik, partida amaitzen da.
 		// itsasontzirikEz() erabiliko da jokalarien tableroak ikusteko.
 		boolean ema=false;
-		if(this.zerrenda[0].itsasontzirikEz()) {
+		if(this.getZerrenda()[0].itsasontzirikEz()) {
 			ema= true;
 		}
-		else if (this.zerrenda[1].itsasontzirikEz()) {
+		else if (this.getZerrenda()[1].itsasontzirikEz()) {
 			ema= true;
 		}		
 		return ema;
@@ -75,7 +90,9 @@ public class BikoteJokalariak {
 	
 	
 	
-	
+	public void getKoordenatuaaukeratu(){
+		this.koordenatuaAukeratu();
+	}
 	
 	private void koordenatuaAukeratu() {
 		boolean posibleaDa=true;
@@ -84,14 +101,14 @@ public class BikoteJokalariak {
 		
 		//JokalariArrunta:
 		do {
-		System.out.println(this.zerrenda[0].getIzena() + " zure txanda da!");
-		Koordenatuak k= ((JokalariArrunta)this.zerrenda[0]).koordenatuaAukeratu();
+		System.out.println(this.getZerrenda()[0].getIzena() + " zure txanda da!");
+		Koordenatuak k= ((JokalariArrunta)this.getZerrenda()[0]).koordenatuaAukeratu();
 		short pX= (short) (k.getKoordenatuakX() + 1);
 		short pY = (short) ( k.getKoordenatuakY()+1);
 		
-			if(this.zerrenda[0].koordenadaBaliogarriak(pX, pY)  ) {
-				String emaitza = this.zerrenda[1].koordenatuanZerDagoen(pX, pY);
-				this.zerrenda[0].eguneratuPrintTableroa(pX, pY, emaitza);
+			if(this.getZerrenda()[0].koordenadaBaliogarriak(pX, pY)  ) {
+				String emaitza = this.getZerrenda()[1].koordenatuanZerDagoen(pX, pY);
+				this.getZerrenda()[0].eguneratuPrintTableroa(pX, pY, emaitza);
 				if(emaitza!=" U") {
 					//Itsasontzia ez badu ukitzen:
 					posibleaDa=false;
@@ -107,15 +124,15 @@ public class BikoteJokalariak {
 		//JokalariCPU
 		posibleaDa=true;
 		do {
-			System.out.println(this.zerrenda[1].getIzena() + "-ren txanda da!");
+			System.out.println(this.getZerrenda()[1].getIzena() + "-ren txanda da!");
 			
-			k1= ((JokalariCPU)this.zerrenda[1]).koordenatuaAukeratu(k1,   aurrekoanAsmatu);
+			k1= ((JokalariCPU)this.getZerrenda()[1]).koordenatuaAukeratu(k1,   aurrekoanAsmatu);
 			short pX= (short) (k1.getKoordenatuakX()+ 1 );
 			short pY = (short) (k1.getKoordenatuakY()+1);
 			
-				if(this.zerrenda[1].koordenadaBaliogarriak(pX, pY)  ) {
-					String emaitza = this.zerrenda[0].koordenatuanZerDagoen(pX, pY);
-					this.zerrenda[1].eguneratuPrintTableroa(pX, pY, emaitza);
+				if(this.getZerrenda()[1].koordenadaBaliogarriak(pX, pY)  ) {
+					String emaitza = this.getZerrenda()[0].koordenatuanZerDagoen(pX, pY);
+					this.getZerrenda()[1].eguneratuPrintTableroa(pX, pY, emaitza);
 					if(emaitza!=" U") {
 						//Itsasontzia ez badu ukitzen:
 						posibleaDa=false; 
@@ -158,8 +175,8 @@ public class BikoteJokalariak {
 		System.out.println("Sartu zure izena: ");
 		String izena = Teklatua.getNireTeklatua().irakurriString();
 		short i=10;	//erenkada kopurua	
-		BikoteJokalariak.getNireBikoteJokalariak().zerrenda[0] = new JokalariArrunta(izena, i );
-		BikoteJokalariak.getNireBikoteJokalariak().zerrenda[1] = new JokalariCPU( i );
+		BikoteJokalariak.getNireBikoteJokalariak().getZerrenda()[0] = new JokalariArrunta(izena, i );
+		BikoteJokalariak.getNireBikoteJokalariak().getZerrenda()[1] = new JokalariCPU( i );
 		
 		System.out.println("Partida hasiko da!");
 		BikoteJokalariak.getNireBikoteJokalariak().partidaBatJokatu();		
