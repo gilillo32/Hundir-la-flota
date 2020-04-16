@@ -53,11 +53,13 @@ public class Tableroa {
 		}	
 		//this.tableroaInprimatu();		
 	} 
+	
+	//testa egiteko erabiliko dugu
 	public boolean konprobatuItsasontziakJarri(short pX, short pY,short pItsas, String pOrientazio) {
 		boolean emaitza= true;
 		try {
-			this.itsasontziakJarri(pX, pY, pItsas, pOrientazio);
-			
+			//gehi bat egin dugu JokalariArruntan bezala, matrizea 11x11 delako eta koordenatu horrek matrizean duen benetako posizioa +1 eginez da
+			this.itsasontziakJarri((short)(pX+1), (short)(pY+1), pItsas, pOrientazio);
 		}
 		catch (KoordenatuEzEgokiak e){
 			emaitza= false;
@@ -332,6 +334,6 @@ public class Tableroa {
 	
 	//Testak egiteko behar dugun metodoa:
 	public void KoordenatuanJarri ( int pX, int pY, String pJarri) {
-	this.matrizea[pY][pX] = pJarri;
+	this.matrizea[pY+1][pX+1] = pJarri;
 	}
 }

@@ -12,9 +12,9 @@ public class JokalariArrunta extends Jokalaria {
 		//koordenatuak eskatu
 		
 		String pMezua1="Sartu zure lehenengo koordenatua mesedez";
-		short pX=Teklatua.getNireTeklatua().irakurriShort(pMezua1, 1, 10);
+		short pX=(short) (Teklatua.getNireTeklatua().irakurriShort(pMezua1, 0, 9));
 		String pMezua2="Sartu zure lehenengo koordenatua mesedez";
-		short pY=Teklatua.getNireTeklatua().irakurriShort(pMezua2, 1, 10);
+		short pY=(short) (Teklatua.getNireTeklatua().irakurriShort(pMezua2, 0, 9));;
 		Koordenatuak k = new Koordenatuak(pX, pY);
 		
 		return k;
