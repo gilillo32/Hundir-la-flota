@@ -28,6 +28,7 @@ public class JokalariaTest {
 		assertNotNull(j1);
 	}
 
+	
 /*
 	@Test
 	public void test2GetNireTableroa() {
