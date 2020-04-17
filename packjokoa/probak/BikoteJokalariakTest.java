@@ -82,9 +82,6 @@ public class BikoteJokalariakTest {
 	
 	
 
-	@Test
-	public void testMain() {
-		fail();
-	}
+
 
 }

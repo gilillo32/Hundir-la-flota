@@ -22,9 +22,11 @@ public class JokalariArruntaTest {
 		j1=null;
 	}
 
+	//hay que imprimir la matriz vacia
+	
 	@Test
-	public void test1ItsasontziakJarri() {
-		System.out.println("Metodo hau konprobatzeko kontsolatik egin behar da, eta hainbat kasu ffrgatu behar dira, ikusteko exception egokiak botatzen duela etab egin behar duenean");
+	public void testItsasontziakJarri1() {
+		System.out.println("Metodo hau konprobatzeko kontsolatik egin behar da, eta hainbat kasu frogatu behar dira, ikusteko exception egokiak botatzen duela etab egin behar duenean");
 		System.out.println("Leheneng testa");
 		System.out.println("Hau da frogatu beharrekoa test honetan:");
 		System.out.println("-Proba guztietan: Itsasontsiak ordenean jartzen direla.");
@@ -33,8 +35,8 @@ public class JokalariArruntaTest {
 	}
 	
 	@Test
-	public void test2ItsasontziakJarri() {
-		System.out.println("Metodo hau konprobatzeko kontsolatik egin behar da, eta hainbat kasu ffrgatu behar dira, ikusteko exception egokiak botatzen duela etab egin behar duenean");
+	public void testItsasontziakJarri2() {
+		System.out.println("Metodo hau konprobatzeko kontsolatik egin behar da, eta hainbat kasu frogatu behar dira, ikusteko exception egokiak botatzen duela etab egin behar duenean");
 		System.out.println("Bigarren testa");
 		System.out.println("Hau da frogatu beharrekoa test honetan:");
 		System.out.println("-Proba guztietan: Itsasontsiak ordenean jartzen direla.");
@@ -43,7 +45,7 @@ public class JokalariArruntaTest {
 	}
 	
 	@Test
-	public void test3ItsasontziakJarri() {
+	public void testItsasontziakJarri3() {
 		System.out.println("Metodo hau konprobatzeko kontsolatik egin behar da, eta hainbat kasu ffrgatu behar dira, ikusteko exception egokiak botatzen duela etab egin behar duenean");
 		System.out.println("Hirugarren testa");
 		System.out.println("Hau da frogatu beharrekoa test honetan:");
@@ -53,7 +55,7 @@ public class JokalariArruntaTest {
 	}
 	//test4ItsasontziakJarri() etab
 
-	@Test
+/*	@Test
 	public void testJokalariArrunta() {
 		assertNotNull(j1);
 	}
@@ -63,5 +65,5 @@ public class JokalariArruntaTest {
 		fail("Not yet implemented");
 		//hemos puesto que lo comprobamos en la konsla, pero para eso tenemos que hacer un metodo que imprima las koordenadas, no? 
 	}
-
+*/
 }

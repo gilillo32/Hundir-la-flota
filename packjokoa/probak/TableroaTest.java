@@ -93,7 +93,7 @@ public class TableroaTest {
 		
 		//sartuko dugu itsasontzi bat EZKERREKO ERTZAN
 		nireT.koordenatuanJarri((short)(0), (short)(3), " 1");
-		//nireT.tableroaInprimatu();
+		nireT.tableroaInprimatu();
 		assertFalse(nireT.konprobatuItsasontziakJarri((short)(0), (short)(4), (short)(2), "h"));
 		
 	}	
