@@ -85,7 +85,7 @@ public class JokalariaTest {
 		assertEquals(" -" , ema);
 		
 		//koordenatu horretan " 1" jarriko dugu eta metodoa " U" buletatuko du
-		j1.koordenatuanJarri(1, 1, " 1");
+		j1.koordenatuanJarri(1-1, 1-1, " 1");
 		ema = j1.koordenatuanZerDagoen((short)1,(short) 1);
 		assertEquals(" U" , ema);	
 //	2
@@ -94,7 +94,7 @@ public class JokalariaTest {
 		assertEquals(" -" , ema);
 				
 		//koordenatu horretan " 2" jarriko dugu eta metodoa " U" buletatuko du
-		j1.koordenatuanJarri(5, 1, " 2");
+		j1.koordenatuanJarri(5-1, 1-1, " 2");
 		ema = j1.koordenatuanZerDagoen((short)5,(short) 1);
 		assertEquals(" U" , ema);
 //  3
@@ -103,7 +103,7 @@ public class JokalariaTest {
 		assertEquals(" -" , ema);
 		
 		//koordenatu horretan " 3" jarriko dugu eta metodoa " U" buletatuko du
-		j1.koordenatuanJarri(7, 2, " 3");		
+		j1.koordenatuanJarri(7-1, 2-1, " 3");		
 		ema = j1.koordenatuanZerDagoen((short)7,(short) 2);
 		assertEquals(" U" , ema);
 //  4
@@ -112,7 +112,7 @@ public class JokalariaTest {
 		assertEquals(" -" , ema);
 		
 		//koordenatu horretan " 4" jarriko dugu eta metodoa " U" buletatuko du
-		j1.koordenatuanJarri(9, 3, " 4");		
+		j1.koordenatuanJarri(9-1, 3-1, " 4");		
 		ema = j1.koordenatuanZerDagoen((short)9,(short) 3);
 		assertEquals(" U" , ema);	
 	
@@ -129,7 +129,7 @@ public class JokalariaTest {
 		assertTrue(j1.koordenadaBaliogarriak( (short)1,(short) 1) );
 		
 		//koordenatu horretan " 1" jarriko dugu eta koordenatuanZerDagoen metodoa " U" buletatuko du, beraz false bueltatuko du
-		j1.koordenatuanJarri(1, 1, " 1");
+		j1.koordenatuanJarri(1-1, 1-1, " 1");
 		ema = j1.koordenatuanZerDagoen( (short)1,(short) 1);
 		assertEquals(" U" , ema);		
 		assertFalse(j1.koordenadaBaliogarriak(  (short)1,(short) 1) );		
@@ -140,7 +140,7 @@ public class JokalariaTest {
 		assertTrue(j1.koordenadaBaliogarriak( (short)5,(short) 1) );
 				
 		//koordenatu horretan " 2" jarriko dugu eta koordenatuanZerDagoen metodoa " U" buletatuko du, beraz false bueltatuko du
-		j1.koordenatuanJarri(5, 1, " 2");
+		j1.koordenatuanJarri(5-1, 1-1, " 2");
 		ema = j1.koordenatuanZerDagoen( (short)5,(short) 1);
 		assertEquals(" U" , ema);
 		assertFalse(j1.koordenadaBaliogarriak( (short)5,(short) 1)  );
@@ -151,7 +151,7 @@ public class JokalariaTest {
 		assertTrue(j1.koordenadaBaliogarriak( (short)7,(short) 2) );
 		
 		//koordenatu horretan " 3" jarriko dugu koordenatuanZerDagoen metodoa " U" buletatuko du, beraz false bueltatuko du
-		j1.koordenatuanJarri(7, 2, " 3");		
+		j1.koordenatuanJarri(7-1, 2-1, " 3");		
 		ema = j1.koordenatuanZerDagoen( (short)7,(short) 2);
 		assertEquals(" U" , ema);
 		assertFalse(j1.koordenadaBaliogarriak(  (short)7,(short) 2) );
@@ -162,7 +162,7 @@ public class JokalariaTest {
 		assertTrue(j1.koordenadaBaliogarriak( (short)9,(short) 3) );
 		
 		//koordenatu horretan " 4" jarriko dugu koordenatuanZerDagoen metodoa " U" buletatuko du, beraz false bueltatuko du
-		j1.koordenatuanJarri(9, 3, " 4");		
+		j1.koordenatuanJarri(9-1, 3-1, " 4");		
 		ema = j1.koordenatuanZerDagoen( (short)9,(short) 3);
 		assertEquals(" U" , ema);	
 		assertFalse(j1.koordenadaBaliogarriak( (short)9,(short) 3) );
