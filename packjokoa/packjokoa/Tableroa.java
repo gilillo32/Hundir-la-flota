@@ -160,10 +160,12 @@ public class Tableroa {
 		String lau =" 4";
 		//System.out.println( "matrizean dagoenaaaaaaaa   !m" + this.matrizea[pY][pX] );
 		//System.out.println("EMA hasierako balioa .... " + ema);
-		if( ema.equals(bat)  || ema.equals(bi)  || ema.equals(hiru)  || ema.equals(lau) ) { //   ||this.matrizea[pY][pX].equals(bi)  || this.matrizea[pY][pX].equals(hiru)  || this.matrizea[pY][pX].equals(lau)
+		if(ema!=null){
+			if( ema.equals(bat)  || ema.equals(bi)  || ema.equals(hiru)  || ema.equals(lau) ) { //   ||this.matrizea[pY][pX].equals(bi)  || this.matrizea[pY][pX].equals(hiru)  || this.matrizea[pY][pX].equals(lau)
 			ema = " U";
 			//System.out.println("EMA LO QUE se supne que hay si entra en el if " + ema);
-		}	
+			}	
+		}
 		//System.out.println("EMA LO QUE devuelve " + ema);
 		return ema ;		
 	}
