@@ -93,7 +93,10 @@ public abstract class Jokalaria {
 		this.nireTableroa.koordenatuanJarri(pX, pY, pJarri);
 	}
 	
-	
+	public void koordenatuanJarriPrint ( int pX, int pY, String pJarri) {
+		//Testak egiteko behar dugun metodoa:
+		this.printTableroa.koordenatuanJarri(pX, pY, pJarri);
+	}
 	
 
 }
