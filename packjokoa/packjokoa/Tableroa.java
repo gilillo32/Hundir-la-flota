@@ -333,7 +333,7 @@ public class Tableroa {
 	}
 	
 	//Testak egiteko behar dugun metodoa:
-	public void KoordenatuanJarri ( int pX, int pY, String pJarri) {
+	public void koordenatuanJarri ( int pX, int pY, String pJarri) {
 	this.matrizea[pY+1][pX+1] = pJarri;
 	}
 }

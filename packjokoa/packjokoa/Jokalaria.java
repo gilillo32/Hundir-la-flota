@@ -20,11 +20,11 @@ public abstract class Jokalaria {
 	}
 	
 	
-	public Tableroa getNireTableroa() {
+	protected Tableroa getNireTableroa() {
 		return this.nireTableroa;
 	}
 	
-	public Tableroa getPrintTableroa() {
+	protected Tableroa getPrintTableroa() {
 		return this.printTableroa;
 	}
 	
@@ -85,6 +85,12 @@ public abstract class Jokalaria {
 	
 	public void  setNUkituta(int pUkituta) {
 		 this.nUkituta = pUkituta;
+	}
+	
+
+	public void koordenatuanJarri ( int pX, int pY, String pJarri) {
+		//Testak egiteko behar dugun metodoa:
+		this.nireTableroa.koordenatuanJarri(pX, pY, pJarri);
 	}
 	
 	
