@@ -59,7 +59,7 @@ public abstract class Jokalaria {
 	}
 	
 	public boolean koordenadaBaliogarriak(short pX, short pY) {
-		return this.nireTableroa.konprobatuTiroa(pX, pY);
+		return this.printTableroa.konprobatuTiroa(pX, pY);
 	}
 
 	public void eguneratuPrintTableroa(short pX, short pY, String pEma) {

@@ -25,12 +25,12 @@ public class JokalariCPU extends Jokalaria {
 			do {
 				k= this.koordenatuRandom();
 				if(!this.esandakoKoordenatuak.contains(k)) {
-					this.esandakoKoordenatuak.add(k);
+					//this.esandakoKoordenatuak.add(k);
 					errepikatuta=false;
 				}
-				else {
+				else if  (this.esandakoKoordenatuak.contains(k)){
 					errepikatuta=true;
-				}					
+				}					 
 			} while(errepikatuta);		
 		}
 		else if(pAurrekoanAsmatu &&  this.albokoKoordenatuak.size()==0) { //lehen aldiz ikutu du eta zentzua asmatu behar du
@@ -52,10 +52,10 @@ public class JokalariCPU extends Jokalaria {
 				do {
 					k= this.koordenatuRandom();
 					if(!this.esandakoKoordenatuak.contains(k)) {
-						this.esandakoKoordenatuak.add(k);
+						//this.esandakoKoordenatuak.add(k);
 						errepikatuta=false;
 					}
-					else {
+					else if  (this.esandakoKoordenatuak.contains(k)){
 						errepikatuta=true;
 					}					
 				} while(errepikatuta);	
@@ -81,10 +81,10 @@ public class JokalariCPU extends Jokalaria {
 				do {
 					k= this.koordenatuRandom();
 					if(!this.esandakoKoordenatuak.contains(k)) {
-						this.esandakoKoordenatuak.add(k);
+						//this.esandakoKoordenatuak.add(k);
 						errepikatuta=false;
 					}
-					else {
+					else if  (this.esandakoKoordenatuak.contains(k)){
 						errepikatuta=true;
 					}					
 				} while(errepikatuta);	
@@ -109,10 +109,10 @@ public class JokalariCPU extends Jokalaria {
 				do {
 					k= this.koordenatuRandom();
 					if(!this.esandakoKoordenatuak.contains(k)) {
-						this.esandakoKoordenatuak.add(k);
+						//this.esandakoKoordenatuak.add(k);
 						errepikatuta=false;
 					}
-					else {
+					else if  (this.esandakoKoordenatuak.contains(k)){
 						errepikatuta=true;
 					}					
 				} while(errepikatuta);	
@@ -120,20 +120,21 @@ public class JokalariCPU extends Jokalaria {
 			if (this.zentzua==0) {
 				this.erreseteatuAlbokoKoordenatuak();//alboko koordenatuak erreseteatu
 			}
-		}		
+		}
+		this.esandakoKoordenatuak.add(k);
 		return  k ;
 	}
 	 
-	 
+	 																									////////////////////////////////////////////////////////////////
 	 private Koordenatuak koordenatuRandom() {
 		 Koordenatuak k = new Koordenatuak();
 		 Random rand = new Random();
-		 short pX = (short) ((short) rand.nextInt(10) + 1);//1-etik 10 zenbaki bat bueltatzeko
-		 short pY = (short) ((short) rand.nextInt(10) + 1);
+		 short pX = (short) ((short) rand.nextInt(10) );//0-etik 9 zenbaki bat bueltatzeko					////////////////////////////////////////
+		 short pY = (short) ((short) rand.nextInt(10));
 		 k.setKoordenatuakX(pX);
 		 k.setKoordenatuakY(pY);
 		 return k;
-	 }
+	 }														////////////////////////////////////////////////////
 	 
 	 public void itsasontziakJarri(int pErrenkadaZutKop) {
 		 short pItsas = 1;

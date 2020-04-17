@@ -62,8 +62,14 @@ public class BikoteJokalariak {
 
 	private void itsasontziakJarri() {
 		this.getZerrenda()[0].nireTableroaBete();
+		System.out.println(" ");
+		System.out.println(" ");
 		this.getZerrenda()[0].itsasontziakJarri(10);
+		System.out.println(" ");
+		System.out.println(" ");
 		this.getZerrenda()[1].nireTableroaBete();
+		System.out.println(" ");
+		System.out.println(" ");
 		this.getZerrenda()[1].itsasontziakJarri(10);
 		
 	}
@@ -102,6 +108,7 @@ public class BikoteJokalariak {
 		//JokalariArrunta:
 		do {
 		System.out.println(this.getZerrenda()[0].getIzena() + " zure txanda da!");
+		System.out.println(" ");
 		Koordenatuak k= ((JokalariArrunta)this.getZerrenda()[0]).koordenatuaAukeratu();
 		short pX= (short) (k.getKoordenatuakX() + 1);
 		short pY = (short) ( k.getKoordenatuakY()+1);
@@ -112,12 +119,14 @@ public class BikoteJokalariak {
 				if(emaitza!=" U") {
 					//Itsasontzia ez badu ukitzen:
 					posibleaDa=false;
-					System.out.println("OOH!!! Ez duzu itsasontzirik ukitu");
+					System.out.println("OOH!!!" + this.getZerrenda()[0].getIzena() +", ez duzu itsasontzirik ukitu");
+					System.out.println(" ");
 				}				
 			}
 			else {
 				posibleaDa=false;
-				System.out.println("Sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu");
+				System.out.println(this.getZerrenda()[0].getIzena() + ", sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu");
+				System.out.println(" ");
 			}
 			
 		}while(posibleaDa) ;
@@ -125,6 +134,7 @@ public class BikoteJokalariak {
 		posibleaDa=true;
 		do {
 			System.out.println(this.getZerrenda()[1].getIzena() + "-ren txanda da!");
+			System.out.println(" ");
 			
 			k1= ((JokalariCPU)this.getZerrenda()[1]).koordenatuaAukeratu(k1,   aurrekoanAsmatu);
 			short pX= (short) (k1.getKoordenatuakX()+ 1 );
@@ -137,6 +147,8 @@ public class BikoteJokalariak {
 						//Itsasontzia ez badu ukitzen:
 						posibleaDa=false; 
 						aurrekoanAsmatu=false;
+						System.out.println("OOH!!!" + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
+						System.out.println(" ");
 						
 					}
 					else {
@@ -146,6 +158,8 @@ public class BikoteJokalariak {
 				}
 				else {
 					posibleaDa=false;
+					System.out.println(this.getZerrenda()[1].getIzena() + ", sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu");
+					System.out.println(" ");
 				}
 		}while(posibleaDa);			
 	}
@@ -172,13 +186,15 @@ public class BikoteJokalariak {
 		}
 		System.out.println("kAIXO LAGUN!");
 		System.out.println("ONGI ETORRI!");
+		System.out.println(" ");
 		System.out.println("Sartu zure izena: ");
 		String izena = Teklatua.getNireTeklatua().irakurriString();
 		short i=10;	//erenkada kopurua	
 		BikoteJokalariak.getNireBikoteJokalariak().getZerrenda()[0] = new JokalariArrunta(izena, i );
 		BikoteJokalariak.getNireBikoteJokalariak().getZerrenda()[1] = new JokalariCPU( i );
-		
+		System.out.println(" ");
 		System.out.println("Partida hasiko da!");
+		System.out.println(" ");
 		BikoteJokalariak.getNireBikoteJokalariak().partidaBatJokatu();		
 	}
 	
