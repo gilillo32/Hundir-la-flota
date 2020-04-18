@@ -84,7 +84,7 @@ public class Tableroa {
 					pX++;
 				}
 			}
-			else if(pOrientazio.equals("B") || pOrientazio.equals("b") ) {//pX ez da aldatzen   
+			if(pOrientazio.equals("B") || pOrientazio.equals("b") ) {//pX ez da aldatzen   
 				//System.out.println( " itsasontziakJarri primer if BBBBBBBBBBBBBBBBBBBBBBBBBBBB ");
 				aux	=pY+ pItsas;
 				while(pY<aux) {
@@ -121,7 +121,7 @@ public class Tableroa {
 				pX++;
 			}			
 		}
-		else if( pOrientazio.equals("B") || pOrientazio.equals("b") ) {//pX ez da aldatzen
+	    if( pOrientazio.equals("B") || pOrientazio.equals("b") ) {//pX ez da aldatzen
 			//System.out.println( " konprobatuItsasontsirikEzKoordenatuan ELSE IF ");
 			aux	=pY+ pItsas;
 			while(pY<aux && emaitza) {
@@ -201,12 +201,19 @@ public class Tableroa {
 					//System.out.println( " konprobatuHutsuneak  EZK1 jjdsjdjdjj");
 					hutsune = false;
 				}}
-			if(pX != this.errenZutKop-1) {
+			/*if(pX != this.errenZutKop-1 && amZut==this.errenZutKop-1) {
 				//System.out.println( " konprobatuHutsuneak  IF PX!=this.errenZutKop ESKUINEKO ");
 				if(this.koordenatuanZerDagoen( amZut, amEr) == " U") { //ESKUINEKO KASILAN BEGIRATU
 				hutsune = false;	
 				//System.out.println( " konprobatuHutsuneak  ESK1");
-				}}
+				}
+			}
+			else*/ if (pX != this.errenZutKop-1 && amZut!=this.errenZutKop-1) {
+				if(this.koordenatuanZerDagoen((short)(amZut+1), amEr) == " U") { //ESKUINEKO KASILAN BEGIRATU
+					hutsune = false;	
+					//System.out.println( " konprobatuHutsuneak  ESK1");
+					}
+			}
 			aux=(short)(pX-1);
 			if(pY!=1 && amZut != this.errenZutKop-1 ) { 
 				//System.out.println( " konprobatuHutsuneak  pY!=1  GOIKO");
@@ -218,7 +225,7 @@ public class Tableroa {
 						aux++;
 					}
 			}
-			else if(pY!=1 && amZut == this.errenZutKop-1 ) {
+		 if(pY!=1 && amZut == this.errenZutKop-1 ) {
 				//System.out.println( " konprobatuHutsuneak  pY!=1  GOIKO bisssss");
 				while(hutsune && aux<= amZut) {		//GOIKO ERRENKETAKO KASILAK BEGIRATU		
 					if(this.koordenatuanZerDagoen(aux, (short)(pY-1)) == " U") {
@@ -240,7 +247,7 @@ public class Tableroa {
 					aux++;
 				}
 			}
-			else if (pY != this.errenZutKop-1 && amZut == this.errenZutKop-1 ) {
+			if (pY != this.errenZutKop-1 && amZut == this.errenZutKop-1 ) {
 				//System.out.println( " konprobatuHutsuneak  (pY != this.errenZutKop   BEHEKO bisssss");
 				while(hutsune && aux<= amZut) {				
 					if(this.koordenatuanZerDagoen(aux, (short)(pY+1)) == " U") { //BEHEKO ERRENKADAKO KASILETAN BEGIRATU
@@ -252,7 +259,7 @@ public class Tableroa {
 			}
 
 		}
-		else if (pOrientazio.equals("B") || pOrientazio.equals("b")) {
+		if (pOrientazio.equals("B") || pOrientazio.equals("b")) {
 			//System.out.println( " konprobatuHutsuneak PRIMER IF  B ");
 			//Bertikalean
 			amEr= (short )(pY + pItsas -1); //-1 EGITEN DUGU, JAKITEKO ITSASONTZIAREN AZKENENGO KASILA
@@ -265,9 +272,9 @@ public class Tableroa {
 				}
 			}			
 			
-			if(pY != this.errenZutKop-1 ) {   
+			if(pY != this.errenZutKop-1 && amEr != this.errenZutKop-1) {   
 				//System.out.println( " konprobatuHutsuneak  pY != this.errenZutKop BEHEKO");
-				if(this.koordenatuanZerDagoen( amZut, amEr) == " U") { //BEHEKO KASILAN BEGIRATU
+				if(this.koordenatuanZerDagoen( amZut, (short)(amEr+1)) == " U") { //BEHEKO KASILAN BEGIRATU
 					hutsune = false;	
 				}
 			}
@@ -282,7 +289,7 @@ public class Tableroa {
 					aux++;
 				}
 			}
-			else if(pX!=1  && amEr == this.errenZutKop-1) {
+			if(pX!=1  && amEr == this.errenZutKop-1) {
 				//System.out.println( " else if konprobatuHutsuneak pX!=1 EZKERREKO bis");
 				while(hutsune && aux<= amEr) {		//EZKERREKO ZUTABEKOKASILAK BEGIRATU		
 					if( this.koordenatuanZerDagoen((short) (pX-1), aux) == " U") {
@@ -303,7 +310,7 @@ public class Tableroa {
 					aux++;
 				}
 			}
-			else if(pX != this.errenZutKop-1 &&  amEr == this.errenZutKop-1 ) {
+		   if(pX != this.errenZutKop-1 &&  amEr == this.errenZutKop-1 ) {
 				//System.out.println( "else if konprobatuHutsuneak pY != this.errenZutKop ESKUINEKO bis");
 				while(hutsune && aux<= amEr) {			//ESKUINEKO ZUTABEKOKASILAK BEGIRATU	
 					if(this.koordenatuanZerDagoen((short) (pX+1), aux) == " U") {
