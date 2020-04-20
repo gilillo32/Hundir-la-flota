@@ -61,16 +61,22 @@ public class BikoteJokalariak {
 	
 
 	private void itsasontziakJarri() {
+		System.out.println(this.getZerrenda()[0].getIzena() + " itsasontziak jartzeko unea heldu da!");
+		System.out.println(" ");
 		this.getZerrenda()[0].nireTableroaBete();
 		System.out.println(" ");
 		System.out.println(" ");
 		this.getZerrenda()[0].itsasontziakJarri(10);
 		System.out.println(" ");
 		System.out.println(" ");
+		
+		System.out.println(this.getZerrenda()[1].getIzena() + " itsasontziak jartzeko unea heldu da!");
+		System.out.println(" ");
 		this.getZerrenda()[1].nireTableroaBete();
 		System.out.println(" ");
 		System.out.println(" ");
 		this.getZerrenda()[1].itsasontziakJarri(10);
+		System.out.println(" ");
 		
 	}
 	
@@ -184,8 +190,15 @@ public class BikoteJokalariak {
 		{ 
 		   System.out.println(input.nextLine());
 		}
-		System.out.println("kAIXO LAGUN!");
 		System.out.println("ONGI ETORRI!");
+		System.out.println(" ");
+		System.out.println("ARAUAK: ");
+		System.out.println("- Ezin dira bi itsasontzi ondoz ondo jarri, kasila bateko distantzia egon behar da.");
+		System.out.println("- Koordenatuak hautatzeko, errenkada eta zutabeen zenbakia idatzi behar da, baita orientazioa B edo H ere.");
+		System.out.println("- Jokalari bakoitzak aukera bakarra dauka tiroa egiteko, koordenatua errepikatzen badu txanda galduko du.  ");
+		System.out.println("- Jokalari bat itsaontzia ukitzen baldin badu, beste tiro bat egiteko aukera izango du, hutz egiten duen harte. ");
+		System.out.println("- Irabazlea beste jokalariaren itsasontzi guztiak hondoratzen dituen jokalaria da. ");
+		System.out.println(" ");
 		System.out.println(" ");
 		System.out.println("Sartu zure izena: ");
 		String izena = Teklatua.getNireTeklatua().irakurriString();
@@ -193,7 +206,7 @@ public class BikoteJokalariak {
 		BikoteJokalariak.getNireBikoteJokalariak().getZerrenda()[0] = new JokalariArrunta(izena, i );
 		BikoteJokalariak.getNireBikoteJokalariak().getZerrenda()[1] = new JokalariCPU( i );
 		System.out.println(" ");
-		System.out.println("Partida hasiko da!");
+		System.out.println("				PARTIDA HASIKO DA!!!");
 		System.out.println(" ");
 		BikoteJokalariak.getNireBikoteJokalariak().partidaBatJokatu();		
 	}

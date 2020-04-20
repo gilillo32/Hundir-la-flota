@@ -33,44 +33,50 @@ public abstract class Jokalaria {
 	}
 	
 	public abstract void itsasontziakJarri(int pErrenkadaZutKop);
-
-	
-
 	
 	private void nUkituaInkrementatu() {
 		this.nUkituta++;
 	}
 	
 	public boolean itsasontzirikEz() {
-		//true ematen du itsasontzirik ez badago tableroan
-		//Dentro de arrunta y dentro de CPU comprueba cuántos se han tocado. 
-		//Si llega a 10 partidaBukatu = true. Y se acaba el juego.
+		/*
+		 * true ematen du etsaiaren itsasontzi guztiak hondoratu ostean, hau da, this.nUkituta==10 izatra heltzen denean.		
+		*/
 		boolean badaudeItsas=false;
 		if(this.nUkituta==10) {
 			badaudeItsas=true;
 		}
-		return badaudeItsas;
-		
-	}
-
-	public String koordenatuanZerDagoen(short pX, short pY) {
-		return this.nireTableroa.koordenatuanZerDagoen(pX, pY);
-		//itzuliko duen String-a hirugarren tiroan erabiliko da
+		return badaudeItsas;		
 	}
 	
 	public boolean koordenadaBaliogarriak(short pX, short pY) {
+	/*
+		*printTableroan begiratzen du, hau da, tiroak egin ostean lortutakoa gordetzen den tableroan.
+		*Jolasan zehar uraz " -", ukitutako itsasontziz " U", eta hutz egindako tiroz " X", betea egongo da.
+		*Kordenatu batean " U" edo " X" egonda, koordenada hori ez da baliogarria izango, FALSE bueltatuko du
+		*Kordenatu batean " -" egonda, koordenada hori baliogarria da, TRUE bueltautko du
+	*/
 		return this.printTableroa.konprobatuTiroa(pX, pY);
 	}
-
+	
+	public String koordenatuanZerDagoen(short pX, short pY) {
+		/*
+		 * NireTableroan begiratuko du kasilan zer dagoen, itsasontzia baldin badago " U" bueltatzen du, bestela, han dagoena, hau da, ura "-"
+		 * Itzuliko duen String-a hirugarren tiroan erabiliko da
+	    */
+		return this.nireTableroa.koordenatuanZerDagoen(pX, pY);		
+	}
+	
 	public void eguneratuPrintTableroa(short pX, short pY, String pEma) {
-		// primeros llamamos a super.nUkituaInkrementatu y luego a tableroa.eguneratu
-		//bigarren tiroan itzuli duen String-a dagokion posizioan sartuko du
+		/*
+		 * koordenatuanZerDagoen itzuli duen String-a  " U" bada, ukituen zenbakia (nUkituta) unitate batean inkrementatuko du.
+		 * " U" bada printTableroan dagokion posizioan sartuko du, beste kasuetan " X" sartuko du.
+		 *Azkenik printTableroa inprimatuko du 
+		 */
 		if(pEma == " U") {
-			//Itsasontzia " U"kitu badu:
 			this.nUkituaInkrementatu();
 		}
-		this.printTableroa.eguneratuTableroa(pX, pY, pEma);
-  
+		this.printTableroa.eguneratuTableroa(pX, pY, pEma);  
 	}
 	
 	
@@ -81,20 +87,17 @@ public abstract class Jokalaria {
 	public int  getNUkituta() {
 		return this.nUkituta;
 	}
-	
-	
 	public void  setNUkituta(int pUkituta) {
 		 this.nUkituta = pUkituta;
 	}
 	
-
-	public void koordenatuanJarri ( int pX, int pY, String pJarri) {
-		//Testak egiteko behar dugun metodoa:
+//	Testak egiteko behar ditugun metodoak:
+	
+	public void koordenatuanJarri ( int pX, int pY, String pJarri) {		
 		this.nireTableroa.koordenatuanJarri(pX, pY, pJarri);
 	}
 	
 	public void koordenatuanJarriPrint ( int pX, int pY, String pJarri) {
-		//Testak egiteko behar dugun metodoa:
 		this.printTableroa.koordenatuanJarri(pX, pY, pJarri);
 	}
 	
