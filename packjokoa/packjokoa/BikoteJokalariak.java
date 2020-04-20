@@ -113,6 +113,7 @@ public class BikoteJokalariak {
 		
 		//JokalariArrunta:
 		do {
+		System.out.println(" ");
 		System.out.println(this.getZerrenda()[0].getIzena() + " zure txanda da!");
 		System.out.println(" ");
 		Koordenatuak k= ((JokalariArrunta)this.getZerrenda()[0]).koordenatuaAukeratu();
@@ -125,20 +126,22 @@ public class BikoteJokalariak {
 				if(emaitza!=" U") {
 					//Itsasontzia ez badu ukitzen:
 					posibleaDa=false;
-					System.out.println("OOH!!!" + this.getZerrenda()[0].getIzena() +", ez duzu itsasontzirik ukitu");
 					System.out.println(" ");
+					System.out.println("OOH!!!" + this.getZerrenda()[0].getIzena() +", ez duzu itsasontzirik ukitu");
 				}				
 			}
 			else {
 				posibleaDa=false;
-				System.out.println(this.getZerrenda()[0].getIzena() + ", sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu");
 				System.out.println(" ");
+				System.out.println(this.getZerrenda()[0].getIzena() + ", sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu");
+				
 			}
 			
 		}while(posibleaDa) ;
 		//JokalariCPU
 		posibleaDa=true;
 		do {
+			System.out.println(" ");
 			System.out.println(this.getZerrenda()[1].getIzena() + "-ren txanda da!");
 			System.out.println(" ");
 			
@@ -153,8 +156,8 @@ public class BikoteJokalariak {
 						//Itsasontzia ez badu ukitzen:
 						posibleaDa=false; 
 						aurrekoanAsmatu=false;
-						System.out.println("OOH!!!" + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
 						System.out.println(" ");
+						System.out.println("OOH!!!" + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
 						
 					}
 					else {
@@ -164,8 +167,8 @@ public class BikoteJokalariak {
 				}
 				else {
 					posibleaDa=false;
-					System.out.println(this.getZerrenda()[1].getIzena() + ", sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu");
 					System.out.println(" ");
+					System.out.println(this.getZerrenda()[1].getIzena() + ", sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu");
 				}
 		}while(posibleaDa);			
 	}
@@ -196,8 +199,11 @@ public class BikoteJokalariak {
 		System.out.println("- Ezin dira bi itsasontzi ondoz ondo jarri, kasila bateko distantzia egon behar da.");
 		System.out.println("- Koordenatuak hautatzeko, errenkada eta zutabeen zenbakia idatzi behar da, baita orientazioa B edo H ere.");
 		System.out.println("- Jokalari bakoitzak aukera bakarra dauka tiroa egiteko, koordenatua errepikatzen badu txanda galduko du.  ");
-		System.out.println("- Jokalari bat itsaontzia ukitzen baldin badu, beste tiro bat egiteko aukera izango du, hutz egiten duen harte. ");
+		System.out.println("- Jokalari bat itsaontzia ukitzen baldin badu, beste tiro bat egiteko aukera izango du, hutz egiten duen arte. ");
 		System.out.println("- Irabazlea beste jokalariaren itsasontzi guztiak hondoratzen dituen jokalaria da. ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println("ZORTE ON! ");
 		System.out.println(" ");
 		System.out.println(" ");
 		System.out.println("Sartu zure izena: ");
@@ -206,7 +212,7 @@ public class BikoteJokalariak {
 		BikoteJokalariak.getNireBikoteJokalariak().getZerrenda()[0] = new JokalariArrunta(izena, i );
 		BikoteJokalariak.getNireBikoteJokalariak().getZerrenda()[1] = new JokalariCPU( i );
 		System.out.println(" ");
-		System.out.println("				PARTIDA HASIKO DA!!!");
+		System.out.println("				PARTIDA HASIKO DA!");
 		System.out.println(" ");
 		BikoteJokalariak.getNireBikoteJokalariak().partidaBatJokatu();		
 	}
