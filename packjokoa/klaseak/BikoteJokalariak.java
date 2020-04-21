@@ -1,4 +1,4 @@
-package packjokoa;
+package klaseak;
 import java.io.*;
 import java.util.*;
 

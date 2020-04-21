@@ -1,4 +1,4 @@
-package packjokoa;
+package klaseak;
 
 public class Koordenatuak {
 	

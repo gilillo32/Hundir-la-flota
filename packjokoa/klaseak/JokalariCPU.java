@@ -1,4 +1,4 @@
-package packjokoa;
+package klaseak;
 import java.util.*;
 
 import salbuespenak.KoordenatuEzEgokiak;

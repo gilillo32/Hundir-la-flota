@@ -1,4 +1,4 @@
-package packjokoa;
+package klaseak;
 import salbuespenak.*;
 
 public class JokalariArrunta extends Jokalaria {
