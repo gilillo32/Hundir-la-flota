@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import packjokoa.JokalariArrunta;
+import packjokoa.Koordenatuak;
 
 public class JokalariArruntaTest {
 
@@ -27,10 +28,10 @@ public class JokalariArruntaTest {
 	@Test
 	public void testItsasontziakJarri1() {
 		System.out.println("Metodo hau konprobatzeko kontsolatik egin behar da, eta hainbat kasu frogatu behar dira, ikusteko exception egokiak botatzen duela etab egin behar duenean");
-		System.out.println("Leheneng testa");
+		System.out.println("Lehenengo testa");
 		System.out.println("Hau da frogatu beharrekoa test honetan:");
 		System.out.println("-Proba guztietan: Itsasontsiak ordenean jartzen direla.");
-		System.out.println("-Itsasontsiak ondo jarri behar ditugu (jarriko ditugu errorerik emango ez dituen koordenatuetan)");
+		System.out.println("-Itsasontziak ondo jarri behar ditugu (jarriko ditugu errorerik emango ez dituen koordenatuetan)");
 		j1.itsasontziakJarri(10);
 	}
 	
@@ -40,20 +41,35 @@ public class JokalariArruntaTest {
 		System.out.println("Bigarren testa");
 		System.out.println("Hau da frogatu beharrekoa test honetan:");
 		System.out.println("-Proba guztietan: Itsasontsiak ordenean jartzen direla.");
-		System.out.println("-Itsasontsiren bat jada itsasontsi bat jarri dugun koordenatuan jartzen saituko gara eta exception bat botako du, KoordenatuEzEgokiak deitu duguna, eta koordenatu berriak sartzeko eskatuko du.");
+		System.out.println("-Itsasontziren bat jada itsasontsi bat jarri dugun koordenatuan jartzen saituko gara eta exception bat botako du, KoordenatuEzEgokiak deitu duguna, eta koordenatu berriak sartzeko eskatuko du.");
 		j1.itsasontziakJarri(10);
 	}
 	
 	@Test
 	public void testItsasontziakJarri3() {
-		System.out.println("Metodo hau konprobatzeko kontsolatik egin behar da, eta hainbat kasu ffrgatu behar dira, ikusteko exception egokiak botatzen duela etab egin behar duenean");
+		System.out.println("Metodo hau konprobatzeko kontsolatik egin behar da, eta hainbat kasu frogatu behar dira, ikusteko exception egokiak botatzen duela etab egin behar duenean");
 		System.out.println("Hirugarren testa");
 		System.out.println("Hau da frogatu beharrekoa test honetan:");
-		System.out.println("-Proba guztietan: Itsasontsiak ordenean jartzen direla.");
-		System.out.println("-Itsasontsiren bat Tableroan ez dagoen koordenatu batTableroan ez dagoen koordenatu bat");
+		System.out.println("-Proba guztietan: Itsasontziak ordenean jartzen direla.");
+		System.out.println("-Itsasontziren bat Tableroan ez dagoen koordenatu batTableroan ez dagoen koordenatu bat");
 		j1.itsasontziakJarri(10);
 	}
 	//test4ItsasontziakJarri() etab
+	
+	
+	//koordenatuakAukeratu:
+	
+	@Test
+	public void koordenatuakAukeratuTest() {
+		System.out.println("Metodo hau konprobatzeko kontsolatik egin behar da, eta hainbat kasu frogatu behar dira, ikusteko exception egokiak botatzen duela etab egin behar duenean");
+		System.out.println("koordenatuakAukeratuLehenengo testa" + "\nHau da frogatu beharrekoa test honetan:");
+		System.out.println("-Proba guztietan: Bi parametro eskatzen direla: Zutabea eta errenkada, orden horretan.");
+		System.out.println("-0 eta 9 (biak barne) arteko zenbakiak aukeratu ahal ditugula errorerik gabe.");
+		System.out.println("Guk sartutako koordenatuak era egokian bueltatzen direla.");
+		Koordenatuak k = new Koordenatuak();
+		k = j1.koordenatuaAukeratu();
+		System.out.println("Esandako koordenatuak hurrengoak dira:\nZutabea: " + k.getKoordenatuakX() + "\nErrenkada: " + k.getKoordenatuakY());
+	}
 
 /*	@Test
 	public void testJokalariArrunta() {
