@@ -20,18 +20,9 @@ public class JokalariCPU extends Jokalaria {
 
 	 public Koordenatuak koordenatuaAukeratu( Koordenatuak pK1,  boolean pAurrekoanAsmatu) {
 		Koordenatuak k= new Koordenatuak();	
-		boolean errepikatuta=false;
+		//boolean errepikatuta=false;
 		if(!pAurrekoanAsmatu && this.albokoKoordenatuak.size()==0 ) { //ez dago arazorik, lehen saiakera da
-			do {
-				k= this.koordenatuRandom();
-				if(!this.esandakoKoordenatuak.contains(k)) {
-					//this.esandakoKoordenatuak.add(k);
-					errepikatuta=false;
-				}
-				else if  (this.esandakoKoordenatuak.contains(k)){
-					errepikatuta=true;
-				}					 
-			} while(errepikatuta);		
+			k= this.koordenatuRandom();	
 		}
 		else if(pAurrekoanAsmatu &&  this.albokoKoordenatuak.size()==0) { //lehen aldiz ikutu du eta zentzua asmatu behar du
 			this.albokoKordenatuakSortu(pK1);
@@ -48,46 +39,26 @@ public class JokalariCPU extends Jokalaria {
 				}
 			}while(k.getKoordenatuakY()== -1 && k.getKoordenatuakX()== -1 && this.esandakoKoordenatuak.contains(k) && konti<=4);
 			if(konti==4) {
-				errepikatuta= false;
-				do {
-					k= this.koordenatuRandom();
-					if(!this.esandakoKoordenatuak.contains(k)) {
-						//this.esandakoKoordenatuak.add(k);
-						errepikatuta=false;
-					}
-					else if  (this.esandakoKoordenatuak.contains(k)){
-						errepikatuta=true;
-					}					
-				} while(errepikatuta);	
+				k= this.koordenatuRandom();
 			}
 		}
 		else if(pAurrekoanAsmatu && this.albokoKoordenatuak.size()!=0) { //ez da ukitzen duen lehenengo aldia, hau da zentzua asmatu du.
-			//zentzua jakiteko:s
+	/*	//zentzua jakiteko:s
 			if (this.zentzua==0) {
 				this.zentzua=3;
 			}
 			else{
 				this.zentzua--;
 			}
+	*/
+			this.erreseteatuAlbokoKoordenatuak();
 			k= this.zentzuBateanKoordenatuBerriak(pK1.getKoordenatuakX(), pK1.getKoordenatuakY(), this.zentzua);
 			if (k.getKoordenatuakY()== -1 && k.getKoordenatuakX()== -1) {
-				this.kontrakoZentzua();
-				this.erreseteatuAlbokoKoordenatuak();
+				this.kontrakoZentzua();				
 				k= this.zentzuBateanKoordenatuBerriak(this.koordenatuOriginalak.getKoordenatuakX(), this.koordenatuOriginalak.getKoordenatuakY(), this.zentzua);
-				this.albokoKordenatuakSortu(k);
 			}
 			if(this.esandakoKoordenatuak.contains(k) ) {
-				errepikatuta= false;
-				do {
-					k= this.koordenatuRandom();
-					if(!this.esandakoKoordenatuak.contains(k)) {
-						//this.esandakoKoordenatuak.add(k);
-						errepikatuta=false;
-					}
-					else if  (this.esandakoKoordenatuak.contains(k)){
-						errepikatuta=true;
-					}					
-				} while(errepikatuta);	
+				k= this.koordenatuRandom();
 			}	
 		}
 		else if(!pAurrekoanAsmatu && this.albokoKoordenatuak.size()!=0) {//lehen ukitu du baina ez du zentzua asmatu
@@ -105,17 +76,7 @@ public class JokalariCPU extends Jokalaria {
 				
 			}while(k.getKoordenatuakY()== -1 && k.getKoordenatuakX()==-1 && this.esandakoKoordenatuak.contains(k) && aux< 4-zentzua);
 			if( aux== 4-zentzua) {
-				errepikatuta= false;
-				do {
-					k= this.koordenatuRandom();
-					if(!this.esandakoKoordenatuak.contains(k)) {
-						//this.esandakoKoordenatuak.add(k);
-						errepikatuta=false;
-					}
-					else if  (this.esandakoKoordenatuak.contains(k)){
-						errepikatuta=true;
-					}					
-				} while(errepikatuta);	
+				k= this.koordenatuRandom();
 			}
 			if (this.zentzua==0) {
 				this.erreseteatuAlbokoKoordenatuak();//alboko koordenatuak erreseteatu
@@ -127,12 +88,16 @@ public class JokalariCPU extends Jokalaria {
 	 
 	 																									////////////////////////////////////////////////////////////////
 	 private Koordenatuak koordenatuRandom() {
-		 Koordenatuak k = new Koordenatuak();
+		 Koordenatuak k = null;;		
+		 do {
+		 k = new Koordenatuak();
 		 Random rand = new Random();
 		 short pX = (short) ((short) rand.nextInt(10) );//0-etik 9 zenbaki bat bueltatzeko					////////////////////////////////////////
 		 short pY = (short) ((short) rand.nextInt(10));
 		 k.setKoordenatuakX(pX);
 		 k.setKoordenatuakY(pY);
+		 } while(this.esandakoKoordenatuak.contains(k));		 
+		 
 		 return k;
 	 }														////////////////////////////////////////////////////
 	 
