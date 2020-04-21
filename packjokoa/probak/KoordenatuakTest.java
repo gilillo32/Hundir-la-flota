@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import packjokoa.Koordenatuak;
+import klaseak.*;
 
 public class KoordenatuakTest {
 	private Koordenatuak k, k1;

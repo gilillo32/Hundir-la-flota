@@ -6,8 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import packjokoa.JokalariArrunta;
-import packjokoa.Tableroa;
+import klaseak.*;
 
 public class JokalariaTest {
 

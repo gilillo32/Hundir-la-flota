@@ -6,10 +6,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import packjokoa.BikoteJokalariak;
-import packjokoa.JokalariArrunta;
-import packjokoa.JokalariCPU;
-import packjokoa.Jokalaria;
+import klaseak.BikoteJokalariak;
+import klaseak.JokalariArrunta;
+import klaseak.JokalariCPU;
+import klaseak.Jokalaria;
 
 public class BikoteJokalariakTest {
 	private static BikoteJokalariak bikoteJokalariak;

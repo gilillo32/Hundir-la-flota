@@ -6,9 +6,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import packjokoa.JokalariCPU;
-import packjokoa.Jokalaria;
-import packjokoa.Koordenatuak;
+import klaseak.JokalariCPU;
+import klaseak.Jokalaria;
+import klaseak.Koordenatuak;
 import salbuespenak.*;
 
 public class JokalariCPUTest {

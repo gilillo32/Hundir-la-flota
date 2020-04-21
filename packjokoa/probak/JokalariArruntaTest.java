@@ -6,8 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import packjokoa.JokalariArrunta;
-import packjokoa.Koordenatuak;
+import klaseak.JokalariArrunta;
+import klaseak.Koordenatuak;
 
 public class JokalariArruntaTest {
 
