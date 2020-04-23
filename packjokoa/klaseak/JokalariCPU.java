@@ -23,8 +23,10 @@ public class JokalariCPU extends Jokalaria {
 		//boolean errepikatuta=false;
 		if(!pAurrekoanAsmatu && this.albokoKoordenatuak.size()==0 ) { //ez dago arazorik, lehen saiakera da
 			k= this.koordenatuRandom();	
+			this.erreseteatuAlbokoKoordenatuak();
 		}
 		else if(pAurrekoanAsmatu &&  this.albokoKoordenatuak.size()==0) { //lehen aldiz ikutu du eta zentzua asmatu behar du
+			this.zentzua=0;								//berria 2020/04/23
 			this.albokoKordenatuakSortu(pK1);
 			this.koordenatuOriginalak=pK1;
 			int konti=0;
@@ -38,12 +40,20 @@ public class JokalariCPU extends Jokalaria {
 					this.zentzua++;
 				}
 			}while(k.getKoordenatuakY()== -1 && k.getKoordenatuakX()== -1 && this.esandakoKoordenatuak.contains(k) && konti<=4);
+			//this.zentzua-n egungo zentzua gordetzeko
+			if (this.zentzua==0) {
+				this.zentzua=3;
+			}
+			else{
+				this.zentzua--;
+			}
+			
 			if(konti==4) {
 				k= this.koordenatuRandom();
 			}
 		}
 		else if(pAurrekoanAsmatu && this.albokoKoordenatuak.size()!=0) { //ez da ukitzen duen lehenengo aldia, hau da zentzua asmatu du.
-	/*	//zentzua jakiteko:s
+	/*		//zentzua jakiteko -1 egin behar dugu, aurreko egoeran +1 egin genuelako, eta hori ez da guk behar dugun balioa
 			if (this.zentzua==0) {
 				this.zentzua=3;
 			}
@@ -51,15 +61,19 @@ public class JokalariCPU extends Jokalaria {
 				this.zentzua--;
 			}
 	*/
-			this.erreseteatuAlbokoKoordenatuak();
+
+			//this.erreseteatuAlbokoKoordenatuak();
+			System.out.println(this.zentzua);
 			k= this.zentzuBateanKoordenatuBerriak(pK1.getKoordenatuakX(), pK1.getKoordenatuakY(), this.zentzua);
 			if (k.getKoordenatuakY()== -1 && k.getKoordenatuakX()== -1) {
-				this.kontrakoZentzua();				
+				this.kontrakoZentzua();	
+				System.out.println(this.zentzua + "ifean sartzen denean");
 				k= this.zentzuBateanKoordenatuBerriak(this.koordenatuOriginalak.getKoordenatuakX(), this.koordenatuOriginalak.getKoordenatuakY(), this.zentzua);
 			}
 			if(this.esandakoKoordenatuak.contains(k) ) {
 				k= this.koordenatuRandom();
-			}	
+			}
+			
 		}
 		else if(!pAurrekoanAsmatu && this.albokoKoordenatuak.size()!=0) {//lehen ukitu du baina ez du zentzua asmatu
 			int aux=0;
