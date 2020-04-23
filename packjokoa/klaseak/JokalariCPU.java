@@ -76,6 +76,7 @@ public class JokalariCPU extends Jokalaria {
 			
 		}
 		else if(!pAurrekoanAsmatu && this.albokoKoordenatuak.size()!=0) {//lehen ukitu du baina ez du zentzua asmatu
+			//lehen ez du asmatu baina zentzua bazekien, beraz kontrako zentzuan begiratu behar du
 			int aux=0;
 			int zentzua= this.zentzua;
 			do {

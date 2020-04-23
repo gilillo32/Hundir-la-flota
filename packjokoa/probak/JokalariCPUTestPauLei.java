@@ -6,24 +6,29 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class JokalariCPUTestPauLei {
+import klaseak.JokalariCPU;
 
+public class JokalariCPUTestPauLei {
+	private JokalariCPU j1;
+	
 	@Before
 	public void setUp() throws Exception {
+		j1 = new JokalariCPU((short)10);
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		j1 = null;
 	}
 
-	@Test
+	/*@Test
 	public void testItsasontziakJarri() {
 		fail("Not yet implemented");
-	}
+	}*/
 
 	@Test
 	public void testJokalariCPU() {
-		fail("Not yet implemented");
+		assertNotNull(j1);
 	}
 
 	@Test
