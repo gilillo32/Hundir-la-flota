@@ -154,7 +154,7 @@ public class BikoteJokalariak {
 			short pX= (short) (k1.getKoordenatuakX() +1);
 			short pY = (short) (k1.getKoordenatuakY()+1);
 			
-				if(this.getZerrenda()[1].koordenadaBaliogarriak(pX, pY)  ) {
+				if(this.getZerrenda()[1].koordenadaBaliogarriak(pX, pY)) {
 					String emaitza = this.getZerrenda()[0].koordenatuanZerDagoen(pX, pY);
 					this.getZerrenda()[1].eguneratuPrintTableroa(pX, pY, emaitza);
 					//ikusiko dugu ze itsasontzi dagoen koordenatuan

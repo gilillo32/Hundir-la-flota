@@ -33,10 +33,11 @@ public class JokalariCPU extends Jokalaria {
 		if(!pAurrekoanAsmatu && this.albokoKoordenatuak.size()==0 ) { //ez dago arazorik, lehen saiakera da
 			k= this.koordenatuRandom();	
 			//sartuko ditugu koordnatu horiek koordeantuOriginalan, jakiteko asmtzen duen zein izan den aurrekoa, hau da, originala
-			this.koordenatuOriginalak=k;
+			//this.koordenatuOriginalak=k;
 		}
-		else if(!this.zentzuAukeratuta) { //LEHEN aldiz ikutu du eta zentzua asmatu behar du
+		else if(!this.zentzuAukeratuta) { //sartuko da zentzua aurkitu arte
 			if (this.albokoKoordenatuak.size()==0) {
+				this.koordenatuOriginalak=pK1;
 				this.albokoKordenatuakSortu(this.koordenatuOriginalak);
 			}
 			//berria 2020/04/23
@@ -53,33 +54,36 @@ public class JokalariCPU extends Jokalaria {
 					}
 				}
 				if((this.esandakoKoordenatuak.contains(k))) {
-					this.zentzua++;
+					if (this.zentzua==3) {
+						this.zentzua=0;
+					}
+					else if (this.zentzua!=3) {
+						this.zentzua++;
+					}
 				}
 				
 			}while((k.getKoordenatuakY()== -1 || k.getKoordenatuakX()== -1) || this.esandakoKoordenatuak.contains(k) && konti<=4);
 			
 		}
-		else if(pAurrekoanAsmatu && this.albokoKoordenatuak.size()!=0) { //ez da ukitzen duen lehenengo aldia, hau da zentzua asmatu du.
+		else if(pAurrekoanAsmatu && this.albokoKoordenatuak.size()!=0) { //zentzua asmatu du eta koordenatuak zentzu horretan aukeratu
 			k= this.zentzuBateanKoordenatuBerriak(pK1.getKoordenatuakX(), pK1.getKoordenatuakY(), this.zentzua);
 			if (k.getKoordenatuakY()== -1 && k.getKoordenatuakX()== -1) {
 				this.kontrakoZentzua();	
 				k= this.zentzuBateanKoordenatuBerriak(this.koordenatuOriginalak.getKoordenatuakX(), this.koordenatuOriginalak.getKoordenatuakY(), this.zentzua);
 			}
-			if(this.esandakoKoordenatuak.contains(k) ) {
+			/*if(this.esandakoKoordenatuak.contains(k) ) {
 				k= this.koordenatuRandom();
-			}
+			}*/
 			
 		}
-		else if(!pAurrekoanAsmatu && this.albokoKoordenatuak.size()!=0) {//lehen ukitu du baina ez du zentzua asmatu
-			//lehen ez du asmatu baina zentzua bazekien, beraz kontrako zentzuan begiratu behar du
-			if (this.zentzuAukeratuta) {
+		else if(!pAurrekoanAsmatu && this.albokoKoordenatuak.size()!=0) {//lehen ez du asmatu baina zentzua bazekien, beraz kontrako zentzuan begiratu behar du
 				this.kontrakoZentzua();
 				k= this.zentzuBateanKoordenatuBerriak(this.koordenatuOriginalak.getKoordenatuakX(), this.koordenatuOriginalak.getKoordenatuakY(), this.zentzua);
-				
+				/*
 				if(this.esandakoKoordenatuak.contains(k) ) {
 					k= this.koordenatuRandom();
-				}
-			}
+				}*/
+			
 			/*else {
 				int aux=0;
 				int zentzua= this.zentzua;
@@ -102,6 +106,11 @@ public class JokalariCPU extends Jokalaria {
 				}
 			}*/
 		}
+		while(!this.koordenadaBaliogarriak(k.getKoordenatuakX(), k.getKoordenatuakY())) {
+			k=this.koordenatuRandom();
+
+			 System.out.println("whileeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+		}
 		this.esandakoKoordenatuak.add(k);
 		return  k ;
 	}
@@ -111,18 +120,22 @@ public class JokalariCPU extends Jokalaria {
 		 Koordenatuak k = null;
 		 boolean sartu=true;
 		 while (sartu){
+			 System.out.println("whilean sartu");
 			 k = new Koordenatuak(); 
 			 Random rand = new Random();
 			 short pX = (short) ((short) rand.nextInt(10) );//0-etik 9 zenbaki bat bueltatzeko					////////////////////////////////////////
 			 short pY = (short) ((short) rand.nextInt(10));
 			 k.setKoordenatuakX(pX);
 			 k.setKoordenatuakY(pY);		
-			 if(!(this.esandakoKoordenatuak.contains(k))) {
+			 if(this.koordenadaBaliogarriak(pX, pY)) {
 				 sartu=false;
 				 System.out.println("sadjfhdsjf");
-			 }			
+			 }	
+			 else {
+				 System.out.println("else");
+			 }
 		 }
-		 this.esandakoKoordenatuak.add(k);
+		// this.esandakoKoordenatuak.add(k);
 		 return k;
 	 }														////////////////////////////////////////////////////
 	 
