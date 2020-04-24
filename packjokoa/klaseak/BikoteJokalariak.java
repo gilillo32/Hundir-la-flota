@@ -46,10 +46,10 @@ public class BikoteJokalariak {
 			System.out.println("BERDINKETA");
 		}
 		else if(this.getZerrenda()[0].itsasontzirikEz()) {
-			System.out.println("ZORIONAK " + this.getZerrenda()[0].getIzena() + "IRABAZI DUZU!!!!   :)  <3 ");
+			System.out.println("ZORIONAK " + this.getZerrenda()[0].getIzena() + " IRABAZI DUZU!!!!   :)  <3 ");
 		}
 		else {
-			System.out.println("GAME OVER " + this.getZerrenda()[0].getIzena() + "GALDU DUZU!!!!  :(    ");
+			System.out.println("GAME OVER " + this.getZerrenda()[0].getIzena() + " GALDU DUZU!!!!  :(    ");
 		}
 	}
 	
