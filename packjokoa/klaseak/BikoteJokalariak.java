@@ -123,6 +123,11 @@ public class BikoteJokalariak {
 			if(this.getZerrenda()[0].koordenadaBaliogarriak(pX, pY)  ) {
 				String emaitza = this.getZerrenda()[1].koordenatuanZerDagoen(pX, pY);
 				this.getZerrenda()[0].eguneratuPrintTableroa(pX, pY, emaitza);
+				int itsas=this.getZerrenda()[1].getNireTableroa().zeItsasontziHondoratu(pX, pY);
+				this.getZerrenda()[1].eguneratuNireTableroa(pX, pY, emaitza);
+				if(this.getZerrenda()[1].getNireTableroa().hondoratutaDago(itsas)) {
+					System.out.println("ZORIONAK " + this.getZerrenda()[0].getIzena() +", hondoratu duzu itsasontzia!!");
+				}
 				if(emaitza!=" U") {
 					//Itsasontzia ez badu ukitzen:
 					posibleaDa=false;
@@ -138,7 +143,7 @@ public class BikoteJokalariak {
 			}
 			
 		}while(posibleaDa) ;
-		//JokalariCPU
+		//JokalariCPU 
 		posibleaDa=true;
 		do {
 			System.out.println(" ");
@@ -146,12 +151,15 @@ public class BikoteJokalariak {
 			System.out.println(" ");
 			
 			k1= ((JokalariCPU)this.getZerrenda()[1]).koordenatuaAukeratu(k1,   aurrekoanAsmatu);
-			short pX= (short) (k1.getKoordenatuakX()+ 1 );
+			short pX= (short) (k1.getKoordenatuakX() +1);
 			short pY = (short) (k1.getKoordenatuakY()+1);
 			
 				if(this.getZerrenda()[1].koordenadaBaliogarriak(pX, pY)  ) {
 					String emaitza = this.getZerrenda()[0].koordenatuanZerDagoen(pX, pY);
 					this.getZerrenda()[1].eguneratuPrintTableroa(pX, pY, emaitza);
+					//ikusiko dugu ze itsasontzi dagoen koordenatuan
+					int itsas=this.getZerrenda()[0].getNireTableroa().zeItsasontziHondoratu(pX, pY);
+					this.getZerrenda()[0].eguneratuNireTableroa(pX, pY, emaitza);
 					if(emaitza!=" U") {
 						//Itsasontzia ez badu ukitzen:
 						posibleaDa=false; 
@@ -164,11 +172,22 @@ public class BikoteJokalariak {
 						aurrekoanAsmatu=true;
 						
 					}
+					
+					if(this.getZerrenda()[0].getNireTableroa().hondoratutaDago(itsas)) {
+						System.out.println("ZORIONAK " + this.getZerrenda()[1].getIzena() +", hondoratu duzu itsasontzia!!");
+						if (this.getZerrenda()[1] instanceof JokalariCPU) {
+							((JokalariCPU)this.getZerrenda()[1]).erreseteatu();
+							aurrekoanAsmatu=false;
+						}
+					}
+					
 				}
 				else {
 					posibleaDa=false;
 					System.out.println(" ");
 					System.out.println(this.getZerrenda()[1].getIzena() + ", sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu");
+					System.out.println(k1.getKoordenatuakX());
+					System.out.println(k1.getKoordenatuakY());
 				}
 		}while(posibleaDa);			
 	}

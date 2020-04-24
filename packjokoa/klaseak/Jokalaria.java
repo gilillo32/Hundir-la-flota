@@ -77,8 +77,17 @@ public abstract class Jokalaria {
 			this.nUkituaInkrementatu();
 		}
 		this.printTableroa.eguneratuTableroa(pX, pY, pEma);  
+		this.printTableroa.tableroaInprimatu();
 	}
 	
+	public void eguneratuNireTableroa(short pX, short pY, String pEma) {
+		/*
+		 * koordenatuanZerDagoen itzuli duen String-a  " U" bada, ukituen zenbakia (nUkituta) unitate batean inkrementatuko du.
+		 * " U" bada printTableroan dagokion posizioan sartuko du, beste kasuetan " X" sartuko du.
+		 *Azkenik printTableroa inprimatuko du 
+		 */
+		this.nireTableroa.eguneratuTableroa(pX, pY, pEma);  
+	}
 	
 	
 	public String getIzena() {

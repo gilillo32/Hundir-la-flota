@@ -178,8 +178,6 @@ public class Tableroa {
 		return dago;		
 	}
 	
-
-	
 	private boolean konprobatuHutsuneak(short pX, short pY, short pItsas, String pOrientazio ) {		
 	
 		//true bueltatzen du itsasontzien hartean hiutsuneak egongo badira itsasontzia koordenatu horretan jarrri ostean, bestela false, hau da, itsasontzia ezin da han jarri
@@ -323,18 +321,66 @@ public class Tableroa {
 		}
 		return hutsune;
 	}
-	
-	
+		
 	public void eguneratuTableroa( short pX, short pY, String pEmaitza) {
 		//etsaiak koordenatu horretan duena zure tableroan jarriko du metodo honek
 		if ( pEmaitza != " U") {
 			pEmaitza= " X"; //jarriko du X bat gero konprobatuTiroa jakiteko ea koordenatu hori lehenik esan dugun ala ez
 		}
 		this.matrizea[pY][pX] = pEmaitza;
-		this.tableroaInprimatu();
 	}
 	
-
+	public boolean hondoratutaDago (int pItsas) {
+		boolean emaitza=true;
+		String itsas="";
+		
+		if(pItsas==2) {
+			itsas=" 2";
+		}
+		else if(pItsas==3) {
+			itsas=" 3";
+		}
+		else if(pItsas==4) {
+			itsas=" 4";
+		}
+		else {
+			itsas=" -";
+		}
+		
+		if(pItsas!=1) {
+			int i=1;
+			int j=1;
+			while(i<this.errenZutKop && emaitza) {
+				j=1;
+				while(j<this.errenZutKop && emaitza) {
+					if( this.matrizea[j][i].equals(itsas) ) {
+						emaitza=false;
+					}
+					j++;
+				}
+				i++;
+			}
+		}
+		return emaitza;
+	}
+	
+	public int zeItsasontziHondoratu(short pX, short pY) {
+		int emaitza=0;
+		String itsas=this.matrizea[pY][pX];
+		if(itsas.equals(" 1")) {
+			emaitza=1;
+		}
+		else if(itsas.equals(" 2")) {
+			emaitza=2;
+		}
+		else if(itsas.equals(" 3")) {
+			emaitza=3;
+		}
+		else if(itsas.equals(" 4")) {
+			emaitza=4;
+		}
+		return emaitza;
+	}
 	
 	//izkinen konprobaketak JokalariCPU-n beharrezkoa da metodo hau:
 	public int getErrenkadaZutKop() {

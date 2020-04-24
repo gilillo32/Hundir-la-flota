@@ -43,6 +43,28 @@ public class TableroaTest {
 		
 	}
 	
+	@Test
+	public void testHondoratutaDago() {
+		//EZ daude itsasontzirik TRUE bueltatu behar du
+		assertTrue(nireT.hondoratutaDago(1));
+		assertTrue(nireT.hondoratutaDago(2));
+		assertTrue(nireT.hondoratutaDago(3));
+		assertTrue(nireT.hondoratutaDago(4));
+		
+		//sartuko dugu bakoitzeko kasilla bat, bateko izan ezik bakarrik bat egon ahal delako 
+		nireT.koordenatuanJarri(4, 4, " 2");
+		nireT.koordenatuanJarri(6, 6, " 3");
+		nireT.koordenatuanJarri(5, 8, " 4");
+		
+		assertFalse(nireT.hondoratutaDago(2));
+		assertFalse(nireT.hondoratutaDago(2));
+		assertFalse(nireT.hondoratutaDago(3));
+		assertFalse(nireT.hondoratutaDago(4));
+		
+		//sartuko diot 0, hau da, ez du itsasontzirik aurkitu
+		assertFalse(nireT.hondoratutaDago(0));//mal
+		
+	}
 	
 	@Test
 	public void test4konprobatuItsasontziakJarri1() {
