@@ -50,22 +50,10 @@ public class Tableroa {
 				z++;
 			}	
 			e++;
-		}	
-		//this.tableroaInprimatu();		
+		}		
 	} 
 	
-	//testa egiteko erabiliko dugu
-	public boolean konprobatuItsasontziakJarri(short pX, short pY,short pItsas, String pOrientazio) {
-		boolean emaitza= true;
-		try {
-			//gehi bat egin dugu JokalariArruntan bezala, matrizea 11x11 delako eta koordenatu horrek matrizean duen benetako posizioa +1 eginez da
-			this.itsasontziakJarri((short)(pX+1), (short)(pY+1), pItsas, pOrientazio);
-		}
-		catch (KoordenatuEzEgokiak e){
-			emaitza= false;
-		}
-		return emaitza;
-	}
+
 
 	public void itsasontziakJarri (short pX, short pY,short pItsas, String pOrientazio) throws KoordenatuEzEgokiak{
 		int aux=0;
@@ -137,8 +125,6 @@ public class Tableroa {
 	}
 	
 	
-	
-	
 	public boolean konprobatuTiroa(short pX, short pY) {
 		//honako hauek salbuespenean jarriko ditugu(teklatuan)
 		//konprobatuko dugu ez duela lehen erabili, ez badago U edo  (U itsasontzia ukituta dagoela esan nahi du, GOGORATU!!!
@@ -178,11 +164,11 @@ public class Tableroa {
 		return dago;		
 	}
 	
-	private boolean konprobatuHutsuneak(short pX, short pY, short pItsas, String pOrientazio ) {		
-	
-		//true bueltatzen du itsasontzien hartean hiutsuneak egongo badira itsasontzia koordenatu horretan jarrri ostean, bestela false, hau da, itsasontzia ezin da han jarri
-		//pItsas esango digu zein motatak itsasontzia den, guk jakitek zein koordenatuan amaituko den itsasontzia
-		//itsasontzien hartean gutxienez kasila bat tartean egon behar da
+	private boolean konprobatuHutsuneak(short pX, short pY, short pItsas, String pOrientazio ) {	
+		/* true bueltatzen du itsasontzien hartean hiutsuneak egongo badira itsasontzia koordenatu horretan jarrri ostean, bestela false, hau da, itsasontzia ezin da han jarri
+		   pItsas esango digu zein motatak itsasontzia den, guk jakitek zein koordenatuan amaituko den itsasontzia
+		   itsasontzien hartean gutxienez kasila bat tartean egon behar da
+		*/
 		boolean hutsune = true;
 		short aux=0;
 		short amZut=0;
@@ -323,7 +309,7 @@ public class Tableroa {
 	}
 		
 	public void eguneratuTableroa( short pX, short pY, String pEmaitza) {
-		//etsaiak koordenatu horretan duena zure tableroan jarriko du metodo honek
+		//etsaiak koordenatu horretan duena zure PRINTtABLERO-AN jarriko du metodo honek
 		if ( pEmaitza != " U") {
 			pEmaitza= " X"; //jarriko du X bat gero konprobatuTiroa jakiteko ea koordenatu hori lehenik esan dugun ala ez
 		}
@@ -387,8 +373,22 @@ public class Tableroa {
 		return this.errenZutKop;
 	}
 	
-	//Testak egiteko behar dugun metodoa:
+////////////////////////TESTAK EGITEKO BEHAR DITUGUN METODOAK ////////////////////////
 	public void koordenatuanJarri ( int pX, int pY, String pJarri) {
+	// 	NIK NAHI DUDAN KARAKTEREA JARTZEN DU NIK AUKERATUTAKO KOORDENATUAN
+	// !!!!!KONTUZ!!!!!  LEHENENGO KOORDENATU HORRI +1 EGITEN DIO ETA!!!!!!!!!!
 	this.matrizea[pY+1][pX+1] = pJarri;
+	}	
+
+	public boolean konprobatuItsasontziakJarri(short pX, short pY,short pItsas, String pOrientazio) {
+		boolean emaitza= true;
+		try {
+			//gehi bat egin dugu JokalariArruntan bezala, matrizea 11x11 delako eta koordenatu horrek matrizean duen benetako posizioa +1 eginez da
+			this.itsasontziakJarri((short)(pX+1), (short)(pY+1), pItsas, pOrientazio);
+		}
+		catch (KoordenatuEzEgokiak e){
+			emaitza= false;
+		}
+		return emaitza;
 	}
 }

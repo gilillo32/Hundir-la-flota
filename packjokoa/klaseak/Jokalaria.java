@@ -17,8 +17,7 @@ public abstract class Jokalaria {
 		this.printTableroa=new Tableroa(pErrenkadaZutKop); 
 		this.printTableroa.tableroaBete();
 		this.nireTableroa.tableroaBete();
-	}
-	
+	}	
 	
 	protected Tableroa getNireTableroa() {
 		return this.nireTableroa;
@@ -89,26 +88,22 @@ public abstract class Jokalaria {
 		this.nireTableroa.eguneratuTableroa(pX, pY, pEma);  
 	}
 	
-	
 	public String getIzena() {
 		return this.izena;
-	}
+	}	
+//////////////////////// TESTAK EGITEKO BEHAR DITUGUN METODOAK ////////////////////////
 	public int  getNUkituta() {
 		return this.nUkituta;
 	}
 	public void  setNUkituta(int pUkituta) {
 		 this.nUkituta = pUkituta;
-	}
-	
-//	Testak egiteko behar ditugun metodoak:
-	
-	public void koordenatuanJarri ( int pX, int pY, String pJarri) {		
+	}	
+	public void koordenatuanJarri ( int pX, int pY, String pJarri) {
+	//NIREtABLERO ATRIBUTUAN NIK NAHI DUDAN KARAKTEREA JARTZEN DU NIK AUKERATUTAKO KOORDENATUAN
 		this.nireTableroa.koordenatuanJarri(pX, pY, pJarri);
-	}
-	
+	}	
 	public void koordenatuanJarriPrint ( int pX, int pY, String pJarri) {
+	//PRINTtABLERO ATRIBUTUAN NIK NAHI DUDAN KARAKTEREA JARTZEN DU NIK AUKERATUTAKO KOORDENATUAN
 		this.printTableroa.koordenatuanJarri(pX, pY, pJarri);
 	}
-	
-
 }
