@@ -33,23 +33,23 @@ public class BikoteJokalariak {
 
 	public void partidaBatJokatu() {
 		
-		this.itsasontziakJarri();
-		
-		
+		this.itsasontziakJarri();		
 		
 		while (!this.partidaBukatu()) {
 			this.koordenatuaAukeratu();			
-		}
-	
+		}	
 			//inprimatu nork irabazi duen
+		System.out.println(" ");
+		System.out.println(" PARTIDA AMAITU DA!! ");
+		System.out.println(" ");
 		if (this.getZerrenda()[0].itsasontzirikEz() && this.getZerrenda()[1].itsasontzirikEz()) {
-			System.out.println("BERDINKETA");
+			System.out.println("BERDINKETA IZAN DA...");
 		}
 		else if(this.getZerrenda()[0].itsasontzirikEz()) {
-			System.out.println("ZORIONAK " + this.getZerrenda()[0].getIzena() + " IRABAZI DUZU!!!!   :)  <3 ");
+			System.out.println("ZORIONAK " + this.getZerrenda()[0].getIzena() + ", IRABAZI DUZU!!!!   :)  <3 ");
 		}
 		else {
-			System.out.println("GAME OVER " + this.getZerrenda()[0].getIzena() + " GALDU DUZU!!!!  :(    ");
+			System.out.println("GAME OVER " + this.getZerrenda()[0].getIzena() + ", GALDU DUZU!!!!  :(    ");
 		}
 	}
 	
@@ -61,6 +61,7 @@ public class BikoteJokalariak {
 	
 
 	private void itsasontziakJarri() {
+	//JokalariArrunta-k itsasontziak jarriko ditu bere nireTableroa atributuan
 		System.out.println(this.getZerrenda()[0].getIzena() + " itsasontziak jartzeko unea heldu da!");
 		System.out.println(" ");
 		this.getZerrenda()[0].nireTableroaBete();
@@ -69,7 +70,7 @@ public class BikoteJokalariak {
 		this.getZerrenda()[0].itsasontziakJarri(10);
 		System.out.println(" ");
 		System.out.println(" ");
-		
+	//JokalariCPU-k itsasontziak jarriko ditu bere nireTableroa atributuan
 		System.out.println(this.getZerrenda()[1].getIzena() + " itsasontziak jartzeko unea heldu da!");
 		System.out.println(" ");
 		this.getZerrenda()[1].nireTableroaBete();
@@ -77,7 +78,6 @@ public class BikoteJokalariak {
 		System.out.println(" ");
 		this.getZerrenda()[1].itsasontziakJarri(10);
 		System.out.println(" ");
-		
 	}
 	
 	
@@ -87,9 +87,11 @@ public class BikoteJokalariak {
 	}
 	
 	private boolean partidaBukatu() {
-		// bi jokalarien tableroak begiratzen ditu eta 
-		// ez badago itsasontzirik, partida amaitzen da.
-		// itsasontzirikEz() erabiliko da jokalarien tableroak ikusteko.
+		/*
+		 bi jokalarien tableroak begiratzen ditu eta 
+		 ez badago itsasontzirik, partida amaitzen da.
+		 itsasontzirikEz() erabiliko da jokalarien tableroak ikusteko.
+		*/
 		boolean ema=false;
 		if(this.getZerrenda()[0].itsasontzirikEz()) {
 			ema= true;
@@ -111,7 +113,7 @@ public class BikoteJokalariak {
 		boolean aurrekoanAsmatu =false;
 		Koordenatuak k1= new Koordenatuak();
 		
-		//JokalariArrunta:
+	//JokalariArrunta:
 		do {
 		System.out.println(" ");
 		System.out.println(this.getZerrenda()[0].getIzena() + " zure txanda da!");
@@ -123,11 +125,15 @@ public class BikoteJokalariak {
 			if(this.getZerrenda()[0].koordenadaBaliogarriak(pX, pY)  ) {
 				String emaitza = this.getZerrenda()[1].koordenatuanZerDagoen(pX, pY);
 				this.getZerrenda()[0].eguneratuPrintTableroa(pX, pY, emaitza);
+			//AZTERTUKO NAHI  DUGU EA ITSASONTZIA HONDORATU DUEN, HORRETARAKO ETSAIAREN NIREtABLEROA ALDATUKO DUGU UKITZEN DUENEAN GEROAGO getNireTableroa().hondoratutaDago(itsas) ETSAIAREN TABLEROAN METODOA ERABILI AHAL IZATEKO
+				//ikusiko dugu ze itsasontzi dagoen koordenatuan				
 				int itsas=this.getZerrenda()[1].getNireTableroa().zeItsasontziHondoratu(pX, pY);
 				this.getZerrenda()[1].eguneratuNireTableroa(pX, pY, emaitza);
+			
 				if(this.getZerrenda()[1].getNireTableroa().hondoratutaDago(itsas)) {
 					System.out.println("ZORIONAK " + this.getZerrenda()[0].getIzena() +", hondoratu duzu itsasontzia!!");
 				}
+			//
 				if(emaitza!=" U") {
 					//Itsasontzia ez badu ukitzen:
 					posibleaDa=false;
@@ -138,12 +144,17 @@ public class BikoteJokalariak {
 			else {
 				posibleaDa=false;
 				System.out.println(" ");
-				System.out.println(this.getZerrenda()[0].getIzena() + ", sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu");
-				
+				System.out.println(this.getZerrenda()[0].getIzena() + ", sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu");				
+			}
+			if( this.getZerrenda()[0].itsasontzirikEz() ) {
+				//ITSASONTZII GUZTIAK HONDORATU DITUENENEAN SARTZEN DA HEMEN, IF HONEK EGITEN DUENA HONAKOA DA:
+				//AZKENENGO TIROA EGITEAN UKITU DUENEZ BESTE TIRO BAT EGITEN UTZIKO  LIGUKE, BAINA EZ DUGU TIRORIK EGIN BEHAR, JADA ITSASONTSI GUZTIAK HONDORATU DITUGULAKO
+				//IF HAU HORI EKIDITZEN DU, LOOP-A EZ DUELAKO BESTE BEGIZTA BAT EGINGO.
+				posibleaDa=false;
 			}
 			
 		}while(posibleaDa) ;
-		//JokalariCPU 
+	//JokalariCPU 
 		posibleaDa=true;
 		do {
 			System.out.println(" ");
@@ -157,9 +168,12 @@ public class BikoteJokalariak {
 				if(this.getZerrenda()[1].koordenadaBaliogarriak(pX, pY)) {
 					String emaitza = this.getZerrenda()[0].koordenatuanZerDagoen(pX, pY);
 					this.getZerrenda()[1].eguneratuPrintTableroa(pX, pY, emaitza);
+					
+				//AZTERTUKO NAHI  DUGU EA ITSASONTZIA HONDORATU DUEN, HORRETARAKO ETSAIAREN NIREtABLEROA ALDATUKO DUGU UKITZEN DUENEAN GEROAGO getNireTableroa().hondoratutaDago(itsas) ETSAIAREN TABLEROAN METODOA ERABILI AHAL IZATEKO
 					//ikusiko dugu ze itsasontzi dagoen koordenatuan
 					int itsas=this.getZerrenda()[0].getNireTableroa().zeItsasontziHondoratu(pX, pY);
 					this.getZerrenda()[0].eguneratuNireTableroa(pX, pY, emaitza);
+				//	
 					if(emaitza!=" U") {
 						//Itsasontzia ez badu ukitzen:
 						posibleaDa=false; 
@@ -169,25 +183,30 @@ public class BikoteJokalariak {
 						
 					}
 					else {
-						aurrekoanAsmatu=true;
-						
+						aurrekoanAsmatu=true;						
 					}
-					
+				//ITSASONTSI BAT HONDORATZEAN SARTZEN DA
 					if(this.getZerrenda()[0].getNireTableroa().hondoratutaDago(itsas)) {
 						System.out.println("ZORIONAK " + this.getZerrenda()[1].getIzena() +", hondoratu duzu itsasontzia!!");
 						if (this.getZerrenda()[1] instanceof JokalariCPU) {
 							((JokalariCPU)this.getZerrenda()[1]).erreseteatu();
 							aurrekoanAsmatu=false;
 						}
-					}
-					
+					}					
 				}
 				else {
+					//ELSE HONETAN SUPOSATZEN DA EZ DELA INOIZ SARTUKO, EZ BAITITU KOORDENATUAK ERREPIKATUKO BADUELAKO ARRAY BAT NON ESAN DITUEN KOORDENATUAK GORDE DITUEN
 					posibleaDa=false;
 					System.out.println(" ");
 					System.out.println(this.getZerrenda()[1].getIzena() + ", sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu");
 					System.out.println(k1.getKoordenatuakX());
 					System.out.println(k1.getKoordenatuakY());
+				}
+				if( this.getZerrenda()[1].itsasontzirikEz() ) {
+					//ITSASONTZII GUZTIAK HONDORATU DITUENENEAN SARTZEN DA HEMEN, IF HONEK EGITEN DUENA HONAKOA DA:
+					//AZKENENGO TIROA EGITEAN UKITU DUENEZ BESTE TIRO BAT EGITEN UTZIKO  LIGUKE, BAINA EZ DUGU TIRORIK EGIN BEHAR, JADA ITSASONTSI GUZTIAK HONDORATU DITUGULAKO
+					//IF HAU HORI EKIDITZEN DU, LOOP-A EZ DUELAKO BESTE BEGIZTA BAT EGINGO.
+					posibleaDa=false;
 				}
 		}while(posibleaDa);			
 	}
@@ -196,7 +215,7 @@ public class BikoteJokalariak {
 	
 	
 	
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+/////////////////////////////////////////////////////////////////////////////////////	  		 MAIN 	    	//////////////////////////////////////////////////////////////////////////////////////////	
 	
 	public static void main (String [ ] args) 	{	
 		Scanner input = null;
