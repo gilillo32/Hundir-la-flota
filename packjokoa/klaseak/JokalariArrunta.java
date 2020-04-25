@@ -10,13 +10,13 @@ public class JokalariArrunta extends Jokalaria {
 
 	public Koordenatuak koordenatuaAukeratu() {	
 		//koordenatuak eskatu
-		
+		System.out.println(" ");
 		String pMezua1="Sartu zure lehenengo koordenatua mesedez";
 		short pX=(short) (Teklatua.getNireTeklatua().irakurriShort(pMezua1, 0, 9));
-		String pMezua2="Sartu zure lehenengo koordenatua mesedez";
-		short pY=(short) (Teklatua.getNireTeklatua().irakurriShort(pMezua2, 0, 9));;
-		Koordenatuak k = new Koordenatuak(pX, pY);
-		
+		String pMezua2="Sartu zure bigarren koordenatua mesedez";
+		short pY=(short) (Teklatua.getNireTeklatua().irakurriShort(pMezua2, 0, 9));
+		System.out.println(" ");
+		Koordenatuak k = new Koordenatuak(pX, pY);		
 		return k;
 	}
 	

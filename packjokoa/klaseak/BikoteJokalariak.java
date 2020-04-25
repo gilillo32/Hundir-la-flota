@@ -114,13 +114,12 @@ public class BikoteJokalariak {
 		Koordenatuak k1= new Koordenatuak();
 		
 	//JokalariArrunta:
+			System.out.println(" ");
+			System.out.println(this.getZerrenda()[0].getIzena() + " zure txanda da!");
 		do {
-		System.out.println(" ");
-		System.out.println(this.getZerrenda()[0].getIzena() + " zure txanda da!");
-		System.out.println(" ");
-		Koordenatuak k= ((JokalariArrunta)this.getZerrenda()[0]).koordenatuaAukeratu();
-		short pX= (short) (k.getKoordenatuakX() + 1);
-		short pY = (short) ( k.getKoordenatuakY()+1);
+			Koordenatuak k= ((JokalariArrunta)this.getZerrenda()[0]).koordenatuaAukeratu();
+			short pX= (short) (k.getKoordenatuakX() + 1);
+			short pY = (short) ( k.getKoordenatuakY()+1);
 		
 			if(this.getZerrenda()[0].koordenadaBaliogarriak(pX, pY)  ) {
 				String emaitza = this.getZerrenda()[1].koordenatuanZerDagoen(pX, pY);
@@ -139,7 +138,11 @@ public class BikoteJokalariak {
 					posibleaDa=false;
 					System.out.println(" ");
 					System.out.println("OOH!!!" + this.getZerrenda()[0].getIzena() +", ez duzu itsasontzirik ukitu");
-				}				
+				}
+				else {
+					System.out.println(" ");
+					System.out.println("Oso ondo!" + this.getZerrenda()[0].getIzena() +", itsasontsi bat ukitu duzu!");
+				}
 			}
 			else {
 				posibleaDa=false;
@@ -155,12 +158,11 @@ public class BikoteJokalariak {
 			
 		}while(posibleaDa) ;
 	//JokalariCPU 
-		posibleaDa=true;
-		do {
 			System.out.println(" ");
 			System.out.println(this.getZerrenda()[1].getIzena() + "-ren txanda da!");
 			System.out.println(" ");
-			
+		posibleaDa=true;
+		do {			
 			k1= ((JokalariCPU)this.getZerrenda()[1]).koordenatuaAukeratu(k1,   aurrekoanAsmatu);
 			short pX= (short) (k1.getKoordenatuakX() +1);
 			short pY = (short) (k1.getKoordenatuakY()+1);
@@ -195,8 +197,8 @@ public class BikoteJokalariak {
 					}					
 				}
 				else {
-					//ELSE HONETAN SUPOSATZEN DA EZ DELA INOIZ SARTUKO, EZ BAITITU KOORDENATUAK ERREPIKATUKO BADUELAKO ARRAY BAT NON ESAN DITUEN KOORDENATUAK GORDE DITUEN
-					posibleaDa=false;
+					
+					//posibleaDa=false;
 					System.out.println(" ");
 					System.out.println(this.getZerrenda()[1].getIzena() + ", sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu");
 					System.out.println(k1.getKoordenatuakX());
@@ -212,7 +214,7 @@ public class BikoteJokalariak {
 	}
 	
 	
-	
+	 
 	
 	
 /////////////////////////////////////////////////////////////////////////////////////	  		 MAIN 	    	//////////////////////////////////////////////////////////////////////////////////////////	
