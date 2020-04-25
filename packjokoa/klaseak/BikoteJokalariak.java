@@ -241,18 +241,26 @@ public class BikoteJokalariak {
 		System.out.println("- Irabazlea beste jokalariaren itsasontzi guztiak hondoratzen dituen jokalaria da. ");
 		System.out.println(" ");
 		System.out.println(" ");
-		System.out.println("ZORTE ON! ");
-		System.out.println(" ");
-		System.out.println(" ");
 		System.out.println("Sartu zure izena: ");
 		String izena = Teklatua.getNireTeklatua().irakurriString();
 		short i=10;	//erenkada kopurua	
 		BikoteJokalariak.getNireBikoteJokalariak().getZerrenda()[0] = new JokalariArrunta(izena, i );
 		BikoteJokalariak.getNireBikoteJokalariak().getZerrenda()[1] = new JokalariCPU( i );
 		System.out.println(" ");
-		System.out.println("				PARTIDA HASIKO DA!");
+		System.out.println(" PARTIDA HASIKO DA!");
 		System.out.println(" ");
-		BikoteJokalariak.getNireBikoteJokalariak().partidaBatJokatu();		
+		System.out.println(" ZORTE ON! ");
+		System.out.println(" ");
+		BikoteJokalariak.getNireBikoteJokalariak().partidaBatJokatu();	
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println("Eskerrik asko jolasteagatik! <3 ");
+		System.out.println(" ");
+		System.out.println(" 				Egileak:");
+		System.out.println(" 							- Paula Ontalvilla");
+		System.out.println(" 							- Leire Garcia");
+		System.out.println(" 							- Gaizka Zuazo");
+		System.out.println(" 							- Iñigo Gil");
 	}
 	
 }
