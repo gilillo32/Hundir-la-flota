@@ -106,11 +106,11 @@ public class JokalariCPU extends Jokalaria {
 				}
 			}*/
 		}
-		while(!this.koordenadaBaliogarriak(k.getKoordenatuakX(), k.getKoordenatuakY())) {
+	/*	while(!this.koordenadaBaliogarriak(k.getKoordenatuakX(), k.getKoordenatuakY())) {
 			k=this.koordenatuRandom();
 
 			 System.out.println("whileeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
-		}
+		}*/
 		this.esandakoKoordenatuak.add(k);
 		return  k ;
 	}
@@ -118,16 +118,16 @@ public class JokalariCPU extends Jokalaria {
 	 																									////////////////////////////////////////////////////////////////
 	 private Koordenatuak koordenatuRandom() {
 		 Koordenatuak k = null;
-		 boolean sartu=true;
+		 /*boolean sartu=true;
 		 while (sartu){
-			 System.out.println("whilean sartu");
+			 System.out.println("whilean sartu");*/
 			 k = new Koordenatuak(); 
 			 Random rand = new Random();
 			 short pX = (short) ((short) rand.nextInt(10) );//0-etik 9 zenbaki bat bueltatzeko					////////////////////////////////////////
 			 short pY = (short) ((short) rand.nextInt(10));
 			 k.setKoordenatuakX(pX);
 			 k.setKoordenatuakY(pY);		
-			 if(this.koordenadaBaliogarriak(pX, pY)) {
+			/* if(this.koordenadaBaliogarriak(pX, pY)) {
 				 sartu=false;
 				 System.out.println("sadjfhdsjf");
 			 }	
@@ -135,7 +135,7 @@ public class JokalariCPU extends Jokalaria {
 				 System.out.println("else");
 			 }
 		 }
-		// this.esandakoKoordenatuak.add(k);
+		// this.esandakoKoordenatuak.add(k);*/
 		 return k;
 	 }														////////////////////////////////////////////////////
 	 
