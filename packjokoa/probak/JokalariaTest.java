@@ -31,7 +31,7 @@ public class JokalariaTest {
 	public void test4NireTableroaBete() {
 		//metodo hau konprobatzeko ez dago assert-erik, kontsolan konprobatzen dugu guk, metodo hau bera inprimatzen du tableroa ez dugu inprimatu metodoa deitu behar
 		System.out.println(" Konprobatu tableroa bete dela uraz (' -')");
-		j1.inprimatuNireTableroa();//metodo hau bikoteJokalariak klasean erabiltzen dugu eta nire tableroa inprimatzen du, kontslatik konprobatzen da
+		j1.nireTableroaBete();//metodo hau bikoteJokalariak klasean erabiltzen dugu eta nire tableroa inprimatzen du, kontslatik konprobatzen da
 		System.out.println(" ");
 	}
 
