@@ -226,8 +226,6 @@ public class BikoteJokalariak {
 		File aukerakFile = new File("AUKERAK.txt");
 		try {
 			input_HASIERA = new Scanner(hasieraTestuaFile);
-			input_ARAUAK = new Scanner(arauakFile);
-			input_AUKERAK = new Scanner(aukerakFile);
 			
 		} catch (FileNotFoundException e) {
 			System.out.println("Ez da aurkitu fitxategia");
@@ -236,41 +234,62 @@ public class BikoteJokalariak {
 		while(input_HASIERA.hasNextLine())
 		{ 
 		   System.out.println(input_HASIERA.nextLine());
-		}
-		System.out.println("ONGI ETORRI!");
-		System.out.println(" ");
-		while(input_AUKERAK.hasNextLine()) {
-			System.out.println(input_AUKERAK.nextLine());
-		}
-		int aukera = Teklatua.getNireTeklatua().irakurriAukera("Zer egin nahi duzu?", 1, 3);
-		System.out.println("ARAUAK: ");
-		System.out.println("- Ezin dira bi itsasontzi ondoz ondoan jarri, kasila bateko distantzia egon behar da.");
-		System.out.println("- Koordenatuak hautatzeko, errenkada eta zutabeen zenbakia idatzi behar da, baita orientazioa B edo H ere.");
-		System.out.println("- Jokalari bakoitzak aukera bakarra dauka tiroa egiteko, koordenatua errepikatzen badu txanda galduko du.");
-		System.out.println("- Jokalari bat itsaontzia ukitzen baldin badu, beste tiro bat egiteko aukera izango du, hutz egiten duen arte.");
-		System.out.println("- Irabazlea beste jokalariaren itsasontzi guztiak hondoratzen dituen jokalaria da. ");
-		System.out.println(" ");
-		System.out.println(" ");
-		System.out.println("Sartu zure izena: ");
-		String izena = Teklatua.getNireTeklatua().irakurriString();
-		short i=10;	//erenkada kopurua	
-		BikoteJokalariak.getNireBikoteJokalariak().getZerrenda()[0] = new JokalariArrunta(izena, i );
-		BikoteJokalariak.getNireBikoteJokalariak().getZerrenda()[1] = new JokalariCPU( i );
-		System.out.println(" ");
-		System.out.println(" PARTIDA HASIKO DA!");
-		System.out.println(" ");
-		System.out.println(" ZORTE ON! ");
-		System.out.println(" ");
-		BikoteJokalariak.getNireBikoteJokalariak().partidaBatJokatu();	
-		System.out.println(" ");
-		System.out.println(" ");
-		System.out.println("Eskerrik asko jolasteagatik! <3 ");
-		System.out.println(" ");
-		System.out.println(" 				Egileak:");
-		System.out.println(" 							- Paula Ontalvilla");
-		System.out.println(" 							- Leire Garcia");
-		System.out.println(" 							- Gaizka Zuazo");
-		System.out.println(" 							- Iñigo Gil");
+		}input_HASIERA.close();
+		System.out.println("ONGI ETORRI! Esperientzia osoaz gozatzeko, pantaila osoan jokatzea gomendatzen dugu!\n");
+		do {
+			
+			try {
+				input_AUKERAK = new Scanner(aukerakFile);
+			}
+			catch(FileNotFoundException e){
+				System.out.println("Ez da aurkitu fitxategia");
+			}
+			while(input_AUKERAK.hasNextLine()) {
+				System.out.println(input_AUKERAK.nextLine());
+			}input_AUKERAK.close();
+			int aukera = Teklatua.getNireTeklatua().irakurriAukera("\nZer egin nahi duzu?", 1, 3);
+			switch(aukera) {
+			case 1:
+				System.out.println("Sartu zure izena: ");
+				String izena = Teklatua.getNireTeklatua().irakurriString();
+				short i=10;	//erenkada kopurua	
+				BikoteJokalariak.getNireBikoteJokalariak().getZerrenda()[0] = new JokalariArrunta(izena, i );
+				BikoteJokalariak.getNireBikoteJokalariak().getZerrenda()[1] = new JokalariCPU( i );
+				System.out.println(" ");
+				System.out.println(" PARTIDA HASIKO DA!");
+				System.out.println(" ");
+				System.out.println(" ZORTE ON! ");
+				System.out.println(" ");
+				BikoteJokalariak.getNireBikoteJokalariak().partidaBatJokatu();	
+				System.out.println(" ");
+				System.out.println(" ");
+				System.out.println("Eskerrik asko jolasteagatik! <3 ");
+				System.out.println(" ");
+				System.out.println(" 				Egileak:");
+				System.out.println(" 							- Paula Ontalvilla");
+				System.out.println(" 							- Leire Garcia");
+				System.out.println(" 							- Gaizka Zuazo");
+				System.out.println(" 							- Iñigo Gil");
+				break;
+			case 2:
+				try {
+					input_ARAUAK = new Scanner(arauakFile);
+				}
+				catch(FileNotFoundException e) {
+					System.out.println("Ez da aurkitu fitxategia");
+				}
+				while(input_ARAUAK.hasNextLine())
+				{ 
+				   System.out.println(input_ARAUAK.nextLine());
+				}input_ARAUAK.close();
+				System.out.println("\n");
+				break;
+			case 3:
+				System.exit(0);
+				break;
+			}
+		}while(true);
+		
 	}
 	
 }
