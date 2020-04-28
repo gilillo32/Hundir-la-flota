@@ -4886,8 +4886,8 @@
             <constraint>
               <height>30</height>
               <width>337</width>
-              <x>273</x>
-              <y>1124</y>
+              <x>711</x>
+              <y>1228</y>
             </constraint>
             <sourceConnections/>
             <targetConnections/>
@@ -4915,8 +4915,8 @@
             <constraint>
               <height>42</height>
               <width>333</width>
-              <x>269</x>
-              <y>1240</y>
+              <x>755</x>
+              <y>1122</y>
             </constraint>
             <sourceConnections/>
             <targetConnections/>
@@ -4944,8 +4944,8 @@
             <constraint>
               <height>45</height>
               <width>316</width>
-              <x>273</x>
-              <y>1357</y>
+              <x>1157</x>
+              <y>1411</y>
             </constraint>
             <sourceConnections/>
             <targetConnections/>
@@ -4974,8 +4974,8 @@
             <constraint>
               <height>30</height>
               <width>164</width>
-              <x>284</x>
-              <y>1520</y>
+              <x>274</x>
+              <y>1186</y>
             </constraint>
             <sourceConnections/>
             <targetConnections/>
@@ -5003,8 +5003,8 @@
             <constraint>
               <height>36</height>
               <width>308</width>
-              <x>268</x>
-              <y>1661</y>
+              <x>730</x>
+              <y>1279</y>
             </constraint>
             <sourceConnections/>
             <targetConnections/>
@@ -5033,8 +5033,8 @@
             <constraint>
               <height>51</height>
               <width>217</width>
-              <x>274</x>
-              <y>2194</y>
+              <x>470</x>
+              <y>1124</y>
             </constraint>
             <sourceConnections/>
             <targetConnections/>
@@ -8208,8 +8208,8 @@
             <constraint>
               <height>43</height>
               <width>125</width>
-              <x>343</x>
-              <y>2143</y>
+              <x>517</x>
+              <y>1187</y>
             </constraint>
             <sourceConnections/>
             <targetConnections/>
@@ -8238,8 +8238,8 @@ psibleaDa=false</old>
             <constraint>
               <height>30</height>
               <width>138</width>
-              <x>276</x>
-              <y>2265</y>
+              <x>506</x>
+              <y>1255</y>
             </constraint>
             <sourceConnections/>
             <targetConnections/>
@@ -8294,7 +8294,7 @@ psibleaDa=false</old>
               <height>30</height>
               <width>308</width>
               <x>270</x>
-              <y>2409</y>
+              <y>1325</y>
             </constraint>
             <sourceConnections/>
             <targetConnections/>
@@ -8525,7 +8525,7 @@ posibleaDa=false</content>
             </java.beans.PropertyChangeSupport>
           </listeners>
           <constraint>
-            <height>2875</height>
+            <height>2874</height>
             <width>5</width>
             <x>82</x>
             <y>20</y>
@@ -8548,7 +8548,7 @@ posibleaDa=false</content>
                 </java.beans.PropertyChangeSupport>
               </listeners>
               <constraint>
-                <height>2768</height>
+                <height>2767</height>
                 <width>10</width>
                 <x>77</x>
                 <y>97</y>
@@ -8584,7 +8584,7 @@ posibleaDa=false</content>
                       <height>2757</height>
                       <width>10</width>
                       <x>252</x>
-                      <y>98</y>
+                      <y>97</y>
                     </constraint>
                     <sourceConnections>
                       <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -8636,7 +8636,7 @@ posibleaDa=false</content>
                             <height>952</height>
                             <width>10</width>
                             <x>257</x>
-                            <y>128</y>
+                            <y>127</y>
                           </constraint>
                           <sourceConnections>
                             <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
@@ -8669,7 +8669,7 @@ posibleaDa=false</content>
                                   <height>56</height>
                                   <width>10</width>
                                   <x>653</x>
-                                  <y>619</y>
+                                  <y>618</y>
                                 </constraint>
                                 <sourceConnections>
                                   <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -8719,7 +8719,7 @@ posibleaDa=false</content>
                                         <height>30</height>
                                         <width>10</width>
                                         <x>895</x>
-                                        <y>635</y>
+                                        <y>634</y>
                                       </constraint>
                                       <sourceConnections>
                                         <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -8760,7 +8760,7 @@ posibleaDa=false</content>
                                           </java.beans.PropertyChangeSupport>
                                         </listeners>
                                         <constraint>
-                                          <height>2875</height>
+                                          <height>2874</height>
                                           <width>5</width>
                                           <x>900</x>
                                           <y>20</y>
@@ -8786,7 +8786,7 @@ posibleaDa=false</content>
                                               <height>30</height>
                                               <width>10</width>
                                               <x>895</x>
-                                              <y>166</y>
+                                              <y>150</y>
                                             </constraint>
                                             <sourceConnections>
                                               <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -8816,10 +8816,10 @@ posibleaDa=false</content>
                                                     </java.beans.PropertyChangeSupport>
                                                   </listeners>
                                                   <constraint>
-                                                    <height>55</height>
+                                                    <height>40</height>
                                                     <width>10</width>
                                                     <x>443</x>
-                                                    <y>151</y>
+                                                    <y>150</y>
                                                   </constraint>
                                                   <sourceConnections>
                                                     <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -8853,7 +8853,7 @@ posibleaDa=false</content>
                                                       <source class="net.java.amateras.uml.sequencediagram.model.ActivationModel" reference="../../.."/>
                                                       <target class="net.java.amateras.uml.sequencediagram.model.ActivationModel" reference="../../../../../.."/>
                                                       <bendpoints/>
-                                                      <name>tableroaBete():void</name>
+                                                      <name>tableroaInprimatu():void</name>
                                                       <direction>true</direction>
                                                       <order>4</order>
                                                       <oldOrder>4</oldOrder>
@@ -8874,7 +8874,7 @@ posibleaDa=false</content>
                                                       <source class="net.java.amateras.uml.sequencediagram.model.ActivationModel" reference="../../../../../../../../../../../../../../.."/>
                                                       <target class="net.java.amateras.uml.sequencediagram.model.ActivationModel" reference="../../.."/>
                                                       <bendpoints/>
-                                                      <name>nireTableroaBete():void</name>
+                                                      <name>inprimatuNireTableroa():void</name>
                                                       <direction>true</direction>
                                                       <order>3</order>
                                                       <oldOrder>3</oldOrder>
@@ -8898,7 +8898,7 @@ posibleaDa=false</content>
                                                       </java.beans.PropertyChangeSupport>
                                                     </listeners>
                                                     <constraint>
-                                                      <height>2875</height>
+                                                      <height>2874</height>
                                                       <width>5</width>
                                                       <x>448</x>
                                                       <y>20</y>
@@ -8924,7 +8924,7 @@ posibleaDa=false</content>
                                                           <height>367</height>
                                                           <width>10</width>
                                                           <x>443</x>
-                                                          <y>229</y>
+                                                          <y>228</y>
                                                         </constraint>
                                                         <sourceConnections>
                                                           <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -8976,7 +8976,7 @@ posibleaDa=false</content>
                                                                 <height>313</height>
                                                                 <width>10</width>
                                                                 <x>448</x>
-                                                                <y>273</y>
+                                                                <y>272</y>
                                                               </constraint>
                                                               <sourceConnections>
                                                                 <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
@@ -9009,7 +9009,7 @@ posibleaDa=false</content>
                                                                       <height>278</height>
                                                                       <width>10</width>
                                                                       <x>895</x>
-                                                                      <y>298</y>
+                                                                      <y>297</y>
                                                                     </constraint>
                                                                     <sourceConnections>
                                                                       <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -9061,7 +9061,7 @@ posibleaDa=false</content>
                                                                             <height>86</height>
                                                                             <width>10</width>
                                                                             <x>900</x>
-                                                                            <y>341</y>
+                                                                            <y>340</y>
                                                                           </constraint>
                                                                           <sourceConnections>
                                                                             <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
@@ -9096,7 +9096,7 @@ posibleaDa=false</content>
                                                                                   <height>30</height>
                                                                                   <width>10</width>
                                                                                   <x>905</x>
-                                                                                  <y>387</y>
+                                                                                  <y>386</y>
                                                                                 </constraint>
                                                                                 <sourceConnections/>
                                                                                 <targetConnections>
@@ -9164,7 +9164,7 @@ posibleaDa=false</content>
                                                                             <height>87</height>
                                                                             <width>10</width>
                                                                             <x>900</x>
-                                                                            <y>479</y>
+                                                                            <y>478</y>
                                                                           </constraint>
                                                                           <sourceConnections>
                                                                             <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
@@ -9199,7 +9199,7 @@ posibleaDa=false</content>
                                                                                   <height>30</height>
                                                                                   <width>10</width>
                                                                                   <x>905</x>
-                                                                                  <y>526</y>
+                                                                                  <y>525</y>
                                                                                 </constraint>
                                                                                 <sourceConnections/>
                                                                                 <targetConnections>
@@ -9318,7 +9318,7 @@ posibleaDa=false</content>
                                                           <height>30</height>
                                                           <width>10</width>
                                                           <x>443</x>
-                                                          <y>1623</y>
+                                                          <y>1276</y>
                                                         </constraint>
                                                         <sourceConnections>
                                                           <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -9351,7 +9351,7 @@ posibleaDa=false</content>
                                                                 <height>649</height>
                                                                 <width>10</width>
                                                                 <x>257</x>
-                                                                <y>1502</y>
+                                                                <y>1155</y>
                                                               </constraint>
                                                               <sourceConnections>
                                                                 <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
@@ -9370,8 +9370,8 @@ posibleaDa=false</content>
                                                                   <bendpoints/>
                                                                   <name>koordenatuakAukeratu():void</name>
                                                                   <direction>true</direction>
-                                                                  <order>25</order>
-                                                                  <oldOrder>25</oldOrder>
+                                                                  <order>22</order>
+                                                                  <oldOrder>22</oldOrder>
                                                                 </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                 <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                   <showIcon>true</showIcon>
@@ -9400,10 +9400,10 @@ posibleaDa=false</content>
                                                                       </java.beans.PropertyChangeSupport>
                                                                     </listeners>
                                                                     <constraint>
-                                                                      <height>94</height>
+                                                                      <height>106</height>
                                                                       <width>10</width>
                                                                       <x>443</x>
-                                                                      <y>1732</y>
+                                                                      <y>1385</y>
                                                                     </constraint>
                                                                     <sourceConnections>
                                                                       <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -9450,10 +9450,10 @@ posibleaDa=false</content>
                                                                             </java.beans.PropertyChangeSupport>
                                                                           </listeners>
                                                                           <constraint>
-                                                                            <height>71</height>
+                                                                            <height>83</height>
                                                                             <width>10</width>
                                                                             <x>895</x>
-                                                                            <y>1745</y>
+                                                                            <y>1398</y>
                                                                           </constraint>
                                                                           <sourceConnections>
                                                                             <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -9505,7 +9505,7 @@ posibleaDa=false</content>
                                                                                   <height>30</height>
                                                                                   <width>10</width>
                                                                                   <x>900</x>
-                                                                                  <y>1776</y>
+                                                                                  <y>1441</y>
                                                                                 </constraint>
                                                                                 <sourceConnections/>
                                                                                 <targetConnections>
@@ -9520,8 +9520,8 @@ posibleaDa=false</content>
                                                                               <bendpoints/>
                                                                               <name>uraDago(short pX, short pY):boolean</name>
                                                                               <direction>true</direction>
-                                                                              <order>28</order>
-                                                                              <oldOrder>28</oldOrder>
+                                                                              <order>25</order>
+                                                                              <oldOrder>25</oldOrder>
                                                                             </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                           </sourceConnections>
                                                                           <targetConnections>
@@ -9537,8 +9537,8 @@ posibleaDa=false</content>
                                                                         <bendpoints/>
                                                                         <name>koordenadaBaliogarriak(short pX, short pY):boolean</name>
                                                                         <direction>true</direction>
-                                                                        <order>27</order>
-                                                                        <oldOrder>27</oldOrder>
+                                                                        <order>24</order>
+                                                                        <oldOrder>24</oldOrder>
                                                                       </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                     </sourceConnections>
                                                                     <targetConnections>
@@ -9553,8 +9553,8 @@ posibleaDa=false</content>
                                                                   <bendpoints/>
                                                                   <name>koordenatuBaliogarriak(short pX, short pY):boolean</name>
                                                                   <direction>true</direction>
-                                                                  <order>26</order>
-                                                                  <oldOrder>26</oldOrder>
+                                                                  <order>23</order>
+                                                                  <oldOrder>23</oldOrder>
                                                                 </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                 <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                   <showIcon>true</showIcon>
@@ -9586,7 +9586,7 @@ posibleaDa=false</content>
                                                                       <height>50</height>
                                                                       <width>10</width>
                                                                       <x>653</x>
-                                                                      <y>1873</y>
+                                                                      <y>1526</y>
                                                                     </constraint>
                                                                     <sourceConnections>
                                                                       <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -9636,7 +9636,7 @@ posibleaDa=false</content>
                                                                             <height>30</height>
                                                                             <width>10</width>
                                                                             <x>895</x>
-                                                                            <y>1883</y>
+                                                                            <y>1536</y>
                                                                           </constraint>
                                                                           <sourceConnections>
                                                                             <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -9668,8 +9668,8 @@ posibleaDa=false</content>
                                                                         <bendpoints/>
                                                                         <name>koordenatuanZerDagoen(short pX, short pY) :String </name>
                                                                         <direction>true</direction>
-                                                                        <order>30</order>
-                                                                        <oldOrder>30</oldOrder>
+                                                                        <order>27</order>
+                                                                        <oldOrder>27</oldOrder>
                                                                       </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                     </sourceConnections>
                                                                     <targetConnections>
@@ -9693,7 +9693,7 @@ posibleaDa=false</content>
                                                                         </java.beans.PropertyChangeSupport>
                                                                       </listeners>
                                                                       <constraint>
-                                                                        <height>2875</height>
+                                                                        <height>2874</height>
                                                                         <width>5</width>
                                                                         <x>658</x>
                                                                         <y>20</y>
@@ -9720,7 +9720,7 @@ posibleaDa=false</content>
                                                                             <height>368</height>
                                                                             <width>10</width>
                                                                             <x>653</x>
-                                                                            <y>702</y>
+                                                                            <y>701</y>
                                                                           </constraint>
                                                                           <sourceConnections>
                                                                             <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -9772,7 +9772,7 @@ posibleaDa=false</content>
                                                                                   <height>330</height>
                                                                                   <width>10</width>
                                                                                   <x>658</x>
-                                                                                  <y>730</y>
+                                                                                  <y>729</y>
                                                                                 </constraint>
                                                                                 <sourceConnections>
                                                                                   <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
@@ -9805,7 +9805,7 @@ posibleaDa=false</content>
                                                                                         <height>298</height>
                                                                                         <width>10</width>
                                                                                         <x>895</x>
-                                                                                        <y>752</y>
+                                                                                        <y>751</y>
                                                                                       </constraint>
                                                                                       <sourceConnections>
                                                                                         <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -9857,7 +9857,7 @@ posibleaDa=false</content>
                                                                                               <height>96</height>
                                                                                               <width>10</width>
                                                                                               <x>900</x>
-                                                                                              <y>798</y>
+                                                                                              <y>797</y>
                                                                                             </constraint>
                                                                                             <sourceConnections>
                                                                                               <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
@@ -9892,7 +9892,7 @@ posibleaDa=false</content>
                                                                                                     <height>30</height>
                                                                                                     <width>10</width>
                                                                                                     <x>905</x>
-                                                                                                    <y>854</y>
+                                                                                                    <y>853</y>
                                                                                                   </constraint>
                                                                                                   <sourceConnections/>
                                                                                                   <targetConnections>
@@ -9960,7 +9960,7 @@ posibleaDa=false</content>
                                                                                               <height>89</height>
                                                                                               <width>10</width>
                                                                                               <x>900</x>
-                                                                                              <y>951</y>
+                                                                                              <y>950</y>
                                                                                             </constraint>
                                                                                             <sourceConnections>
                                                                                               <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
@@ -9995,7 +9995,7 @@ posibleaDa=false</content>
                                                                                                     <height>30</height>
                                                                                                     <width>10</width>
                                                                                                     <x>905</x>
-                                                                                                    <y>1000</y>
+                                                                                                    <y>999</y>
                                                                                                   </constraint>
                                                                                                   <sourceConnections/>
                                                                                                   <targetConnections>
@@ -10113,7 +10113,7 @@ posibleaDa=false</content>
                                                                             <height>30</height>
                                                                             <width>10</width>
                                                                             <x>653</x>
-                                                                            <y>1206</y>
+                                                                            <y>2210</y>
                                                                           </constraint>
                                                                           <sourceConnections>
                                                                             <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -10146,7 +10146,7 @@ posibleaDa=false</content>
                                                                                   <height>230</height>
                                                                                   <width>10</width>
                                                                                   <x>257</x>
-                                                                                  <y>1125</y>
+                                                                                  <y>2129</y>
                                                                                 </constraint>
                                                                                 <sourceConnections>
                                                                                   <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
@@ -10165,8 +10165,8 @@ posibleaDa=false</content>
                                                                                     <bendpoints/>
                                                                                     <name>itsasontzirikEz():boolean</name>
                                                                                     <direction>true</direction>
-                                                                                    <order>22</order>
-                                                                                    <oldOrder>22</oldOrder>
+                                                                                    <order>33</order>
+                                                                                    <oldOrder>33</oldOrder>
                                                                                   </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                                   <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                                     <showIcon>true</showIcon>
@@ -10198,7 +10198,7 @@ posibleaDa=false</content>
                                                                                         <height>30</height>
                                                                                         <width>10</width>
                                                                                         <x>895</x>
-                                                                                        <y>1315</y>
+                                                                                        <y>2319</y>
                                                                                       </constraint>
                                                                                       <sourceConnections>
                                                                                         <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -10230,8 +10230,8 @@ posibleaDa=false</content>
                                                                                     <bendpoints/>
                                                                                     <name>itsasontzirikEz():boolean</name>
                                                                                     <direction>true</direction>
-                                                                                    <order>23</order>
-                                                                                    <oldOrder>23</oldOrder>
+                                                                                    <order>34</order>
+                                                                                    <oldOrder>34</oldOrder>
                                                                                   </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                                 </sourceConnections>
                                                                                 <targetConnections>
@@ -10253,8 +10253,8 @@ posibleaDa=false</content>
                                                                                     <bendpoints/>
                                                                                     <name>partidaBukatu():boolean</name>
                                                                                     <direction>true</direction>
-                                                                                    <order>21</order>
-                                                                                    <oldOrder>21</oldOrder>
+                                                                                    <order>32</order>
+                                                                                    <oldOrder>32</oldOrder>
                                                                                   </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                                   <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel reference="../../.."/>
                                                                                   <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel reference="../../sourceConnections/net.java.amateras.uml.sequencediagram.model.SyncMessageModel[2]/target/sourceConnections/net.java.amateras.uml.sequencediagram.model.ReturnMessageModel"/>
@@ -10277,7 +10277,7 @@ posibleaDa=false</content>
                                                                                     </java.beans.PropertyChangeSupport>
                                                                                   </listeners>
                                                                                   <constraint>
-                                                                                    <height>2875</height>
+                                                                                    <height>2874</height>
                                                                                     <width>5</width>
                                                                                     <x>257</x>
                                                                                     <y>20</y>
@@ -10353,7 +10353,7 @@ posibleaDa=false</content>
                                                                             <height>30</height>
                                                                             <width>10</width>
                                                                             <x>653</x>
-                                                                            <y>2360</y>
+                                                                            <y>2359</y>
                                                                           </constraint>
                                                                           <sourceConnections>
                                                                             <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -10418,7 +10418,7 @@ posibleaDa=false</content>
                                                                             <height>93</height>
                                                                             <width>10</width>
                                                                             <x>653</x>
-                                                                            <y>2464</y>
+                                                                            <y>2463</y>
                                                                           </constraint>
                                                                           <sourceConnections>
                                                                             <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -10468,7 +10468,7 @@ posibleaDa=false</content>
                                                                                   <height>81</height>
                                                                                   <width>10</width>
                                                                                   <x>895</x>
-                                                                                  <y>2466</y>
+                                                                                  <y>2465</y>
                                                                                 </constraint>
                                                                                 <sourceConnections>
                                                                                   <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -10520,7 +10520,7 @@ posibleaDa=false</content>
                                                                                         <height>30</height>
                                                                                         <width>10</width>
                                                                                         <x>900</x>
-                                                                                        <y>2507</y>
+                                                                                        <y>2506</y>
                                                                                       </constraint>
                                                                                       <sourceConnections/>
                                                                                       <targetConnections>
@@ -10601,7 +10601,7 @@ posibleaDa=false</content>
                                                                             <height>160</height>
                                                                             <width>10</width>
                                                                             <x>653</x>
-                                                                            <y>2685</y>
+                                                                            <y>2684</y>
                                                                           </constraint>
                                                                           <sourceConnections>
                                                                             <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -10651,7 +10651,7 @@ posibleaDa=false</content>
                                                                                   <height>137</height>
                                                                                   <width>10</width>
                                                                                   <x>895</x>
-                                                                                  <y>2698</y>
+                                                                                  <y>2697</y>
                                                                                 </constraint>
                                                                                 <sourceConnections>
                                                                                   <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -10703,7 +10703,7 @@ posibleaDa=false</content>
                                                                                         <height>88</height>
                                                                                         <width>10</width>
                                                                                         <x>900</x>
-                                                                                        <y>2737</y>
+                                                                                        <y>2736</y>
                                                                                       </constraint>
                                                                                       <sourceConnections>
                                                                                         <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
@@ -10738,7 +10738,7 @@ posibleaDa=false</content>
                                                                                               <height>30</height>
                                                                                               <width>10</width>
                                                                                               <x>905</x>
-                                                                                              <y>2785</y>
+                                                                                              <y>2784</y>
                                                                                             </constraint>
                                                                                             <sourceConnections/>
                                                                                             <targetConnections>
@@ -10857,8 +10857,8 @@ posibleaDa=false</content>
                                                                   <bendpoints/>
                                                                   <name>koordenatuanZerDagoen(short pX, short pY):String   = String emaitza</name>
                                                                   <direction>true</direction>
-                                                                  <order>29</order>
-                                                                  <oldOrder>29</oldOrder>
+                                                                  <order>26</order>
+                                                                  <oldOrder>26</oldOrder>
                                                                 </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                 <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                   <showIcon>true</showIcon>
@@ -10890,7 +10890,7 @@ posibleaDa=false</content>
                                                                       <height>161</height>
                                                                       <width>10</width>
                                                                       <x>443</x>
-                                                                      <y>1980</y>
+                                                                      <y>1633</y>
                                                                     </constraint>
                                                                     <sourceConnections>
                                                                       <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -10940,7 +10940,7 @@ posibleaDa=false</content>
                                                                             <height>133</height>
                                                                             <width>10</width>
                                                                             <x>895</x>
-                                                                            <y>1998</y>
+                                                                            <y>1651</y>
                                                                           </constraint>
                                                                           <sourceConnections>
                                                                             <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -10992,7 +10992,7 @@ posibleaDa=false</content>
                                                                                   <height>86</height>
                                                                                   <width>10</width>
                                                                                   <x>900</x>
-                                                                                  <y>2035</y>
+                                                                                  <y>1688</y>
                                                                                 </constraint>
                                                                                 <sourceConnections>
                                                                                   <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
@@ -11027,7 +11027,7 @@ posibleaDa=false</content>
                                                                                         <height>30</height>
                                                                                         <width>10</width>
                                                                                         <x>905</x>
-                                                                                        <y>2081</y>
+                                                                                        <y>1734</y>
                                                                                       </constraint>
                                                                                       <sourceConnections/>
                                                                                       <targetConnections>
@@ -11042,8 +11042,8 @@ posibleaDa=false</content>
                                                                                     <bendpoints/>
                                                                                     <name>tableroaInprimatu():void</name>
                                                                                     <direction>true</direction>
-                                                                                    <order>34</order>
-                                                                                    <oldOrder>34</oldOrder>
+                                                                                    <order>31</order>
+                                                                                    <oldOrder>31</oldOrder>
                                                                                   </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                                 </sourceConnections>
                                                                                 <targetConnections>
@@ -11060,8 +11060,8 @@ posibleaDa=false</content>
                                                                               <bendpoints/>
                                                                               <name>eguneratuTableroa( short pX, short pY, String pEmaitza):void</name>
                                                                               <direction>true</direction>
-                                                                              <order>33</order>
-                                                                              <oldOrder>33</oldOrder>
+                                                                              <order>30</order>
+                                                                              <oldOrder>30</oldOrder>
                                                                             </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                           </sourceConnections>
                                                                           <targetConnections>
@@ -11077,8 +11077,8 @@ posibleaDa=false</content>
                                                                         <bendpoints/>
                                                                         <name>eguneratuPrintTableroa(short pX, short pY, String pEma):void</name>
                                                                         <direction>true</direction>
-                                                                        <order>32</order>
-                                                                        <oldOrder>32</oldOrder>
+                                                                        <order>29</order>
+                                                                        <oldOrder>29</oldOrder>
                                                                       </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                     </sourceConnections>
                                                                     <targetConnections>
@@ -11093,8 +11093,8 @@ posibleaDa=false</content>
                                                                   <bendpoints/>
                                                                   <name>eguneratuPrintTableroa(short pX, short pY, String pEmaitza):void</name>
                                                                   <direction>true</direction>
-                                                                  <order>31</order>
-                                                                  <oldOrder>31</oldOrder>
+                                                                  <order>28</order>
+                                                                  <oldOrder>28</oldOrder>
                                                                 </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                               </sourceConnections>
                                                               <targetConnections>
@@ -11116,8 +11116,8 @@ posibleaDa=false</content>
                                                                   <bendpoints/>
                                                                   <name>koordenatuaAukeratu():void</name>
                                                                   <direction>true</direction>
-                                                                  <order>24</order>
-                                                                  <oldOrder>24</oldOrder>
+                                                                  <order>21</order>
+                                                                  <oldOrder>21</oldOrder>
                                                                 </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                 <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel reference="../../.."/>
                                                                 <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel reference="../../sourceConnections/net.java.amateras.uml.sequencediagram.model.SyncMessageModel[2]/target/sourceConnections/net.java.amateras.uml.sequencediagram.model.ReturnMessageModel"/>
@@ -11163,7 +11163,7 @@ posibleaDa=false</content>
                                                           <height>58</height>
                                                           <width>10</width>
                                                           <x>443</x>
-                                                          <y>2593</y>
+                                                          <y>2592</y>
                                                         </constraint>
                                                         <sourceConnections>
                                                           <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -11213,7 +11213,7 @@ posibleaDa=false</content>
                                                                 <height>30</height>
                                                                 <width>10</width>
                                                                 <x>895</x>
-                                                                <y>2611</y>
+                                                                <y>2610</y>
                                                               </constraint>
                                                               <sourceConnections>
                                                                 <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -11370,7 +11370,7 @@ posibleaDa=false</content>
                                       <movable>true</movable>
                                     </target>
                                     <bendpoints/>
-                                    <name>tableroaBete():void</name>
+                                    <name>tableroaInprimatu():void</name>
                                     <direction>true</direction>
                                     <order>13</order>
                                     <oldOrder>13</oldOrder>
@@ -11386,7 +11386,7 @@ posibleaDa=false</content>
                                 <movable>true</movable>
                               </target>
                               <bendpoints/>
-                              <name>nireTableroaBete():void</name>
+                              <name>inprimatuNireTableroa():void</name>
                               <direction>true</direction>
                               <order>12</order>
                               <oldOrder>12</oldOrder>

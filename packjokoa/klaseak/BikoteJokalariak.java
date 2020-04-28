@@ -5,8 +5,6 @@ import java.util.*;
 public class BikoteJokalariak {
 	//atributuak:
 	private Jokalaria[] zerrenda;
-/*	private JokalariArrunta j1;
-	private JokalariCPU j2;    */
 	private static BikoteJokalariak nireBikoteJokalariak = null;
 	
 	//eraikitzailea (Singleton):
@@ -64,7 +62,7 @@ public class BikoteJokalariak {
 	//JokalariArrunta-k itsasontziak jarriko ditu bere nireTableroa atributuan
 		System.out.println(this.getZerrenda()[0].getIzena() + " itsasontziak jartzeko unea heldu da!");
 		System.out.println(" ");
-		this.getZerrenda()[0].nireTableroaBete();
+		this.getZerrenda()[0].inprimatuNireTableroa();
 		System.out.println(" ");
 		System.out.println(" ");
 		this.getZerrenda()[0].itsasontziakJarri(10);
@@ -73,7 +71,7 @@ public class BikoteJokalariak {
 	//JokalariCPU-k itsasontziak jarriko ditu bere nireTableroa atributuan
 		System.out.println(this.getZerrenda()[1].getIzena() + " itsasontziak jartzeko unea heldu da!");
 		System.out.println(" ");
-		this.getZerrenda()[1].nireTableroaBete();
+		this.getZerrenda()[1].inprimatuNireTableroa();
 		System.out.println(" ");
 		System.out.println(" ");
 		this.getZerrenda()[1].itsasontziakJarri(10);
@@ -157,6 +155,7 @@ public class BikoteJokalariak {
 			}
 			
 		}while(posibleaDa) ;
+		
 	//JokalariCPU 
 			System.out.println(" ");
 			System.out.println(this.getZerrenda()[1].getIzena() + "-ren txanda da!");
@@ -173,6 +172,7 @@ public class BikoteJokalariak {
 					
 				//AZTERTUKO NAHI  DUGU EA ITSASONTZIA HONDORATU DUEN, HORRETARAKO ETSAIAREN NIREtABLEROA ALDATUKO DUGU UKITZEN DUENEAN GEROAGO getNireTableroa().hondoratutaDago(itsas) ETSAIAREN TABLEROAN METODOA ERABILI AHAL IZATEKO
 					//ikusiko dugu ze itsasontzi dagoen koordenatuan
+					//ura badago 0 itzultzen du
 					int itsas=this.getZerrenda()[0].getNireTableroa().zeItsasontziHondoratu(pX, pY);
 					this.getZerrenda()[0].eguneratuNireTableroa(pX, pY, emaitza);
 				//	
@@ -185,12 +185,16 @@ public class BikoteJokalariak {
 						
 					}
 					else {
-						aurrekoanAsmatu=true;						
+						aurrekoanAsmatu=true;							
 					}
+					
 				//ITSASONTSI BAT HONDORATZEAN SARTZEN DA
 					if(this.getZerrenda()[0].getNireTableroa().hondoratutaDago(itsas)) {
+						System.out.println(" ");
 						System.out.println("ZORIONAK " + this.getZerrenda()[1].getIzena() +", hondoratu duzu itsasontzia!!");
 						if (this.getZerrenda()[1] instanceof JokalariCPU) {
+							byte zentzua=((JokalariCPU)this.getZerrenda()[1]).getZentzua();
+							this.getZerrenda()[1].getPrintTableroa().XBete(pX, pY, itsas, zentzua);
 							((JokalariCPU)this.getZerrenda()[1]).erreseteatu();
 							aurrekoanAsmatu=false;
 						}

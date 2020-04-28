@@ -18,6 +18,10 @@ public class JokalariCPU extends Jokalaria {
 		this.koordenatuOriginalak = new Koordenatuak();		
 	}
 	
+	public byte getZentzua() {
+		return this.zentzua;
+	}
+	
 	public void erreseteatu() {
 		this.zentzuAukeratuta=false;
 		this.erreseteatuAlbokoKoordenatuak();
@@ -40,7 +44,6 @@ public class JokalariCPU extends Jokalaria {
 				this.koordenatuOriginalak=pK1;
 				this.albokoKordenatuakSortu(this.koordenatuOriginalak);
 			}
-			//berria 2020/04/23
 			int konti=0;
 			do {
 				k=this.albokoKoordenatuak.get(this.zentzua);
@@ -79,38 +82,7 @@ public class JokalariCPU extends Jokalaria {
 		else if(!pAurrekoanAsmatu && this.albokoKoordenatuak.size()!=0) {//lehen ez du asmatu baina zentzua bazekien, beraz kontrako zentzuan begiratu behar du
 				this.kontrakoZentzua();
 				k= this.zentzuBateanKoordenatuBerriak(this.koordenatuOriginalak.getKoordenatuakX(), this.koordenatuOriginalak.getKoordenatuakY(), this.zentzua);
-				/*
-				if(this.esandakoKoordenatuak.contains(k) ) {
-					k= this.koordenatuRandom();
-				}*/
-			
-			/*else {
-				int aux=0;
-				int zentzua= this.zentzua;
-				do {
-					aux++;
-					k=this.albokoKoordenatuak.get(this.zentzua);
-					if (this.zentzua==3) {
-						this.zentzua=0;
-					}
-					else {
-						this.zentzua++;
-					}
-					
-				}while(k.getKoordenatuakY()== -1 && k.getKoordenatuakX()==-1 && this.esandakoKoordenatuak.contains(k) && aux< 4-zentzua);
-				if( aux== 4-zentzua) {
-					k= this.koordenatuRandom();
-				}
-				if (this.zentzua==0) {
-					this.erreseteatuAlbokoKoordenatuak();//alboko koordenatuak erreseteatu
-				}
-			}*/
 		}
-	/*	while(!this.koordenadaBaliogarriak(k.getKoordenatuakX(), k.getKoordenatuakY())) {
-			k=this.koordenatuRandom();
-
-			 System.out.println("whileeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
-		}*/
 		this.esandakoKoordenatuak.add(k);
 		return  k ;
 	}
@@ -118,24 +90,12 @@ public class JokalariCPU extends Jokalaria {
 	 																									////////////////////////////////////////////////////////////////
 	 private Koordenatuak koordenatuRandom() {
 		 Koordenatuak k = null;
-		 /*boolean sartu=true;
-		 while (sartu){
-			 System.out.println("whilean sartu");*/
-			 k = new Koordenatuak(); 
-			 Random rand = new Random();
-			 short pX = (short) ((short) rand.nextInt(10) );//0-etik 9 zenbaki bat bueltatzeko					////////////////////////////////////////
-			 short pY = (short) ((short) rand.nextInt(10));
-			 k.setKoordenatuakX(pX);
-			 k.setKoordenatuakY(pY);		
-			/* if(this.koordenadaBaliogarriak(pX, pY)) {
-				 sartu=false;
-				 System.out.println("sadjfhdsjf");
-			 }	
-			 else {
-				 System.out.println("else");
-			 }
-		 }
-		// this.esandakoKoordenatuak.add(k);*/
+		 k = new Koordenatuak(); 
+		 Random rand = new Random();
+		 short pX = (short) ((short) rand.nextInt(10) );//0-etik 9 zenbaki bat bueltatzeko					////////////////////////////////////////
+		 short pY = (short) ((short) rand.nextInt(10));
+		 k.setKoordenatuakX(pX);
+		 k.setKoordenatuakY(pY);		
 		 return k;
 	 }														////////////////////////////////////////////////////
 	 

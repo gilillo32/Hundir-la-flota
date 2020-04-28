@@ -144,15 +144,11 @@ public class Tableroa {
 		String bi = " 2";
 		String hiru = " 3";
 		String lau =" 4";
-		//System.out.println( "matrizean dagoenaaaaaaaa   !m" + this.matrizea[pY][pX] );
-		//System.out.println("EMA hasierako balioa .... " + ema);
 		if(ema!=null){
-			if( ema.equals(bat)  || ema.equals(bi)  || ema.equals(hiru)  || ema.equals(lau) ) { //   ||this.matrizea[pY][pX].equals(bi)  || this.matrizea[pY][pX].equals(hiru)  || this.matrizea[pY][pX].equals(lau)
-			ema = " U";
-			//System.out.println("EMA LO QUE se supne que hay si entra en el if " + ema);
+			if( ema.equals(bat)  || ema.equals(bi)  || ema.equals(hiru)  || ema.equals(lau) ) { 
+				ema = " U";
 			}	
 		}
-		//System.out.println("EMA LO QUE devuelve " + ema);
 		return ema ;		
 	}
 	
@@ -340,6 +336,180 @@ public class Tableroa {
 		this.matrizea[pY][pX] = pEmaitza;
 	}
 	
+	public void XBete(short pX, short pY, int pItsas, byte pZentzua ) {	
+		//lortuko dugu orientazioa
+		String pOrientazio;
+		if(pZentzua==0 || pZentzua==2) {
+			pOrientazio="h";
+		}
+		else {
+			pOrientazio="b";
+		}
+		
+		boolean lehena=false;
+		boolean azkena=false;		
+		short aux=0;
+		short amZut=0;
+		short amEr=0;
+		
+		//orientazioaren arabera prozedura desberdina izango da
+		if ( pOrientazio.equals("h") ) { 
+			//ikusiko dugu ea koordenatua ezkerreko (lehena) ala eskuinekoa (azkena) den
+			//lehen zutabea bada
+			if(pX==1) {//Lehenengo koordenatua da
+				lehena=true;
+			}
+			//azken zutabea bada
+			else if(pX==this.errenZutKop-1){//azken koordenatua da
+				azkena=true;
+			}
+			else {
+				if(pItsas!=1) {
+					//koordenatuanZerDagoen metodoa erabiliko dugu, " U" itzultzen badu lehena dela dakigu, bestela azkena
+					if(this.koordenatuanZerDagoen((short)(pX+1),pY).equals(" U")) {
+						lehena=true;
+					}
+					else {
+						azkena=true;
+					}
+				}
+			}
+						
+			//horizontalean
+			if(azkena) {
+				amZut=pX;
+				pX=(short)(pX-pItsas+1);//+1 egiten dugu jakiteko itsasontziaren lehenengo kasila
+			}
+			else {
+				amZut= (short )(pX + pItsas-1);//-1 EGITEN DUGU, JAKITEKO ITSASONTZIAREN AZKENENGO KASILA
+			}
+			amEr= pY;
+			
+			if(pX!=1) {
+				this.matrizea[pY][(short)(pX-1)]= " X";
+				
+			if (pX != this.errenZutKop-1 && amZut!=this.errenZutKop-1) {
+				this.matrizea[amEr][(short)(amZut+1)]= " X";
+			}
+			
+			aux=(short)(pX-1);
+			if(pY!=1 && amZut != this.errenZutKop-1 ) { 
+				while(aux<= (amZut+1)) {		//GOIKO ERRENKETAKO KASILAK BEGIRATU		
+					this.matrizea[(short)(pY-1)][aux]= " X";
+					aux++;
+				}
+			}
+			if(pY!=1 && amZut == this.errenZutKop-1 ) {
+				while(aux<= amZut) {		//GOIKO ERRENKETAKO KASILAK BEGIRATU		
+					this.matrizea[(short)(pY-1)][aux]= " X";
+					aux++;
+				}
+			}
+
+			aux=(short)(pX-1) ;
+			if(pY != this.errenZutKop-1  && amZut != this.errenZutKop-1) {
+				while(aux<= (amZut+1)) {				
+					this.matrizea[(short)(pY+1)][aux]= " X";
+					aux++;
+				}
+			}
+			if (pY != this.errenZutKop-1 && amZut == this.errenZutKop-1 ) {
+				while( aux<= amZut) {				
+					this.matrizea[(short)(pY+1)][aux]= " X";				
+					aux++;
+				}
+			}
+
+		}
+			
+		else {//if (pOrientazio.equals("b"))
+			//ikusiko dugu ea koordenatua goikoa (lehena) ala behekoa (azkena) den
+			//lehen errenkada bada
+			if(pY==1) {//Lehenengo koordenatua da
+				lehena=true;
+			}
+			//azken errenkada bada
+			else if(pY==this.errenZutKop-1){//azken koordenatua da
+				azkena=true;
+			}
+			else {
+				if(pItsas!=1) {
+					//koordenatuanZerDagoen metodoa erabiliko dugu, " U" itzultzen badu lehena dela dakigu, bestela azkena
+					if(this.koordenatuanZerDagoen(pX,(short)(pY+1)).equals(" U")) {
+						lehena=true;
+					}
+					else {
+						azkena=true;
+					}
+				}
+			}
+		}
+			//Bertikalean
+			if(azkena) {
+				amEr=pY;
+				pY=(short)(pY-pItsas+1);//+1 egiten dugu jakiteko itsasontziaren lehenengo kasila
+			}
+			else {
+				amEr= (short )(pY + pItsas -1); //-1 EGITEN DUGU, JAKITEKO ITSASONTZIAREN AZKENENGO KASILA
+			}
+			amZut= pX;
+			
+			if(pY!=1 ) {
+				this.matrizea[(short)(pY-1)][pX]= " X";	
+			}			
+			
+			if(pY != this.errenZutKop-1 && amEr != this.errenZutKop-1) {   
+				this.matrizea[(short)(amEr+1)][amZut]= " X";	
+			}
+			
+			aux=(short) (pY-1);
+			if(pX!=1  && amEr != this.errenZutKop-1 ) { 
+				if (pY!=1) {
+					while(aux<= (amEr+1)) {		//EZKERREKO ZUTABEKO KASILAK BEGIRATU	(ez da azkenengo errenkada)	
+						this.matrizea[aux][(short) (pX-1)]= " X";
+						aux++;
+					}
+				}
+				else {
+					aux=(short) (pY);
+					while(aux<= (amEr+1)) {		//EZKERREKO ZUTABEKO KASILAK BEGIRATU	(baina ez diagonala)
+						this.matrizea[aux][(short) (pX-1)]= " X";	
+						aux++;
+					}
+				}
+			}
+			
+			if(pX!=1  && amEr == this.errenZutKop-1) {
+				while(aux<= amEr) {		//EZKERREKO ZUTABEKO KASILAK BEGIRATU	 (azkenengo errenkada da)	
+					this.matrizea[aux][(short) (pX-1)]= " X";
+					aux++;
+				}
+			}
+			aux=(short) (pY-1);
+			if(pX != this.errenZutKop-1 && amEr != this.errenZutKop-1  ) {  
+				if(pY!=1) {
+					while(aux<= (amEr+1)) {			//ESKUINEKO ZUTABEKOKASILAK BEGIRATU	
+						this.matrizea[aux][(short) (pX+1)]= " X";
+						aux++;
+					}
+				}
+				else {
+					aux=(short) (pY);
+					while(aux<= (amEr+1)) {			//ESKUINEKO ZUTABEKOKASILAK BEGIRATU	 (DIAGONALAK EZ)
+						this.matrizea[aux][(short) (pX+1)]= " X";
+						aux++;
+					}
+				}
+			}
+		   if(pX != this.errenZutKop-1 &&  amEr == this.errenZutKop-1 ) {
+				while(aux<= amEr) {			//ESKUINEKO ZUTABEKOKASILAK BEGIRATU	(azkenengo errenkada da)	
+					this.matrizea[aux][(short) (pX+1)]= " X";
+					aux++;
+				}
+			}
+		}
+}
+		
 	public boolean hondoratutaDago (int pItsas) {
 		boolean emaitza=true;
 		String itsas="";

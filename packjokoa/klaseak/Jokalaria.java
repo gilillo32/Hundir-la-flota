@@ -27,7 +27,7 @@ public abstract class Jokalaria {
 		return this.printTableroa;
 	}
 	
-	public void nireTableroaBete() {
+	public void inprimatuNireTableroa() {
 		this.nireTableroa.tableroaInprimatu();
 	}
 	
