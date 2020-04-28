@@ -1,7 +1,6 @@
 package klaseak;
 
 import java.util.Scanner;
-
 import salbuespenak.LimiteakGainditutaExc;
 
 public class Teklatua {

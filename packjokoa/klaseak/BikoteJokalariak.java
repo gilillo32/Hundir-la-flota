@@ -217,12 +217,12 @@ public class BikoteJokalariak {
 			System.out.println(" ");
 			System.out.println(this.getZerrenda()[1].getIzena() + " zure txanda da!");
 		do {
-			Koordenatuak k= ((JokalariArrunta)this.getZerrenda()[0]).koordenatuaAukeratu();
+			Koordenatuak k= ((JokalariArrunta)this.getZerrenda()[1]).koordenatuaAukeratu();
 			short pX= (short) (k.getKoordenatuakX() + 1);
 			short pY = (short) ( k.getKoordenatuakY()+1);
 		
 			if(this.getZerrenda()[1].koordenadaBaliogarriak(pX, pY)  ) {
-				String emaitza = this.getZerrenda()[1].koordenatuanZerDagoen(pX, pY);
+				String emaitza = this.getZerrenda()[0].koordenatuanZerDagoen(pX, pY);
 				this.getZerrenda()[1].eguneratuPrintTableroa(pX, pY, emaitza);
 			//AZTERTUKO NAHI  DUGU EA ITSASONTZIA HONDORATU DUEN, HORRETARAKO ETSAIAREN NIREtABLEROA ALDATUKO DUGU UKITZEN DUENEAN GEROAGO getNireTableroa().hondoratutaDago(itsas) ETSAIAREN TABLEROAN METODOA ERABILI AHAL IZATEKO
 				//ikusiko dugu ze itsasontzi dagoen koordenatuan				
@@ -249,7 +249,7 @@ public class BikoteJokalariak {
 				System.out.println(" ");
 				System.out.println(this.getZerrenda()[1].getIzena() + ", sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu");				
 			}
-			if( this.getZerrenda()[0].itsasontzirikEz() ) {
+			if( this.getZerrenda()[1].itsasontzirikEz() ) {
 				//ITSASONTZII GUZTIAK HONDORATU DITUENENEAN SARTZEN DA HEMEN, IF HONEK EGITEN DUENA HONAKOA DA:
 				//AZKENENGO TIROA EGITEAN UKITU DUENEZ BESTE TIRO BAT EGITEN UTZIKO  LIGUKE, BAINA EZ DUGU TIRORIK EGIN BEHAR, JADA ITSASONTSI GUZTIAK HONDORATU DITUGULAKO
 				//IF HAU HORI EKIDITZEN DU, LOOP-A EZ DUELAKO BESTE BEGIZTA BAT EGINGO.
@@ -264,6 +264,7 @@ public class BikoteJokalariak {
 	public void setNorenKontra(String pNorenKontra) {
 		this.norenKontra = pNorenKontra;
 	}
+
 	
 	
 	 
@@ -271,7 +272,7 @@ public class BikoteJokalariak {
 	
 /////////////////////////////////////////////////////////////////////////////////////	  		 MAIN 	    	//////////////////////////////////////////////////////////////////////////////////////////	
 	
-	public static void main (String [ ] args) 	{	
+	public static void main (String [ ] args) throws InterruptedException 	{	
 		Scanner input_HASIERA = null;
 		Scanner input_ARAUAK = null;
 		Scanner input_AUKERAK = null;
@@ -302,7 +303,7 @@ public class BikoteJokalariak {
 			while(input_AUKERAK.hasNextLine()) {
 				System.out.println(input_AUKERAK.nextLine());
 			}input_AUKERAK.close();
-			int aukera = Teklatua.getNireTeklatua().irakurriAukera("\nZer egin nahi duzu?", 1, 4);
+			int aukera = Teklatua.getNireTeklatua().irakurriAukera("\nZer egin nahi duzu?", 0, 4);
 			switch(aukera) {
 			case 1:
 				BikoteJokalariak.getNireBikoteJokalariak().setNorenKontra("CPU");
@@ -368,7 +369,10 @@ public class BikoteJokalariak {
 			case 4:
 				System.exit(0);
 				break;
+			case 0:
+				klaseak.LifeStarts.laif();
 			}
+				
 		}while(true);
 		
 	}
