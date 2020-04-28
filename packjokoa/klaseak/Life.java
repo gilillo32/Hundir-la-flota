@@ -17,7 +17,7 @@ public class Life {
 		for(int row = 0; row < newWorld.length; row++ ){
 			for(int col = 0; col < newWorld[row].length; col++ ){
 				newWorld[row][col] = (Math.random() < 0.3);
-			}
+			} 
 		}
 		world = newWorld;
 	}
