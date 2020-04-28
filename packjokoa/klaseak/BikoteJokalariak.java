@@ -113,6 +113,7 @@ public class BikoteJokalariak {
 		
 	//JokalariArrunta:
 			System.out.println(" ");
+			System.out.println(" ");
 			System.out.println(this.getZerrenda()[0].getIzena() + " zure txanda da!");
 		do {
 			Koordenatuak k= ((JokalariArrunta)this.getZerrenda()[0]).koordenatuaAukeratu();
@@ -158,6 +159,7 @@ public class BikoteJokalariak {
 		
 	//JokalariCPU 
 			System.out.println(" ");
+			System.out.println(" ");
 			System.out.println(this.getZerrenda()[1].getIzena() + "-ren txanda da!");
 			System.out.println(" ");
 		posibleaDa=true;
@@ -169,7 +171,7 @@ public class BikoteJokalariak {
 				if(this.getZerrenda()[1].koordenadaBaliogarriak(pX, pY)) {
 					String emaitza = this.getZerrenda()[0].koordenatuanZerDagoen(pX, pY);
 					this.getZerrenda()[1].eguneratuPrintTableroa(pX, pY, emaitza);
-					
+					System.out.println(" ");
 				//AZTERTUKO NAHI  DUGU EA ITSASONTZIA HONDORATU DUEN, HORRETARAKO ETSAIAREN NIREtABLEROA ALDATUKO DUGU UKITZEN DUENEAN GEROAGO getNireTableroa().hondoratutaDago(itsas) ETSAIAREN TABLEROAN METODOA ERABILI AHAL IZATEKO
 					//ikusiko dugu ze itsasontzi dagoen koordenatuan
 					//ura badago 0 itzultzen du
@@ -180,7 +182,6 @@ public class BikoteJokalariak {
 						//Itsasontzia ez badu ukitzen:
 						posibleaDa=false; 
 						aurrekoanAsmatu=false;
-						System.out.println(" ");
 						System.out.println("OOH!!!" + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
 						
 					}
@@ -190,7 +191,6 @@ public class BikoteJokalariak {
 					
 				//ITSASONTSI BAT HONDORATZEAN SARTZEN DA
 					if(this.getZerrenda()[0].getNireTableroa().hondoratutaDago(itsas)) {
-						System.out.println(" ");
 						System.out.println("ZORIONAK " + this.getZerrenda()[1].getIzena() +", hondoratu duzu itsasontzia!!");
 						if (this.getZerrenda()[1] instanceof JokalariCPU) {
 							byte zentzua=((JokalariCPU)this.getZerrenda()[1]).getZentzua();

@@ -387,6 +387,7 @@ public class Tableroa {
 			
 			if(pX!=1) {
 				this.matrizea[pY][(short)(pX-1)]= " X";
+			}
 				
 			if (pX != this.errenZutKop-1 && amZut!=this.errenZutKop-1) {
 				this.matrizea[amEr][(short)(amZut+1)]= " X";
@@ -419,10 +420,8 @@ public class Tableroa {
 					aux++;
 				}
 			}
-
-		}
-			
-		else {//if (pOrientazio.equals("b"))
+		}	
+		else {
 			//ikusiko dugu ea koordenatua goikoa (lehena) ala behekoa (azkena) den
 			//lehen errenkada bada
 			if(pY==1) {//Lehenengo koordenatua da
@@ -443,7 +442,6 @@ public class Tableroa {
 					}
 				}
 			}
-		}
 			//Bertikalean
 			if(azkena) {
 				amEr=pY;
