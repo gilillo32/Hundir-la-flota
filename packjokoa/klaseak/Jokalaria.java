@@ -1,6 +1,6 @@
 package klaseak;
 
-import salbuespenak.KoordenatuEzEgokiak;
+//import salbuespenak.KoordenatuEzEgokiak;
 
 public abstract class Jokalaria {
 	//atributuak:
