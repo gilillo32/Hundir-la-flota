@@ -9,8 +9,6 @@ import org.junit.Test;
 import klaseak.BikoteJokalariak;
 import klaseak.JokalariArrunta;
 import klaseak.JokalariCPU;
-import klaseak.Jokalaria;
-
 public class BikoteJokalariakTest {
 	private static BikoteJokalariak bikoteJokalariak;
 	//private Jokalaria[] zerrenda;

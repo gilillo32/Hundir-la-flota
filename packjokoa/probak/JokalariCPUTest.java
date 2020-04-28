@@ -7,9 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import klaseak.JokalariCPU;
-import klaseak.Jokalaria;
 import klaseak.Koordenatuak;
-import salbuespenak.*;
 
 public class JokalariCPUTest {
 	private JokalariCPU j1;
