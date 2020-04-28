@@ -115,7 +115,34 @@ public class BikoteJokalariak {
 	//JokalariArrunta:
 			System.out.println(" ");
 			System.out.println(" ");
-			System.out.println(this.getZerrenda()[0].getIzena() + " zure txanda da!");
+			if(this.norenKontra.equals("CPU")) {
+				Scanner input_zuretxanda = null;
+				File zuretxandaFile = new File("ZURETXANDA.txt");
+				try {
+					input_zuretxanda = new Scanner(zuretxandaFile);
+					
+				} catch (FileNotFoundException e) {
+					System.out.println("Ez da aurkitu fitxategia");
+				}
+				while(input_zuretxanda.hasNextLine())
+				{ 
+				   System.out.println(input_zuretxanda.nextLine());
+				}input_zuretxanda.close();
+			}
+			else {
+				Scanner input_lehenengo = null;
+				File lehenengoFile = new File("LEHENENGO.txt");
+				try {
+					input_lehenengo = new Scanner(lehenengoFile);
+					
+				} catch (FileNotFoundException e) {
+					System.out.println("Ez da aurkitu fitxategia");
+				}
+				while(input_lehenengo.hasNextLine())
+				{ 
+				   System.out.println(input_lehenengo.nextLine());
+				}input_lehenengo.close();
+			}
 		do {
 			Koordenatuak k= ((JokalariArrunta)this.getZerrenda()[0]).koordenatuaAukeratu();
 			short pX= (short) (k.getKoordenatuakX() + 1);
@@ -163,7 +190,19 @@ public class BikoteJokalariak {
 		//JokalariCPU 
 				System.out.println(" ");
 				System.out.println(" ");
-				System.out.println(this.getZerrenda()[1].getIzena() + "-ren txanda da!");
+				//System.out.println(this.getZerrenda()[1].getIzena() + "-ren txanda da!");
+				Scanner input_cpu = null;
+				File cpuFile = new File("CPU.txt");
+				try {
+					input_cpu = new Scanner(cpuFile);
+					
+				} catch (FileNotFoundException e) {
+					System.out.println("Ez da aurkitu fitxategia");
+				}
+				while(input_cpu.hasNextLine())
+				{ 
+				   System.out.println(input_cpu.nextLine());
+				}input_cpu.close();
 				System.out.println(" ");
 			posibleaDa=true;
 			do {			
@@ -215,7 +254,18 @@ public class BikoteJokalariak {
 	case "Arrunta":
 			System.out.println(" ");
 			System.out.println(" ");
-			System.out.println(this.getZerrenda()[1].getIzena() + " zure txanda da!");
+			Scanner input_bigarren = null;
+			File bigarrenFile = new File("BIGARREN.txt");
+			try {
+				input_cpu = new Scanner(bigarrenFile);
+				
+			} catch (FileNotFoundException e) {
+				System.out.println("Ez da aurkitu fitxategia");
+			}
+			while(input_bigarren.hasNextLine())
+			{ 
+			   System.out.println(input_bigarren.nextLine());
+			}input_bigarren.close();
 		do {
 			Koordenatuak k= ((JokalariArrunta)this.getZerrenda()[1]).koordenatuaAukeratu();
 			short pX= (short) (k.getKoordenatuakX() + 1);
