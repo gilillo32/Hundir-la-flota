@@ -110,12 +110,12 @@ public class Tableroa {
 			}			
 		}
 	    if( pOrientazio.equals("B") || pOrientazio.equals("b") ) {//pX ez da aldatzen
-			System.out.println( " konprobatuItsasontsirikEzKoordenatuan ELSE IF ");
+			//System.out.println( " konprobatuItsasontsirikEzKoordenatuan ELSE IF ");
 			aux	=pY+ pItsas;
 			while(pY<aux && emaitza) {
-				System.out.println( " konprobatuItsasontsirikEzKoordenatuan SEGUNDO WHILE ");
+				//System.out.println( " konprobatuItsasontsirikEzKoordenatuan SEGUNDO WHILE ");
 				if (  this.koordenatuanZerDagoen(pX, pY).equals(" U")) {
-					System.out.println( " konprobatuItsasontsirikEzKoordenatuan TERCER IF ");
+					//System.out.println( " konprobatuItsasontsirikEzKoordenatuan TERCER IF ");
 					emaitza=false;
 				}
 				pY++;
@@ -244,14 +244,14 @@ public class Tableroa {
 
 		}
 		if (pOrientazio.equals("B") || pOrientazio.equals("b")) {
-			System.out.println( " konprobatuHutsuneak PRIMER IF  B ");
+			//System.out.println( " konprobatuHutsuneak PRIMER IF  B ");
 			//Bertikalean
 			amEr= (short )(pY + pItsas -1); //-1 EGITEN DUGU, JAKITEKO ITSASONTZIAREN AZKENENGO KASILA
 			amZut= pX;
 			if(pY!=1 ) {
-				System.out.println( " konprobatuHutsuneak  pY!=1 gOIKO");
+				//System.out.println( " konprobatuHutsuneak  pY!=1 gOIKO");
 				if(this.koordenatuanZerDagoen(pX, (short)(pY-1)) == " U") { //gOIKO KASILAN BEGIRATU
-					System.out.println( " konprobatuHutsuneak  GOI");
+					//System.out.println( " konprobatuHutsuneak  GOI");
 					hutsune = false;
 				}
 			}			
