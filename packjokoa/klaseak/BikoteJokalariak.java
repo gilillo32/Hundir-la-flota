@@ -217,26 +217,37 @@ public class BikoteJokalariak {
 /////////////////////////////////////////////////////////////////////////////////////	  		 MAIN 	    	//////////////////////////////////////////////////////////////////////////////////////////	
 	
 	public static void main (String [ ] args) 	{	
-		Scanner input = null;
+		Scanner input_HASIERA = null;
+		Scanner input_ARAUAK = null;
+		Scanner input_AUKERAK = null;
 		//Hasierako pantaila inprimatzeko:
-		File f = new File("HASIERA_TESTUA.txt");
+		File hasieraTestuaFile = new File("HASIERA_TESTUA.txt");
+		File arauakFile = new File("ARAUAK.txt");
+		File aukerakFile = new File("AUKERAK.txt");
 		try {
-			input = new Scanner(f);
+			input_HASIERA = new Scanner(hasieraTestuaFile);
+			input_ARAUAK = new Scanner(arauakFile);
+			input_AUKERAK = new Scanner(aukerakFile);
+			
 		} catch (FileNotFoundException e) {
 			System.out.println("Ez da aurkitu fitxategia");
 		}
 
-		while (input.hasNextLine())
+		while(input_HASIERA.hasNextLine())
 		{ 
-		   System.out.println(input.nextLine());
+		   System.out.println(input_HASIERA.nextLine());
 		}
 		System.out.println("ONGI ETORRI!");
 		System.out.println(" ");
+		while(input_AUKERAK.hasNextLine()) {
+			System.out.println(input_AUKERAK.nextLine());
+		}
+		int aukera = Teklatua.getNireTeklatua().irakurriAukera("Zer egin nahi duzu?", 1, 3);
 		System.out.println("ARAUAK: ");
-		System.out.println("- Ezin dira bi itsasontzi ondoz ondo jarri, kasila bateko distantzia egon behar da.");
+		System.out.println("- Ezin dira bi itsasontzi ondoz ondoan jarri, kasila bateko distantzia egon behar da.");
 		System.out.println("- Koordenatuak hautatzeko, errenkada eta zutabeen zenbakia idatzi behar da, baita orientazioa B edo H ere.");
-		System.out.println("- Jokalari bakoitzak aukera bakarra dauka tiroa egiteko, koordenatua errepikatzen badu txanda galduko du.  ");
-		System.out.println("- Jokalari bat itsaontzia ukitzen baldin badu, beste tiro bat egiteko aukera izango du, hutz egiten duen arte. ");
+		System.out.println("- Jokalari bakoitzak aukera bakarra dauka tiroa egiteko, koordenatua errepikatzen badu txanda galduko du.");
+		System.out.println("- Jokalari bat itsaontzia ukitzen baldin badu, beste tiro bat egiteko aukera izango du, hutz egiten duen arte.");
 		System.out.println("- Irabazlea beste jokalariaren itsasontzi guztiak hondoratzen dituen jokalaria da. ");
 		System.out.println(" ");
 		System.out.println(" ");

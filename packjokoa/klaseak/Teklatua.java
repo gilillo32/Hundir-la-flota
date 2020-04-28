@@ -95,4 +95,24 @@ public class Teklatua {
         while(!denaOndo);
         return emaitza;
       } 
+	
+	public short irakurriAukera(String pMezua, int pNundik, int pNora){
+		short emaitza = (short) (pNundik -1);
+        boolean denaOndo=false;
+        do {
+	        System.out.println(pMezua);
+			String str = sc.nextLine();
+		try{
+			emaitza = Short.parseShort(str);
+	        if(emaitza < pNundik || emaitza >pNora){
+	        	throw new LimiteakGainditutaExc("Limitetik kanpo");//sartzen duen koordenatuaren balio bat negatiboa edo tablerotik kanpo badago
+            }
+            denaOndo=true;
+		} 
+         catch (NumberFormatException e) { System.out.println("Zenbaki bat sartu behar duzu"); }
+         catch (LimiteakGainditutaExc e) { System.out.println("Ez da aukera baliogarria"); }
+        }
+        while(!denaOndo);
+        return emaitza;
+      } 
 }

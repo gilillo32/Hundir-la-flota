@@ -1,0 +1,16 @@
+     _    ____      _   _   _   _    _  __  
+    / \  |  _ \    / \ | | | | / \  | |/ /_ 
+   / _ \ | |_) |  / _ \| | | |/ _ \ | ' /(_)
+  / ___ \|  _ <  / ___ \ |_| / ___ \| . \ _ 
+ /_/   \_\_| \_\/_/   \_\___/_/   \_\_|\_(_)
+                                                 
+
+- Ezin dira bi itsasontzi ondoz ondoan jarri, kasila bateko distantzia egon behar da itsasontzien artean.
+
+- Koordenatuak hautatzeko, errenkada eta zutabeen zenbakia idatzi behar da, baita orientazioa B edo H ere, letra xehez zein larriz.
+
+- Jokalari bakoitzak aukera bakarra dauka tiroa egiteko, koordenatua errepikatzen badu txanda galduko du.
+
+- Jokalari bat itsaontzia ukitzen baldin badu, beste tiro bat egiteko aukera izango du, hutz egiten duen arte.
+
+- Irabazlea beste jokalariaren itsasontzi guztiak hondoratzen dituen jokalaria da.
