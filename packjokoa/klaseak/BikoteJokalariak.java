@@ -35,7 +35,7 @@ public class BikoteJokalariak {
 		this.itsasontziakJarri();		
 		
 		while (!this.partidaBukatu()) {
-			this.koordenatuaAukeratu();			
+			this.koordenatuaAukeratu();	
 		}	
 			//inprimatu nork irabazi duen
 		System.out.println(" ");
@@ -55,13 +55,13 @@ public class BikoteJokalariak {
 	
 	
 	public void getItsasontziak(){
-		this.itsasontziakJarri();
+		this.itsasontziakJarri();		
 	}
 	
 
 	private void itsasontziakJarri() {
 	//JokalariArrunta-k itsasontziak jarriko ditu bere nireTableroa atributuan
-		System.out.println(this.getZerrenda()[0].getIzena() + " itsasontziak jartzeko unea heldu da!");
+		System.out.println(this.getZerrenda()[0].getIzena() + ", itsasontziak jartzeko unea heldu da!");
 		System.out.println(" ");
 		this.getZerrenda()[0].inprimatuNireTableroa();
 		System.out.println(" ");
@@ -69,6 +69,15 @@ public class BikoteJokalariak {
 		this.getZerrenda()[0].itsasontziakJarri(10);
 		System.out.println(" ");
 		System.out.println(" ");
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		for(int h = 0; h<50; h++) {
+			System.out.println("\n");
+		}
 	//JokalariCPU-k itsasontziak jarriko ditu bere nireTableroa atributuan
 		System.out.println(this.getZerrenda()[1].getIzena() + " itsasontziak jartzeko unea heldu da!");
 		System.out.println(" ");
@@ -77,6 +86,7 @@ public class BikoteJokalariak {
 		System.out.println(" ");
 		this.getZerrenda()[1].itsasontziakJarri(10);
 		System.out.println(" ");
+		
 	}
 	
 	
@@ -104,7 +114,7 @@ public class BikoteJokalariak {
 	
 	
 	public void getKoordenatuaaukeratu(){
-		this.koordenatuaAukeratu();
+		this.koordenatuaAukeratu();		
 	}
 	
 	private void koordenatuaAukeratu() {
@@ -124,10 +134,20 @@ public class BikoteJokalariak {
 				} catch (FileNotFoundException e) {
 					System.out.println("Ez da aurkitu fitxategia");
 				}
+				try {
+					Thread.sleep(5000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				for(int h = 0; h < 50; h++) {
+					System.out.println("\n");
+				}
 				while(input_zuretxanda.hasNextLine())
 				{ 
 				   System.out.println(input_zuretxanda.nextLine());
 				}input_zuretxanda.close();
+				this.zerrenda[0].getPrintTableroa().tableroaInprimatu();
 			} 
 			else {
 				Scanner input_lehenengo = null;
@@ -138,10 +158,20 @@ public class BikoteJokalariak {
 				} catch (FileNotFoundException e) {
 					System.out.println("Ez da aurkitu fitxategia");
 				}
+				try {
+					Thread.sleep(5000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				for(int h = 0; h<50; h++) {
+					System.out.println("\n");
+				}
 				while(input_lehenengo.hasNextLine())
 				{ 
 				   System.out.println(input_lehenengo.nextLine());
 				}input_lehenengo.close();
+				this.zerrenda[0].getPrintTableroa().tableroaInprimatu();
 			}
 		do {
 			Koordenatuak k= ((JokalariArrunta)this.getZerrenda()[0]).koordenatuaAukeratu();
@@ -156,10 +186,7 @@ public class BikoteJokalariak {
 				int itsas=this.getZerrenda()[1].getNireTableroa().zeItsasontziHondoratu(pX, pY);
 				this.getZerrenda()[1].eguneratuNireTableroa(pX, pY, emaitza);
 			
-				if(this.getZerrenda()[1].getNireTableroa().hondoratutaDago(itsas)) {
-					System.out.println("ZORIONAK " + this.getZerrenda()[0].getIzena() +", hondoratu duzu itsasontzia!!");
-				}
-			//
+			
 				if(emaitza!=" U") {
 					//Itsasontzia ez badu ukitzen:
 					posibleaDa=false;
@@ -168,7 +195,10 @@ public class BikoteJokalariak {
 				}
 				else {
 					System.out.println(" ");
-					System.out.println("Oso ondo!" + this.getZerrenda()[0].getIzena() +", itsasontsi bat ukitu duzu!");
+					System.out.println("Oso ondo!" + this.getZerrenda()[0].getIzena() +", itsasontzi bat ukitu duzu!");
+				}
+				if(this.getZerrenda()[1].getNireTableroa().hondoratutaDago(itsas)) {
+					System.out.println("ZORIONAK " + this.getZerrenda()[0].getIzena() +", hondoratu duzu itsasontzia!!");
 				}
 			}
 			else {
@@ -199,6 +229,13 @@ public class BikoteJokalariak {
 				} catch (FileNotFoundException e) {
 					System.out.println("Ez da aurkitu fitxategia");
 				}
+				try {
+					Thread.sleep(5000);
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n");
 				while(input_cpu.hasNextLine())
 				{ 
 				   System.out.println(input_cpu.nextLine());
@@ -257,15 +294,23 @@ public class BikoteJokalariak {
 			Scanner input_bigarren = null;
 			File bigarrenFile = new File("BIGARREN.txt");
 			try {
-				input_cpu = new Scanner(bigarrenFile);
+				input_bigarren = new Scanner(bigarrenFile);
 				
 			} catch (FileNotFoundException e) {
 				System.out.println("Ez da aurkitu fitxategia");
 			}
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n");
 			while(input_bigarren.hasNextLine())
 			{ 
 			   System.out.println(input_bigarren.nextLine());
 			}input_bigarren.close();
+			this.zerrenda[1].getPrintTableroa().tableroaInprimatu();
 		do {
 			Koordenatuak k= ((JokalariArrunta)this.getZerrenda()[1]).koordenatuaAukeratu();
 			short pX= (short) (k.getKoordenatuakX() + 1);
@@ -279,10 +324,7 @@ public class BikoteJokalariak {
 				int itsas=this.getZerrenda()[0].getNireTableroa().zeItsasontziHondoratu(pX, pY);
 				this.getZerrenda()[0].eguneratuNireTableroa(pX, pY, emaitza);
 			
-				if(this.getZerrenda()[0].getNireTableroa().hondoratutaDago(itsas)) {
-					System.out.println("ZORIONAK " + this.getZerrenda()[1].getIzena() +", hondoratu duzu itsasontzia!!");
-				}
-			//
+			
 				if(emaitza!=" U") {
 					//Itsasontzia ez badu ukitzen:
 					posibleaDa=false;
@@ -291,7 +333,10 @@ public class BikoteJokalariak {
 				}
 				else {
 					System.out.println(" ");
-					System.out.println("Oso ondo!" + this.getZerrenda()[1].getIzena() +", itsasontsi bat ukitu duzu!");
+					System.out.println("Oso ondo!" + this.getZerrenda()[1].getIzena() +", itsasontzi bat ukitu duzu!");
+				}
+				if(this.getZerrenda()[0].getNireTableroa().hondoratutaDago(itsas)) {
+					System.out.println("ZORIONAK " + this.getZerrenda()[1].getIzena() +", hondoratu duzu itsasontzia!!");
 				}
 			}
 			else {
@@ -314,7 +359,6 @@ public class BikoteJokalariak {
 	public void setNorenKontra(String pNorenKontra) {
 		this.norenKontra = pNorenKontra;
 	}
-
 	
 	
 	 
@@ -322,7 +366,7 @@ public class BikoteJokalariak {
 	
 /////////////////////////////////////////////////////////////////////////////////////	  		 MAIN 	    	//////////////////////////////////////////////////////////////////////////////////////////	
 	
-	public static void main (String [ ] args) throws InterruptedException 	{	
+	public static void main (String [ ] args){	
 		Scanner input_HASIERA = null;
 		Scanner input_ARAUAK = null;
 		Scanner input_AUKERAK = null;
@@ -420,10 +464,10 @@ public class BikoteJokalariak {
 				System.exit(0);
 				break;
 			case 0:
-				klaseak.LifeStarts.laif();
+				//TODO
 			}
-				
-		}while(true);
+				  
+		}while(true); 
 		
 	}
 	
