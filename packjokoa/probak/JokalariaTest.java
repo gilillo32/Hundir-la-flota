@@ -34,7 +34,7 @@ public class JokalariaTest {
 		j1.nireTableroaBete();//metodo hau bikoteJokalariak klasean erabiltzen dugu eta nire tableroa inprimatzen du, kontslatik konprobatzen da
 		System.out.println(" ");
 	}
-
+ 
 	@Test
 	public void test4ItsasontzirikEz() {
 		//false kasuak:
