@@ -25,7 +25,7 @@ public class JokalariaTest {
 	@Test
 	public void test1Jokalaria() {
 		assertNotNull(j1);
-	}
+	} 
 
 	@Test
 	public void test4NireTableroaBete() {
