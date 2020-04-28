@@ -196,16 +196,7 @@ public class BikoteJokalariak {
 						}
 					}					
 				}
-				else {
-//OJO!! PARA QUE NO REPITA KOORDENATUAK EL CPU SE PODRIA QUITAR EL ELSE, LO DEJO PARA QUITARLO TODOS JUNTOS
-					/*																																		
-					//posibleaDa=false;
-					System.out.println(" ");
-					System.out.println(this.getZerrenda()[1].getIzena() + ", sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu");
-					System.out.println(k1.getKoordenatuakX());
-					System.out.println(k1.getKoordenatuakY());
-					*/
-				}
+
 				if( this.getZerrenda()[1].itsasontzirikEz() ) {
 					//ITSASONTZII GUZTIAK HONDORATU DITUENENEAN SARTZEN DA HEMEN, IF HONEK EGITEN DUENA HONAKOA DA:
 					//AZKENENGO TIROA EGITEAN UKITU DUENEZ BESTE TIRO BAT EGITEN UTZIKO  LIGUKE, BAINA EZ DUGU TIRORIK EGIN BEHAR, JADA ITSASONTSI GUZTIAK HONDORATU DITUGULAKO
