@@ -213,50 +213,51 @@ public class BikoteJokalariak {
 			}while(posibleaDa);	
 			break;
 	case "Arrunta":
-		System.out.println(" ");
-		System.out.println(" ");
-		System.out.println(this.getZerrenda()[1].getIzena() + " zure txanda da!");
-	do {
-		Koordenatuak k= ((JokalariArrunta)this.getZerrenda()[0]).koordenatuaAukeratu();
-		short pX= (short) (k.getKoordenatuakX() + 1);
-		short pY = (short) ( k.getKoordenatuakY()+1);
-	
-		if(this.getZerrenda()[1].koordenadaBaliogarriak(pX, pY)  ) {
-			String emaitza = this.getZerrenda()[1].koordenatuanZerDagoen(pX, pY);
-			this.getZerrenda()[1].eguneratuPrintTableroa(pX, pY, emaitza);
-		//AZTERTUKO NAHI  DUGU EA ITSASONTZIA HONDORATU DUEN, HORRETARAKO ETSAIAREN NIREtABLEROA ALDATUKO DUGU UKITZEN DUENEAN GEROAGO getNireTableroa().hondoratutaDago(itsas) ETSAIAREN TABLEROAN METODOA ERABILI AHAL IZATEKO
-			//ikusiko dugu ze itsasontzi dagoen koordenatuan				
-			int itsas=this.getZerrenda()[0].getNireTableroa().zeItsasontziHondoratu(pX, pY);
-			this.getZerrenda()[0].eguneratuNireTableroa(pX, pY, emaitza);
+			System.out.println(" ");
+			System.out.println(" ");
+			System.out.println(this.getZerrenda()[1].getIzena() + " zure txanda da!");
+		do {
+			Koordenatuak k= ((JokalariArrunta)this.getZerrenda()[0]).koordenatuaAukeratu();
+			short pX= (short) (k.getKoordenatuakX() + 1);
+			short pY = (short) ( k.getKoordenatuakY()+1);
 		
-			if(this.getZerrenda()[0].getNireTableroa().hondoratutaDago(itsas)) {
-				System.out.println("ZORIONAK " + this.getZerrenda()[1].getIzena() +", hondoratu duzu itsasontzia!!");
-			}
-		//
-			if(emaitza!=" U") {
-				//Itsasontzia ez badu ukitzen:
-				posibleaDa=false;
-				System.out.println(" ");
-				System.out.println("OOH!!!" + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
+			if(this.getZerrenda()[1].koordenadaBaliogarriak(pX, pY)  ) {
+				String emaitza = this.getZerrenda()[1].koordenatuanZerDagoen(pX, pY);
+				this.getZerrenda()[1].eguneratuPrintTableroa(pX, pY, emaitza);
+			//AZTERTUKO NAHI  DUGU EA ITSASONTZIA HONDORATU DUEN, HORRETARAKO ETSAIAREN NIREtABLEROA ALDATUKO DUGU UKITZEN DUENEAN GEROAGO getNireTableroa().hondoratutaDago(itsas) ETSAIAREN TABLEROAN METODOA ERABILI AHAL IZATEKO
+				//ikusiko dugu ze itsasontzi dagoen koordenatuan				
+				int itsas=this.getZerrenda()[0].getNireTableroa().zeItsasontziHondoratu(pX, pY);
+				this.getZerrenda()[0].eguneratuNireTableroa(pX, pY, emaitza);
+			
+				if(this.getZerrenda()[0].getNireTableroa().hondoratutaDago(itsas)) {
+					System.out.println("ZORIONAK " + this.getZerrenda()[1].getIzena() +", hondoratu duzu itsasontzia!!");
+				}
+			//
+				if(emaitza!=" U") {
+					//Itsasontzia ez badu ukitzen:
+					posibleaDa=false;
+					System.out.println(" ");
+					System.out.println("OOH!!!" + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
+				}
+				else {
+					System.out.println(" ");
+					System.out.println("Oso ondo!" + this.getZerrenda()[1].getIzena() +", itsasontsi bat ukitu duzu!");
+				}
 			}
 			else {
+				posibleaDa=false;
 				System.out.println(" ");
-				System.out.println("Oso ondo!" + this.getZerrenda()[1].getIzena() +", itsasontsi bat ukitu duzu!");
+				System.out.println(this.getZerrenda()[1].getIzena() + ", sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu");				
 			}
-		}
-		else {
-			posibleaDa=false;
-			System.out.println(" ");
-			System.out.println(this.getZerrenda()[1].getIzena() + ", sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu");				
-		}
-		if( this.getZerrenda()[0].itsasontzirikEz() ) {
-			//ITSASONTZII GUZTIAK HONDORATU DITUENENEAN SARTZEN DA HEMEN, IF HONEK EGITEN DUENA HONAKOA DA:
-			//AZKENENGO TIROA EGITEAN UKITU DUENEZ BESTE TIRO BAT EGITEN UTZIKO  LIGUKE, BAINA EZ DUGU TIRORIK EGIN BEHAR, JADA ITSASONTSI GUZTIAK HONDORATU DITUGULAKO
-			//IF HAU HORI EKIDITZEN DU, LOOP-A EZ DUELAKO BESTE BEGIZTA BAT EGINGO.
-			posibleaDa=false;
-		}
-		
-	}while(posibleaDa);
+			if( this.getZerrenda()[0].itsasontzirikEz() ) {
+				//ITSASONTZII GUZTIAK HONDORATU DITUENENEAN SARTZEN DA HEMEN, IF HONEK EGITEN DUENA HONAKOA DA:
+				//AZKENENGO TIROA EGITEAN UKITU DUENEZ BESTE TIRO BAT EGITEN UTZIKO  LIGUKE, BAINA EZ DUGU TIRORIK EGIN BEHAR, JADA ITSASONTSI GUZTIAK HONDORATU DITUGULAKO
+				//IF HAU HORI EKIDITZEN DU, LOOP-A EZ DUELAKO BESTE BEGIZTA BAT EGINGO.
+				posibleaDa=false;
+			}
+			
+		}while(posibleaDa);
+		break;
 		}
 	}
 	
