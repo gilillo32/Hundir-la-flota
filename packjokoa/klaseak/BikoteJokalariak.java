@@ -128,7 +128,7 @@ public class BikoteJokalariak {
 				{ 
 				   System.out.println(input_zuretxanda.nextLine());
 				}input_zuretxanda.close();
-			}
+			} 
 			else {
 				Scanner input_lehenengo = null;
 				File lehenengoFile = new File("LEHENENGO.txt");
