@@ -6,6 +6,7 @@ public class BikoteJokalariak {
 	//atributuak:
 	private Jokalaria[] zerrenda;
 	private static BikoteJokalariak nireBikoteJokalariak = null;
+	private String norenKontra = null;
 	
 	//eraikitzailea (Singleton):
 	private BikoteJokalariak() {   //JokalariArrunta pJ1, JokalariCPU pJ2
@@ -155,59 +156,112 @@ public class BikoteJokalariak {
 				posibleaDa=false;
 			}
 			
-		}while(posibleaDa) ;
+		}while(posibleaDa);
 		
-	//JokalariCPU 
-			System.out.println(" ");
-			System.out.println(" ");
-			System.out.println(this.getZerrenda()[1].getIzena() + "-ren txanda da!");
-			System.out.println(" ");
-		posibleaDa=true;
-		do {			
-			k1= ((JokalariCPU)this.getZerrenda()[1]).koordenatuaAukeratu(k1,   aurrekoanAsmatu);
-			short pX= (short) (k1.getKoordenatuakX() +1);
-			short pY = (short) (k1.getKoordenatuakY()+1);
-			
-				if(this.getZerrenda()[1].koordenadaBaliogarriak(pX, pY)) {
-					String emaitza = this.getZerrenda()[0].koordenatuanZerDagoen(pX, pY);
-					this.getZerrenda()[1].eguneratuPrintTableroa(pX, pY, emaitza);
-					System.out.println(" ");
-				//AZTERTUKO NAHI  DUGU EA ITSASONTZIA HONDORATU DUEN, HORRETARAKO ETSAIAREN NIREtABLEROA ALDATUKO DUGU UKITZEN DUENEAN GEROAGO getNireTableroa().hondoratutaDago(itsas) ETSAIAREN TABLEROAN METODOA ERABILI AHAL IZATEKO
-					//ikusiko dugu ze itsasontzi dagoen koordenatuan
-					//ura badago 0 itzultzen du
-					int itsas=this.getZerrenda()[0].getNireTableroa().zeItsasontziHondoratu(pX, pY);
-					this.getZerrenda()[0].eguneratuNireTableroa(pX, pY, emaitza);
-				//	
-					if(emaitza!=" U") {
-						//Itsasontzia ez badu ukitzen:
-						posibleaDa=false; 
-						aurrekoanAsmatu=false;
-						System.out.println("OOH!!!" + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
-						
-					}
-					else {
-						aurrekoanAsmatu=true;							
-					}
-					
-				//ITSASONTSI BAT HONDORATZEAN SARTZEN DA
-					if(this.getZerrenda()[0].getNireTableroa().hondoratutaDago(itsas)) {
-						System.out.println("ZORIONAK " + this.getZerrenda()[1].getIzena() +", hondoratu duzu itsasontzia!!");
-						if (this.getZerrenda()[1] instanceof JokalariCPU) {
-							byte zentzua=((JokalariCPU)this.getZerrenda()[1]).getZentzua();
-							this.getZerrenda()[1].getPrintTableroa().XBete(pX, pY, itsas, zentzua);
-							((JokalariCPU)this.getZerrenda()[1]).erreseteatu();
+	switch(this.norenKontra) {
+	case "CPU":
+		//JokalariCPU 
+				System.out.println(" ");
+				System.out.println(" ");
+				System.out.println(this.getZerrenda()[1].getIzena() + "-ren txanda da!");
+				System.out.println(" ");
+			posibleaDa=true;
+			do {			
+				k1= ((JokalariCPU)this.getZerrenda()[1]).koordenatuaAukeratu(k1, aurrekoanAsmatu);
+				short pX= (short) (k1.getKoordenatuakX() +1);
+				short pY = (short) (k1.getKoordenatuakY()+1);
+				
+					if(this.getZerrenda()[1].koordenadaBaliogarriak(pX, pY)) {
+						String emaitza = this.getZerrenda()[0].koordenatuanZerDagoen(pX, pY);
+						this.getZerrenda()[1].eguneratuPrintTableroa(pX, pY, emaitza);
+						System.out.println(" ");
+					//AZTERTUKO NAHI  DUGU EA ITSASONTZIA HONDORATU DUEN, HORRETARAKO ETSAIAREN NIREtABLEROA ALDATUKO DUGU UKITZEN DUENEAN GEROAGO getNireTableroa().hondoratutaDago(itsas) ETSAIAREN TABLEROAN METODOA ERABILI AHAL IZATEKO
+						//ikusiko dugu ze itsasontzi dagoen koordenatuan
+						//ura badago 0 itzultzen du
+						int itsas=this.getZerrenda()[0].getNireTableroa().zeItsasontziHondoratu(pX, pY);
+						this.getZerrenda()[0].eguneratuNireTableroa(pX, pY, emaitza);
+					//	
+						if(emaitza!=" U") {
+							//Itsasontzia ez badu ukitzen:
+							posibleaDa=false; 
 							aurrekoanAsmatu=false;
+							System.out.println("OOH!!!" + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
+							
 						}
-					}					
-				}
-
-				if( this.getZerrenda()[1].itsasontzirikEz() ) {
-					//ITSASONTZII GUZTIAK HONDORATU DITUENENEAN SARTZEN DA HEMEN, IF HONEK EGITEN DUENA HONAKOA DA:
-					//AZKENENGO TIROA EGITEAN UKITU DUENEZ BESTE TIRO BAT EGITEN UTZIKO  LIGUKE, BAINA EZ DUGU TIRORIK EGIN BEHAR, JADA ITSASONTSI GUZTIAK HONDORATU DITUGULAKO
-					//IF HAU HORI EKIDITZEN DU, LOOP-A EZ DUELAKO BESTE BEGIZTA BAT EGINGO.
-					posibleaDa=false;
-				}
-		}while(posibleaDa);			
+						else {
+							aurrekoanAsmatu=true;							
+						}
+						
+					//ITSASONTSI BAT HONDORATZEAN SARTZEN DA
+						if(this.getZerrenda()[0].getNireTableroa().hondoratutaDago(itsas)) {
+							System.out.println("ZORIONAK " + this.getZerrenda()[1].getIzena() +", hondoratu duzu itsasontzia!!");
+							if (this.getZerrenda()[1] instanceof JokalariCPU) {
+								byte zentzua=((JokalariCPU)this.getZerrenda()[1]).getZentzua();
+								this.getZerrenda()[1].getPrintTableroa().XBete(pX, pY, itsas, zentzua);
+								((JokalariCPU)this.getZerrenda()[1]).erreseteatu();
+								aurrekoanAsmatu=false;
+							}
+						}					
+					}
+	
+					if( this.getZerrenda()[1].itsasontzirikEz() ) {
+						//ITSASONTZII GUZTIAK HONDORATU DITUENENEAN SARTZEN DA HEMEN, IF HONEK EGITEN DUENA HONAKOA DA:
+						//AZKENENGO TIROA EGITEAN UKITU DUENEZ BESTE TIRO BAT EGITEN UTZIKO  LIGUKE, BAINA EZ DUGU TIRORIK EGIN BEHAR, JADA ITSASONTSI GUZTIAK HONDORATU DITUGULAKO
+						//IF HAU HORI EKIDITZEN DU, LOOP-A EZ DUELAKO BESTE BEGIZTA BAT EGINGO.
+						posibleaDa=false;
+					}
+			}while(posibleaDa);	
+			break;
+	case "Arrunta":
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(this.getZerrenda()[1].getIzena() + " zure txanda da!");
+	do {
+		Koordenatuak k= ((JokalariArrunta)this.getZerrenda()[0]).koordenatuaAukeratu();
+		short pX= (short) (k.getKoordenatuakX() + 1);
+		short pY = (short) ( k.getKoordenatuakY()+1);
+	
+		if(this.getZerrenda()[1].koordenadaBaliogarriak(pX, pY)  ) {
+			String emaitza = this.getZerrenda()[1].koordenatuanZerDagoen(pX, pY);
+			this.getZerrenda()[1].eguneratuPrintTableroa(pX, pY, emaitza);
+		//AZTERTUKO NAHI  DUGU EA ITSASONTZIA HONDORATU DUEN, HORRETARAKO ETSAIAREN NIREtABLEROA ALDATUKO DUGU UKITZEN DUENEAN GEROAGO getNireTableroa().hondoratutaDago(itsas) ETSAIAREN TABLEROAN METODOA ERABILI AHAL IZATEKO
+			//ikusiko dugu ze itsasontzi dagoen koordenatuan				
+			int itsas=this.getZerrenda()[0].getNireTableroa().zeItsasontziHondoratu(pX, pY);
+			this.getZerrenda()[0].eguneratuNireTableroa(pX, pY, emaitza);
+		
+			if(this.getZerrenda()[0].getNireTableroa().hondoratutaDago(itsas)) {
+				System.out.println("ZORIONAK " + this.getZerrenda()[1].getIzena() +", hondoratu duzu itsasontzia!!");
+			}
+		//
+			if(emaitza!=" U") {
+				//Itsasontzia ez badu ukitzen:
+				posibleaDa=false;
+				System.out.println(" ");
+				System.out.println("OOH!!!" + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
+			}
+			else {
+				System.out.println(" ");
+				System.out.println("Oso ondo!" + this.getZerrenda()[1].getIzena() +", itsasontsi bat ukitu duzu!");
+			}
+		}
+		else {
+			posibleaDa=false;
+			System.out.println(" ");
+			System.out.println(this.getZerrenda()[1].getIzena() + ", sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu");				
+		}
+		if( this.getZerrenda()[0].itsasontzirikEz() ) {
+			//ITSASONTZII GUZTIAK HONDORATU DITUENENEAN SARTZEN DA HEMEN, IF HONEK EGITEN DUENA HONAKOA DA:
+			//AZKENENGO TIROA EGITEAN UKITU DUENEZ BESTE TIRO BAT EGITEN UTZIKO  LIGUKE, BAINA EZ DUGU TIRORIK EGIN BEHAR, JADA ITSASONTSI GUZTIAK HONDORATU DITUGULAKO
+			//IF HAU HORI EKIDITZEN DU, LOOP-A EZ DUELAKO BESTE BEGIZTA BAT EGINGO.
+			posibleaDa=false;
+		}
+		
+	}while(posibleaDa);
+		}
+	}
+	
+	public void setNorenKontra(String pNorenKontra) {
+		this.norenKontra = pNorenKontra;
 	}
 	
 	
@@ -247,10 +301,11 @@ public class BikoteJokalariak {
 			while(input_AUKERAK.hasNextLine()) {
 				System.out.println(input_AUKERAK.nextLine());
 			}input_AUKERAK.close();
-			int aukera = Teklatua.getNireTeklatua().irakurriAukera("\nZer egin nahi duzu?", 1, 3);
+			int aukera = Teklatua.getNireTeklatua().irakurriAukera("\nZer egin nahi duzu?", 1, 4);
 			switch(aukera) {
 			case 1:
-				System.out.println("Sartu zure izena: ");
+				BikoteJokalariak.getNireBikoteJokalariak().setNorenKontra("CPU");
+				System.out.println("Sartu zure izena:");
 				String izena = Teklatua.getNireTeklatua().irakurriString();
 				short i=10;	//erenkada kopurua	
 				BikoteJokalariak.getNireBikoteJokalariak().getZerrenda()[0] = new JokalariArrunta(izena, i );
@@ -272,6 +327,31 @@ public class BikoteJokalariak {
 				System.out.println(" 							- Iñigo Gil");
 				break;
 			case 2:
+				BikoteJokalariak.getNireBikoteJokalariak().setNorenKontra("Arrunta");
+				System.out.println("Sartu lehenengo jokalariaren izena:");
+				String izena1 = Teklatua.getNireTeklatua().irakurriString();
+				System.out.println("Sartu bigarren jokalariaren izena:");
+				String izena2 = Teklatua.getNireTeklatua().irakurriString();
+				short j=10;	//erenkada kopurua	
+				BikoteJokalariak.getNireBikoteJokalariak().getZerrenda()[0] = new JokalariArrunta(izena1, j );
+				BikoteJokalariak.getNireBikoteJokalariak().getZerrenda()[1] = new JokalariArrunta(izena2, j );
+				System.out.println(" ");
+				System.out.println(" PARTIDA HASIKO DA!");
+				System.out.println(" ");
+				System.out.println(" ZORTE ON! ");
+				System.out.println(" ");
+				BikoteJokalariak.getNireBikoteJokalariak().partidaBatJokatu();	
+				System.out.println(" ");
+				System.out.println(" ");
+				System.out.println("Eskerrik asko jolasteagatik! <3 ");
+				System.out.println(" ");
+				System.out.println(" 				Egileak:");
+				System.out.println(" 							- Paula Ontalvilla");
+				System.out.println(" 							- Leire Garcia");
+				System.out.println(" 							- Gaizka Zuazo");
+				System.out.println(" 							- Iñigo Gil");
+				break;
+			case 3:
 				try {
 					input_ARAUAK = new Scanner(arauakFile);
 				}
@@ -284,7 +364,7 @@ public class BikoteJokalariak {
 				}input_ARAUAK.close();
 				System.out.println("\n");
 				break;
-			case 3:
+			case 4:
 				System.exit(0);
 				break;
 			}

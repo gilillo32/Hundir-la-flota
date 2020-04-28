@@ -1,3 +1,4 @@
-1) Jolastu
-2) Arauak irakurri
-3) Irten
+1) Jolastu CPU-aren kontra
+2) Jolastu beste norbaiten kontra
+3) Arauak irakurri
+4) Irten
