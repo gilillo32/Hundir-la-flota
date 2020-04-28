@@ -16,3 +16,4 @@ public class KoordenatuEzEgokiak extends Exception {
 	}
 
 }
+ 
