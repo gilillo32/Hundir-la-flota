@@ -517,6 +517,7 @@ public class BikoteJokalariak {
 				{ 
 				   System.out.println(input_AUKERAK_BIS.nextLine());
 				}input_AUKERAK_BIS.close();
+				Teklatua.getNireTeklatua().irakurriAukeraBis(1, 3);
 				break;
 			}
 				  
