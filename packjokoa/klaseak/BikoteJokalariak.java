@@ -416,11 +416,11 @@ public class BikoteJokalariak {
 				System.out.println(" ");
 				System.out.println("Eskerrik asko jolasteagatik! <3 ");
 				System.out.println(" ");
-				System.out.println(" 				Egileak:");
-				System.out.println(" 							- Paula Ontalvilla");
-				System.out.println(" 							- Leire Garcia");
-				System.out.println(" 							- Gaizka Zuazo");
-				System.out.println(" 							- Iñigo Gil");
+				System.out.println(" 	Egileak:");
+				System.out.println(" 			- Paula Ontalvilla");
+				System.out.println(" 			- Leire Garcia");
+				System.out.println(" 			- Gaizka Zuazo");
+				System.out.println(" 			- Iñigo Gil");
 				break;
 			case 2:
 				BikoteJokalariak.getNireBikoteJokalariak().setNorenKontra("Arrunta");
