@@ -360,12 +360,56 @@ public class BikoteJokalariak {
 		this.norenKontra = pNorenKontra;
 	}
 	
-	public InputStream getFile() {
+	public InputStream getHasiera() {
 		
-		InputStream inputStream = getClass().getResourceAsStream("/HASIERA_TESTUA.txt");
+		InputStream inputStream = getClass().getResourceAsStream("/Testuak/HASIERA_TESTUA.txt");
 			
 		return inputStream;	
 	}
+	
+	public InputStream getArauak() {
+			
+		InputStream inputStream = getClass().getResourceAsStream("/Testuak/ARAUAK.txt");
+			
+		return inputStream;	
+	}
+	
+	public InputStream getAukerak() {
+			
+		InputStream inputStream = getClass().getResourceAsStream("/Testuak/AUKERAK.txt");
+			
+		return inputStream;	
+	}
+	
+	public InputStream getBigarren() {
+		
+		InputStream inputStream = getClass().getResourceAsStream("/Testuak/BIGARREN.txt");
+			
+		return inputStream;	
+	}
+	
+	public InputStream getCPU() {
+		
+		InputStream inputStream = getClass().getResourceAsStream("/Testuak/CPU.txt");
+			
+		return inputStream;	
+	}
+	
+	public InputStream getLehenengo() {
+		
+		InputStream inputStream = getClass().getResourceAsStream("/Testuak/LEHENENGO.txt");
+			
+		return inputStream;	
+	}
+	
+	public InputStream getZureTxanda() {
+		
+		InputStream inputStream = getClass().getResourceAsStream("/Testuak/ZURETXANDA.txt");
+			
+		return inputStream;	
+	}
+	
+	
 	
 	
 	 
@@ -378,9 +422,9 @@ public class BikoteJokalariak {
 		Scanner input_ARAUAK = null;
 		Scanner input_AUKERAK = null;
 		//Hasierako pantaila inprimatzeko:
-		InputStream hasieraTestuaFile = BikoteJokalariak.getNireBikoteJokalariak().getFile();
-		File arauakFile = new File("ARAUAK.txt");
-		File aukerakFile = new File("AUKERAK.txt");
+		InputStream hasieraTestuaFile = BikoteJokalariak.getNireBikoteJokalariak().getHasiera();
+		InputStream arauakFile = BikoteJokalariak.getNireBikoteJokalariak().getArauak();
+		InputStream aukerakFile = BikoteJokalariak.getNireBikoteJokalariak().getAukerak();
 		input_HASIERA = new Scanner(hasieraTestuaFile);
 
 		while(input_HASIERA.hasNextLine())
