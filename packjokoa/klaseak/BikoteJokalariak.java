@@ -70,7 +70,7 @@ public class BikoteJokalariak {
 		System.out.println(" ");
 		System.out.println(" ");
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -130,7 +130,7 @@ public class BikoteJokalariak {
 				InputStream zureTxandaFile = this.getZureTxanda();
 				input_zuretxanda = new Scanner(zureTxandaFile);
 				try {
-					Thread.sleep(5000);
+					Thread.sleep(4000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -149,7 +149,7 @@ public class BikoteJokalariak {
 				InputStream lehenengoFile = this.getLehenengo();
 				input_lehenengo = new Scanner(lehenengoFile);
 				try {
-					Thread.sleep(5000);
+					Thread.sleep(4000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -181,11 +181,11 @@ public class BikoteJokalariak {
 					//Itsasontzia ez badu ukitzen:
 					posibleaDa=false;
 					System.out.println(" ");
-					System.out.println("OOH!!!" + this.getZerrenda()[0].getIzena() +", ez duzu itsasontzirik ukitu");
+					System.out.println("OOH!!! " + this.getZerrenda()[0].getIzena() +", ez duzu itsasontzirik ukitu");
 				}
 				else {
 					System.out.println(" ");
-					System.out.println("Oso ondo!" + this.getZerrenda()[0].getIzena() +", itsasontzi bat ukitu duzu!");
+					System.out.println("Oso ondo! " + this.getZerrenda()[0].getIzena() +", itsasontzi bat ukitu duzu!");
 				}
 				if(this.getZerrenda()[1].getNireTableroa().hondoratutaDago(itsas)) {
 					System.out.println("ZORIONAK " + this.getZerrenda()[0].getIzena() +", hondoratu duzu itsasontzia!!");
@@ -215,7 +215,7 @@ public class BikoteJokalariak {
 				InputStream cpuFile = this.getCPU();
 				input_cpu = new Scanner(cpuFile);
 				try {
-					Thread.sleep(5000);
+					Thread.sleep(4000);
 				} catch (InterruptedException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -246,7 +246,7 @@ public class BikoteJokalariak {
 							//Itsasontzia ez badu ukitzen:
 							posibleaDa=false; 
 							aurrekoanAsmatu=false;
-							System.out.println("OOH!!!" + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
+							System.out.println("OOH!!! " + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
 							
 						}
 						else {
@@ -280,7 +280,7 @@ public class BikoteJokalariak {
 			InputStream bigarrenFile = this.getBigarren();
 			input_bigarren = new Scanner(bigarrenFile);
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(4000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -309,11 +309,11 @@ public class BikoteJokalariak {
 					//Itsasontzia ez badu ukitzen:
 					posibleaDa=false;
 					System.out.println(" ");
-					System.out.println("OOH!!!" + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
+					System.out.println("OOH!!! " + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
 				}
 				else {
 					System.out.println(" ");
-					System.out.println("Oso ondo!" + this.getZerrenda()[1].getIzena() +", itsasontzi bat ukitu duzu!");
+					System.out.println("Oso ondo! " + this.getZerrenda()[1].getIzena() +", itsasontzi bat ukitu duzu!");
 				}
 				if(this.getZerrenda()[0].getNireTableroa().hondoratutaDago(itsas)) {
 					System.out.println("ZORIONAK " + this.getZerrenda()[1].getIzena() +", hondoratu duzu itsasontzia!!");
@@ -406,26 +406,31 @@ public class BikoteJokalariak {
 	
 	public static void main (String [ ] args) throws FileNotFoundException{	
 		Scanner input_HASIERA = null;
-		Scanner input_ARAUAK = null;
-		Scanner input_AUKERAK = null;
+		
 		//Hasierako pantaila inprimatzeko:
 		InputStream hasieraTestuaFile = BikoteJokalariak.getNireBikoteJokalariak().getHasiera();
-		InputStream arauakFile = BikoteJokalariak.getNireBikoteJokalariak().getArauak();
-		InputStream aukerakFile = BikoteJokalariak.getNireBikoteJokalariak().getAukerak();
+		
 		input_HASIERA = new Scanner(hasieraTestuaFile);
 
 		while(input_HASIERA.hasNextLine())
-		{ 
+		{			
 		   System.out.println(input_HASIERA.nextLine());
 		}input_HASIERA.close();
 		System.out.println("ONGI ETORRI! Esperientzia osoaz gozatzeko, pantaila osoan jokatzea gomendatzen dugu!\n");
 		do {
+			Scanner input_ARAUAK = null;
+			Scanner input_AUKERAK = null;
+			Scanner input_KREDITUAK = null;
+			
+			InputStream arauakFile = BikoteJokalariak.getNireBikoteJokalariak().getArauak();
+			InputStream aukerakFile = BikoteJokalariak.getNireBikoteJokalariak().getAukerak();
+			InputStream kredituakFile = BikoteJokalariak.getNireBikoteJokalariak().getAukerak();
 			
 			input_AUKERAK = new Scanner(aukerakFile);
 			while(input_AUKERAK.hasNextLine()) {
 				System.out.println(input_AUKERAK.nextLine());
 			}input_AUKERAK.close();
-			int aukera = Teklatua.getNireTeklatua().irakurriAukera("\nZer egin nahi duzu?", 1, 4);
+			int aukera = Teklatua.getNireTeklatua().irakurriAukera("\nZer egin nahi duzu?", 1, 5);
 			switch(aukera) {
 			case 1:
 				BikoteJokalariak.getNireBikoteJokalariak().setNorenKontra("CPU");
@@ -444,11 +449,6 @@ public class BikoteJokalariak {
 				System.out.println(" ");
 				System.out.println("Eskerrik asko jolasteagatik! <3 ");
 				System.out.println(" ");
-				System.out.println(" 	Egileak:");
-				System.out.println(" 			- Paula Ontalvilla");
-				System.out.println(" 			- Leire Garcia");
-				System.out.println(" 			- Gaizka Zuazo");
-				System.out.println(" 			- Iñigo Gil");
 				break;
 			case 2:
 				BikoteJokalariak.getNireBikoteJokalariak().setNorenKontra("Arrunta");
@@ -469,11 +469,6 @@ public class BikoteJokalariak {
 				System.out.println(" ");
 				System.out.println("Eskerrik asko jolasteagatik! <3 ");
 				System.out.println(" ");
-				System.out.println(" 				Egileak:");
-				System.out.println(" 							- Paula Ontalvilla");
-				System.out.println(" 							- Leire Garcia");
-				System.out.println(" 							- Gaizka Zuazo");
-				System.out.println(" 							- Iñigo Gil");
 				break;
 			case 3:
 				input_ARAUAK = new Scanner(arauakFile);
@@ -484,6 +479,11 @@ public class BikoteJokalariak {
 				System.out.println("\n");
 				break;
 			case 4:
+				input_KREDITUAK = new Scanner(kredituakFile);
+				while(input_KREDITUAK.hasNextLine()) {
+					System.out.println(input_KREDITUAK.nextLine());
+				}input_KREDITUAK.close();
+			case 5:
 				System.exit(0);
 				break;
 			case -42:
