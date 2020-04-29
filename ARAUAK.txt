@@ -9,8 +9,11 @@
 
 - Koordenatuak hautatzeko, errenkada eta zutabeen zenbakia idatzi behar da, baita orientazioa B edo H ere, letra xehez zein larriz.
 
-- Jokalari bakoitzak aukera bakarra dauka tiroa egiteko, koordenatua errepikatzen badu txanda galduko du.
+- Itsasontziak jartzerako orduan, bakarrik koordenatu bat esango da. Orientazio horizontala aukeratzekotan, koordenatu horren
+  eskuinerantz jarriko da itsasontzia. Bertikala aukeratzekotan, beherantz jarriko da.
 
-- Jokalari bat itsaontzia ukitzen baldin badu, beste tiro bat egiteko aukera izango du, hutz egiten duen arte.
+- Jokalari bakoitzak aukera bakarra dauka tiroa egiteko, koordenatua errepikatzen badu, txanda galduko du.
 
-- Irabazlea beste jokalariaren itsasontzi guztiak hondoratzen dituen jokalaria da.
+- Jokalari bat itsaontzia ukitzen baldin badu, beste tiro bat egiteko aukera izango du, huts egiten duen arte.
+
+- Irabazlea beste jokalariaren itsasontzi guztiak hondoratzen dituen jokalaria da, hala ere, berdinketa egotea litzateke.
