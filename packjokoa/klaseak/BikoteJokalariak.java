@@ -417,7 +417,7 @@ public class BikoteJokalariak {
 	
 /////////////////////////////////////////////////////////////////////////////////////	  		 MAIN 	    	//////////////////////////////////////////////////////////////////////////////////////////	
 	
-	public static void main (String [ ] args){	
+	public static void main (String [ ] args) throws FileNotFoundException{	
 		Scanner input_HASIERA = null;
 		Scanner input_ARAUAK = null;
 		Scanner input_AUKERAK = null;
@@ -434,12 +434,7 @@ public class BikoteJokalariak {
 		System.out.println("ONGI ETORRI! Esperientzia osoaz gozatzeko, pantaila osoan jokatzea gomendatzen dugu!\n");
 		do {
 			
-			try {
-				input_AUKERAK = new Scanner(aukerakFile);
-			}
-			catch(FileNotFoundException e){
-				System.out.println("Ez da aurkitu fitxategia");
-			}
+			input_AUKERAK = new Scanner(aukerakFile);
 			while(input_AUKERAK.hasNextLine()) {
 				System.out.println(input_AUKERAK.nextLine());
 			}input_AUKERAK.close();
@@ -494,12 +489,7 @@ public class BikoteJokalariak {
 				System.out.println(" 							- Iñigo Gil");
 				break;
 			case 3:
-				try {
-					input_ARAUAK = new Scanner(arauakFile);
-				}
-				catch(FileNotFoundException e) {
-					System.out.println("Ez da aurkitu fitxategia");
-				}
+				input_ARAUAK = new Scanner(arauakFile);
 				while(input_ARAUAK.hasNextLine())
 				{ 
 				   System.out.println(input_ARAUAK.nextLine());
