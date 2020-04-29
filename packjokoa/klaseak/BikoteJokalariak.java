@@ -360,6 +360,13 @@ public class BikoteJokalariak {
 		this.norenKontra = pNorenKontra;
 	}
 	
+	public InputStream getFile() {
+		
+		InputStream inputStream = getClass().getResourceAsStream("/HASIERA_TESTUA.txt");
+			
+		return inputStream;	
+	}
+	
 	
 	 
 	
@@ -371,15 +378,10 @@ public class BikoteJokalariak {
 		Scanner input_ARAUAK = null;
 		Scanner input_AUKERAK = null;
 		//Hasierako pantaila inprimatzeko:
-		File hasieraTestuaFile = new File("HASIERA_TESTUA.txt");
+		InputStream hasieraTestuaFile = BikoteJokalariak.getNireBikoteJokalariak().getFile();
 		File arauakFile = new File("ARAUAK.txt");
 		File aukerakFile = new File("AUKERAK.txt");
-		try {
-			input_HASIERA = new Scanner(hasieraTestuaFile);
-			
-		} catch (FileNotFoundException e) {
-			System.out.println("Ez da aurkitu fitxategia");
-		}
+		input_HASIERA = new Scanner(hasieraTestuaFile);
 
 		while(input_HASIERA.hasNextLine())
 		{ 
@@ -397,7 +399,7 @@ public class BikoteJokalariak {
 			while(input_AUKERAK.hasNextLine()) {
 				System.out.println(input_AUKERAK.nextLine());
 			}input_AUKERAK.close();
-			int aukera = Teklatua.getNireTeklatua().irakurriAukera("\nZer egin nahi duzu?", 0, 4);
+			int aukera = Teklatua.getNireTeklatua().irakurriAukera("\nZer egin nahi duzu?", 1, 4);
 			switch(aukera) {
 			case 1:
 				BikoteJokalariak.getNireBikoteJokalariak().setNorenKontra("CPU");
@@ -463,8 +465,31 @@ public class BikoteJokalariak {
 			case 4:
 				System.exit(0);
 				break;
-			case 0:
+			case -42:
+				System.out.println("Ez daude pazko arrautzarik programa honetan.");
+				break;
 				//TODO
+			case -43:
+				System.out.println("Pazko arrautzarik ez daudela esan dizut.");
+				break;
+			case -44:
+				System.out.println("Geldi!!");
+				break;
+			case -45:
+				System.out.println("Bale, bale, pazko arrautza ematen badizut jungo zara?");
+				break;
+			case -46:
+				System.out.println("Ale, tori:");
+				System.out.println("                               /----\\\r\n" + 
+						"                       -------/      \\\r\n" + 
+						"                      /               \\\r\n" + 
+						"                     /                |\r\n" + 
+						"   -----------------/                  --------\\\r\n" + 
+						"   ----------------------------------------------");
+				break;
+			case -47:
+				System.out.println("Zer da hori?");
+				break;
 			}
 				  
 		}while(true); 
