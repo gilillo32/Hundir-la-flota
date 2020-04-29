@@ -52,7 +52,7 @@ public class JokalariArrunta extends Jokalaria {
 			//koordenatuak pantailatik eskatu
 			
 			System.out.println(" ");
-			String pMezua1="Orain "+itsasMota+ " jarriko duzu, "+ pItsas +" laukiko itsasontzia da, mesedez sartu zutabea ";
+			String pMezua1="Orain "+itsasMota+ " jarriko duzu, "+ pItsas +" laukiko itsasontzia da, mesedez, sartu zutabea ";
 			short pX= (short) (Teklatua.getNireTeklatua().irakurriShort(pMezua1, 0, 9)+1);
 			
 			String pMezua2="Sartu errenkada mesedez";
