@@ -127,13 +127,8 @@ public class BikoteJokalariak {
 			System.out.println(" ");
 			if(this.norenKontra.equals("CPU")) {
 				Scanner input_zuretxanda = null;
-				File zuretxandaFile = new File("ZURETXANDA.txt");
-				try {
-					input_zuretxanda = new Scanner(zuretxandaFile);
-					
-				} catch (FileNotFoundException e) {
-					System.out.println("Ez da aurkitu fitxategia");
-				}
+				InputStream zureTxandaFile = this.getZureTxanda();
+				input_zuretxanda = new Scanner(zureTxandaFile);
 				try {
 					Thread.sleep(5000);
 				} catch (InterruptedException e) {
@@ -151,13 +146,8 @@ public class BikoteJokalariak {
 			} 
 			else {
 				Scanner input_lehenengo = null;
-				File lehenengoFile = new File("LEHENENGO.txt");
-				try {
-					input_lehenengo = new Scanner(lehenengoFile);
-					
-				} catch (FileNotFoundException e) {
-					System.out.println("Ez da aurkitu fitxategia");
-				}
+				InputStream lehenengoFile = this.getLehenengo();
+				input_lehenengo = new Scanner(lehenengoFile);
 				try {
 					Thread.sleep(5000);
 				} catch (InterruptedException e) {
@@ -222,13 +212,8 @@ public class BikoteJokalariak {
 				System.out.println(" ");
 				//System.out.println(this.getZerrenda()[1].getIzena() + "-ren txanda da!");
 				Scanner input_cpu = null;
-				File cpuFile = new File("CPU.txt");
-				try {
-					input_cpu = new Scanner(cpuFile);
-					
-				} catch (FileNotFoundException e) {
-					System.out.println("Ez da aurkitu fitxategia");
-				}
+				InputStream cpuFile = this.getCPU();
+				input_cpu = new Scanner(cpuFile);
 				try {
 					Thread.sleep(5000);
 				} catch (InterruptedException e1) {
@@ -292,13 +277,8 @@ public class BikoteJokalariak {
 			System.out.println(" ");
 			System.out.println(" ");
 			Scanner input_bigarren = null;
-			File bigarrenFile = new File("BIGARREN.txt");
-			try {
-				input_bigarren = new Scanner(bigarrenFile);
-				
-			} catch (FileNotFoundException e) {
-				System.out.println("Ez da aurkitu fitxategia");
-			}
+			InputStream bigarrenFile = this.getBigarren();
+			input_bigarren = new Scanner(bigarrenFile);
 			try {
 				Thread.sleep(5000);
 			} catch (InterruptedException e) {
@@ -532,7 +512,7 @@ public class BikoteJokalariak {
 				System.out.println("Zer da hori?");
 				InputStream aukerakBisFile = BikoteJokalariak.getNireBikoteJokalariak().getAukerakBis();
 				Scanner input_AUKERAK_BIS = null;
-				input_AUKERAK_BIS = new Scanner(hasieraTestuaFile);
+				input_AUKERAK_BIS = new Scanner(aukerakBisFile);
 				while(input_AUKERAK_BIS.hasNextLine())
 				{ 
 				   System.out.println(input_AUKERAK_BIS.nextLine());
