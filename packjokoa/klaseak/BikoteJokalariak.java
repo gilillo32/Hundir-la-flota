@@ -409,6 +409,13 @@ public class BikoteJokalariak {
 		return inputStream;	
 	}
 	
+	public InputStream getAukerakBis() {
+			
+		InputStream inputStream = getClass().getResourceAsStream("/Testuak/AUKERAK_BIS.txt");
+				
+		return inputStream;	
+		}
+	
 	
 	
 	
@@ -523,6 +530,13 @@ public class BikoteJokalariak {
 				break;
 			case -47:
 				System.out.println("Zer da hori?");
+				InputStream aukerakBisFile = BikoteJokalariak.getNireBikoteJokalariak().getAukerakBis();
+				Scanner input_AUKERAK_BIS = null;
+				input_AUKERAK_BIS = new Scanner(hasieraTestuaFile);
+				while(input_AUKERAK_BIS.hasNextLine())
+				{ 
+				   System.out.println(input_AUKERAK_BIS.nextLine());
+				}input_AUKERAK_BIS.close();
 				break;
 			}
 				  
