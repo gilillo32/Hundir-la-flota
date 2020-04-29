@@ -70,7 +70,7 @@ public class BikoteJokalariak {
 		System.out.println(" ");
 		System.out.println(" ");
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(4000);
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -79,7 +79,7 @@ public class BikoteJokalariak {
 			System.out.println("\n");
 		}
 	//JokalariCPU-k itsasontziak jarriko ditu bere nireTableroa atributuan
-		System.out.println(this.getZerrenda()[1].getIzena() + " itsasontziak jartzeko unea heldu da!");
+		System.out.println(this.getZerrenda()[1].getIzena() + ", itsasontziak jartzeko unea heldu da!");
 		System.out.println(" ");
 		this.getZerrenda()[1].inprimatuNireTableroa();
 		System.out.println(" ");
@@ -135,7 +135,7 @@ public class BikoteJokalariak {
 					System.out.println("Ez da aurkitu fitxategia");
 				}
 				try {
-					Thread.sleep(5000);
+					Thread.sleep(4000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -159,7 +159,7 @@ public class BikoteJokalariak {
 					System.out.println("Ez da aurkitu fitxategia");
 				}
 				try {
-					Thread.sleep(5000);
+					Thread.sleep(4000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -191,11 +191,11 @@ public class BikoteJokalariak {
 					//Itsasontzia ez badu ukitzen:
 					posibleaDa=false;
 					System.out.println(" ");
-					System.out.println("OOH!!!" + this.getZerrenda()[0].getIzena() +", ez duzu itsasontzirik ukitu");
+					System.out.println("OOH!!! " + this.getZerrenda()[0].getIzena() +", ez duzu itsasontzirik ukitu");
 				}
 				else {
 					System.out.println(" ");
-					System.out.println("Oso ondo!" + this.getZerrenda()[0].getIzena() +", itsasontzi bat ukitu duzu!");
+					System.out.println("Oso ondo! " + this.getZerrenda()[0].getIzena() +", itsasontzi bat ukitu duzu!");
 				}
 				if(this.getZerrenda()[1].getNireTableroa().hondoratutaDago(itsas)) {
 					System.out.println("ZORIONAK " + this.getZerrenda()[0].getIzena() +", hondoratu duzu itsasontzia!!");
@@ -230,7 +230,7 @@ public class BikoteJokalariak {
 					System.out.println("Ez da aurkitu fitxategia");
 				}
 				try {
-					Thread.sleep(5000);
+					Thread.sleep(4000);
 				} catch (InterruptedException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -261,7 +261,7 @@ public class BikoteJokalariak {
 							//Itsasontzia ez badu ukitzen:
 							posibleaDa=false; 
 							aurrekoanAsmatu=false;
-							System.out.println("OOH!!!" + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
+							System.out.println("OOH!!! " + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
 							
 						}
 						else {
@@ -300,7 +300,7 @@ public class BikoteJokalariak {
 				System.out.println("Ez da aurkitu fitxategia");
 			}
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(4000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -329,11 +329,11 @@ public class BikoteJokalariak {
 					//Itsasontzia ez badu ukitzen:
 					posibleaDa=false;
 					System.out.println(" ");
-					System.out.println("OOH!!!" + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
+					System.out.println("OOH!!! " + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
 				}
 				else {
 					System.out.println(" ");
-					System.out.println("Oso ondo!" + this.getZerrenda()[1].getIzena() +", itsasontzi bat ukitu duzu!");
+					System.out.println("Oso ondo! " + this.getZerrenda()[1].getIzena() +", itsasontzi bat ukitu duzu!");
 				}
 				if(this.getZerrenda()[0].getNireTableroa().hondoratutaDago(itsas)) {
 					System.out.println("ZORIONAK " + this.getZerrenda()[1].getIzena() +", hondoratu duzu itsasontzia!!");
@@ -359,8 +359,6 @@ public class BikoteJokalariak {
 	public void setNorenKontra(String pNorenKontra) {
 		this.norenKontra = pNorenKontra;
 	}
-	
-	
 	 
 	
 	
@@ -368,12 +366,9 @@ public class BikoteJokalariak {
 	
 	public static void main (String [ ] args){	
 		Scanner input_HASIERA = null;
-		Scanner input_ARAUAK = null;
-		Scanner input_AUKERAK = null;
+		
 		//Hasierako pantaila inprimatzeko:
 		File hasieraTestuaFile = new File("HASIERA_TESTUA.txt");
-		File arauakFile = new File("ARAUAK.txt");
-		File aukerakFile = new File("AUKERAK.txt");
 		try {
 			input_HASIERA = new Scanner(hasieraTestuaFile);
 			
@@ -387,6 +382,10 @@ public class BikoteJokalariak {
 		}input_HASIERA.close();
 		System.out.println("ONGI ETORRI! Esperientzia osoaz gozatzeko, pantaila osoan jokatzea gomendatzen dugu!\n");
 		do {
+			File arauakFile = new File("ARAUAK.txt");
+			File aukerakFile = new File("AUKERAK.txt");
+			Scanner input_ARAUAK = null;
+			Scanner input_AUKERAK = null;
 			
 			try {
 				input_AUKERAK = new Scanner(aukerakFile);
@@ -397,7 +396,7 @@ public class BikoteJokalariak {
 			while(input_AUKERAK.hasNextLine()) {
 				System.out.println(input_AUKERAK.nextLine());
 			}input_AUKERAK.close();
-			int aukera = Teklatua.getNireTeklatua().irakurriAukera("\nZer egin nahi duzu?", 0, 4);
+			int aukera = Teklatua.getNireTeklatua().irakurriAukera("\nZer egin nahi duzu?", 1, 5);
 			switch(aukera) {
 			case 1:
 				BikoteJokalariak.getNireBikoteJokalariak().setNorenKontra("CPU");
@@ -416,11 +415,6 @@ public class BikoteJokalariak {
 				System.out.println(" ");
 				System.out.println("Eskerrik asko jolasteagatik! <3 ");
 				System.out.println(" ");
-				System.out.println(" 	Egileak:");
-				System.out.println(" 			- Paula Ontalvilla");
-				System.out.println(" 			- Leire Garcia");
-				System.out.println(" 			- Gaizka Zuazo");
-				System.out.println(" 			- Iñigo Gil");
 				break;
 			case 2:
 				BikoteJokalariak.getNireBikoteJokalariak().setNorenKontra("Arrunta");
@@ -441,11 +435,6 @@ public class BikoteJokalariak {
 				System.out.println(" ");
 				System.out.println("Eskerrik asko jolasteagatik! <3 ");
 				System.out.println(" ");
-				System.out.println(" 				Egileak:");
-				System.out.println(" 							- Paula Ontalvilla");
-				System.out.println(" 							- Leire Garcia");
-				System.out.println(" 							- Gaizka Zuazo");
-				System.out.println(" 							- Iñigo Gil");
 				break;
 			case 3:
 				try {
@@ -461,10 +450,65 @@ public class BikoteJokalariak {
 				System.out.println("\n");
 				break;
 			case 4:
+				Scanner input_KREDITUAK = null;
+				File kredituakFile = new File("KREDITUAK.txt");
+				try {
+					input_KREDITUAK = new Scanner(kredituakFile);
+					
+				} catch (FileNotFoundException e) {
+					System.out.println("Ez da aurkitu fitxategia");
+				}
+
+				while(input_KREDITUAK.hasNextLine())
+				{ 
+				   System.out.println(input_KREDITUAK.nextLine());
+				   
+				}input_KREDITUAK.close();
+				break;
+			case 5:
 				System.exit(0);
 				break;
-			case 0:
-				//TODO
+				
+				
+			case -42:
+				System.out.println("Ez daude pazko arrautzarik programa honetan.");
+				break;
+			case -43:
+				System.out.println("Pazko arrautzarik ez daudela esan dizut.");
+				break;
+			case -44:
+				System.out.println("Geldi!!");
+				break;
+			case -45:
+				System.out.println("Bale, bale, pazko arrautza ematen badizut jungo zara?");
+				break;
+			case -46:
+				System.out.println("Ale, tori:");
+				System.out.println("                               /----\\\r\n" + 
+						"                       -------/      \\\r\n" + 
+						"                      /               \\\r\n" + 
+						"                     /                |\r\n" + 
+						"   -----------------/                  --------\\\r\n" + 
+						"   ----------------------------------------------");
+				break;
+			case -47:
+				System.out.println("Zer da hori?");
+				Scanner input_AUKERAK_BIS = null;
+				File aukerakBisFile = new File("AUKERAK_BIS.txt");
+				try {
+					input_AUKERAK_BIS = new Scanner(aukerakBisFile);
+					
+				} catch (FileNotFoundException e) {
+					System.out.println("Ez da aurkitu fitxategia");
+				}
+
+				while(input_AUKERAK_BIS.hasNextLine())
+				{ 
+				   System.out.println(input_AUKERAK_BIS.nextLine());
+				   
+				}input_AUKERAK_BIS.close();
+				Teklatua.getNireTeklatua().irakurriAukeraBis(1, 3);
+				break;
 			}
 				  
 		}while(true); 

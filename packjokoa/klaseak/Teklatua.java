@@ -103,7 +103,7 @@ public class Teklatua {
 			String str = sc.nextLine();
 		try{
 			emaitza = Short.parseShort(str);
-	        if(emaitza != (short)-42 && (emaitza < pNundik || emaitza >pNora)){
+	        if((emaitza <-47 && emaitza > -42) && (emaitza < pNundik || emaitza >pNora)){
 	        	throw new LimiteakGainditutaExc("Limitetik kanpo");//sartzen duen koordenatuaren balio bat negatiboa edo tablerotik kanpo badago
             }
             denaOndo=true;
@@ -114,4 +114,30 @@ public class Teklatua {
         while(!denaOndo);
         return emaitza;
       } 
+	
+	
+	public short irakurriAukeraBis(int pNundik, int pNora){
+		short emaitza = (short) (pNundik -1);
+        boolean denaOndo=false;
+        do {
+			String str = sc.nextLine();
+		try{
+			emaitza = Short.parseShort(str);
+	        if((emaitza < pNundik || emaitza >pNora)){
+	        	throw new LimiteakGainditutaExc("Limitetik kanpo");//sartzen duen koordenatuaren balio bat negatiboa edo tablerotik kanpo badago
+            }
+	        else if(emaitza == 3) {
+	        	System.out.println("Oso ondo!");
+	        }
+	        else {
+	        	System.out.println("Ez...");
+	        }
+            denaOndo=true;
+		} 
+         catch (NumberFormatException e) { System.out.println("Zenbaki bat sartu behar duzu"); }
+         catch (LimiteakGainditutaExc e) { System.out.println("Ez da aukera baliogarria"); }
+        }
+        while(!denaOndo);
+        return emaitza;
+      }
 }

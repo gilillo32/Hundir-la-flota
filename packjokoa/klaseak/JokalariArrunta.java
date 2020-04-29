@@ -11,9 +11,9 @@ public class JokalariArrunta extends Jokalaria {
 	public Koordenatuak koordenatuaAukeratu() {	
 		//koordenatuak eskatu
 		System.out.println(" ");
-		String pMezua1="Sartu zure lehenengo koordenatua mesedez";
+		String pMezua1="Sartu zure zutabea mesedez";
 		short pX=(short) (Teklatua.getNireTeklatua().irakurriShort(pMezua1, 0, 9));
-		String pMezua2="Sartu zure bigarren koordenatua mesedez";
+		String pMezua2="Sartu zure errenkada koordenatua mesedez";
 		short pY=(short) (Teklatua.getNireTeklatua().irakurriShort(pMezua2, 0, 9));
 		System.out.println(" ");
 		Koordenatuak k = new Koordenatuak(pX, pY);		
@@ -40,7 +40,7 @@ public class JokalariArrunta extends Jokalaria {
 				 itsasMota="txalupa";
 				 break;
 			 case 2:
-				 itsasMota="itsaspeko"; 
+				 itsasMota="itsaspekoa"; 
 				 break;
 			 case 3:
 				 itsasMota="suntsitzailea";
@@ -52,7 +52,7 @@ public class JokalariArrunta extends Jokalaria {
 			//koordenatuak pantailatik eskatu
 			
 			System.out.println(" ");
-			String pMezua1="Orain "+itsasMota+ " jarriko duzu "+ pItsas +" laukiko itsasontzia da, mesedez sartu zutabea ";
+			String pMezua1="Orain "+itsasMota+ " jarriko duzu, "+ pItsas +" laukiko itsasontzia da, mesedez sartu zutabea ";
 			short pX= (short) (Teklatua.getNireTeklatua().irakurriShort(pMezua1, 0, 9)+1);
 			
 			String pMezua2="Sartu errenkada mesedez";
