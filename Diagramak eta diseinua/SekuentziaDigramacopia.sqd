@@ -8786,7 +8786,7 @@ posibleaDa=false</content>
                                               <height>30</height>
                                               <width>10</width>
                                               <x>895</x>
-                                              <y>162</y>
+                                              <y>159</y>
                                             </constraint>
                                             <sourceConnections>
                                               <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -8819,7 +8819,7 @@ posibleaDa=false</content>
                                                     <height>40</height>
                                                     <width>10</width>
                                                     <x>443</x>
-                                                    <y>162</y>
+                                                    <y>159</y>
                                                   </constraint>
                                                   <sourceConnections>
                                                     <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -8856,7 +8856,7 @@ posibleaDa=false</content>
                                                       <name>tableroaInprimatu():void</name>
                                                       <direction>true</direction>
                                                       <order>4</order>
-                                                      <oldOrder>5</oldOrder>
+                                                      <oldOrder>4</oldOrder>
                                                     </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                   </sourceConnections>
                                                   <targetConnections>
@@ -8877,7 +8877,7 @@ posibleaDa=false</content>
                                                       <name>inprimatuNireTableroa():void</name>
                                                       <direction>true</direction>
                                                       <order>3</order>
-                                                      <oldOrder>4</oldOrder>
+                                                      <oldOrder>3</oldOrder>
                                                     </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                     <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel reference="../../.."/>
                                                   </targetConnections>
@@ -9112,7 +9112,7 @@ posibleaDa=false</content>
                                                                               <name>koordenatuanZerDagoen(short pX,short pY): String</name>
                                                                               <direction>true</direction>
                                                                               <order>9</order>
-                                                                              <oldOrder>10</oldOrder>
+                                                                              <oldOrder>9</oldOrder>
                                                                             </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                           </sourceConnections>
                                                                           <targetConnections>
@@ -9130,7 +9130,7 @@ posibleaDa=false</content>
                                                                         <name>konprobatuItsasontzirikEzKoordenatuan(short pX, short pY,short pItsas, String pOrientazio):boolean</name>
                                                                         <direction>true</direction>
                                                                         <order>8</order>
-                                                                        <oldOrder>9</oldOrder>
+                                                                        <oldOrder>8</oldOrder>
                                                                       </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                       <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                         <backgroundColor reference="../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../backgroundColor"/>
@@ -9215,7 +9215,7 @@ posibleaDa=false</content>
                                                                               <name>koordenatuanZerDagoen(short pX,short pY): String</name>
                                                                               <direction>true</direction>
                                                                               <order>11</order>
-                                                                              <oldOrder>12</oldOrder>
+                                                                              <oldOrder>11</oldOrder>
                                                                             </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                           </sourceConnections>
                                                                           <targetConnections>
@@ -9233,7 +9233,7 @@ posibleaDa=false</content>
                                                                         <name>konprobatuHutsuneak(short pX, short pY,short pItsas, String pOrientazio):boolean</name>
                                                                         <direction>true</direction>
                                                                         <order>10</order>
-                                                                        <oldOrder>11</oldOrder>
+                                                                        <oldOrder>10</oldOrder>
                                                                       </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                     </sourceConnections>
                                                                     <targetConnections>
@@ -9251,7 +9251,7 @@ posibleaDa=false</content>
                                                                   <name>itsasontziakJarri(short pX, short pY,short pItsas, String pOrientazio):void</name>
                                                                   <direction>true</direction>
                                                                   <order>7</order>
-                                                                  <oldOrder>8</oldOrder>
+                                                                  <oldOrder>7</oldOrder>
                                                                 </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                               </sourceConnections>
                                                               <targetConnections>
@@ -9268,7 +9268,7 @@ posibleaDa=false</content>
                                                             <name>getNireTableroa():Tableroa</name>
                                                             <direction>true</direction>
                                                             <order>6</order>
-                                                            <oldOrder>7</oldOrder>
+                                                            <oldOrder>6</oldOrder>
                                                           </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                         </sourceConnections>
                                                         <targetConnections>
@@ -9289,7 +9289,7 @@ posibleaDa=false</content>
                                                             <name>itsasontziakJarri(int pErrenkadaZutKop):void</name>
                                                             <direction>true</direction>
                                                             <order>5</order>
-                                                            <oldOrder>6</oldOrder>
+                                                            <oldOrder>5</oldOrder>
                                                           </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                         </targetConnections>
                                                         <children>
@@ -9371,7 +9371,7 @@ posibleaDa=false</content>
                                                                   <name>koordenatuakAukeratu():void</name>
                                                                   <direction>true</direction>
                                                                   <order>22</order>
-                                                                  <oldOrder>23</oldOrder>
+                                                                  <oldOrder>22</oldOrder>
                                                                 </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                 <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                   <showIcon>true</showIcon>
@@ -9521,7 +9521,7 @@ posibleaDa=false</content>
                                                                               <name>uraDago(short pX, short pY):boolean</name>
                                                                               <direction>true</direction>
                                                                               <order>25</order>
-                                                                              <oldOrder>26</oldOrder>
+                                                                              <oldOrder>25</oldOrder>
                                                                             </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                           </sourceConnections>
                                                                           <targetConnections>
@@ -9538,7 +9538,7 @@ posibleaDa=false</content>
                                                                         <name>koordenadaBaliogarriak(short pX, short pY):boolean</name>
                                                                         <direction>true</direction>
                                                                         <order>24</order>
-                                                                        <oldOrder>25</oldOrder>
+                                                                        <oldOrder>24</oldOrder>
                                                                       </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                     </sourceConnections>
                                                                     <targetConnections>
@@ -9554,7 +9554,7 @@ posibleaDa=false</content>
                                                                   <name>koordenatuBaliogarriak(short pX, short pY):boolean</name>
                                                                   <direction>true</direction>
                                                                   <order>23</order>
-                                                                  <oldOrder>24</oldOrder>
+                                                                  <oldOrder>23</oldOrder>
                                                                 </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                 <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                   <showIcon>true</showIcon>
@@ -9669,7 +9669,7 @@ posibleaDa=false</content>
                                                                         <name>koordenatuanZerDagoen(short pX, short pY) :String </name>
                                                                         <direction>true</direction>
                                                                         <order>27</order>
-                                                                        <oldOrder>28</oldOrder>
+                                                                        <oldOrder>27</oldOrder>
                                                                       </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                     </sourceConnections>
                                                                     <targetConnections>
@@ -9908,7 +9908,7 @@ posibleaDa=false</content>
                                                                                                 <name>koordenatuanZerDagoen(Short pX,Short pY): String</name>
                                                                                                 <direction>true</direction>
                                                                                                 <order>18</order>
-                                                                                                <oldOrder>19</oldOrder>
+                                                                                                <oldOrder>18</oldOrder>
                                                                                               </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                                             </sourceConnections>
                                                                                             <targetConnections>
@@ -9926,7 +9926,7 @@ posibleaDa=false</content>
                                                                                           <name>konprobatuItsasontzirikEzKoordenatuan(short pX, short pY,short pItsas, String pOrientazio):boolean</name>
                                                                                           <direction>true</direction>
                                                                                           <order>17</order>
-                                                                                          <oldOrder>18</oldOrder>
+                                                                                          <oldOrder>17</oldOrder>
                                                                                         </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                                         <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                                           <backgroundColor reference="../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../backgroundColor"/>
@@ -10011,7 +10011,7 @@ posibleaDa=false</content>
                                                                                                 <name>koordenatuanZerDagoen(Short pX,Short pY): String</name>
                                                                                                 <direction>true</direction>
                                                                                                 <order>20</order>
-                                                                                                <oldOrder>21</oldOrder>
+                                                                                                <oldOrder>20</oldOrder>
                                                                                               </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                                             </sourceConnections>
                                                                                             <targetConnections>
@@ -10029,7 +10029,7 @@ posibleaDa=false</content>
                                                                                           <name>konprobatuHutsuneak(short pX, short pY,short pItsas, String pOrientazio):boolean</name>
                                                                                           <direction>true</direction>
                                                                                           <order>19</order>
-                                                                                          <oldOrder>20</oldOrder>
+                                                                                          <oldOrder>19</oldOrder>
                                                                                         </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                                       </sourceConnections>
                                                                                       <targetConnections>
@@ -10047,7 +10047,7 @@ posibleaDa=false</content>
                                                                                     <name>itsasontziakJarri(short pX, short pY,short pItsas, String pOrientazio):void</name>
                                                                                     <direction>true</direction>
                                                                                     <order>16</order>
-                                                                                    <oldOrder>17</oldOrder>
+                                                                                    <oldOrder>16</oldOrder>
                                                                                   </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                                 </sourceConnections>
                                                                                 <targetConnections>
@@ -10064,7 +10064,7 @@ posibleaDa=false</content>
                                                                               <name>getNireTableroa():Tableroa</name>
                                                                               <direction>true</direction>
                                                                               <order>15</order>
-                                                                              <oldOrder>16</oldOrder>
+                                                                              <oldOrder>15</oldOrder>
                                                                             </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                           </sourceConnections>
                                                                           <targetConnections>
@@ -10085,7 +10085,7 @@ posibleaDa=false</content>
                                                                               <name>itsasontziakJarri(int pErrenkadaZutKop):void</name>
                                                                               <direction>true</direction>
                                                                               <order>14</order>
-                                                                              <oldOrder>15</oldOrder>
+                                                                              <oldOrder>14</oldOrder>
                                                                             </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                           </targetConnections>
                                                                           <children>
@@ -10166,7 +10166,7 @@ posibleaDa=false</content>
                                                                                     <name>itsasontzirikEz():boolean</name>
                                                                                     <direction>true</direction>
                                                                                     <order>33</order>
-                                                                                    <oldOrder>34</oldOrder>
+                                                                                    <oldOrder>33</oldOrder>
                                                                                   </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                                   <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                                     <showIcon>true</showIcon>
@@ -10231,7 +10231,7 @@ posibleaDa=false</content>
                                                                                     <name>itsasontzirikEz():boolean</name>
                                                                                     <direction>true</direction>
                                                                                     <order>34</order>
-                                                                                    <oldOrder>35</oldOrder>
+                                                                                    <oldOrder>34</oldOrder>
                                                                                   </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                                 </sourceConnections>
                                                                                 <targetConnections>
@@ -10254,7 +10254,7 @@ posibleaDa=false</content>
                                                                                     <name>partidaBukatu():boolean</name>
                                                                                     <direction>true</direction>
                                                                                     <order>32</order>
-                                                                                    <oldOrder>33</oldOrder>
+                                                                                    <oldOrder>32</oldOrder>
                                                                                   </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                                   <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel reference="../../.."/>
                                                                                   <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel reference="../../sourceConnections/net.java.amateras.uml.sequencediagram.model.SyncMessageModel[2]/target/sourceConnections/net.java.amateras.uml.sequencediagram.model.ReturnMessageModel"/>
@@ -10392,7 +10392,7 @@ posibleaDa=false</content>
                                                                               <name>koordenatuaAukeratu( Koordenatuak pK1,  boolean pAurrekoanAsmatu): Koordenatuak</name>
                                                                               <direction>true</direction>
                                                                               <order>35</order>
-                                                                              <oldOrder>36</oldOrder>
+                                                                              <oldOrder>35</oldOrder>
                                                                             </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                           </targetConnections>
                                                                           <children/>
@@ -10536,7 +10536,7 @@ posibleaDa=false</content>
                                                                                     <name>uraDago(short pX, short pY):boolean</name>
                                                                                     <direction>true</direction>
                                                                                     <order>38</order>
-                                                                                    <oldOrder>39</oldOrder>
+                                                                                    <oldOrder>38</oldOrder>
                                                                                   </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                                 </sourceConnections>
                                                                                 <targetConnections>
@@ -10553,7 +10553,7 @@ posibleaDa=false</content>
                                                                               <name>koordenadaBaliogarriak(short pX, short pY):boolean</name>
                                                                               <direction>true</direction>
                                                                               <order>37</order>
-                                                                              <oldOrder>38</oldOrder>
+                                                                              <oldOrder>37</oldOrder>
                                                                             </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                           </sourceConnections>
                                                                           <targetConnections>
@@ -10574,7 +10574,7 @@ posibleaDa=false</content>
                                                                               <name>koordenatuBaliogarriak(short pX, short pY):boolean</name>
                                                                               <direction>true</direction>
                                                                               <order>36</order>
-                                                                              <oldOrder>37</oldOrder>
+                                                                              <oldOrder>36</oldOrder>
                                                                             </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                             <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel reference="../../sourceConnections/net.java.amateras.uml.sequencediagram.model.SyncMessageModel/target/sourceConnections/net.java.amateras.uml.sequencediagram.model.ReturnMessageModel"/>
                                                                           </targetConnections>
@@ -10754,7 +10754,7 @@ posibleaDa=false</content>
                                                                                           <name>tableroaInprimatu():void</name>
                                                                                           <direction>true</direction>
                                                                                           <order>44</order>
-                                                                                          <oldOrder>45</oldOrder>
+                                                                                          <oldOrder>44</oldOrder>
                                                                                         </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                                       </sourceConnections>
                                                                                       <targetConnections>
@@ -10772,7 +10772,7 @@ posibleaDa=false</content>
                                                                                     <name>eguneratuTableroa( short pX, short pY, String pEmaitza):void</name>
                                                                                     <direction>true</direction>
                                                                                     <order>43</order>
-                                                                                    <oldOrder>44</oldOrder>
+                                                                                    <oldOrder>43</oldOrder>
                                                                                   </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                                 </sourceConnections>
                                                                                 <targetConnections>
@@ -10789,7 +10789,7 @@ posibleaDa=false</content>
                                                                               <name>eguneratuPrintTableroa(short pX, short pY, String pEma):void</name>
                                                                               <direction>true</direction>
                                                                               <order>42</order>
-                                                                              <oldOrder>43</oldOrder>
+                                                                              <oldOrder>42</oldOrder>
                                                                             </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                           </sourceConnections>
                                                                           <targetConnections>
@@ -10810,7 +10810,7 @@ posibleaDa=false</content>
                                                                               <name>eguneratuPrintTableroa(short pX, short pY, String pEmaitza):void</name>
                                                                               <direction>true</direction>
                                                                               <order>41</order>
-                                                                              <oldOrder>42</oldOrder>
+                                                                              <oldOrder>41</oldOrder>
                                                                             </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                             <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel reference="../../sourceConnections/net.java.amateras.uml.sequencediagram.model.SyncMessageModel/target/sourceConnections/net.java.amateras.uml.sequencediagram.model.ReturnMessageModel"/>
                                                                           </targetConnections>
@@ -10858,7 +10858,7 @@ posibleaDa=false</content>
                                                                   <name>koordenatuanZerDagoen(short pX, short pY):String   = String emaitza</name>
                                                                   <direction>true</direction>
                                                                   <order>26</order>
-                                                                  <oldOrder>27</oldOrder>
+                                                                  <oldOrder>26</oldOrder>
                                                                 </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                 <net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                   <showIcon>true</showIcon>
@@ -11043,7 +11043,7 @@ posibleaDa=false</content>
                                                                                     <name>tableroaInprimatu():void</name>
                                                                                     <direction>true</direction>
                                                                                     <order>31</order>
-                                                                                    <oldOrder>32</oldOrder>
+                                                                                    <oldOrder>31</oldOrder>
                                                                                   </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                                 </sourceConnections>
                                                                                 <targetConnections>
@@ -11061,7 +11061,7 @@ posibleaDa=false</content>
                                                                               <name>eguneratuTableroa( short pX, short pY, String pEmaitza):void</name>
                                                                               <direction>true</direction>
                                                                               <order>30</order>
-                                                                              <oldOrder>31</oldOrder>
+                                                                              <oldOrder>30</oldOrder>
                                                                             </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                           </sourceConnections>
                                                                           <targetConnections>
@@ -11078,7 +11078,7 @@ posibleaDa=false</content>
                                                                         <name>eguneratuPrintTableroa(short pX, short pY, String pEma):void</name>
                                                                         <direction>true</direction>
                                                                         <order>29</order>
-                                                                        <oldOrder>30</oldOrder>
+                                                                        <oldOrder>29</oldOrder>
                                                                       </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                     </sourceConnections>
                                                                     <targetConnections>
@@ -11094,7 +11094,7 @@ posibleaDa=false</content>
                                                                   <name>eguneratuPrintTableroa(short pX, short pY, String pEmaitza):void</name>
                                                                   <direction>true</direction>
                                                                   <order>28</order>
-                                                                  <oldOrder>29</oldOrder>
+                                                                  <oldOrder>28</oldOrder>
                                                                 </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                               </sourceConnections>
                                                               <targetConnections>
@@ -11117,7 +11117,7 @@ posibleaDa=false</content>
                                                                   <name>koordenatuaAukeratu():void</name>
                                                                   <direction>true</direction>
                                                                   <order>21</order>
-                                                                  <oldOrder>22</oldOrder>
+                                                                  <oldOrder>21</oldOrder>
                                                                 </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                                 <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel reference="../../.."/>
                                                                 <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel reference="../../sourceConnections/net.java.amateras.uml.sequencediagram.model.SyncMessageModel[2]/target/sourceConnections/net.java.amateras.uml.sequencediagram.model.ReturnMessageModel"/>
@@ -11246,7 +11246,7 @@ posibleaDa=false</content>
                                                             <name>koordenatuanZerDagoen(short pX, short pY) :String </name>
                                                             <direction>true</direction>
                                                             <order>40</order>
-                                                            <oldOrder>41</oldOrder>
+                                                            <oldOrder>40</oldOrder>
                                                           </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                         </sourceConnections>
                                                         <targetConnections>
@@ -11267,7 +11267,7 @@ posibleaDa=false</content>
                                                             <name>koordenatuanZerDagoen(short pX, short pY):String   = String emaitza</name>
                                                             <direction>true</direction>
                                                             <order>39</order>
-                                                            <oldOrder>40</oldOrder>
+                                                            <oldOrder>39</oldOrder>
                                                           </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                                           <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel reference="../../sourceConnections/net.java.amateras.uml.sequencediagram.model.SyncMessageModel/target/sourceConnections/net.java.amateras.uml.sequencediagram.model.ReturnMessageModel"/>
                                                         </targetConnections>
@@ -11373,7 +11373,7 @@ posibleaDa=false</content>
                                     <name>tableroaInprimatu():void</name>
                                     <direction>true</direction>
                                     <order>13</order>
-                                    <oldOrder>14</oldOrder>
+                                    <oldOrder>13</oldOrder>
                                   </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                                 </sourceConnections>
                                 <targetConnections>
@@ -11389,7 +11389,7 @@ posibleaDa=false</content>
                               <name>inprimatuNireTableroa():void</name>
                               <direction>true</direction>
                               <order>12</order>
-                              <oldOrder>13</oldOrder>
+                              <oldOrder>12</oldOrder>
                             </net.java.amateras.uml.sequencediagram.model.SyncMessageModel>
                             <net.java.amateras.uml.sequencediagram.model.SyncMessageModel reference="../net.java.amateras.uml.sequencediagram.model.SyncMessageModel/target/sourceConnections/net.java.amateras.uml.sequencediagram.model.SyncMessageModel/target/ownerLine/children/net.java.amateras.uml.sequencediagram.model.ActivationModel/sourceConnections/net.java.amateras.uml.sequencediagram.model.ReturnMessageModel/target/ownerLine/children/net.java.amateras.uml.sequencediagram.model.ActivationModel[3]/sourceConnections/net.java.amateras.uml.sequencediagram.model.ReturnMessageModel/target/sourceConnections/net.java.amateras.uml.sequencediagram.model.SyncMessageModel[3]/target/ownerLine/children/net.java.amateras.uml.sequencediagram.model.ActivationModel[2]/targetConnections/net.java.amateras.uml.sequencediagram.model.SyncMessageModel"/>
                             <net.java.amateras.uml.sequencediagram.model.SyncMessageModel reference="../net.java.amateras.uml.sequencediagram.model.SyncMessageModel/target/sourceConnections/net.java.amateras.uml.sequencediagram.model.SyncMessageModel/target/ownerLine/children/net.java.amateras.uml.sequencediagram.model.ActivationModel/sourceConnections/net.java.amateras.uml.sequencediagram.model.ReturnMessageModel/target/ownerLine/children/net.java.amateras.uml.sequencediagram.model.ActivationModel/targetConnections/net.java.amateras.uml.sequencediagram.model.SyncMessageModel"/>

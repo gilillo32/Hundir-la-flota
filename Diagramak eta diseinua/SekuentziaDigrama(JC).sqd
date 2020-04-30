@@ -8500,7 +8500,7 @@ posibleaDa=false</content>
         </java.beans.PropertyChangeSupport>
       </listeners>
       <constraint>
-        <height>90</height>
+        <height>93</height>
         <width>10</width>
         <x>262</x>
         <y>188</y>
@@ -8536,7 +8536,7 @@ posibleaDa=false</content>
               <height>50</height>
               <width>10</width>
               <x>443</x>
-              <y>218</y>
+              <y>221</y>
             </constraint>
             <sourceConnections>
               <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
@@ -8586,7 +8586,7 @@ posibleaDa=false</content>
                     <height>30</height>
                     <width>10</width>
                     <x>895</x>
-                    <y>228</y>
+                    <y>231</y>
                   </constraint>
                   <sourceConnections>
                     <net.java.amateras.uml.sequencediagram.model.ReturnMessageModel>
