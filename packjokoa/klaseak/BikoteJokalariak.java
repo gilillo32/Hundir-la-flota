@@ -2,7 +2,34 @@ package klaseak;
 import java.io.*;
 import java.util.*;
 
+import org.fusesource.jansi.AnsiConsole;
+import static org.fusesource.jansi.AnsiConsole.*;
+import static org.fusesource.jansi.Ansi.Color.*;
 public class BikoteJokalariak {
+	
+	
+	
+	public static final String BLACK = "\u001B[30m";
+	public static final String RED = "\u001B[31m";
+	public static final String GREEN = "\u001B[32m";
+	public static final String YELLOW = "\u001B[33m";
+	public static final String BLUE = "\u001B[34m";
+	public static final String PURPLE = "\u001B[35m";
+	public static final String CYAN = "\u001B[36m";
+	public static final String WHITE = "\u001B[37m";
+	
+	public static final String CLS = "\u001b[2J";
+	public static final String RESET = "\u001B[0m";
+	
+	public static final String BLACK_BACKGROUND = "\u001B[40m";
+	public static final String RED_BACKGROUND = "\u001B[41m";
+	public static final String GREEN_BACKGROUND = "\u001B[42m";
+	public static final String YELLOW_BACKGROUND = "\u001B[43m";
+	public static final String BLUE_BACKGROUND = "\u001B[44m";
+	public static final String PURPLE_BACKGROUND = "\u001B[45m";
+	public static final String CYAN_BACKGROUND = "\u001B[46m";
+	public static final String WHITE_BACKGROUND = "\u001B[47m";
+	
 	//atributuak:
 	private Jokalaria[] zerrenda;
 	private static BikoteJokalariak nireBikoteJokalariak = null;
@@ -181,7 +208,7 @@ public class BikoteJokalariak {
 					//Itsasontzia ez badu ukitzen:
 					posibleaDa=false;
 					System.out.println(" ");
-					System.out.println("OOH!!! " + this.getZerrenda()[0].getIzena() +", ez duzu itsasontzirik ukitu");
+					System.out.println(RED_BACKGROUND + WHITE + "OOH!!! " + this.getZerrenda()[0].getIzena() +", ez duzu itsasontzirik ukitu" + RESET );
 				}
 				else {
 					System.out.println(" ");
@@ -246,7 +273,7 @@ public class BikoteJokalariak {
 							//Itsasontzia ez badu ukitzen:
 							posibleaDa=false; 
 							aurrekoanAsmatu=false;
-							System.out.println("OOH!!! " + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
+							System.out.println(BikoteJokalariak.RED + "OOH!!! " + BikoteJokalariak.RESET + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
 							
 						}
 						else {
@@ -309,7 +336,7 @@ public class BikoteJokalariak {
 					//Itsasontzia ez badu ukitzen:
 					posibleaDa=false;
 					System.out.println(" ");
-					System.out.println("OOH!!! " + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
+					System.out.println(BikoteJokalariak.RED + "OOH!!! " + BikoteJokalariak.RESET + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
 				}
 				else {
 					System.out.println(" ");
@@ -405,6 +432,7 @@ public class BikoteJokalariak {
 /////////////////////////////////////////////////////////////////////////////////////	  		 MAIN 	    	//////////////////////////////////////////////////////////////////////////////////////////	
 	
 	public static void main (String [ ] args) throws FileNotFoundException{	
+		AnsiConsole.systemInstall();
 		Scanner input_HASIERA = null;
 		
 		//Hasierako pantaila inprimatzeko:
