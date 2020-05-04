@@ -439,7 +439,6 @@ public class BikoteJokalariak {
 		InputStream hasieraTestuaFile = BikoteJokalariak.getNireBikoteJokalariak().getHasiera();
 		
 		input_HASIERA = new Scanner(hasieraTestuaFile);
-
 		while(input_HASIERA.hasNextLine())
 		{			
 		   System.out.println(input_HASIERA.nextLine());
