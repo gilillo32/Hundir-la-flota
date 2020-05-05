@@ -524,6 +524,7 @@ public class BikoteJokalariak {
 				while(input_KREDITUAK.hasNextLine()) {
 					System.out.println(input_KREDITUAK.nextLine());
 				}input_KREDITUAK.close();
+				System.out.println("\n");
 				break;
 			case 5:
 				System.exit(0);
