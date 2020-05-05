@@ -429,7 +429,13 @@ public class BikoteJokalariak {
 		InputStream inputStream = getClass().getResourceAsStream("/Testuak/AUKERAK_BIS.txt");
 				
 		return inputStream;	
-		}
+	}
+	
+	public InputStream getKredituak() {
+		InputStream inputStream = getClass().getResourceAsStream("/Tesetuak/KREDITUAK.txt");
+		
+		return inputStream;
+	}
 	
 	
 	
@@ -459,7 +465,7 @@ public class BikoteJokalariak {
 			
 			InputStream arauakFile = BikoteJokalariak.getNireBikoteJokalariak().getArauak();
 			InputStream aukerakFile = BikoteJokalariak.getNireBikoteJokalariak().getAukerak();
-			InputStream kredituakFile = BikoteJokalariak.getNireBikoteJokalariak().getAukerak();
+			InputStream kredituakFile = BikoteJokalariak.getNireBikoteJokalariak().getKredituak();
 			
 			input_AUKERAK = new Scanner(aukerakFile);
 			while(input_AUKERAK.hasNextLine()) {
