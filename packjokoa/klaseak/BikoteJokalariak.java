@@ -471,7 +471,7 @@ public class BikoteJokalariak {
 			while(input_AUKERAK.hasNextLine()) {
 				System.out.println(input_AUKERAK.nextLine());
 			}input_AUKERAK.close();
-			int aukera = Teklatua.getNireTeklatua().irakurriAukera("\nZer egin nahi duzu?", 1, 5);
+			int aukera = Teklatua.getNireTeklatua().irakurriAukera("\n\nZer egin nahi duzu?", 1, 5);
 			switch(aukera) {
 			case 1:
 				BikoteJokalariak.getNireBikoteJokalariak().setNorenKontra("CPU");
@@ -529,17 +529,17 @@ public class BikoteJokalariak {
 				System.exit(0);
 				break;
 			case -42:
-				System.out.println("Ez daude pazko arrautzarik programa honetan.");
+				System.out.println("Ez daude pazko arrautzarik programa honetan.\n");
 				break;
 				//TODO
 			case -43:
-				System.out.println("Pazko arrautzarik ez daudela esan dizut.");
+				System.out.println("Pazko arrautzarik ez daudela esan dizut.\n");
 				break;
 			case -44:
-				System.out.println("Geldi!!");
+				System.out.println("Geldi!!\n");
 				break;
 			case -45:
-				System.out.println("Bale, bale, pazko arrautza ematen badizut jungo zara?");
+				System.out.println("Bale, bale, pazko arrautza ematen badizut jungo zara?\n");
 				break;
 			case -46:
 				System.out.println("Ale, tori:");
