@@ -432,7 +432,7 @@ public class BikoteJokalariak {
 	}
 	
 	public InputStream getKredituak() {
-		InputStream inputStream = getClass().getResourceAsStream("/Tesetuak/KREDITUAK.txt");
+		InputStream inputStream = getClass().getResourceAsStream("/Testuak/KREDITUAK.txt");
 		
 		return inputStream;
 	}
