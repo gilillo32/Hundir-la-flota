@@ -169,7 +169,7 @@ public class JokalariCPU extends Jokalaria {
 				pItsas++;
 			}//while(pItsas<5)
 		 if(pItsas==5) {
-		this.getNireTableroa().tableroaInprimatu();
+		//this.getNireTableroa().tableroaInprimatu();
 		 }
 	 }
 	 
