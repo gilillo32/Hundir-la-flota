@@ -28,7 +28,7 @@ public class JokalariCPU extends Jokalaria {
 		this.zentzua=0;
 	}
 
-	 public Koordenatuak koordenatuaAukeratu( Koordenatuak pK1,  boolean pAurrekoanAsmatu) {
+	public Koordenatuak koordenatuaAukeratu( Koordenatuak pK1,  boolean pAurrekoanAsmatu) {
 		Koordenatuak k= new Koordenatuak();	
 		if (pAurrekoanAsmatu && this.albokoKoordenatuak.size()!=0) {
 			this.zentzuAukeratuta=true;
@@ -47,7 +47,11 @@ public class JokalariCPU extends Jokalaria {
 			int konti=0;
 			do {
 				k=this.albokoKoordenatuak.get(this.zentzua);
+				System.out.println(this.albokoKoordenatuak.get(this.zentzua).getKoordenatuakX());
+				System.out.println(this.albokoKoordenatuak.get(this.zentzua).getKoordenatuakY());
+				
 				konti++;
+				//System.out.println(konti);
 				if ((k.getKoordenatuakY()== -1 || k.getKoordenatuakX()== -1)){
 					if (this.zentzua==3) {
 						this.zentzua=0;
@@ -56,7 +60,10 @@ public class JokalariCPU extends Jokalaria {
 						this.zentzua++;
 					}
 				}
-				if((this.esandakoKoordenatuak.contains(k))) {
+				
+				//-1 bueltatuko du X egotekotan 
+				else if(this.getPrintTableroa().zeItsasontziHondoratu((short)(k.getKoordenatuakX()+1), (short)(k.getKoordenatuakY()+1))==-1 ) {
+					System.out.println("Sarty");
 					if (this.zentzua==3) {
 						this.zentzua=0;
 					}
@@ -65,12 +72,17 @@ public class JokalariCPU extends Jokalaria {
 					}
 				}
 				
-			}while((k.getKoordenatuakY()== -1 || k.getKoordenatuakX()== -1) || this.esandakoKoordenatuak.contains(k) && konti<=4);
+				if ((k.getKoordenatuakY()!= -1 || k.getKoordenatuakX()!= -1)){
+					System.out.println(this.getPrintTableroa().koordenatuanZerDagoen(k.getKoordenatuakX(), k.getKoordenatuakY()));
+				System.out.println(this.getPrintTableroa().zeItsasontziHondoratu(k.getKoordenatuakX(), k.getKoordenatuakY()));
+				}
+				System.out.println(this.zentzua);
+			}while((k.getKoordenatuakY()== -1 || k.getKoordenatuakX()== -1) || this.getPrintTableroa().zeItsasontziHondoratu((short)(k.getKoordenatuakX()+1), (short)(k.getKoordenatuakY()+1))==-1 && konti<=4);
 			
 		}
 		else if(pAurrekoanAsmatu && this.albokoKoordenatuak.size()!=0) { //zentzua asmatu du eta koordenatuak zentzu horretan aukeratu
 			k= this.zentzuBateanKoordenatuBerriak(pK1.getKoordenatuakX(), pK1.getKoordenatuakY(), this.zentzua);
-			if (k.getKoordenatuakY()== -1 && k.getKoordenatuakX()== -1) {
+			if (k.getKoordenatuakY()== -1 && k.getKoordenatuakX()== -1 || this.getPrintTableroa().zeItsasontziHondoratu((short)(k.getKoordenatuakX()+1), (short)(k.getKoordenatuakY()+1))==-1 ) {
 				this.kontrakoZentzua();	
 				k= this.zentzuBateanKoordenatuBerriak(this.koordenatuOriginalak.getKoordenatuakX(), this.koordenatuOriginalak.getKoordenatuakY(), this.zentzua);
 			}
