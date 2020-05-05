@@ -557,6 +557,9 @@ public class Tableroa {
 		else if(itsas.equals(" 4")) {
 			emaitza=4;
 		}
+		else if(itsas.equals(" X")) {
+			emaitza=-1;
+		}
 		return emaitza;
 	}
 	
