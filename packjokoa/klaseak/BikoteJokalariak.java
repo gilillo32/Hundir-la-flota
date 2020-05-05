@@ -282,7 +282,9 @@ public class BikoteJokalariak {
 							
 						}
 						else {
-							aurrekoanAsmatu=true;							
+							aurrekoanAsmatu=true;	
+							System.out.println(" ");
+							System.out.println(GREEN_BACKGROUND + WHITE + "Oso ondo! " + this.getZerrenda()[1].getIzena() +", itsasontzi bat ukitu duzu!" + RESET);
 						}
 						
 					//ITSASONTSI BAT HONDORATZEAN SARTZEN DA
