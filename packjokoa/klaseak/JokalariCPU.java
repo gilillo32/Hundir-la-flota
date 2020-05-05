@@ -47,8 +47,8 @@ public class JokalariCPU extends Jokalaria {
 			int konti=0;
 			do {
 				k=this.albokoKoordenatuak.get(this.zentzua);
-				System.out.println(this.albokoKoordenatuak.get(this.zentzua).getKoordenatuakX());
-				System.out.println(this.albokoKoordenatuak.get(this.zentzua).getKoordenatuakY());
+				//System.out.println(this.albokoKoordenatuak.get(this.zentzua).getKoordenatuakX());
+				//System.out.println(this.albokoKoordenatuak.get(this.zentzua).getKoordenatuakY());
 				
 				konti++;
 				//System.out.println(konti);
@@ -63,7 +63,7 @@ public class JokalariCPU extends Jokalaria {
 				
 				//-1 bueltatuko du X egotekotan 
 				else if(this.getPrintTableroa().zeItsasontziHondoratu((short)(k.getKoordenatuakX()+1), (short)(k.getKoordenatuakY()+1))==-1 ) {
-					System.out.println("Sarty");
+					//System.out.println("Sarty");
 					if (this.zentzua==3) {
 						this.zentzua=0;
 					}
@@ -72,11 +72,11 @@ public class JokalariCPU extends Jokalaria {
 					}
 				}
 				
-				if ((k.getKoordenatuakY()!= -1 || k.getKoordenatuakX()!= -1)){
+				/*if ((k.getKoordenatuakY()!= -1 || k.getKoordenatuakX()!= -1)){
 					System.out.println(this.getPrintTableroa().koordenatuanZerDagoen(k.getKoordenatuakX(), k.getKoordenatuakY()));
 				System.out.println(this.getPrintTableroa().zeItsasontziHondoratu(k.getKoordenatuakX(), k.getKoordenatuakY()));
 				}
-				System.out.println(this.zentzua);
+				System.out.println(this.zentzua);*/
 			}while((k.getKoordenatuakY()== -1 || k.getKoordenatuakX()== -1) || this.getPrintTableroa().zeItsasontziHondoratu((short)(k.getKoordenatuakX()+1), (short)(k.getKoordenatuakY()+1))==-1 && konti<=4);
 			
 		}
