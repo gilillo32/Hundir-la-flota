@@ -262,6 +262,12 @@ public class BikoteJokalariak {
 							posibleaDa=false; 
 							aurrekoanAsmatu=false;
 							System.out.println("OOH!!! " + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu");
+							try {
+								Thread.sleep(1000);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
 							
 						}
 						else {
