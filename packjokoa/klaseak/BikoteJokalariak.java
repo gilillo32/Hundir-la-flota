@@ -106,7 +106,7 @@ public class BikoteJokalariak {
 			System.out.println("\n");
 		}
 	//JokalariCPU-k itsasontziak jarriko ditu bere nireTableroa atributuan
-		System.out.println(this.getZerrenda()[1].getIzena() + " itsasontziak jartzeko unea heldu da!");
+		System.out.println(this.getZerrenda()[1].getIzena() + ", itsasontziak jartzeko unea heldu da!");
 		System.out.println(" ");
 		this.getZerrenda()[1].inprimatuNireTableroa();
 		System.out.println(" ");
@@ -212,20 +212,20 @@ public class BikoteJokalariak {
 					//Itsasontzia ez badu ukitzen:
 					posibleaDa=false;
 					System.out.println(" ");
-					System.out.println(RED_BACKGROUND + WHITE + "OOH!!! " + this.getZerrenda()[0].getIzena() +", ez duzu itsasontzirik ukitu" + RESET );
+					System.out.println(RED_BACKGROUND + WHITE + "OOH!!! " + this.getZerrenda()[0].getIzena() +", ez duzu itsasontzirik ukitu" + RESET + "\n");
 				}
 				else {
 					System.out.println(" ");
-					System.out.println(GREEN_BACKGROUND + WHITE + "Oso ondo! " + this.getZerrenda()[0].getIzena() +", itsasontzi bat ukitu duzu!" + RESET);
+					System.out.println(GREEN_BACKGROUND + WHITE + "Oso ondo! " + this.getZerrenda()[0].getIzena() +", itsasontzi bat ukitu duzu!" + RESET + "\n");
 				}
 				if(this.getZerrenda()[1].getNireTableroa().hondoratutaDago(itsas)) {
-					System.out.println(GREEN_BACKGROUND + WHITE + "ZORIONAK " + this.getZerrenda()[0].getIzena() +", hondoratu duzu itsasontzia!!" + RESET);
+					System.out.println(GREEN_BACKGROUND + WHITE + "ZORIONAK " + this.getZerrenda()[0].getIzena() +", hondoratu duzu itsasontzia!!" + RESET + "\n");
 				}
 			}
 			else {
 				posibleaDa=false;
 				System.out.println(" ");
-				System.out.println(RED_BACKGROUND + WHITE + this.getZerrenda()[0].getIzena() + ", sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu" + RESET);				
+				System.out.println(RED_BACKGROUND + WHITE + this.getZerrenda()[0].getIzena() + ", sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu" + RESET + "\n");				
 			}
 			if( this.getZerrenda()[0].itsasontzirikEz() ) {
 				//ITSASONTZII GUZTIAK HONDORATU DITUENENEAN SARTZEN DA HEMEN, IF HONEK EGITEN DUENA HONAKOA DA:
@@ -278,15 +278,15 @@ public class BikoteJokalariak {
 							//Itsasontzia ez badu ukitzen:
 							posibleaDa=false; 
 							aurrekoanAsmatu=false;
-							System.out.println(RED_BACKGROUND + WHITE + "OOH!!! " + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu" + RESET);
+							System.out.println(RED_BACKGROUND + WHITE + "OOH!!! " + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu" + RESET + "\n");
 							
 						}
 						else {
 							aurrekoanAsmatu=true;	
 							System.out.println(" ");
-							System.out.println(GREEN_BACKGROUND + WHITE + "Oso ondo! " + this.getZerrenda()[1].getIzena() +", itsasontzi bat ukitu duzu!" + RESET);
+							System.out.println(GREEN_BACKGROUND + WHITE + "Oso ondo! " + this.getZerrenda()[1].getIzena() +", itsasontzi bat ukitu duzu!" + RESET + "\n");
 							try {
-								Thread.sleep(1000);
+								Thread.sleep(2000);
 							} catch (InterruptedException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
@@ -295,7 +295,7 @@ public class BikoteJokalariak {
 						
 					//ITSASONTSI BAT HONDORATZEAN SARTZEN DA
 						if(this.getZerrenda()[0].getNireTableroa().hondoratutaDago(itsas)) {
-							System.out.println(GREEN_BACKGROUND + WHITE + "ZORIONAK " + this.getZerrenda()[1].getIzena() +", hondoratu duzu itsasontzia!!" + RESET);
+							System.out.println(GREEN_BACKGROUND + WHITE + "ZORIONAK " + this.getZerrenda()[1].getIzena() +", hondoratu duzu itsasontzia!!" + RESET + "\n");
 							if (this.getZerrenda()[1] instanceof JokalariCPU) {
 								byte zentzua=((JokalariCPU)this.getZerrenda()[1]).getZentzua();
 								this.getZerrenda()[1].getPrintTableroa().XBete(pX, pY, itsas, zentzua);
@@ -350,20 +350,20 @@ public class BikoteJokalariak {
 					//Itsasontzia ez badu ukitzen:
 					posibleaDa=false;
 					System.out.println(" ");
-					System.out.println(RED_BACKGROUND + WHITE + "OOH!!! " + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu" + RESET);
+					System.out.println(RED_BACKGROUND + WHITE + "OOH!!! " + this.getZerrenda()[1].getIzena() +", ez duzu itsasontzirik ukitu" + RESET + "\n");
 				}
 				else {
 					System.out.println(" ");
-					System.out.println(GREEN_BACKGROUND + WHITE + "Oso ondo! " + this.getZerrenda()[1].getIzena() +", itsasontzi bat ukitu duzu!" + RESET);
+					System.out.println(GREEN_BACKGROUND + WHITE + "Oso ondo! " + this.getZerrenda()[1].getIzena() +", itsasontzi bat ukitu duzu!" + RESET + "\n");
 				}
 				if(this.getZerrenda()[0].getNireTableroa().hondoratutaDago(itsas)) {
-					System.out.println(GREEN_BACKGROUND + WHITE + "ZORIONAK " + this.getZerrenda()[1].getIzena() +", hondoratu duzu itsasontzia!!" + RESET);
+					System.out.println(GREEN_BACKGROUND + WHITE + "ZORIONAK " + this.getZerrenda()[1].getIzena() +", hondoratu duzu itsasontzia!!" + RESET + "\n");
 				}
 			}
 			else {
 				posibleaDa=false;
 				System.out.println(" ");
-				System.out.println(RED_BACKGROUND + WHITE + this.getZerrenda()[1].getIzena() + ", sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu" + RESET);				
+				System.out.println(RED_BACKGROUND + WHITE + this.getZerrenda()[1].getIzena() + ", sartu dituzun koordenatuak jada sartu dituzu. Txanda galdu duzu" + RESET + "\n");				
 			}
 			if( this.getZerrenda()[1].itsasontzirikEz() ) {
 				//ITSASONTZII GUZTIAK HONDORATU DITUENENEAN SARTZEN DA HEMEN, IF HONEK EGITEN DUENA HONAKOA DA:
