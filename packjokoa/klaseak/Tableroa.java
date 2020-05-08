@@ -26,7 +26,9 @@ public class Tableroa {
 			this.matrizea[z][e]= String.valueOf(akum+" ");
 			z++;
 			akum++;
-		}		
+		}	
+		//this.matrizea[1][9]= " X";
+		//this.matrizea[2][9]= " X";
 		while (e< this.errenZutKop ) { //erabili daiteke This.matrizea.length
 			z=0;
 			while (z<this.errenZutKop) { //erabili daiteke this.matrize[e].length
@@ -34,6 +36,7 @@ public class Tableroa {
 				System.out.print(  this.matrizea[e][z]); //aldi bakoitzean hurrengo lerroan inprimatzen du
 				z++; 
 			}
+			
 			e++;
 			System.out.print("\n");			
 		}
@@ -556,6 +559,9 @@ public class Tableroa {
 		}
 		else if(itsas.equals(" 4")) {
 			emaitza=4;
+		}
+		else if(itsas.equals(" X")) {
+			emaitza=-1;
 		}
 		return emaitza;
 	}

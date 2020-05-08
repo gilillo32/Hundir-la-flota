@@ -103,7 +103,7 @@ public class Teklatua {
 			String str = sc.nextLine();
 		try{
 			emaitza = Short.parseShort(str);
-	        if((emaitza <-47 && emaitza > -42) && (emaitza < pNundik || emaitza >pNora)){
+	        if((emaitza <-47 || emaitza > -42) && (emaitza < pNundik || emaitza >pNora)){
 	        	throw new LimiteakGainditutaExc("Limitetik kanpo");//sartzen duen koordenatuaren balio bat negatiboa edo tablerotik kanpo badago
             }
             denaOndo=true;
@@ -127,10 +127,10 @@ public class Teklatua {
 	        	throw new LimiteakGainditutaExc("Limitetik kanpo");//sartzen duen koordenatuaren balio bat negatiboa edo tablerotik kanpo badago
             }
 	        else if(emaitza == 3) {
-	        	System.out.println("Oso ondo!");
+	        	System.out.println("Oso ondo!\n");
 	        }
 	        else {
-	        	System.out.println("Ez...");
+	        	System.out.println("Ez...\n");
 	        }
             denaOndo=true;
 		} 
