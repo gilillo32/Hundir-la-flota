@@ -65,6 +65,8 @@ public class TableroaTest {
 		assertFalse(nireT.hondoratutaDago(0));//mal
 		
 	}
+	//KONTUTAN IZATEKO!!
+	//konprobatuItsasontziakJarri() bi koordenatu jasotzen ditu, baina +1 egingo du
 	
 	@Test
 	public void test4konprobatuItsasontziakJarri1() {
@@ -369,7 +371,7 @@ public class TableroaTest {
 	}
 	
 	@Test
-	public void test8KoordenatuanJarri() {
+	public void test9KoordenatuanJarri() {
 		//guztietan +1 egin dugu, koordenatuanZerDagoen +1 egiten duelako
 		printT.koordenatuanJarri(5, 6, " 1");
 		assertEquals(" U",printT.koordenatuanZerDagoen((short)(5+1), (short)(6+1)));//koordenatuanZerDagoen " U" itzultzen du koordenatuan itsasotziren bat badago
@@ -382,4 +384,300 @@ public class TableroaTest {
 		
 	}
 
+	@Test
+	public void test10zeItsasontziHondoratu() {
+	//guztietan +1 egin dugu, koordenatuanZerDagoen +1 egiten duelako
+		//sartuko dugu 1-ko itsasontzi bat
+		printT.koordenatuanJarri(6, 6, " 1");
+		//"1"-eko izatekotan 1 itzuli behar du
+		assertEquals(1,printT.zeItsasontziHondoratu((short)(6+1), (short)(6+1)));
+		
+		//sartuko dugu 2-ko itsasontzi bat
+		printT.koordenatuanJarri(6, 6, " 2");
+		//"2"-eko izatekotan 2 itzuli behar du
+		assertEquals(2,printT.zeItsasontziHondoratu((short)(6+1), (short)(6+1)));
+		
+		//sartuko dugu 3-ko itsasontzi bat
+		printT.koordenatuanJarri(6, 6, " 3");
+		//"3"-eko izatekotan 3 itzuli behar du
+		assertEquals(3,printT.zeItsasontziHondoratu((short)(6+1), (short)(6+1)));
+		
+		//sartuko dugu 4-ko itsasontzi bat
+		printT.koordenatuanJarri(6, 6, " 4");
+		//"4"-eko izatekotan 4 itzuli behar du
+		assertEquals(4,printT.zeItsasontziHondoratu((short)(6+1), (short)(6+1)));	
+		
+		//sartuko dugu X (ura dagoela esan nahi du)
+		printT.koordenatuanJarri(6, 6, " X");
+		//X egotekotan -1 itzuliko du
+		assertEquals(-1,printT.zeItsasontziHondoratu((short)(6+1), (short)(6+1)));
+		
+		//sartuko dugu U (ukituta dagoela esan nahi du)
+		printT.koordenatuanJarri(6, 6, " U");
+		//bestela 0 itzuliko du
+		assertEquals(0,printT.zeItsasontziHondoratu((short)(6+1), (short)(6+1)));
+	}
+	
+	//KONTUTAN IZATEKO!!
+	//erabili dugun kodea hutsuneakKonprobatu() metodoaren antzekoa da, beraz kasu berdinak erabiliko ditugu
+	//konprobatzeko ea ondo dagoen metodoa erabiliko dugu kontsola
+	//XBete() metodoari sartzen zaizkion koordenatuak +1 eginda daude
+	@Test
+	public void test11XBete1() {
+	//HORIZONTALEAN (zentzua=0 edo zentzua=2)
+	//sartuko dugu itsasontzi bat ERDIAN
+		nireT.koordenatuanJarri((short)(4), (short)(4), " 1");//benetan (5,5) koordenatuan jarri duzu
+		nireT.XBete((short)(5), (short)(5), 1, (byte)(0));
+		nireT.tableroaInprimatu();
+		
+		nireT.tableroaBete();
+		
+		nireT.koordenatuanJarri((short)(4), (short)(4), " 3");//benetan (5,5) koordenatuan jarri duzu
+		nireT.koordenatuanJarri((short)(3), (short)(4), " 3");//benetan (4,5) koordenatuan jarri duzu
+		nireT.koordenatuanJarri((short)(2), (short)(4), " 3");//benetan (3,5) koordenatuan jarri duzu
+		nireT.XBete((short)(5), (short)(5), 3, (byte)(2));//esandako azkenengo koodenatua (5,5) da
+		nireT.tableroaInprimatu();
+		
+		nireT.tableroaBete();
+		
+		nireT.koordenatuanJarri((short)(4), (short)(4), " 3");//benetan (5,5) koordenatuan jarri duzu
+		nireT.koordenatuanJarri((short)(3), (short)(4), " 3");//benetan (4,5) koordenatuan jarri duzu
+		nireT.koordenatuanJarri((short)(2), (short)(4), " 3");//benetan (3,5) koordenatuan jarri duzu
+		nireT.XBete((short)(3), (short)(5), 3, (byte)(2));//esandako azkenengo koodenatua (3,5) da
+		nireT.tableroaInprimatu();
+	}
+	
+	@Test
+	public void test11XBete2() {
+	//HORIZONTALEAN (zentzua=0 edo zentzua=2)
+		//sartuko dugu itsasontzi bat GOIKO ERTZAN
+		nireT.koordenatuanJarri((short)(4), (short)(0), " 2");//benetan (5,1) koordenatuan jarri duzu
+		nireT.koordenatuanJarri((short)(3), (short)(0), " 2");//benetan (4,1) koordenatuan jarri duzu
+		nireT.XBete((short)(4), (short)(1), 2, (byte)(2));//esandako azkenenengo koodenatua (4,1) da
+		nireT.tableroaInprimatu();
+		
+		nireT.tableroaBete();
+		
+		nireT.koordenatuanJarri((short)(4), (short)(0), " 2");//benetan (5,1) koordenatuan jarri duzu
+		nireT.koordenatuanJarri((short)(3), (short)(0), " 2");//benetan (4,1) koordenatuan jarri duzu
+		nireT.XBete((short)(5), (short)(1), 2, (byte)(2));//esandako azkenenengo koodenatua (5,1) da
+		nireT.tableroaInprimatu();
+		
+		nireT.tableroaBete();
+		
+		//sartuko dugu itsasontzi bat BEHEKO ERTZAN
+		nireT.koordenatuanJarri((short)(4), (short)(9), " 2");//benetan (5,10) koordenatuan jarri duzu
+		nireT.koordenatuanJarri((short)(3), (short)(9), " 2");//benetan (4,10) koordenatuan jarri duzu
+		nireT.XBete((short)(5), (short)(10), 2, (byte)(0));//esandako azkenenengo koodenatua (5,10) da
+		nireT.tableroaInprimatu();
+		
+		nireT.tableroaBete();
+		
+		nireT.koordenatuanJarri((short)(4), (short)(9), " 2");//benetan (5,10) koordenatuan jarri duzu
+		nireT.koordenatuanJarri((short)(3), (short)(9), " 2");//benetan (4,10) koordenatuan jarri duzu
+		nireT.XBete((short)(4), (short)(10), 2, (byte)(0));//esandako azkenenengo koodenatua (4,10) da
+		nireT.tableroaInprimatu();
+		
+		nireT.tableroaBete();
+		
+		//sartuko dugu itsasontzi bat ESKUINEKO ERTZAN (kontutan izan behar dugu itsasontziaren lehenengo koordenatua sartzen dugula)
+		nireT.koordenatuanJarri((short)(9), (short)(4), " 2");//benetan (10,5) koordenatuan jarri duzu
+		nireT.koordenatuanJarri((short)(8), (short)(4), " 2");//benetan (9,5) koordenatuan jarri duzu
+		nireT.XBete((short)(9), (short)(5), 2, (byte)(0));//esandako azkenenengo koodenatua (9,5) da
+		nireT.tableroaInprimatu();
+		
+		nireT.tableroaBete();
+		
+		nireT.koordenatuanJarri((short)(9), (short)(4), " 2");//benetan (10,5) koordenatuan jarri duzu
+		nireT.koordenatuanJarri((short)(8), (short)(4), " 2");//benetan (9,5) koordenatuan jarri duzu
+		nireT.XBete((short)(10), (short)(5), 2, (byte)(0));//esandako azkenenengo koodenatua (10,5) da
+		nireT.tableroaInprimatu();
+		
+		nireT.tableroaBete();
+					
+		//sartuko dugu itsasontzi bat EZKERREKO ERTZAN
+		nireT.koordenatuanJarri((short)(0), (short)(3), " 2");//benetan (1,4) koordenatuan jarri duzu
+		nireT.koordenatuanJarri((short)(8), (short)(4), " 2");//benetan (9,5) koordenatuan jarri duzu
+		nireT.XBete((short)(9), (short)(5), 2, (byte)(0));//esandako azkenenengo koodenatua (9,5) da
+		nireT.tableroaInprimatu();
+		
+		nireT.tableroaBete();
+		
+		
+	}	
+	
+	@Test
+	public void test11XBete3() {
+	//HORIZONTALEAN
+										//GUZTIAK TRUE (itsasontziak ez daudelako inguruan)
+		
+		//sartuko dugu itsasontzi bat GOIKO ERTZAN
+		assertTrue(nireT.konprobatuItsasontziakJarri((short)(4), (short)(0), (short)(2), "h"));
+		
+		//sartuko dugu itsasontzi bat BEHEKO ERTZAN
+		assertTrue(nireT.konprobatuItsasontziakJarri((short)(4), (short)(9), (short)(2), "h"));
+		
+		//sartuko dugu itsasontzi bat ESKUINEKO ERTZAN (kontutan izan behar dugu itsasontziaren lehenengo koordenatua sartzen dugula, beraz itsasontzi 2-koa bada ezin dugu ertzan sartu)
+		assertTrue(nireT.konprobatuItsasontziakJarri((short)(8), (short)(4), (short)(2), "h"));
+		
+		//sartuko dugu itsasontzi bat EZKERREKO ERTZAN
+		assertTrue(nireT.konprobatuItsasontziakJarri((short)(0), (short)(4), (short)(2), "h"));
+		
+		
+	}
+	
+	@Test
+	public void test11XBete4() {
+	//HORIZONTALEAN
+									//GUZTIAK FALSE
+		//sartuko dugu itsasontzi bat IZKINAN (GOIAN EZKERREAN)
+		nireT.koordenatuanJarri((short)(0), (short)(1), " 1");
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(0), (short)(0), (short)(2), "h"));
+		
+		//sartuko dugu itsasontzi bat IZKINAN (GOIAN ESKUINEAN) (kontutan izan behar dugu itsasontziaren lehenengo koordenatua sartzen dugula, beraz itsasontzi 2-koa bada ezin dugu ertzan sartu)
+		nireT.koordenatuanJarri((short)(9), (short)(1), " 1");
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(8), (short)(0), (short)(2), "h"));
+		
+		//sartuko dugu itsasontzi bat IZKINAN (BEHEAN ESKUINEAN) (kontutan izan behar dugu itsasontziaren lehenengo koordenatua sartzen dugula, beraz itsasontzi 2-koa bada ezin dugu ertzan sartu)
+		nireT.koordenatuanJarri((short)(9), (short)(8), " 1");
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(8), (short)(9), (short)(2), "h"));
+		
+		//sartuko dugu itsasontzi bat IZKINAN (BEHEAN EZKERREAN)
+		nireT.koordenatuanJarri((short)(0), (short)(8), " 1");
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(0), (short)(9), (short)(2), "h"));
+	}
+	
+	
+	@Test
+	public void test11XBete5() {
+	//HORIZONTALEAN
+										//GUZTIAK TRUE
+		//sartuko dugu itsasontzi bat IZKINAN (GOIAN EZKERREAN)
+		assertTrue(nireT.konprobatuItsasontziakJarri((short)(1), (short)(0), (short)(2), "h"));
+		
+		//sartuko dugu itsasontzi bat IZKINAN (GOIAN ESKUINEAN) (kontutan izan behar dugu itsasontziaren lehenengo koordenatua sartzen dugula, beraz itsasontzi 2-koa bada ezin dugu ertzan sartu)
+		assertTrue(nireT.konprobatuItsasontziakJarri((short)(8), (short)(0), (short)(2), "h"));	
+		
+		//sartuko dugu itsasontzi bat IZKINAN (BEHEAN ESKUINEAN) (kontutan izan behar dugu itsasontziaren lehenengo koordenatua sartzen dugula, beraz itsasontzi 2-koa bada ezin dugu ertzan sartu)
+		assertTrue(nireT.konprobatuItsasontziakJarri((short)(8), (short)(9), (short)(2), "h"));
+
+		//sartuko dugu itsasontzi bat IZKINAN (BEHEAN EZKERREAN)
+		assertTrue(nireT.konprobatuItsasontziakJarri((short)(0), (short)(9), (short)(2), "h"));
+	}
+	
+	@Test
+	public void test11XBete6() {
+	//BERTIKALEAN
+		//sartuko dugu itsasontzi bat edozein koordenatuan, beraz ez dago arazorik
+		assertTrue(nireT.konprobatuItsasontziakJarri((short)(4), (short)(4), (short)(1), "B"));
+		//Lehen sartu dugun koordenatu berdinetan saiatu gara itsasontzi bat jartzen.
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(4), (short)(4), (short)(2), "B"));
+		
+	//sartuko dugu itsasontzi bat ERDIAN
+		nireT.koordenatuanJarri((short)(4), (short)(4), " 1");
+		//saiatuko gara itsasontzi bat jartzen behean
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(4), (short)(5), (short)(2), "b"));
+		//behean diagonalean 
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(3), (short)(5), (short)(2), "b"));
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(5), (short)(5), (short)(2), "b"));
+		
+		//saiatuko gara itsasontzi bat jartzen goian
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(4), (short)(2), (short)(2), "b"));
+		//goian diagonalean
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(3), (short)(2), (short)(2), "b"));
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(5), (short)(2), (short)(2), "b"));
+		
+		//saiatuko gara itsasontzi bat jartzen ezkerrean
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(3), (short)(5), (short)(2), "b"));
+		
+		//saiatuko gara itsasontzi bat jartzen eskuinean
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(5), (short)(4), (short)(2), "b"));
+		
+		
+	}
+	
+	@Test
+	public void test11XBete7() {
+	//BERTIKALEAN
+										//GUZTIAK FALSE
+		//sartuko dugu itsasontzi bat GOIKO ERTZAN
+		nireT.koordenatuanJarri((short)(4), (short)(0), " 1");
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(3), (short)(0), (short)(2), "b"));
+		
+		//sartuko dugu itsasontzi bat BEHEKO ERTZAN (kontutan izan behar dugu itsasontziaren lehenengo koordenatua sartzen dugula, beraz itsasontzi 2-koa bada sartu ezin dugu sartu beheko ertzean zuzenean)
+		nireT.koordenatuanJarri((short)(4), (short)(9), " 1");
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(3), (short)(8), (short)(2), "b"));
+			//baita saiatuko gara 1-ko itsasontzia sartzen
+			nireT.koordenatuanJarri((short)(6), (short)(9), " 1");
+			assertFalse(nireT.konprobatuItsasontziakJarri((short)(7), (short)(9), (short)(1), "b"));
+			
+		//sartuko dugu itsasontzi bat ESKUINEKO ERTZAN
+		nireT.koordenatuanJarri((short)(8), (short)(4), " 1");
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(9), (short)(4), (short)(2), "b"));
+		
+		//sartuko dugu itsasontzi bat EZKERREKO ERTZAN
+		nireT.koordenatuanJarri((short)(1), (short)(3), " 1");
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(0), (short)(3), (short)(2), "b"));
+		
+	}	
+	
+	@Test
+	public void test11XBete8() {
+	//BERTIKALEAN
+										//GUZTIAK TRUE (itsasontziak ez daudelako inguruan)
+		
+		//sartuko dugu itsasontzi bat GOIKO ERTZAN
+		assertTrue(nireT.konprobatuItsasontziakJarri((short)(4), (short)(0), (short)(2), "b"));
+		
+		//sartuko dugu itsasontzi bat BEHEKO ERTZAN (kontutan izan behar dugu itsasontziaren lehenengo koordenatua sartzen dugula, beraz itsasontzi 2-koa bada sartu ezin dugu sartu beheko ertzean zuzenean)
+		assertTrue(nireT.konprobatuItsasontziakJarri((short)(4), (short)(8), (short)(2), "b"));
+		
+		//sartuko dugu itsasontzi bat ESKUINEKO ERTZAN (kontutan izan behar dugu itsasontziaren lehenengo koordenatua sartzen dugula, beraz itsasontzi 2-koa bada sartu ezin dugu sartu beheko ertzean zuzenean)
+		assertTrue(nireT.konprobatuItsasontziakJarri((short)(8), (short)(4), (short)(2), "b"));
+				
+		//sartuko dugu itsasontzi bat EZKERREKO ERTZAN
+		assertTrue(nireT.konprobatuItsasontziakJarri((short)(0), (short)(4), (short)(2), "b"));
+		
+		
+	}
+	
+	@Test
+	public void test11XBete9() {
+	//BERTIKALEAN
+									//GUZTIAK FALSE
+		//sartuko dugu itsasontzi bat IZKINAN (GOIAN EZKERREAN)
+		nireT.koordenatuanJarri((short)(0), (short)(1), " 1");
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(1), (short)(0), (short)(2), "b"));
+		
+		//sartuko dugu itsasontzi bat IZKINAN (GOIAN ESKUINEAN)
+		nireT.koordenatuanJarri((short)(8), (short)(0), " 1"); 
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(9), (short)(0), (short)(2), "b"));
+		
+		//sartuko dugu itsasontzi bat IZKINAN (BEHEAN ESKUINEAN) (kontutan izan behar dugu itsasontziaren lehenengo koordenatua sartzen dugula, beraz itsasontzi 2-koa bada sartu ezin dugu sartu beheko ertzean zuzenean)
+		nireT.koordenatuanJarri((short)(8), (short)(9), " 1");
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(9), (short)(8), (short)(2), "b"));
+		
+		//sartuko dugu itsasontzi bat IZKINAN (BEHEAN EZKERREAN) (kontutan izan behar dugu itsasontziaren lehenengo koordenatua sartzen dugula, beraz itsasontzi 2-koa bada sartu ezin dugu sartu beheko ertzean zuzenean)
+		nireT.koordenatuanJarri((short)(1), (short)(8), " 1");
+		assertFalse(nireT.konprobatuItsasontziakJarri((short)(0), (short)(8), (short)(2), "b"));
+	}
+	
+	
+	@Test
+	public void test11XBete10() {
+	//BERTIKALEAN
+										//GUZTIAK TRUE
+		//sartuko dugu itsasontzi bat IZKINAN (GOIAN EZKERREAN)
+		assertTrue(nireT.konprobatuItsasontziakJarri((short)(0), (short)(1), (short)(2), "b"));
+		
+		//sartuko dugu itsasontzi bat IZKINAN (GOIAN ESKUINEAN)
+		assertTrue(nireT.konprobatuItsasontziakJarri((short)(9), (short)(0), (short)(2), "b"));
+		
+		//sartuko dugu itsasontzi bat IZKINAN (BEHEAN ESKUINEAN )(kontutan izan behar dugu itsasontziaren lehenengo koordenatua sartzen dugula, beraz itsasontzi 2-koa bada sartu ezin dugu sartu beheko ertzean zuzenean)
+		assertTrue(nireT.konprobatuItsasontziakJarri((short)(9), (short)(8), (short)(2), "b"));
+		
+		//sartuko dugu itsasontzi bat IZKINAN (BEHEAN EZKERREAN)(kontutan izan behar dugu itsasontziaren lehenengo koordenatua sartzen dugula, beraz itsasontzi 2-koa bada sartu ezin dugu sartu beheko ertzean zuzenean)
+		assertTrue(nireT.konprobatuItsasontziakJarri((short)(0), (short)(8), (short)(2), "b"));
+	}
+	
 }
