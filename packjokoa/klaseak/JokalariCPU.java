@@ -178,7 +178,7 @@ public class JokalariCPU extends Jokalaria {
 			kont++;
 		}
 	 }
-	 
+	    
 	
 	private void gehituAlbokoKoordenatuak (Koordenatuak pK) {
 		this.albokoKoordenatuak.add(pK);
