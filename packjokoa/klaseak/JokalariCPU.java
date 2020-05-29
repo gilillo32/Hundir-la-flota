@@ -5,7 +5,6 @@ import salbuespenak.KoordenatuEzEgokiak;
 
 public class JokalariCPU extends Jokalaria {
 	
-	private ArrayList<Koordenatuak> esandakoKoordenatuak;//esan dituen koorenatu guztiak gordetzen dira, ez errepikatzeko
 	private ArrayList<Koordenatuak> albokoKoordenatuak;
 	private Koordenatuak koordenatuOriginalak;
 	private boolean zentzuAukeratuta=false;
@@ -13,7 +12,6 @@ public class JokalariCPU extends Jokalaria {
 	
 	public JokalariCPU(short pErrenkadaZutKop) {		
 		super("CPU", pErrenkadaZutKop);
-		this.esandakoKoordenatuak= new ArrayList<Koordenatuak>();
 		this.albokoKoordenatuak = new ArrayList<Koordenatuak>();
 		this.koordenatuOriginalak = new Koordenatuak();		
 	}
@@ -86,16 +84,12 @@ public class JokalariCPU extends Jokalaria {
 				this.kontrakoZentzua();	
 				k= this.zentzuBateanKoordenatuBerriak(this.koordenatuOriginalak.getKoordenatuakX(), this.koordenatuOriginalak.getKoordenatuakY(), this.zentzua);
 			}
-			/*if(this.esandakoKoordenatuak.contains(k) ) {
-				k= this.koordenatuRandom();
-			}*/
 			
 		}
 		else if(!pAurrekoanAsmatu && this.albokoKoordenatuak.size()!=0) {//lehen ez du asmatu baina zentzua bazekien, beraz kontrako zentzuan begiratu behar du
 				this.kontrakoZentzua();
 				k= this.zentzuBateanKoordenatuBerriak(this.koordenatuOriginalak.getKoordenatuakX(), this.koordenatuOriginalak.getKoordenatuakY(), this.zentzua);
 		}
-		this.esandakoKoordenatuak.add(k);
 		return  k ;
 	}
 	 
@@ -185,11 +179,6 @@ public class JokalariCPU extends Jokalaria {
 		}
 	 }
 	 
-	 /* Ez da erabiltzen metodo hau
-	private void gehituEsandakoKoordenatuak (Koordenatuak pK) {
-		this.esandakoKoordenatuak.add(pK);
-	}
-	*/
 	
 	private void gehituAlbokoKoordenatuak (Koordenatuak pK) {
 		this.albokoKoordenatuak.add(pK);
