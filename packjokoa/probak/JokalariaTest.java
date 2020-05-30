@@ -219,4 +219,47 @@ public class JokalariaTest {
 		ukituta= j1.getNUkituta();
 		assertEquals( 6, ukituta);
 	}
+	
+	@Test
+	public void test11KoordenatuanJarri() {
+		//koordenatuanJarri NireTablero matrizean aukeratutako koordenatu7an jartzen du nahi dugun karakterea, 
+		//funtzinamendua frogatzeko koordenatuanZerDagoen metodoa erabiliko dut, metodo honek  NireTableroan begiratuko du kasilan zer dagoen, itsasontzia baldin badago " U" bueltatzen du, bestela, han dagoena, hau da, ura "-"		
+			
+		//hasieran uraz - beteta dago, beraz TRUE bueltatuko du
+			String ema = j1.koordenatuanZerDagoen((short)2,(short) 2);
+			assertEquals(" -" , ema);
+			
+			//koordenatu horretan " 1" jarriko dugu eta metodoa " U" buletatuko du
+				//kordenatuanJarri metodoak +1 egiten dio sartutako kordenatuari, beraz -1 egingo diot nik nahi dudan koordenatuan egin dezan
+			j1.koordenatuanJarri(2-1, 2-1, " 1"); 
+			ema = j1.koordenatuanZerDagoen((short)2,(short) 2);
+			assertEquals(" U" , ema);
+	}
+	@Test
+	public void test12KoordenatuanJarriPrint() {
+		//KoordenatuanJarriPrint printTableroan aukeratutako koordenatuan jartzen du nahi dugun karakterea, 
+		//koordenadaBaliogarriak erabiliko dut frogak egiteko
+		
+			//hasieran uraz - beteta dago
+		boolean ema = j1.koordenadaBaliogarriak((short)3,(short) 3);
+		assertTrue( ema);
+		
+		//koordenatu horretan " U" jarriko dugu eta metodoa FALSE
+		//kordenatuanJarri metodoak +1 egiten dio sartutako kordenatuari, beraz -1 egingo diot nik nahi dudan koordenatuan egin dezan
+	j1.koordenatuanJarriPrint(3-1, 3-1, " U"); 
+	ema = j1.koordenadaBaliogarriak((short)3,(short) 3);
+	assertFalse( ema);
+	
+		//koordenatu horretan " X" jarriko dugu eta metodoa FALSE
+		//kordenatuanJarri metodoak +1 egiten dio sartutako kordenatuari, beraz -1 egingo diot nik nahi dudan koordenatuan egin dezan
+	j1.koordenatuanJarriPrint(3-1, 3-1, " X"); 
+	ema = j1.koordenadaBaliogarriak((short)3,(short) 3);
+	assertFalse( ema);
+		
+	}
+		@Test
+	public void test13eguneratuNireTableroa() {
+			//koordenatuanZerDagoen erabiliko dut frogatzeko
+		
+	}
 }
