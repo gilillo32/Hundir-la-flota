@@ -259,7 +259,17 @@ public class JokalariaTest {
 	}
 		@Test
 	public void test13eguneratuNireTableroa() {
-			//koordenatuanZerDagoen erabiliko dut frogatzeko
-		
+			/*
+			 * koordenatuanZerDagoen itzuli duen String-a  
+			 * " U" (itsasontzia dago) bada nireTableroan dagokion posizioan sartuko du, beste kasuetan " X" sartuko du.
+			 *inprimatuNireTableroaerabiliko dt frogatzeko kontsolaz
+			*/
+			System.out.println( " Konprobatu (3,3) koordenatuan U bat dagoela");
+			j1.eguneratuNireTableroa( (short)4, (short) 4, " U"); //gogoratu matrizearen indizeak matrizearen barne daudela!
+			j1.inprimatuNireTableroa();
+			
+			System.out.println( " Konprobatu (3,3) koordenatuan X bat dagoela");
+			j1.eguneratuNireTableroa( (short)4, (short) 4, " -"); //gogoratu matrizearen indizeak matrizearen barne daudela!
+			j1.inprimatuNireTableroa();
 	}
 }
