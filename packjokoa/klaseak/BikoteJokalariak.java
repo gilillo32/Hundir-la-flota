@@ -311,7 +311,7 @@ public class BikoteJokalariak {
 				Thread.sleep(4000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				e.printStackTrace(); 
 			}
 			System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n");
 			while(input_bigarren.hasNextLine())
@@ -430,6 +430,9 @@ public class BikoteJokalariak {
 				String izena1 = Teklatua.getNireTeklatua().irakurriString();
 				System.out.println("Sartu bigarren jokalariaren izena:");
 				String izena2 = Teklatua.getNireTeklatua().irakurriString();
+				if(izena1.equals(izena2)) {
+					izena2=izena2+"1";
+				}
 				short j=10;	//erenkada kopurua	
 				BikoteJokalariak.getNireBikoteJokalariak().getZerrenda()[0] = new JokalariArrunta(izena1, j );
 				BikoteJokalariak.getNireBikoteJokalariak().getZerrenda()[1] = new JokalariArrunta(izena2, j );
