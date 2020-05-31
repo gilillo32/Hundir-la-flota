@@ -96,8 +96,7 @@ public class BikoteJokalariak {
 	
 	private boolean partidaBukatu() {
 		/*
-		 bi jokalarien tableroak begiratzen ditu eta ez badago itsasontzirik, partida amaitzen da.
-		 itsasontzirikEz() erabiliko da jokalarien tableroak ikusteko.
+		 bi jokalarien itsasontzirikEz() metdoa deitzen dute eta baten batek ez baditu ukitu gabeko itsasontzirik, partida amaitzen da.
 		*/
 		boolean ema=false;
 		if(this.getZerrenda()[0].itsasontzirikEz()) {
