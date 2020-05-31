@@ -67,5 +67,11 @@ public class JokalariCPUTest {
 			//ura aurkitzen duenenen kontrako zentzuan begiratuko du lehenengo asmakizunetik(koordenatu horretatik)
 		
 	}
+	
+	@Test
+	public void testGetZentzua() {
+		
+	}
+	
 
 }
