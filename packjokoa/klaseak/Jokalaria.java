@@ -39,7 +39,7 @@ public abstract class Jokalaria {
 	
 	public boolean itsasontzirikEz() {
 		/*
-		 * true ematen du etsaiaren itsasontzi guztiak hondoratu ostean, hau da, this.nUkituta==10 izatra heltzen denean.		
+		 * true ematen du etsaiaren itsasontzi guztiak hondoratu ostean, hau da, this.nUkituta==10 izatera heltzen denean.		
 		*/
 		boolean badaudeItsas=false;
 		if(this.nUkituta==10) {
@@ -53,7 +53,7 @@ public abstract class Jokalaria {
 		*printTableroan begiratzen du, hau da, tiroak egin ostean lortutakoa gordetzen den tableroan.
 		*Jolasan zehar uraz " -", ukitutako itsasontziz " U", eta hutz egindako tiroz " X", betea egongo da.
 		*Kordenatu batean " U" edo " X" egonda, koordenada hori ez da baliogarria izango, FALSE bueltatuko du
-		*Kordenatu batean " -" egonda, koordenada hori baliogarria da, TRUE bueltautko du
+		*Kordenatu batean " -" egonda, koordenada hori baliogarria da, TRUE bueltatuko du
 	*/
 		return this.printTableroa.konprobatuTiroa(pX, pY);
 	}
@@ -90,6 +90,8 @@ public abstract class Jokalaria {
 	public String getIzena() {
 		return this.izena;
 	}	
+	
+	
 //////////////////////// TESTAK EGITEKO BEHAR DITUGUN METODOAK ////////////////////////
 	public int  getNUkituta() {
 		return this.nUkituta;
@@ -98,11 +100,11 @@ public abstract class Jokalaria {
 		 this.nUkituta = pUkituta;
 	}	
 	public void koordenatuanJarri ( int pX, int pY, String pJarri) {
-	//NIREtABLERO ATRIBUTUAN NIK NAHI DUDAN KARAKTEREA JARTZEN DU NIK AUKERATUTAKO KOORDENATUAN
+	//nireTablero ATRIBUTUAN NIK NAHI DUDAN KARAKTEREA JARTZEN DU NIK AUKERATUTAKO KOORDENATUAN
 		this.nireTableroa.koordenatuanJarri(pX, pY, pJarri);
 	}	
 	public void koordenatuanJarriPrint ( int pX, int pY, String pJarri) {
-	//PRINTtABLERO ATRIBUTUAN NIK NAHI DUDAN KARAKTEREA JARTZEN DU NIK AUKERATUTAKO KOORDENATUAN
+	//printTablero ATRIBUTUAN NIK NAHI DUDAN KARAKTEREA JARTZEN DU NIK AUKERATUTAKO KOORDENATUAN
 		this.printTableroa.koordenatuanJarri(pX, pY, pJarri);
 	}
 }

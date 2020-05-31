@@ -34,8 +34,6 @@ public class JokalariCPU extends Jokalaria {
 		
 		if(!pAurrekoanAsmatu && this.albokoKoordenatuak.size()==0 ) { //ez dago arazorik, lehen saiakera da
 			k= this.koordenatuRandom();	
-			//sartuko ditugu koordnatu horiek koordeantuOriginalan, jakiteko asmtzen duen zein izan den aurrekoa, hau da, originala
-			//this.koordenatuOriginalak=k;
 		}
 		else if(!this.zentzuAukeratuta) { //sartuko da zentzua aurkitu arte
 			if (this.albokoKoordenatuak.size()==0) {
@@ -93,17 +91,16 @@ public class JokalariCPU extends Jokalaria {
 		return  k ;
 	}
 	 
-	 																									////////////////////////////////////////////////////////////////
 	 private Koordenatuak koordenatuRandom() {
 		 Koordenatuak k = null;
 		 k = new Koordenatuak(); 
 		 Random rand = new Random();
-		 short pX = (short) ((short) rand.nextInt(10) );//0-etik 9 zenbaki bat bueltatzeko					////////////////////////////////////////
+		 short pX = (short) ((short) rand.nextInt(10) );//0-etik 9 zenbaki bat bueltatzeko					
 		 short pY = (short) ((short) rand.nextInt(10));
 		 k.setKoordenatuakX(pX);
 		 k.setKoordenatuakY(pY);		
 		 return k;
-	 }														////////////////////////////////////////////////////
+	 }														
 	 
 	 public void itsasontziakJarri(int pErrenkadaZutKop) {
 		 short pItsas = 1;
@@ -157,11 +154,10 @@ public class JokalariCPU extends Jokalaria {
 				    catch(KoordenatuEzEgokiak e) {
 					    denaOndo2=false;
 				   }
-			   //}
-			}  while(!denaOndo2);  //do
+			}  while(!denaOndo2);  
 				denaOndo2=false;
 				pItsas++;
-			}//while(pItsas<5)
+			}
 		 if(pItsas==5) {
 		this.getNireTableroa().tableroaInprimatu();
 		 }
@@ -408,176 +404,7 @@ public class JokalariCPU extends Jokalaria {
 		}
 		
 	}
-	
-	//Itsasontzia ukitu badu, metodo hau erabiliko da ausazko alboko koordenatuak generatzeko
-	/*Cuando la CPU acierta una coordenada por primera vez, tiene cuatro opciones para decir la siguiente coordenada:
-	 * la coordenada de arriba, la de abajo, la de la eskuma y la de la izda. Por lo tanto, este método crea un Random
-	 * entre 1 y 4 (ambos incluídos), y si sale:
-	 * 0- se dice la coordenada de la derecha
-	 * 1- se dice la coordenada de arriba
-	 * 2- se dice la coordenada de la izda
-	 * 3- se dice la coordenada de abajo
-	 */
-	
-	/*
-	private Koordenatuak albokoAusazkoKoordenatuakEratu(short pX, short pY) {
-		//Arazorik ez badago, lau aukera ditu koordenatua eratzeko:
-		if(this.zeinErtzaDa(pX, pY) == 0 && this.zeinIzkinaDa(pX, pY) == 0) {
-			Random rand = new Random();
-			byte zeinAukera = (byte)rand.nextInt(4);
-			switch(zeinAukera) {
-			case 0:
-				pX = (short) (pX + 1);
-				break;
-			case 1:
-				pY = (short) (pY - 1);
-				break;
-			case 2:
-				pX = (short) (pX - 1);
-				break;
-			case 3:
-				pY = (short) (pY + 1);
-				break;
-			}			
-		}
-		else {
-			//Eskumako ertzan badago:
-			if(this.zeinErtzaDa(pX, pY) == 1) {
-				Random rand = new Random();
-				byte zeinAukera = (byte) rand.nextInt(2);
-				switch(zeinAukera) {
-				case 0:
-					pY = (short)(pY - 1);
-					break;
-				case 1:
-					pX = (short)(pX - 1);
-					break;
-				case 2:
-					pY = (short)(pY + 1);
-					break;
-				}
-			}
-			else {
-				//Eskumako goiko izkinan badago:
-				if(this.zeinIzkinaDa(pX, pY) == 1) {
-					Random rand = new Random();
-					byte zeinAukera = (byte)rand.nextInt(1);
-					switch(zeinAukera) {
-					case 0:
-						pY = (short)(pY + 1);
-						break;
-					case 1:
-						pX = (short)(pX - 1);
-						break;
-					}
-				}
-				else {
-					//Goiko ertza bada:
-					if(this.zeinErtzaDa(pX, pY) == 2) {
-						Random rand = new Random();
-						byte zeinAukera = (byte)rand.nextInt(3);
-						switch(zeinAukera) {
-						case 0:
-							pX = (short)(pX + 1);
-							break;
-						case 1:
-							pY = (short)(pY + 1);
-							break;
-						case 2:
-							pX = (short)(pX - 1);
-							break;
-						}
-					}
-					else {
-						//Goiko ezkerreko izkina bada:
-						if(this.zeinIzkinaDa(pX, pY) == 2) {
-							Random rand = new Random();
-							byte zeinAukera = (byte)rand.nextInt(2);
-							switch(zeinAukera) {
-							case 0:
-								pY = (short)(pY + 1);
-								break;
-							case 1:
-								pX = (short)(pX + 1);
-								break;
-							}
-						}
-						else {
-							//Ezkerreko ertza bada:
-							if(this.zeinErtzaDa(pX, pY) == 3) {
-								Random rand = new Random();
-								byte zeinAukera = (byte)rand.nextInt(3);
-								switch(zeinAukera) {
-								case 0:
-									pY = (short)(pY - 1);
-									break;
-								case 1:
-									pX = (short)(pX + 1);
-									break;
-								case 2:
-									pY = (short)(pY + 1);
-									break;
-								}
-							}
-							else {
-								//Beheko ezkerreko izkina bada: 
-								if(this.zeinIzkinaDa(pX, pY) == 3) {
-									Random rand = new Random();
-									byte zeinAukera = (byte)rand.nextInt(2);
-									switch(zeinAukera) {
-									case 0:
-										pY = (short)(pY - 1);
-										break;
-									case 1:
-										pX = (short)(pX + 1);
-										break;
-									}
-								}
-								else {
-									//Beheko ertza bada:
-									if(this.zeinErtzaDa(pX, pY) == 4) {
-										Random rand = new Random();
-										byte zeinAukera = (byte)rand.nextInt(3);
-										switch(zeinAukera) {
-										case 0:
-											pX = (short)(pX - 1);
-											break;
-										case 1:
-											pY = (short)(pY - 1); 
-											break;
-										case 2:
-											pX = (short)(pX + 1);
-											break;
-										}
-									}
-									else {
-										//Beheko eskumako izkina bada:
-										if(this.zeinIzkinaDa(pX, pY) == 4) {
-											Random rand = new Random();
-											byte zeinAukera = (byte)rand.nextInt(2);
-											switch(zeinAukera) {
-											case 0:
-												pY = (short)(pY - 1);
-												break;
-											case 1:
-												pX = (short)(pX - 1);
-												break;
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		Koordenatuak koord = new Koordenatuak(pX, pY);
-		return koord;
-	}
-	 
-	
-	
+		
 	/*Koordenada bat ertza bada konprobatzen duen duen metodoa:
 	 * Lehenengo, izkina bat bada konprobatzen du, eta ez bada, zein ertza den konprobatzen du
 	 * 1 bueltatuko du eskumako ertza bada
@@ -669,7 +496,6 @@ public class JokalariCPU extends Jokalaria {
 	
 	private boolean izkina2Da(short pX, short pY) {
 		boolean izkina2Da = false;
-		//int errenZutKop =  this.getNireTableroa().getErrenkadaZutKop();
 		if((pX - 1 == -1) && (pY - 1 == -1)) {
 			izkina2Da = true;
 		}
@@ -694,7 +520,7 @@ public class JokalariCPU extends Jokalaria {
 		return izkina4Da;
 	}
 	
-	//Método general que devuelve el número de esquina:
+	//metodo orokorra izquinako zenbakia bueltatzen duena:
 	private short zeinIzkinaDa(short pX, short pY) {
 		short izkinaZenb = 0;
 		if(izkina1Da(pX, pY)) {

@@ -22,7 +22,7 @@ public class Teklatua {
 	//String bat irakurtzeko
 
 	public String irakurriString(String pMezua){
-		//ailegatuko saio, inprimatu nahi dugun mezua NUMEROS!!!!!
+		//ailegatuko saio, inprimatu nahi dugun mezua 
 		System.out.println(pMezua);
 		String emaitza = sc.nextLine();//irakurri teklatutik enter bat sartu arte
 		return emaitza;
@@ -44,34 +44,11 @@ public class Teklatua {
 	
 	
 	public String irakurriString(){
-		String mezua=this.sc.nextLine();
-		//faltaria salbuespena de si no mete una H o B
-		
+		String mezua=this.sc.nextLine();		
 		return mezua;
 
 	}
 	
-	/*public String irakurriOrientazioa(String pMezua) throws OrientazioExc{
-		System.out.println(pMezua);
-		String emaitza = sc.nextLine();//irakurri teklatutik enter bat sartu arte	
-		boolean denaOndo=false;
-		do {
-		try{
-			if(emaitza!="B"|| emaitza!="b"||emaitza!="H"||emaitza!="h") {
-			throw new  OrientazioExc("Sartu behar duzu H edo B");
-			}
-			denaOndo=true;
-		}
-		catch (OrientazioExc e){
-			e.mezuaInprimatu();
-			this.irakurriOrientazioa(pMezua);
-		}
-		}
-		while(!denaOndo);
-		return emaitza;
-	}*/
-
-
 	
 	//short bat irakurtzeko
 

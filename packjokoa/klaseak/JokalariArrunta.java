@@ -70,17 +70,14 @@ public class JokalariArrunta extends Jokalaria {
 			   try {
 				   if( pOrientazioa.equals("B") || pOrientazioa.equals("b")) {
 					   if ((pY+pItsas-1>= ( pErrenkadaZutKop) +1)) {
-						  // System.out.println("A VER SI ENTRAAA     IndexOutOfBoundsException");
 						   throw new IndexOutOfBoundsException();
 					   }
 				   }
 				   else if(pOrientazioa.equals("H") || pOrientazioa.equals("h")) {
 					   if ((pX+pItsas-1>= (pErrenkadaZutKop+1))) {
-						  //System.out.println("A VER SI ENTRAAA     IndexOutOfBoundsException");
 						   throw new IndexOutOfBoundsException();
 					   }
 				   }
-				   //System.out.println("A VER SI ENTRAAA     IndexOutOfBoundsException  DESPUES DE THROW");
 				   this.getNireTableroa().itsasontziakJarri(pX, pY, pItsas, pOrientazioa);
 				   denaOndo2=true;
 				   
@@ -95,12 +92,11 @@ public class JokalariArrunta extends Jokalaria {
 				   e.inprimatuMezua();
 				   System.out.println(" ");
 			   }
-		   //}
-		}  while(!denaOndo2);  //do
+		}  while(!denaOndo2); 
 			denaOndo2=false;
 			pItsas++;
 			this.getNireTableroa().tableroaInprimatu();
-		}//while(pItsas<5)
+		}
 	}
 	
 	
