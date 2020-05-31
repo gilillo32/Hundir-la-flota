@@ -50,10 +50,9 @@ public class JokalariArruntaTest {
 		System.out.println("Hirugarren testa");
 		System.out.println("Hau da frogatu beharrekoa test honetan:");
 		System.out.println("-Proba guztietan: Itsasontziak ordenean jartzen direla.");
-		System.out.println("-Itsasontziren bat Tableroan ez dagoen koordenatu batTableroan ez dagoen koordenatu bat");
+		System.out.println("-Itsasontziren bat Tableroan ez dagoen koordenatu batean jartzen bada, Exception egokia saltatuko dela.\n Beraz, itsasontziren bat tablerotik at jartzen saiatuko gara.");
 		j1.itsasontziakJarri(10);
 	}
-	//test4ItsasontziakJarri() etab
 	
 	
 	//koordenatuakAukeratu:
