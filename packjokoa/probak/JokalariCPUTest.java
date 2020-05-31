@@ -70,6 +70,8 @@ public class JokalariCPUTest {
 	
 	@Test
 	public void testGetZentzua() {
+		//zentzua 0 hasieratzen dela dakigunez, horrekin frogatuko dugu funtzionamendua
+		assertEquals(0, j1.getZentzua() );
 		
 	}
 	
