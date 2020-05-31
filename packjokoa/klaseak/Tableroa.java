@@ -66,7 +66,8 @@ public class Tableroa {
 				
 				while(pX<aux) {
 					 this.matrizea[pY][pX]=  (" " + String.valueOf(pItsas));
-					pX++;
+
+					 pX++;
 				}
 			}
 			if(pOrientazio.equals("B") || pOrientazio.equals("b") ) {//pX ez da aldatzen   

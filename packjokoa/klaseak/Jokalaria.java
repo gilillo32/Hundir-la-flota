@@ -81,9 +81,8 @@ public abstract class Jokalaria {
 	
 	public void eguneratuNireTableroa(short pX, short pY, String pEma) {
 		/*
-		 * koordenatuanZerDagoen itzuli duen String-a  " U" bada, ukituen zenbakia (nUkituta) unitate batean inkrementatuko du.
-		 * " U" bada printTableroan dagokion posizioan sartuko du, beste kasuetan " X" sartuko du.
-		 *Azkenik printTableroa inprimatuko du 
+		 * koordenatuanZerDagoen itzuli duen String-a  
+		 * " U" bada nireTableroan dagokion posizioan sartuko du, beste kasuetan " X" sartuko du.
 		 */
 		this.nireTableroa.eguneratuTableroa(pX, pY, pEma);  
 	}
