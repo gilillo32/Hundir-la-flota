@@ -49,7 +49,7 @@ public class JokalariCPU extends Jokalaria {
 				System.out.println(this.albokoKoordenatuak.get(this.zentzua).getKoordenatuakY());
 				
 				konti++;
-				//System.out.println(konti);
+				
 				if ((k.getKoordenatuakY()== -1 || k.getKoordenatuakX()== -1)){
 					if (this.zentzua==3) {
 						this.zentzua=0;

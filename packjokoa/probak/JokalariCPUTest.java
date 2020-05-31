@@ -21,20 +21,25 @@ public class JokalariCPUTest {
 	public void tearDown() throws Exception {
 		j1 = null;
 	}
-/*
+
 	@Test
 	public void testItsasontziakJarri1(){
-		System.out.println("Sartuko dugu ' 1'-eko itsasontsi bat 1, 1 koordenatuan CPU kordenatu horretan itsasontsirik ez jartzen behartzeko eta alboko koordenatuetan");
+		//amaituta ETA ONDO, LEIRE
+		System.out.println("Sartuko dugu ' 1'-eko itsasontsi bat (1, 1) koordenatuan [1-eko bi itsasontzi egngo dira] CPU kordenatu horretan itsasontsirik ez jartzen behartzeko eta alboko koordenatuetan");
 		System.out.println("Kordenatu hauetan ezin izang du itsasotzirik jarri: (0,0), (0,1), (0,2), (1,0), (1,2), (2,0), (2,1), (2,2) ");
+		j1.koordenatuanJarri(1, 1, " 1"); 
 		j1.itsasontziakJarri(10);			
 	}
 
 	@Test
 	public void testItsasontziakJarri2(){
-		
+		System.out.println("Sartuko dugu ' 2'-eko itsasontsi bat (3, 3) koordenatuan  horizontalean  [1-eko bi itsasontzi egngo dira] CPU kordenatu horretan itsasontsirik ez jartzen behartzeko eta alboko koordenatuetan");
+		System.out.println("Kordenatu hauetan ezin izang du itsasotzirik jarri: (2,2), (2,3), (2,4), (1,0), (1,2), (2,0), (2,1), (2,2) ");
+		j1.koordenatuanJarri(3, 3, " 2"); 
+		j1.koordenatuanJarri(4, 3, " 2"); 
 		j1.itsasontziakJarri(10);			
 	}
-	
+/*	
 	@Test
 	public void testItsasontziakJarri3(){
 		
@@ -75,5 +80,11 @@ public class JokalariCPUTest {
 		
 	}
 	
+	@Test
+	public void testErreseteatu() {
+		//zentzua 0 hasieratzen dela dakigunez, horrekin frogatuko dugu funtzionamendua
+		assertEquals(0, j1.getZentzua() );
+		
+	}
 
 }
