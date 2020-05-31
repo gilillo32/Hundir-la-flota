@@ -54,7 +54,7 @@ public class JokalariArruntaTest {
 		j1.itsasontziakJarri(10);
 	}
 	
-	
+	 
 	//koordenatuakAukeratu:
 	
 	@Test
