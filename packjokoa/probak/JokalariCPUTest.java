@@ -173,8 +173,46 @@ public class JokalariCPUTest {
 	
 	@Test
 	public void testKoordenatuaAukeratu3() {
-		//asmatu du eta izkina batean dago
+		//asmatu du eta ertza batean dago
+			//GOIKO ERTZA, aukeratuko dugu 6,0
+		Koordenatuak k = new Koordenatuak((short)(5),(short)(0));
+		Koordenatuak k2 = new Koordenatuak();
+		Koordenatuak k3=new Koordenatuak((short)(6),(short)(0));
+		k2=j1.koordenatuaAukeratu(k, true);
+		assertEquals(k3.getKoordenatuakX(),k2.getKoordenatuakX());
+		assertEquals(k3.getKoordenatuakY(),k2.getKoordenatuakY());
+		
+		j1.erreseteatu();
+
+			//BEHEKO ERTZA, aukeratuko du 6,9
+		k = new Koordenatuak((short)(5),(short)(9));
+		k2 = new Koordenatuak();
+		k3=new Koordenatuak((short)(6),(short)(9));
+		k2=j1.koordenatuaAukeratu(k, true);
+		assertEquals(k3.getKoordenatuakX(),k2.getKoordenatuakX());
+		assertEquals(k3.getKoordenatuakY(),k2.getKoordenatuakY());
+		
+		j1.erreseteatu();
+
+			//ESKUINEKO ERTZA, aukeratuko du 9,4
+		k = new Koordenatuak((short)(9),(short)(5));
+		k2 = new Koordenatuak();
+		k3=new Koordenatuak((short)(9),(short)(4));
+		k2=j1.koordenatuaAukeratu(k, true);
+		assertEquals(k3.getKoordenatuakX(),k2.getKoordenatuakX());
+		assertEquals(k3.getKoordenatuakY(),k2.getKoordenatuakY());
+		
+		j1.erreseteatu();
+
+			//EZKERREKO ERTZA, aukeratuko du 1,5
+		k = new Koordenatuak((short)(0),(short)(5));
+		k2 = new Koordenatuak();
+		k3=new Koordenatuak((short)(1),(short)(5));
+		k2=j1.koordenatuaAukeratu(k, true);
+		assertEquals(k3.getKoordenatuakX(),k2.getKoordenatuakX());
+		assertEquals(k3.getKoordenatuakY(),k2.getKoordenatuakY());
 	}
+	
 	@Test
 	public void testGetZentzua() {
 		//zentzua 0 hasieratzen dela dakigunez, horrekin frogatuko dugu funtzionamendua
