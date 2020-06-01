@@ -170,6 +170,11 @@ public class JokalariCPUTest {
 		assertEquals(k3.getKoordenatuakY(),k2.getKoordenatuakY());
 
 	}
+	
+	@Test
+	public void testKoordenatuaAukeratu3() {
+		//asmatu du eta izkina batean dago
+	}
 	@Test
 	public void testGetZentzua() {
 		//zentzua 0 hasieratzen dela dakigunez, horrekin frogatuko dugu funtzionamendua
