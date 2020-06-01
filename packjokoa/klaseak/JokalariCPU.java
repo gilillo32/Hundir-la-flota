@@ -149,9 +149,7 @@ public class JokalariCPU extends Jokalaria {
 				denaOndo2=false;
 				pItsas++;
 			}
-		 if(pItsas==5) {
 		this.getNireTableroa().tableroaInprimatu();
-		 }
 	 }
 	 
 	 

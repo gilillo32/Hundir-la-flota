@@ -267,7 +267,7 @@ public class BikoteJokalariak {
 							}
 						}
 						
-					//ITSASONTSI BAT HONDORATZEAN SARTZEN DA
+					//ITSASONTZI BAT HONDORATZEAN SARTZEN DA
 						if(this.getZerrenda()[0].getNireTableroa().hondoratutaDago(itsas)) {
 							System.out.println("ZORIONAK " + this.getZerrenda()[1].getIzena() +", hondoratu duzu itsasontzia!!");
 							if (this.getZerrenda()[1] instanceof JokalariCPU) {
@@ -280,7 +280,7 @@ public class BikoteJokalariak {
 					}
 	
 					if( this.getZerrenda()[1].itsasontzirikEz() ) {
-						//ITSASONTZII GUZTIAK HONDORATU DITUENENEAN SARTZEN DA HEMEN, IF HONEK EGITEN DUENA HONAKOA DA:
+						//ITSASONTZI GUZTIAK HONDORATU DITUENENEAN SARTZEN DA HEMEN, IF HONEK EGITEN DUENA HONAKOA DA:
 						//AZKENENGO TIROA EGITEAN UKITU DUENEZ BESTE TIRO BAT EGITEN UTZIKO  LIGUKE, BAINA EZ DUGU TIRORIK EGIN BEHAR, JADA ITSASONTZI GUZTIAK HONDORATU DITUGULAKO
 						//IF HAU HORI EKIDITZEN DU, LOOP-A EZ DUELAKO BESTE BEGIZTA BAT EGINGO.
 						posibleaDa=false;

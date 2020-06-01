@@ -19,6 +19,7 @@ public class JokalariCPUTest {
 
 	@After
 	public void tearDown() throws Exception {
+		j1.erreseteatu();
 		j1 = null;
 	}
 
@@ -87,7 +88,7 @@ public class JokalariCPUTest {
 
 
 	@Test
-	public void testKoordenatuaAukeratu1() {
+	public void testKoordenatuaAukeratu0() {
 		Koordenatuak k = new Koordenatuak();
 		Koordenatuak previousK = new Koordenatuak();
 		//////////////////////////////////////////////////////////
@@ -126,6 +127,23 @@ public class JokalariCPUTest {
 		System.out.println("Lehenengo koordenatua asmatu duenez, eskuinerantz saiakera egin duela konprobatuko dugu:\n" + k1.getKoordenatuakX() + "\n" + k1.getKoordenatuakY());
 		k1 = j1.koordenatuaAukeratu(k1, false);
 		System.out.println("Eskuinerantz saiatzen ura aurkitu duenez, orain gorantz saiatuko da:\n" + k1.getKoordenatuakX() + "\n" + k1.getKoordenatuakY());
+	}
+	
+	@Test
+	public void testKoordenatuaAukeratu1() {
+		//badaki zentzua	mallllllllllllll	
+		Koordenatuak k = new Koordenatuak((short)(4),(short)(3)); 
+		Koordenatuak k1=j1.koordenatuaAukeratu(k, true);
+		Koordenatuak k2=j1.koordenatuaAukeratu(k1, false);
+		Koordenatuak k3=j1.koordenatuaAukeratu(k2, false);
+		System.out.println("Eskuinerantz saiatzen ura aurkitu duenez, orain gorantz saiatuko da:\n" + k3.getKoordenatuakX() + "\n" + k3.getKoordenatuakY());
+		Koordenatuak k4=j1.koordenatuaAukeratu(k2, true);///zentzua asmatuta 2 da
+		System.out.println(j1.getZentzua());
+
+		//konprobatuko dugu ea koordenatua 4,1 den
+		Koordenatuak k5 = new Koordenatuak((short)(4),(short)(2)); 
+		assertEquals(k5.getKoordenatuakX(),k4.getKoordenatuakX());
+		assertEquals(k5.getKoordenatuakY(),k4.getKoordenatuakY());
 	}
 	
 	@Test
