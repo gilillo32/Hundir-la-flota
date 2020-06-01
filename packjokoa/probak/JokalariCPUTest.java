@@ -85,28 +85,32 @@ public class JokalariCPUTest {
 	}
 
 
-/*
+
 	@Test
 	public void testKoordenatuaAukeratu() {
-		boolean emaitza= false;
-		Koordenatuak k= new Koordenatuak();
+		Koordenatuak k = new Koordenatuak();
+		Koordenatuak previousK = new Koordenatuak();
+		//////////////////////////////////////////////////////////
 		//Aurrean ez du asmatu, auzazko koordenatua bueltatezen du
 		k = j1.koordenatuaAukeratu(k, false);
+		previousK = k;
 		assertNotNull(k);
-		if (k.getKoordenatuakX()<10 && k.getKoordenatuakX()>-1) {
-			
-			if (k.getKoordenatuakY() <10 && k.getKoordenatuakY()>-1 ) {
-				emaitza=true;
-			}
-		}
-		assertTrue(emaitza);
-		
+		System.out.println("////////////////////////////////\nKoordenatuen probak:");
+		System.out.println("Lehenengo aldiz randomly aukeratutako koordenatuak hauexek dira:\n" + k.getKoordenatuakX() + "\n" + k.getKoordenatuakY());
+		//--------------------------------------------------
 		//Aurrekoan asmatu du, aurreko txandan esan duen koordenatuaren alboko kordenatua esango du
 			//hainbat kasu daude
-		//Itsasontsi baten bi kasila asmatu baditu, itsasontsiaren zentzua asmatu du eta zentzu horretan bilatuko du
+		//Aurrekoan asmatu lehenengo aldiz:
+		k = j1.koordenatuaAukeratu(k, true);
+		System.out.println("Aurreko koordenatuak hauek ziren:\n" + previousK.getKoordenatuakX() + "\n" + previousK.getKoordenatuakY() + "\nEta koordenatu hori lehenengo aldiz asmatu ostean hauexek dira aukeratutakoak:\n" + k.getKoordenatuakX() + "\n" + k.getKoordenatuakY());
+		previousK = k;
+		//Aurrekoan asmatu bigarren aldiz baina oraingoan ez, beraz, zentzua aldatuko du:
+		k = j1.koordenatuaAukeratu(k, true);
+		System.out.println("Aurreko koordenatuak hauek ziren:\n" + previousK.getKoordenatuakX() + "\n" + previousK.getKoordenatuakY() + "\nEta koordenatu hori bigarren aldiz asmatu ostean hauexek dira aukeratutakoak:\n" + k.getKoordenatuakX() + "\n" + k.getKoordenatuakY());
+		//Itsasontzi baten bi kasila asmatu baditu, itsasontsiaren zentzua asmatu du eta zentzu horretan bilatuko du
 			//ura aurkitzen duenenen kontrako zentzuan begiratuko du lehenengo asmakizunetik(koordenatu horretatik)
 		
-	}*/
+	}
 	
 	@Test
 	public void testGetZentzua() {
