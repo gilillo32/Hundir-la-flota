@@ -34,7 +34,6 @@ public class Tableroa {
 				System.out.print(  this.matrizea[e][z]); //aldi bakoitzean hurrengo lerroan inprimatzen du
 				z++; 
 			}
-			
 			e++;
 			System.out.print("\n");			
 		}
@@ -204,7 +203,6 @@ public class Tableroa {
 					aux++;
 				}
 			}
-
 		}
 		//Bertikalean
 		if (pOrientazio.equals("B") || pOrientazio.equals("b")) {
@@ -244,7 +242,6 @@ public class Tableroa {
 			if(pX!=1  && amEr == this.errenZutKop-1) {
 				while(hutsune && aux<= amEr) {		//EZKERREKO ZUTABEKO KASILAK BEGIRATU	 (azkenengo errenkada da)	
 					if( this.koordenatuanZerDagoen((short) (pX-1), aux) == " U") {
-						//System.out.println( " konprobatuHutsuneak EZK");
 						hutsune = false;
 					}
 					aux++;
@@ -305,7 +302,6 @@ public class Tableroa {
 		short aux=0;
 		short amZut=0;
 		short amEr=0;
-		
 		//orientazioaren arabera prozedura desberdina izango da
 		if ( pOrientazio.equals("h") ) { 
 			//ikusiko dugu ea koordenatua ezkerreko (lehena) ala eskuinekoa (azkena) den
@@ -328,7 +324,6 @@ public class Tableroa {
 					}
 				}
 			}
-						
 			//horizontalean
 			if(azkena) {
 				amZut=pX;
@@ -478,7 +473,6 @@ public class Tableroa {
 		else {
 			itsas=" -";
 		}
-		
 		if(pItsas!=1) {
 			int i=1;
 			int j=1;
