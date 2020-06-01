@@ -87,7 +87,7 @@ public class JokalariCPUTest {
 
 
 	@Test
-	public void testKoordenatuaAukeratu() {
+	public void testKoordenatuaAukeratu1() {
 		Koordenatuak k = new Koordenatuak();
 		Koordenatuak previousK = new Koordenatuak();
 		//////////////////////////////////////////////////////////
@@ -128,6 +128,48 @@ public class JokalariCPUTest {
 		System.out.println("Eskuinerantz saiatzen ura aurkitu duenez, orain gorantz saiatuko da:\n" + k1.getKoordenatuakX() + "\n" + k1.getKoordenatuakY());
 	}
 	
+	@Test
+	public void testKoordenatuaAukeratu2() {
+		//asmatu du eta izkina batean dago
+			//GOIAN EZKERREAN, aukeratuko du 1,0
+		Koordenatuak k = new Koordenatuak((short)(0),(short)(0));
+		Koordenatuak k2 = new Koordenatuak();
+		Koordenatuak k3=new Koordenatuak((short)(1),(short)(0));
+		k2=j1.koordenatuaAukeratu(k, true);
+		assertEquals(k3.getKoordenatuakX(),k2.getKoordenatuakX());
+		assertEquals(k3.getKoordenatuakY(),k2.getKoordenatuakY());
+		
+		j1.erreseteatu();
+		
+			//GOIAN ESKUINEAN, aukeratuko du 8,0
+		k = new Koordenatuak((short)(9),(short)(0));
+		k2 = new Koordenatuak();
+		k3=new Koordenatuak((short)(8),(short)(0));
+		k2=j1.koordenatuaAukeratu(k, true);
+		assertEquals(k3.getKoordenatuakX(),k2.getKoordenatuakX());
+		assertEquals(k3.getKoordenatuakY(),k2.getKoordenatuakY());
+		
+		j1.erreseteatu();
+
+			//BEHEAN EZKERREAN, aukeratuko du 1,9
+		k = new Koordenatuak((short)(0),(short)(9));
+		k2 = new Koordenatuak();
+		k3=new Koordenatuak((short)(1),(short)(9));
+		k2=j1.koordenatuaAukeratu(k, true);
+		assertEquals(k3.getKoordenatuakX(),k2.getKoordenatuakX());
+		assertEquals(k3.getKoordenatuakY(),k2.getKoordenatuakY());
+		
+		j1.erreseteatu();
+		
+			//BEHEAN ESKUINEAN, aukeratuko du 9,8
+		k = new Koordenatuak((short)(9),(short)(9));
+		k2 = new Koordenatuak();
+		k3=new Koordenatuak((short)(9),(short)(8));
+		k2=j1.koordenatuaAukeratu(k, true);
+		assertEquals(k3.getKoordenatuakX(),k2.getKoordenatuakX());
+		assertEquals(k3.getKoordenatuakY(),k2.getKoordenatuakY());
+
+	}
 	@Test
 	public void testGetZentzua() {
 		//zentzua 0 hasieratzen dela dakigunez, horrekin frogatuko dugu funtzionamendua

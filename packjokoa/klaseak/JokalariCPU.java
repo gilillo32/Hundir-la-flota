@@ -511,7 +511,7 @@ public class JokalariCPU extends Jokalaria {
 		return izkina4Da;
 	}
 	
-	//metodo orokorra izquinako zenbakia bueltatzen duena:
+	//metodo orokorra izkinako zenbakia bueltatzen duena:
 	private short zeinIzkinaDa(short pX, short pY) {
 		short izkinaZenb = 0;
 		if(izkina1Da(pX, pY)) {
