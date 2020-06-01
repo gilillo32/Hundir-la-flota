@@ -95,21 +95,37 @@ public class JokalariCPUTest {
 		k = j1.koordenatuaAukeratu(k, false);
 		previousK = k;
 		assertNotNull(k);
-		System.out.println("////////////////////////////////\nKoordenatuen probak:");
+		System.out.println("////////////////////////////////\nKoordenatuen probak:\nLehenengo kasua: Zentzua lehenengoan asmatuko du");
 		System.out.println("Lehenengo aldiz randomly aukeratutako koordenatuak hauexek dira:\n" + k.getKoordenatuakX() + "\n" + k.getKoordenatuakY());
 		//--------------------------------------------------
 		//Aurrekoan asmatu du, aurreko txandan esan duen koordenatuaren alboko kordenatua esango du
 			//hainbat kasu daude
 		//Aurrekoan asmatu lehenengo aldiz:
 		k = j1.koordenatuaAukeratu(k, true);
-		System.out.println("Aurreko koordenatuak hauek ziren:\n" + previousK.getKoordenatuakX() + "\n" + previousK.getKoordenatuakY() + "\nEta koordenatu hori lehenengo aldiz asmatu ostean hauexek dira aukeratutakoak:\n" + k.getKoordenatuakX() + "\n" + k.getKoordenatuakY());
+		System.out.println("Koordenatu hori lehenengo aldiz asmatu ostean hauexek dira aukeratutakoak:\n" + k.getKoordenatuakX() + "\n" + k.getKoordenatuakY());
 		previousK = k;
 		//Aurrekoan asmatu bigarren aldiz baina oraingoan ez, beraz, zentzua aldatuko du:
 		k = j1.koordenatuaAukeratu(k, true);
-		System.out.println("Aurreko koordenatuak hauek ziren:\n" + previousK.getKoordenatuakX() + "\n" + previousK.getKoordenatuakY() + "\nEta koordenatu hori bigarren aldiz asmatu ostean hauexek dira aukeratutakoak:\n" + k.getKoordenatuakX() + "\n" + k.getKoordenatuakY());
+		System.out.println("Kordenatu hori bigarren aldiz asmatu ostean hauexek dira aukeratutakoak:\n" + k.getKoordenatuakX() + "\n" + k.getKoordenatuakY());
 		//Itsasontzi baten bi kasila asmatu baditu, itsasontsiaren zentzua asmatu du eta zentzu horretan bilatuko du
 			//ura aurkitzen duenenen kontrako zentzuan begiratuko du lehenengo asmakizunetik(koordenatu horretatik)
+		//Orain, bi koordenatu asmatu ostean, esango diogu azkenetik esandako koordenatua ez duela asmatu, beraz, esan duen lehenengo koordenatura bueltatuko du eta kontrako zentzuan begiratuko du:
+		k = j1.koordenatuaAukeratu(k, false);
+		System.out.println("Koordenatu hori ez duenez asmatu, baina zentzua dakienez, hauek dira aukeratutakoak:\n" + k.getKoordenatuakX() + "\n" + k.getKoordenatuakY());
 		
+		///////////////////////////////////////////////////////////
+		System.out.println(".-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\n");
+		System.out.println("Bigarren kasua: zentzua ez du lehenengoan aurkituko, bigarrenean baizik");
+		j1.erreseteatu();
+		//Orain, zentzua aldatzera behartuko dugu, lehenengo aldiz ukituko du eta itsasontzia bertikalean egongo da:
+		Koordenatuak k1 = new Koordenatuak();
+		k1 = j1.koordenatuaAukeratu(k1, false);
+		previousK = k1;
+		System.out.println("Lehenengo aldiz randomly aukeratutako koordenatuak hauexek dira:\n" + k1.getKoordenatuakX() + "\n" + k1.getKoordenatuakY());
+		k1 = j1.koordenatuaAukeratu(k1, true);
+		System.out.println("Lehenengo koordenatua asmatu duenez, eskuinerantz saiakera egin duela konprobatuko dugu:\n" + k1.getKoordenatuakX() + "\n" + k1.getKoordenatuakY());
+		k1 = j1.koordenatuaAukeratu(k1, false);
+		System.out.println("Eskuinerantz saiatzen ura aurkitu duenez, orain gorantz saiatuko da:\n" + k1.getKoordenatuakX() + "\n" + k1.getKoordenatuakY());
 	}
 	
 	@Test
