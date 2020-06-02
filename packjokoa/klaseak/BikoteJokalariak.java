@@ -77,7 +77,7 @@ public class BikoteJokalariak {
 		for(int h = 0; h<50; h++) {
 			System.out.println("\n");
 		}
-	//JokalariCPU-k itsasontziak jarriko ditu bere nireTableroa atributuan
+	//Bigarren jokalariak, CPU edo Arrunta itsasontziak jarriko ditu bere nireTableroa atributuan
 		System.out.println(this.getZerrenda()[1].getIzena() + ", itsasontziak jartzeko unea heldu da!");
 		System.out.println(" ");
 		this.getZerrenda()[1].inprimatuNireTableroa();
@@ -119,7 +119,6 @@ public class BikoteJokalariak {
 		boolean aurrekoanAsmatu =false;
 		Koordenatuak k1= new Koordenatuak();
 		
-	//JokalariArrunta:
 			System.out.println(" ");
 			System.out.println(" ");
 			if(this.norenKontra.equals("CPU")) {
@@ -168,6 +167,7 @@ public class BikoteJokalariak {
 				}input_lehenengo.close();
 				this.zerrenda[0].getPrintTableroa().tableroaInprimatu();
 			}
+//JokalariArrunta:
 		do {
 			Koordenatuak k= ((JokalariArrunta)this.getZerrenda()[0]).koordenatuaAukeratu();
 			short pX= (short) (k.getKoordenatuakX() + 1);
@@ -209,7 +209,7 @@ public class BikoteJokalariak {
 			}
 			
 		}while(posibleaDa);
-		
+//Bigarren jokalaria		
 	switch(this.norenKontra) {
 	case "CPU":
 		//JokalariCPU 
