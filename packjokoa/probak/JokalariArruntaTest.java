@@ -25,7 +25,7 @@ public class JokalariArruntaTest {
 	//hay que imprimir la matriz vacia
 	
 	@Test
-	public void testItsasontziakJarri1() {
+	public void testItsasontziakJarri01() {
 		System.out.println("\nMetodoa testean: itsasontziakJarri1");
 		System.out.println("\nMetodo hau konprobatzeko kontsolatik egin behar da, eta hainbat kasu frogatu behar dira, ikusteko exception egokiak botatzen duela etab egin behar duenean");
 		System.out.println("Hau da frogatu beharrekoa test honetan:");
@@ -35,16 +35,16 @@ public class JokalariArruntaTest {
 	}
 	
 	@Test
-	public void testItsasontziakJarri2() {
+	public void testItsasontziakJarri02() {
 		System.out.println("\nMetodoa testean: itsasontziakJarri2");
 		System.out.println("Hau da frogatu beharrekoa test honetan:");
 		System.out.println("-Proba guztietan: Itsasontsiak ordenean jartzen direla.");
-		System.out.println("-Itsasontziren bat jada itsasontsi bat jarri dugun koordenatuan jartzen saituko gara eta exception bat botako du, KoordenatuEzEgokiak deitu duguna, eta koordenatu berriak sartzeko eskatuko du.");
+		System.out.println("-Itsasontziren bat jada itsasontzi bat jarri dugun koordenatuan jartzen saituko gara eta exception bat botako du, KoordenatuEzEgokiak deitu duguna, eta koordenatu berriak sartzeko eskatuko du.");
 		j1.itsasontziakJarri(10);
 	}
 	
 	@Test
-	public void testItsasontziakJarri3() {
+	public void testItsasontziakJarri03() {
 		System.out.println("\nMetodoa testean: itsasontziakJarri3");
 		System.out.println("Hau da frogatu beharrekoa test honetan:");
 		System.out.println("-Proba guztietan: Itsasontziak ordenean jartzen direla.");
@@ -53,7 +53,7 @@ public class JokalariArruntaTest {
 	}
 	
 	@Test
-	public void testItsasontziakJarri4() {
+	public void testItsasontziakJarri04() {
 		System.out.println("\nMetodoa testean: itsasontziakJarri4");
 		System.out.println("Hau da frogatu beharrekoa test honetan:");
 		System.out.println("-Proba guztietan: Itsasontziak ordenean jartzen direla.");
@@ -62,7 +62,7 @@ public class JokalariArruntaTest {
 	}
 	
 	@Test
-	public void testItsasontziakJarri5() {
+	public void testItsasontziakJarri05() {
 		System.out.println("\nMetodoa testean: itsasontziakJarri5");
 		System.out.println("Hau da frogatu beharrekoa test honetan:");
 		System.out.println("-Proba guztietan: Itsasontziak ordenean jartzen direla.");
@@ -71,7 +71,7 @@ public class JokalariArruntaTest {
 	}
 	
 	@Test
-	public void testItsasontziakJarri6() {
+	public void testItsasontziakJarri06() {
 		System.out.println("\nMetodoa testean: itsasontziakJarri6");
 		System.out.println("Hau da frogatu beharrekoa test honetan:");
 		System.out.println("-Proba guztietan: Itsasontziak ordenean jartzen direla.");
@@ -80,7 +80,7 @@ public class JokalariArruntaTest {
 	}
 	
 	@Test
-	public void testItsasontziakJarri7() {
+	public void testItsasontziakJarri07() {
 		System.out.println("\nMetodoa testean: itsasontziakJarri7");
 		System.out.println("Hau da frogatu beharrekoa test honetan:");
 		System.out.println("-Proba guztietan: Itsasontziak ordenean jartzen direla.");
@@ -89,7 +89,7 @@ public class JokalariArruntaTest {
 	}
 	
 	@Test
-	public void testItsasontziakJarri8() {
+	public void testItsasontziakJarri08() {
 		System.out.println("\nMetodoa testean: itsasontziakJarri8");
 		System.out.println("Hau da frogatu beharrekoa test honetan:");
 		System.out.println("-Proba guztietan: Itsasontziak ordenean jartzen direla.");
@@ -98,7 +98,7 @@ public class JokalariArruntaTest {
 	}
 	
 	@Test
-	public void testItsasontziakJarri9() {
+	public void testItsasontziakJarri09() {
 		System.out.println("\nMetodoa testean: itsasontziakJarri9");
 		System.out.println("Hau da frogatu beharrekoa test honetan:");
 		System.out.println("-Proba guztietan: Itsasontziak ordenean jartzen direla.");
