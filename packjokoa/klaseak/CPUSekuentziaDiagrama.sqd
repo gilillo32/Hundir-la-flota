@@ -1870,16 +1870,41 @@ if(this.zeinIzkinaDa(pX, pY) == 0)</old>
               </java.beans.PropertyChangeSupport>
             </listeners>
             <constraint>
-              <height>372</height>
-              <width>683</width>
-              <x>237</x>
-              <y>1845</y>
+              <height>386</height>
+              <width>848</width>
+              <x>239</x>
+              <y>1832</y>
             </constraint>
             <sourceConnections/>
             <targetConnections/>
             <children/>
             <filterProperty/>
             <content>int konti=0;&#xd;
+	do {&#xd;
+		k=this.albokoKoordenatuak.get(this.zentzua); &#xd;
+		konti++;&#xd;
+		&#xd;
+		if ((k.getKoordenatuakY()== -1 || k.getKoordenatuakX()== -1)){&#xd;
+			if (this.zentzua==3) {&#xd;
+				this.zentzua=0;&#xd;
+			}&#xd;
+			else if (this.zentzua!=3) {&#xd;
+				this.zentzua++;&#xd;
+			}&#xd;
+		}&#xd;
+				&#xd;
+		//-1 bueltatuko du X egotekotan &#xd;
+		else if(this.getPrintTableroa().zeItsasontziHondoratu((short)(k.getKoordenatuakX()+1), (short)(k.getKoordenatuakY()+1))==-1 ) {&#xd;
+			if (this.zentzua==3) {&#xd;
+				this.zentzua=0;&#xd;
+			}&#xd;
+			else if (this.zentzua!=3) {&#xd;
+				this.zentzua++;&#xd;
+			}&#xd;
+		}		&#xd;
+	}while((k.getKoordenatuakY()== -1 || k.getKoordenatuakX()== -1) || this.getPrintTableroa().zeItsasontziHondoratu((short)(k.getKoordenatuakX()+1), (short)(k.getKoordenatuakY()+1))==-1 &amp;&amp; konti&lt;=4);&#xd;
+			</content>
+            <old>int konti=0;&#xd;
 do {&#xd;
 	k=this.albokoKoordenatuak.get(this.zentzua);&#xd;
 	konti++;&#xd;
@@ -1901,29 +1926,6 @@ do {&#xd;
 	}&#xd;
 				&#xd;
 }while((k.getKoordenatuakY()== -1 || k.getKoordenatuakX()== -1) || this.esandakoKoordenatuak.contains(k) &amp;&amp; konti&lt;=4);&#xd;
-			</content>
-            <old>int konti=0;&#xd;
-			do {&#xd;
-				k=this.albokoKoordenatuak.get(this.zentzua);&#xd;
-				konti++;&#xd;
-				if ((k.getKoordenatuakY()== -1 || k.getKoordenatuakX()== -1)){&#xd;
-					if (this.zentzua==3) {&#xd;
-						this.zentzua=0;&#xd;
-					}&#xd;
-					else if (this.zentzua!=3) {&#xd;
-						this.zentzua++;&#xd;
-					}&#xd;
-				}&#xd;
-				if((this.esandakoKoordenatuak.contains(k))) {&#xd;
-					if (this.zentzua==3) {&#xd;
-						this.zentzua=0;&#xd;
-					}&#xd;
-					else if (this.zentzua!=3) {&#xd;
-						this.zentzua++;&#xd;
-					}&#xd;
-				}&#xd;
-				&#xd;
-			}while((k.getKoordenatuakY()== -1 || k.getKoordenatuakX()== -1) || this.esandakoKoordenatuak.contains(k) &amp;&amp; konti&lt;=4);&#xd;
 			</old>
           </net.java.amateras.uml.model.NoteModel>
           <net.java.amateras.uml.sequencediagram.model.ActivationModel reference="../net.java.amateras.uml.sequencediagram.model.ActivationModel[4]/sourceConnections/net.java.amateras.uml.sequencediagram.model.SyncMessageModel/target/sourceConnections/net.java.amateras.uml.sequencediagram.model.SyncMessageModel/target/sourceConnections/net.java.amateras.uml.sequencediagram.model.SyncMessageModel/target/ownerLine/children/net.java.amateras.uml.sequencediagram.model.ActivationModel/sourceConnections/net.java.amateras.uml.sequencediagram.model.SyncMessageModel[3]/target"/>
@@ -3584,8 +3586,8 @@ else {&#xd;
                         <constraint>
                           <height>64</height>
                           <width>231</width>
-                          <x>797</x>
-                          <y>2282</y>
+                          <x>850</x>
+                          <y>2267</y>
                         </constraint>
                         <sourceConnections/>
                         <targetConnections/>
@@ -8265,16 +8267,18 @@ else {&#xd;
             </listeners>
             <constraint>
               <height>34</height>
-              <width>476</width>
-              <x>296</x>
-              <y>2359</y>
+              <width>1003</width>
+              <x>266</x>
+              <y>2361</y>
             </constraint>
             <sourceConnections/>
             <targetConnections/>
             <children/>
             <filterProperty/>
-            <content>if (k.getKoordenatuakY()== -1 &amp;&amp; k.getKoordenatuakX()== -1)</content>
-            <old></old>
+            <content>if (k.getKoordenatuakY()== -1 &amp;&amp; k.getKoordenatuakX()== -1 || this.getPrintTableroa().zeItsasontziHondoratu((short)(k.getKoordenatuakX()+1), (short)(k.getKoordenatuakY()+1))==-1 ) {&#xd;
+</content>
+            <old>			if (k.getKoordenatuakY()== -1 &amp;&amp; k.getKoordenatuakX()== -1 || this.getPrintTableroa().zeItsasontziHondoratu((short)(k.getKoordenatuakX()+1), (short)(k.getKoordenatuakY()+1))==-1 ) {&#xd;
+</old>
           </net.java.amateras.uml.model.NoteModel>
         </children>
         <filterProperty/>

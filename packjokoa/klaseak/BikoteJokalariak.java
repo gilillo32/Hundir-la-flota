@@ -235,7 +235,7 @@ public class BikoteJokalariak {
 				}input_cpu.close();
 				System.out.println(" ");
 			posibleaDa=true;
-			do {			
+			do {			 
 				k1= ((JokalariCPU)this.getZerrenda()[1]).koordenatuaAukeratu(k1, aurrekoanAsmatu);
 				short pX= (short) (k1.getKoordenatuakX() +1);
 				short pY = (short) (k1.getKoordenatuakY()+1);

@@ -357,10 +357,6 @@ public class JokalariCPU extends Jokalaria {
 												 break;
 											 }
 										 }
-										 else {
-											 pX = -1;
-											 pY = -1;
-										 }
 									 }
 								 }
 							 }
