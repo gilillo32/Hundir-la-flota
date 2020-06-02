@@ -135,16 +135,17 @@ public class JokalariCPUTest {
 		Koordenatuak k = new Koordenatuak((short)(4),(short)(3)); 
 		Koordenatuak k1=j1.koordenatuaAukeratu(k, true);
 		Koordenatuak k2=j1.koordenatuaAukeratu(k1, false);
+		System.out.println(j1.getZentzua());
 		Koordenatuak k3=j1.koordenatuaAukeratu(k2, false);
-		System.out.println("Eskuinerantz saiatzen ura aurkitu duenez, orain gorantz saiatuko da:\n" + k3.getKoordenatuakX() + "\n" + k3.getKoordenatuakY());
-		Koordenatuak k4=j1.koordenatuaAukeratu(k2, true);///zentzua asmatuta 2 da
+		System.out.println(j1.getZentzua());
+		Koordenatuak k4=j1.koordenatuaAukeratu(k3, true);///zentzua asmatuta 2 da
 		System.out.println(j1.getZentzua());
 
 		//konprobatuko dugu ea koordenatua 4,1 den
 		Koordenatuak k5 = new Koordenatuak((short)(4),(short)(2)); 
 		assertEquals(k5.getKoordenatuakX(),k4.getKoordenatuakX());
 		assertEquals(k5.getKoordenatuakY(),k4.getKoordenatuakY());
-	}
+	} 
 	
 	@Test
 	public void testKoordenatuaAukeratu2() {

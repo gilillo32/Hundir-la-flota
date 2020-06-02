@@ -179,7 +179,7 @@ public class BikoteJokalariak {
 			//AZTERTUKO NAHI  DUGU EA ITSASONTZIA HONDORATU DUEN, HORRETARAKO ETSAIAREN nireTableroa ALDATUKO DUGU UKITZEN DUENEAN GEROAGO getNireTableroa().hondoratutaDago(itsas) ETSAIAREN TABLEROAN METODOA ERABILI AHAL IZATEKO
 				//ikusiko dugu ze itsasontzi dagoen koordenatuan				
 				int itsas=this.getZerrenda()[1].getNireTableroa().zeItsasontziHondoratu(pX, pY);
-				this.getZerrenda()[1].eguneratuNireTableroa(pX, pY, emaitza);
+				this.getZerrenda()[1].eguneratuNireTableroa(pX, pY, emaitza); 
 			
 			
 				if(emaitza!=" U") {
