@@ -77,7 +77,7 @@ public class BikoteJokalariak {
 		for(int h = 0; h<50; h++) {
 			System.out.println("\n");
 		}
-	//JokalariCPU-k itsasontziak jarriko ditu bere nireTableroa atributuan
+	//Bigarren jokalariak, CPU edo Arrunta itsasontziak jarriko ditu bere nireTableroa atributuan
 		System.out.println(this.getZerrenda()[1].getIzena() + ", itsasontziak jartzeko unea heldu da!");
 		System.out.println(" ");
 		this.getZerrenda()[1].inprimatuNireTableroa();
