@@ -20,16 +20,6 @@ public class Teklatua {
 	}
 
 	//String bat irakurtzeko
-
-/*	public String irakurriString(String pMezua){
-		//ailegatuko saio, inprimatu nahi dugun mezua 
-		System.out.println(pMezua);
-		String emaitza = sc.nextLine();//irakurri teklatutik enter bat sartu arte
-		return emaitza;
-	}*/
-
-	
-	
 	
 	public String irakurriOrientazioa(String pMezua, String pH, String pB) { 
 		String emaitza; 
@@ -38,9 +28,6 @@ public class Teklatua {
 		}while(!emaitza.equalsIgnoreCase(pH) && !emaitza.equalsIgnoreCase(pB)); 
 		return emaitza; 
 		} 
-	
-	
-	
 	
 	
 	public String irakurriString(){
