@@ -9,7 +9,7 @@ import org.junit.Test;
 import klaseak.JokalariCPU;
 import klaseak.Koordenatuak;
 
-public class JokalariCPUTest {
+public class CPUTest {
 	private JokalariCPU j1;
 
 	@Before
