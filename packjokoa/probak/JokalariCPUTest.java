@@ -144,7 +144,7 @@ public class JokalariCPUTest {
 		System.out.println(j1.getZentzua());
 		Koordenatuak k4=j1.koordenatuaAukeratu(k3, true);///zentzua asmatuta 2 da
 		System.out.println(j1.getZentzua());
-
+/// s,m v,ms
 		//konprobatuko dugu ea koordenatua 4,1 den
 		Koordenatuak k5 = new Koordenatuak((short)(3),(short)(3)); 
 		assertEquals(k5.getKoordenatuakX(),k4.getKoordenatuakX());
