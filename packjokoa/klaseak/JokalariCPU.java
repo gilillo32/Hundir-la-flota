@@ -46,27 +46,19 @@ public class JokalariCPU extends Jokalaria {
 				konti++;
 				
 				if ((k.getKoordenatuakY()== -1 || k.getKoordenatuakX()== -1)){
-					if (this.zentzua==3) {
-						this.zentzua=0;
-					}
-					else if (this.zentzua!=3) {
 						this.zentzua++;
-					}
+					
 				}
 				
 				//-1 bueltatuko du X egotekotan 
 				else if(this.getPrintTableroa().zeItsasontziHondoratu((short)(k.getKoordenatuakX()+1), (short)(k.getKoordenatuakY()+1))==-1 ) {
-					if (this.zentzua==3) {
-						this.zentzua=0;
-					}
-					else if (this.zentzua!=3) {
 						this.zentzua++;
-					}
+					
 				}
 				
 			}while((k.getKoordenatuakY()== -1 || k.getKoordenatuakX()== -1) || this.getPrintTableroa().zeItsasontziHondoratu((short)(k.getKoordenatuakX()+1), (short)(k.getKoordenatuakY()+1))==-1 && konti<=4);
 			
-		}
+	 	} 
 		else if(pAurrekoanAsmatu && this.albokoKoordenatuak.size()!=0) { //zentzua asmatu du eta koordenatuak zentzu horretan aukeratu
 			k= this.zentzuBateanKoordenatuBerriak(pK1.getKoordenatuakX(), pK1.getKoordenatuakY(), this.zentzua);
 			if (k.getKoordenatuakY()== -1 && k.getKoordenatuakX()== -1 || this.getPrintTableroa().zeItsasontziHondoratu((short)(k.getKoordenatuakX()+1), (short)(k.getKoordenatuakY()+1))==-1 ) {
@@ -339,7 +331,6 @@ public class JokalariCPU extends Jokalaria {
 									 }
 									 else {
 										 //Beheko eskumako izkina bada:
-										 if(this.zeinIzkinaDa(pX, pY) == 4) {
 											 switch(pZentzua) {
 											 case 0:
 												 pX = -1;
@@ -356,7 +347,7 @@ public class JokalariCPU extends Jokalaria {
 												 pY = -1;
 												 break;
 											 }
-										 }
+										 
 									 }
 								 }
 							 }

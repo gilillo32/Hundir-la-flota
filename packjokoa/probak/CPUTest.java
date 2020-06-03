@@ -131,27 +131,47 @@ public class CPUTest {
 	
 	@Test
 	public void testKoordenatuaAukeratu1() {
-		//badaki zentzua	
+	//konprobatuko dugu lehenik eta behin eskuinean begiratzen duela
 		Koordenatuak k = new Koordenatuak((short)(4),(short)(3)); 
 		Koordenatuak k1=j1.koordenatuaAukeratu(k, true);//6,4 itzuli
 		j1.eguneratuPrintTableroa((short)(6),(short)(4), " X");
-
-		Koordenatuak k2=j1.koordenatuaAukeratu(k1, false);//5,3 itzuli
+		//konprobatuko dugu koordenatua 5,3 dela
+		Koordenatuak k2 = new Koordenatuak((short)(5),(short)(3)); 
+		assertEquals(k2.getKoordenatuakX(),k1.getKoordenatuakX());
+		assertEquals(k2.getKoordenatuakY(),k1.getKoordenatuakY());
+		
+	//konprobatuko dugu orain goian begiratzen duela
+		k1=j1.koordenatuaAukeratu(k1, false);//5,3 itzuli
 		j1.eguneratuPrintTableroa((short)(5),(short)(3), " X");
-
-		Koordenatuak k3=j1.koordenatuaAukeratu(k2, false);//4,4 itzuli
+		//konprobatuko dugu koordenatua 4,2 dela
+		k2 = new Koordenatuak((short)(4),(short)(2)); 
+		assertEquals(k2.getKoordenatuakX(),k1.getKoordenatuakX());
+		assertEquals(k2.getKoordenatuakY(),k1.getKoordenatuakY());
+	
+	//konprobatuko dugu orain ezkerrean begiratzen duela
+		k1=j1.koordenatuaAukeratu(k1, false);//4,4 itzuli
 		j1.eguneratuPrintTableroa((short)(4),(short)(4), " X");
+		//konprobatuko dugu koordenatua 3,3 dela
+		k2 = new Koordenatuak((short)(3),(short)(3)); 
+		assertEquals(k2.getKoordenatuakX(),k1.getKoordenatuakX());
+		assertEquals(k2.getKoordenatuakY(),k1.getKoordenatuakY());
 		
-		//zentzua badaki 2 da
-		assertEquals(2,j1.getZentzua());
-		//konprobatuko dugu ea koordenatua 3,3 den
-		Koordenatuak k4 = new Koordenatuak((short)(3),(short)(3)); 
-		assertEquals(k4.getKoordenatuakX(),k3.getKoordenatuakX());
-		assertEquals(k4.getKoordenatuakY(),k3.getKoordenatuakY());
+	//konprobatuko dugu azkenik behean begiratzen duela
+		k1=j1.koordenatuaAukeratu(k1, false);//5,5 itzuli
+		j1.eguneratuPrintTableroa((short)(6),(short)(6), " X");
+		//konprobatuko dugu koordenatua 4,4 dela
+		k2 = new Koordenatuak((short)(4),(short)(4)); 
+		assertEquals(k2.getKoordenatuakX(),k1.getKoordenatuakX());
+		assertEquals(k2.getKoordenatuakY(),k1.getKoordenatuakY());
 		
-		//ç		
-		Koordenatuak k5=j1.koordenatuaAukeratu(k3, true);///zentzua asmatuta 2 da
-		
+	//berriro false da zentzua=0
+		k1=j1.koordenatuaAukeratu(k1, false);//6,4 itzuli
+		j1.eguneratuPrintTableroa((short)(6),(short)(4), " X");
+		System.out.println("zentzua"+ j1.getZentzua());
+		//konprobatuko dugu koordenatua 5,3 dela
+		k2 = new Koordenatuak((short)(5),(short)(3)); 
+		assertEquals(k2.getKoordenatuakX(),k1.getKoordenatuakX());
+		assertEquals(k2.getKoordenatuakY(),k1.getKoordenatuakY());
 	} 
 	
 	@Test

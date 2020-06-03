@@ -114,37 +114,51 @@ public class JokalariCPUTest {
 		k = j1.koordenatuaAukeratu(k, false);
 		System.out.println("Koordenatu hori ez duenez asmatu, baina zentzua dakienez, hauek dira aukeratutakoak:\n" + k.getKoordenatuakX() + "\n" + k.getKoordenatuakY());
 		
-		///////////////////////////////////////////////////////////
-		System.out.println(".-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\n");
-		System.out.println("Bigarren kasua: zentzua ez du lehenengoan aurkituko, bigarrenean baizik");
-		j1.erreseteatu();
-		//Orain, zentzua aldatzera behartuko dugu, lehenengo aldiz ukituko du eta itsasontzia bertikalean egongo da:
-		Koordenatuak k1 = new Koordenatuak();
-		k1 = j1.koordenatuaAukeratu(k1, false);
-		previousK = k1;
-		System.out.println("Lehenengo aldiz randomly aukeratutako koordenatuak hauexek dira:\n" + k1.getKoordenatuakX() + "\n" + k1.getKoordenatuakY());
-		k1 = j1.koordenatuaAukeratu(k1, true);
-		System.out.println("Lehenengo koordenatua asmatu duenez, eskuinerantz saiakera egin duela konprobatuko dugu:\n" + k1.getKoordenatuakX() + "\n" + k1.getKoordenatuakY());
-		k1 = j1.koordenatuaAukeratu(k1, false);
-		System.out.println("Eskuinerantz saiatzen ura aurkitu duenez, orain gorantz saiatuko da:\n" + k1.getKoordenatuakX() + "\n" + k1.getKoordenatuakY());
 	}
 	
 	@Test
 	public void testKoordenatuaAukeratu01() {
-		//badaki zentzua	mallllllllllllll	
+	//konprobatuko dugu lehenik eta behin eskuinean begiratzen duela
 		Koordenatuak k = new Koordenatuak((short)(4),(short)(3)); 
-		Koordenatuak k1=j1.koordenatuaAukeratu(k, true);
-		Koordenatuak k2=j1.koordenatuaAukeratu(k1, false);
-		System.out.println(j1.getZentzua());
-		Koordenatuak k3=j1.koordenatuaAukeratu(k2, false);
-		System.out.println(j1.getZentzua());
-		Koordenatuak k4=j1.koordenatuaAukeratu(k3, true);///zentzua asmatuta 2 da
-		System.out.println(j1.getZentzua());
-
-		//konprobatuko dugu ea koordenatua 4,1 den
-		Koordenatuak k5 = new Koordenatuak((short)(4),(short)(2)); 
-		assertEquals(k5.getKoordenatuakX(),k4.getKoordenatuakX());
-		assertEquals(k5.getKoordenatuakY(),k4.getKoordenatuakY());
+		Koordenatuak k1=j1.koordenatuaAukeratu(k, true);//6,4 itzuli
+		j1.eguneratuPrintTableroa((short)(6),(short)(4), " X");
+		//konprobatuko dugu koordenatua 5,3 dela
+		Koordenatuak k2 = new Koordenatuak((short)(5),(short)(3)); 
+		assertEquals(k2.getKoordenatuakX(),k1.getKoordenatuakX());
+		assertEquals(k2.getKoordenatuakY(),k1.getKoordenatuakY());
+		
+	//konprobatuko dugu orain goian begiratzen duela
+		k1=j1.koordenatuaAukeratu(k1, false);//5,3 itzuli
+		j1.eguneratuPrintTableroa((short)(5),(short)(3), " X");
+		//konprobatuko dugu koordenatua 4,2 dela
+		k2 = new Koordenatuak((short)(4),(short)(2)); 
+		assertEquals(k2.getKoordenatuakX(),k1.getKoordenatuakX());
+		assertEquals(k2.getKoordenatuakY(),k1.getKoordenatuakY());
+	
+	//konprobatuko dugu orain ezkerrean begiratzen duela
+		k1=j1.koordenatuaAukeratu(k1, false);//4,4 itzuli
+		j1.eguneratuPrintTableroa((short)(4),(short)(4), " X");
+		//konprobatuko dugu koordenatua 3,3 dela
+		k2 = new Koordenatuak((short)(3),(short)(3)); 
+		assertEquals(k2.getKoordenatuakX(),k1.getKoordenatuakX());
+		assertEquals(k2.getKoordenatuakY(),k1.getKoordenatuakY());
+		
+	//konprobatuko dugu azkenik behean begiratzen duela
+		k1=j1.koordenatuaAukeratu(k1, false);//5,5 itzuli
+		j1.eguneratuPrintTableroa((short)(6),(short)(6), " X");
+		//konprobatuko dugu koordenatua 4,4 dela
+		k2 = new Koordenatuak((short)(4),(short)(4)); 
+		assertEquals(k2.getKoordenatuakX(),k1.getKoordenatuakX());
+		assertEquals(k2.getKoordenatuakY(),k1.getKoordenatuakY());
+		
+	//berriro false da zentzua=0
+		k1=j1.koordenatuaAukeratu(k1, false);//6,4 itzuli
+		j1.eguneratuPrintTableroa((short)(6),(short)(4), " X");
+		System.out.println("zentzua"+ j1.getZentzua());
+		//konprobatuko dugu koordenatua 5,3 dela
+		k2 = new Koordenatuak((short)(4),(short)(4)); 
+		assertEquals(k2.getKoordenatuakX(),k1.getKoordenatuakX());
+		assertEquals(k2.getKoordenatuakY(),k1.getKoordenatuakY());
 	} 
 	
 	@Test
@@ -232,15 +246,33 @@ public class JokalariCPUTest {
 		assertEquals(k3.getKoordenatuakY(),k2.getKoordenatuakY());
 	}
 	
-	/*
-	 * 
-	 * 			HUECO PARA PAULA
-	 * 
-	 * 
-	 * */
+	@Test
+	public void testKoordenatuaAukeratu04() {
+		//erdian dago
+		Koordenatuak k = new Koordenatuak((short)(5),(short)(5)); 
+		Koordenatuak k1=j1.koordenatuaAukeratu(k, true);
+		j1.eguneratuPrintTableroa((short)(5),(short)(5), " X");
+
+		
+		//konprobatuko dugu koordenatua 0,1 dela
+		Koordenatuak k2 = new Koordenatuak((short)(6),(short)(5)); 
+		assertEquals(k2.getKoordenatuakX(),k1.getKoordenatuakX());
+		assertEquals(k2.getKoordenatuakY(),k1.getKoordenatuakY());
+	}
 	
 	@Test
-	public void testKoordenatuaAukeratu08() {
+	public void testKoordenatuaAukeratu05() {
+		//Bi asmatu ditu baina hurrengo koordenatua jadanik esanda dago, beraz, kontrako zentzura jo beharko du.
+		j1.eguneratuPrintTableroa((short)(6),(short)(4), " X");
+		Koordenatuak k = new Koordenatuak((short)(3),(short)(3)); 
+		Koordenatuak k1 = j1.koordenatuaAukeratu(k, true);//4,3 itzuli
+		j1.eguneratuPrintTableroa((short)(5),(short)(4), " U");
+		Koordenatuak k2 = j1.koordenatuaAukeratu(k1, true);
+		assertEquals(j1.getZentzua(), 2);
+	}
+
+	@Test
+	public void testKoordenatuaAukeratu06() {
 		//Bi asmatu ditu baina ertz batekin edo izkina batekin joko du, beraz, kontrako zentzura jo beharko du.
 		//ESKUINEKO ERTZAREKIN TOPO:
 		System.out.println("\n...........................\n");
@@ -255,7 +287,7 @@ public class JokalariCPUTest {
 	}
 	
 	@Test
-	public void testKoordenatuaAukeratu09() {
+	public void testKoordenatuaAukeratu07() {
 		//Bi asmatu ditu baina ertz batekin edo izkina batekin joko du, beraz, kontrako zentzura jo beharko du.
 		//GOIKO ERTZAREKIN TOPO:
 		System.out.println("\n...........................\n");
@@ -273,7 +305,7 @@ public class JokalariCPUTest {
 	}
 	
 	@Test
-	public void testKoordenatuaAukeratu10() {
+	public void testKoordenatuaAukeratu08() {
 		//Bi asmatu ditu baina ertz batekin edo izkina batekin joko du, beraz, kontrako zentzura jo beharko du.
 		//EZKERREKO ERTZAREKIN TOPO:
 		System.out.println("\n...........................\n");
@@ -294,7 +326,7 @@ public class JokalariCPUTest {
 	}
 	
 	@Test
-	public void testKoordenatuaAukeratu11() {
+	public void testKoordenatuaAukeratu09() {
 		//Bi asmatu ditu baina ertz batekin edo izkina batekin joko du, beraz, kontrako zentzura jo beharko du.
 		//BEHEKO ERTZAREKIN TOPO:
 		System.out.println("\n...........................\n");
