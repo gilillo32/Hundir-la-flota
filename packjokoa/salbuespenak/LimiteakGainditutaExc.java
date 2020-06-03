@@ -9,7 +9,6 @@ public class LimiteakGainditutaExc extends Exception {
 			//parametroekin
 		public LimiteakGainditutaExc(String pMezua) {
 			//"Sartu dituzun kordenatuak ez dira egkiak, mesedez sartu koordenatuak berriro."
-			//cuando agamos trow exception tenemos que poner esto entre parentesis
 			super(pMezua);
 		}
 		public void mezuaInprimatu(){
