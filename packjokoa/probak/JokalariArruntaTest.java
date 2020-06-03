@@ -22,8 +22,6 @@ public class JokalariArruntaTest {
 		j1=null;
 	}
 
-	//hay que imprimir la matriz vacia
-	
 	@Test
 	public void testItsasontziakJarri01() {
 		System.out.println("\nMetodoa testean: itsasontziakJarri1");
@@ -139,15 +137,5 @@ public class JokalariArruntaTest {
 		System.out.println("Esandako koordenatuak hurrengoak dira:\nZutabea: " + k.getKoordenatuakX() + "\nErrenkada: " + k.getKoordenatuakY());
 	}
 
-/*	@Test
-	public void testJokalariArrunta() {
-		assertNotNull(j1);
-	}
 
-	@Test
-	public void testKoordenatuaAukeratu() {
-		fail("Not yet implemented");
-		//hemos puesto que lo comprobamos en la konsla, pero para eso tenemos que hacer un metodo que imprima las koordenadas, no? 
-	}
-*/
 }
