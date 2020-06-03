@@ -11,7 +11,7 @@ import klaseak.JokalariArrunta;
 import klaseak.JokalariCPU;
 public class BikoteJokalariakTest {
 	private static BikoteJokalariak bikoteJokalariak;
-	//private Jokalaria[] zerrenda;
+
 	@Before
 	public void setUp() throws Exception {
 		bikoteJokalariak=BikoteJokalariak.getNireBikoteJokalariak();
