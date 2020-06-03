@@ -23,8 +23,7 @@ public class BikoteJokalariakTest {
 	@After
 	public void tearDown() throws Exception {
 		bikoteJokalariak=null;
-		//bikoteJokalariak.getZerrenda()[0]=null;
-		//bikoteJokalariak.getZerrenda()[1]=null;
+
 	}
 
 	@Test
@@ -75,7 +74,7 @@ public class BikoteJokalariakTest {
 	
 	@Test
 	public void testPartidaBatJokatu() {
-		//bikoteJokalariak.partidaBatJokatu();
+		bikoteJokalariak.partidaBatJokatu();
 	}
 	
 	

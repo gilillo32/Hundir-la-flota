@@ -30,7 +30,6 @@ public class JokalariCPUTest {
 	
 	@Test
 	public void testItsasontziakJarri01(){
-		//amaituta ETA ONDO, LEIRE
 		System.out.println(" ");
 		System.out.println("Sartuko dugu ' 1'-eko itsasontsi bat (1, 1) koordenatuan [1-eko bi itsasontzi egngo dira] CPU kordenatu horretan itsasontsirik ez jartzen behartzeko eta alboko koordenatuetan");
 		System.out.println("Kordenatu hauetan ezin izang du itsasotzirik jarri: (0,0), (0,1), (0,2), (1,0), (1,2), (2,0), (2,1), (2,2) ");
@@ -47,7 +46,6 @@ public class JokalariCPUTest {
 
 	@Test
 	public void testItsasontziakJarri02(){
-		//amaituta ETA ONDO, LEIRE
 		System.out.println(" ");
 		System.out.println("Sartuko dugu ' 2'-eko itsasontsi bat (3, 3) koordenatuan  horizontalean  [2-eko bi itsasontzi egngo dira] CPU kordenatu horretan itsasontsirik ez jartzen behartzeko eta alboko koordenatuetan");
 		System.out.println("Kordenatu hauetan ezin izang du itsasotzirik jarri: (2,2), (2,3), (2,4), (3,2), (4,2), (3,4), (4,4), (5,2), (5,3), (5,4) ");
@@ -66,7 +64,6 @@ public class JokalariCPUTest {
 	
 	@Test
 	public void testItsasontziakJarri03(){
-		//amaituta ETA ONDO, LEIRE
 		System.out.println(" ");
 		System.out.println("Sartuko dugu ' 3'-eko itsasontsi bat (6, 3) koordenatuan  bertikalean  [3-eko bi itsasontzi egngo dira] CPU kordenatu horretan itsasontsirik ez jartzen behartzeko eta alboko koordenatuetan");
 		System.out.println("Kordenatu hauetan ezin izang du itsasotzirik jarri: (5,2), (5,3), (5,4), (5,5), (5,6), (6,2), (6,6), (7,2), (7,3), (7,4), (7,5), (7,6) ");
